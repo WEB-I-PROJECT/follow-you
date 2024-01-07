@@ -8,7 +8,7 @@ const dailyReportSchema = new Schema({
     },
     userFollowed: [
        {
-            userIndetidy: {
+            userIndetify: {
                 type: String,
                 required: true
             }
@@ -24,7 +24,7 @@ const dailyReportSchema = new Schema({
     },
     segmentationChecker: [
         {
-            userIndetidy: {
+            userIndetify: {
                 type: String,
                 required: true
             },
