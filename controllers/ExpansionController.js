@@ -6,7 +6,7 @@ const PostChecker = require('../models/PostChecker');
 class ExpansionController {
 
     index(req, res) {
-        // 
+        
     }
 
 }
