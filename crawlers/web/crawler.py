@@ -20,7 +20,7 @@ class Crawler():
             chrome_options.add_argument('--headless') 
             self.driver = webdriver.Chrome(options=chrome_options)
     
-    def access_page(self, uri = ""):
+    def access_page(self, uri = "") -> bool:
          self.driver.get(self.format_url(uri))
          return True
     
@@ -46,7 +46,7 @@ class Crawler():
         
         return f"{protocol}://{self.domain}/{uri}"
 
-    def login_in_instagram(self, timeout=10):
+    def login_in_instagram(self, timeout=10) -> bool:
         try:
             self.access_page()
 
