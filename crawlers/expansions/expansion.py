@@ -23,8 +23,7 @@ class Expansion(Crawler):
         FOLLOWING = lambda username: f'//a[@href="/{username}/following/?next=%2F"]'
 
     def __init__(self, username: str, password: str, window=True, domain='www.instagram.com') -> None:
-        super().__init__(username, password, window, domain)
-        
+        super().__init__(username, password, window, domain)      
     
     def request_page(self, username: str, option) -> bool:
         return self.request_page_by_xpath(option(username))
