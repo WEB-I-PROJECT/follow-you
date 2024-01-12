@@ -18,7 +18,7 @@ if( ex.login_in_instagram() and
        
        if(ex.access_page(uri)):
            
-            ex.request_page(ex.get_username_in_uri(uri), ex.Pages.FOLLOWERS)
+            ex.request_page(ex.get_username_in_uri(uri), ex.Pages.FOLLOWING)
             ex.follow(ex.Elements.BUTTON_FOLLOW.value)
             time.sleep(5)
     
