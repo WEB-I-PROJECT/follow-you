@@ -51,9 +51,9 @@ class verifyUser():
             print(f'Erro na solicitação: {e}')
             return f'Erro na solicitação: {e}'
 
-username_from_node = sys.argv[1]
-verify = verifyUser()
-result = verify.verifyUsername(username_from_node)
+#username_from_node = sys.argv[1]
+#verify = verifyUser()
+#esult = verify.verifyUsername(username)
 
-print(result)
+#print(result)
 

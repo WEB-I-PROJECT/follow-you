@@ -2,8 +2,6 @@ const Category = require('../models/Category');
 const Profile = require('../models/Profile');
 const User = require('../models/User');
 const Slug = require('../services/slug');
-const { spawnSync } = require('child_process');
-
 
 class CategoryController {
 
@@ -25,31 +23,31 @@ class CategoryController {
             slug: Slug(req.body.name)
         }).then((category)=>{
             let categoryID = category._id;
+
             if (req.body && req.body.profile && Array.isArray(req.body.profile)) {
 
                 req.body.profile.forEach(function(oneUsername) {
-                    
                     const username = oneUsername
                     try{
-                        const path = require('path');
-                        const scriptPath = path.join(__dirname, '..', 'crawlers', 'analytics', 'analytic.py');
-                        const resultVerifyUsername = spawnSync('python', [scriptPath, username]);
-                        const stdOutput = resultVerifyUsername.stdout.toString();
-                        
-                        if (stdOutput.trim() !== ''){
-                            const data = JSON.parse(stdOutput)
-                            Profile.create({
-                                name: data.nome_usuario,
-                                userIdentify: username,
-                                urlImg: data.url_imagem_perfil,
-                                category_id: categoryID,
-                            }).then(function(){
-                                
-                            }).catch(function(erro){
-                                res.send('Erro ao cadastrar' + erro);
-                                console.log(erro)
+                        fetch(`http://127.0.0.1:5001/api/verifyUsername/${username}`)
+                        .then(response => response.json())
+                            .then(data => {
+                                data = JSON.parse(data);
+                                Profile.create({
+                                    name: data.nome_usuario,
+                                    userIdentify: username,
+                                    urlImg: data.url_imagem_perfil,
+                                    category_id: categoryID,
+                                }).then(function(){
+                                    
+                                }).catch(function(erro){
+                                    res.send('Erro ao cadastrar' + erro);
+                                    console.log(erro)
+                                })
                             })
-                        }
+                        .catch(error => {
+                            console.error('Erro ao chamar a API:', error);
+                        });
                     }catch (error) {
                         console.error('Erro durante a execução do script Python:', error);
                     }  
@@ -66,10 +64,71 @@ class CategoryController {
     }
 
     delete(req, res){
-        console.log(req.params.id)
         Category.deleteOne({_id: req.params.id }).then(result => {
             if (result.deletedCount > 0) {
                 res.redirect('/categoria/');
+            } else {
+                res.send("Essa postagem não existe");
+            }
+        }).catch(function(erro){
+            res.send(erro);
+        });
+    }
+
+
+    details(req, res){
+        Category.findOne({_id: req.params.id }).then(function(category){
+            Profile.find({category_id: category._id}).then(function(profiles){
+                res.render('category/details', {category:category, profiles:profiles});
+            })
+        })
+    }
+
+    addProfile(req, res){
+
+        Category.findOne({_id: req.params.id}).then(function(category){
+            let categoryID = category._id;
+
+            if (req.body && req.body.profile && Array.isArray(req.body.profile)) {
+
+                req.body.profile.forEach(function(oneUsername) {
+                    const username = oneUsername
+                    try{
+                        fetch(`http://127.0.0.1:5001/api/verifyUsername/${username}`)
+                        .then(response => response.json())
+                            .then(data => {
+                                data = JSON.parse(data);
+                                Profile.create({
+                                    name: data.nome_usuario,
+                                    userIdentify: username,
+                                    urlImg: data.url_imagem_perfil,
+                                    category_id: categoryID,
+                                }).then(function(){
+                                    
+                                }).catch(function(erro){
+                                    res.send('Erro ao cadastrar' + erro);
+                                    console.log(erro)
+                                })
+                            })
+                        .catch(error => {
+                            console.error('Erro ao chamar a API:', error);
+                        });
+                    }catch (error) {
+                        console.error('Erro durante a execução do script Python:', error);
+                    }  
+                });
+                res.redirect(`/categoria/details/${{categoryID}}`);
+            } else {
+                console.error('O corpo da requisição ou a propriedade Profile não estão definidos ou não são um array.');
+            }
+        });
+    }
+
+    deleteProfile(req, res){
+        console.log(req.params.id);
+        Profile.deleteOne({_id: req.params.id }).then(result => {
+            if (result.deletedCount > 0) {
+                return {message: sucess}
             } else {
                 res.send("Essa postagem não existe");
             }
