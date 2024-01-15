@@ -1,6 +1,5 @@
-from expansions.profile import ExpansionByProfile
+from expansions.followers import ExpansionByFollowers
 
-expansion_by_profile = ExpansionByProfile(username='follow.you_official', password='#Followyou{2023}')
-# expansion_by_profile = ExpansionByProfile(username='vanubia_teste', password='@VanubiaTeste{2023]')
+expansion_by_profile = ExpansionByFollowers(username='followyou.official2', password='#Followyou.insta{2}')
 expansion_by_profile.run()
-    
+     

@@ -6,12 +6,13 @@ from enum import Enum
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.common.exceptions import StaleElementReferenceException
+from selenium.common.exceptions import StaleElementReferenceException, TimeoutException, WebDriverException
 
 class Expansion(Crawler):
     
     class Numbers(Enum):
+        LIMIT_OF_SCROLLS_WITHOUT_FOLLOW = 20
+        REST_BETWEEN_FOLLOWING = 5 # seg
         MAX_FOLLOWERS_BY_BREAK = 20
         MAX_FOLLOWERS_BY_DAY = 450
         TIME_OF_BREAK = 60 * 5 # 5 min
@@ -46,50 +47,64 @@ class Expansion(Crawler):
     def get_username_in_uri(self, uri: str) -> str:
         return uri.split('/')[1]
     
-    def click_follow_button(self, followers_div, actions: ActionChains, option: str, timeout = 10):
-    
-        clicks = 0
-        while clicks < self.Numbers.MAX_FOLLOWERS_BY_BREAK.value:
-        
+    def click_buttons(self, buttons, clicks):
+        for button in buttons:
+            if clicks >= self.Numbers.MAX_FOLLOWERS_BY_BREAK.value:
+                break
+            
             try:
-                actions.move_to_element(followers_div).perform()
-            except StaleElementReferenceException:
-                print(f"Elemento tornou-se obsoleto. Tentando novamente...")
-
-            buttons = []
-            try:
-                 buttons = WebDriverWait(self.driver, timeout).until(
-                    EC.presence_of_all_elements_located((By.XPATH, option))
-                )
-            except Exception as e:
-                print(e)
-
-            for button in buttons:
-                if clicks >= self.Numbers.MAX_FOLLOWERS_BY_BREAK.value:
-                    break
-
-                try:
-                    button.click()
-                    clicks += 1
-                except Exception as e:
-                    print(f"Failed to click button: {e}")
-                    
+                button.click()
+                clicks += 1
+                time.sleep(self.Numbers.REST_BETWEEN_FOLLOWING.value)
+            except WebDriverException as e:
+                print(f"Failed to click button: {e}")
         return clicks
-    
-    def follow(self, option, timeout=10) -> None:
+        
+    def get_follow_buttons(self, option, timeout=3):
         try:
-            followers_div = WebDriverWait(self.driver, timeout).until(
+           return WebDriverWait(self.driver, timeout).until(
+                EC.presence_of_all_elements_located((By.XPATH, option))
+            )
+        except TimeoutException:
+            print(f"Timed out waiting for buttons with XPATH: {option}")
+            return []
+            
+    def do_scroll(self):
+        try:
+            self.driver.execute_script("arguments[0].scrollTop += 100;", self.find_followers_div())
+        except StaleElementReferenceException:
+            print("Elemento tornou-se obsoleto. Tentando novamente...")
+            
+    def follow(self, option: str) -> int:
+        clicks = 0
+        scrolls_without_follow = 0
+
+        try:
+            while clicks < self.Numbers.MAX_FOLLOWERS_BY_BREAK.value:
+                self.do_scroll()
+                
+                buttons = self.get_follow_buttons(option)
+                
+                if not buttons:
+                    scrolls_without_follow += 1
+                    
+                if scrolls_without_follow >= self.Numbers.LIMIT_OF_SCROLLS_WITHOUT_FOLLOW.value:
+                    break
+                
+                clicks = self.click_buttons(buttons, clicks)
+               
+        except Exception as e:
+            print(f"Unexpected exception: {e}")
+            
+        return clicks
+
+    def find_followers_div(self, timeout=10):
+        try:
+            return WebDriverWait(self.driver, timeout).until(
                 EC.presence_of_element_located((By.CLASS_NAME, self.Elements.FOLLOWER_CLASS.value))
             )
-            
-            actions = ActionChains(self.driver)
-            
-            return self.click_follow_button(followers_div, actions, option)
-            
         except Exception as e:
-            print(e)
-            print('Buttons of follow not found in this account')
-            return 0
+            return None
         
     def unfollow():
         pass

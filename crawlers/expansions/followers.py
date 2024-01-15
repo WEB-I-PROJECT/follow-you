@@ -1,7 +1,7 @@
 import time
 from expansions.expansion import Expansion
 
-class ExpansionByProfile(Expansion):
+class ExpansionByFollowers(Expansion):
     def __init__(self, username: str, password: str, window=True, domain='www.instagram.com') -> None:
         super().__init__(username, password, window, domain)
        
@@ -21,6 +21,7 @@ class ExpansionByProfile(Expansion):
             return self.follow(self.Elements.BUTTON_FOLLOW.value)
             
     def run(self):
+        
         if(self.access_list_followers()):
             users_followeds = 0
             for follower_uri in self.followers_uri():
@@ -29,7 +30,7 @@ class ExpansionByProfile(Expansion):
                     break
                 
                 print(users_followeds)
-                print(f'PAUSA DE {self.Numbers.TIME_OF_BREAK.value} min')
+                print(f'PAUSA DE {self.Numbers.TIME_OF_BREAK.value / 60} min')
                 time.sleep(self.Numbers.TIME_OF_BREAK.value)
                 
             return users_followeds
