@@ -15,6 +15,11 @@ const profileSchema = new Schema({
         type: String,
         required: true
     },
+    category_id: {
+        type: Schema.Types.ObjectId,
+        ref: 'Category', // Nome do modelo referenciado
+        required: true
+    }
 });
 
 const Profile = mongoose.model('profiles', profileSchema);

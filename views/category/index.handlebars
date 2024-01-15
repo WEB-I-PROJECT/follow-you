@@ -1,0 +1,21 @@
+
+<a href="/categoria/add"><button>Adicionar Categoria</button></a>
+
+<table class="table" border="1">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each categories}}
+            <div class="">
+                <th scope="row">{{this.id}}</th>
+                <td>{{this.name}}</td>
+                <td><a href="/categoria/delete/{{this.id}}"><button>Deletar</button></a></td>
+                <td><a href="/categoria/details/{{this.id}}"><button>Detalhes</button></a></td>
+            </div>
+        {{/each}}
+    </tbody>
+</table>

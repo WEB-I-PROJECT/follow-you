@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/followyou").then(() =>{
+mongoose.connect("mongodb://127.0.0.1:27017/followyou").then(() =>{
     console.log("Banco de dados conectado!");
 }).catch((error) =>{
     console.log("Erro ao conectar no banco de dados: " + error)
