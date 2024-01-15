@@ -1,21 +1,64 @@
+<div class="container">
+    <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#ModalCategory">
+        Adicionar Categoria
+    </button>
 
-<a href="/categoria/add"><button>Adicionar Categoria</button></a>
-
-<table class="table" border="1">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nome</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each categories}}
-            <div class="">
-                <th scope="row">{{this.id}}</th>
-                <td>{{this.name}}</td>
-                <td><a href="/categoria/delete/{{this.id}}"><button>Deletar</button></a></td>
-                <td><a href="/categoria/details/{{this.id}}"><button>Detalhes</button></a></td>
+    <div class="modal fade" id="ModalCategory" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" style="color: var(--purple-system);" id="ModalLabel">Adicionar uma categoria</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="background-color: var(--gray-system);">
+                    <form action="/categoria/create" method="post">
+                        <div class="content-category">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1">Nome da Categoria</label>
+                                <input type="text" name="name" class="form-control" id="" aria-describedby=""
+                                    placeholder="Digite">
+                            </div>
+                            <div class="mb-3">
+                                <label for="">Adicionar username de perfil</label>
+                                <div class="d-flex gap-2">
+                                    <input type="text" class="form-control" name="profile[]" placeholder="username..">
+                                    <button type="button" class="btn btn-danger">Excluir</button>
+                                </div> 
+                            </div>
+                        </div>    
+                        <div class="my-4">
+                            <button onclick="add_profile(event)" id="newRoom" class="me-4 btn btn-success text-light fs-6 d-flex justify-content-around align-self-center">
+                            <i class="fa fa-plus-circle me-1 mt-1" aria-hidden="true"></i> <span>Novo perfil</span> </button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Adicionar</button>
+                        </div>
+                    </form>
+                </div>
+                
             </div>
-        {{/each}}
-    </tbody>
-</table>
+        </div>
+    </div>
+
+    <table class="table mt-3" border="1">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each categories}}
+                <div class="">
+                    <th scope="row">{{this.id}}</th>
+                    <td>{{this.name}}</td>
+                    <td><a href="/categoria/delete/{{this.id}}"><button>Deletar</button></a></td>
+                    <td><a href="/categoria/details/{{this.id}}"><button>Detalhes</button></a></td>
+                </div>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<script src="/category/category.js"></script>
