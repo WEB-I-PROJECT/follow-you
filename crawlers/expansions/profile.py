@@ -18,11 +18,18 @@ class ExpansionByProfile(Expansion):
     def follow_users(self, uri: str):
         if(self.access_page(uri)):
             self.request_page(self.get_username_in_uri(uri), self.Pages.FOLLOWING)
-            self.follow(self.Elements.BUTTON_FOLLOW.value)
-            time.sleep(1)
+            return self.follow(self.Elements.BUTTON_FOLLOW.value)
             
     def run(self):
         if(self.access_list_followers()):
+            users_followeds = 0
             for follower_uri in self.followers_uri():
-                self.follow_users(follower_uri)
+                users_followeds += self.follow_users(follower_uri)
+                if users_followeds >= self.Numbers.MAX_FOLLOWERS_BY_DAY.value:
+                    break
                 
+                print(users_followeds)
+                print(f'PAUSA DE {self.Numbers.TIME_OF_BREAK.value} min')
+                time.sleep(self.Numbers.TIME_OF_BREAK.value)
+                
+            return users_followeds
