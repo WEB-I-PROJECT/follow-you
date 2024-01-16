@@ -17,7 +17,7 @@ class CategoryController {
     }
 
     create(req, res){
-
+        
         Category.create({
             name: req.body.name,
             slug: Slug(req.body.name)
@@ -33,6 +33,7 @@ class CategoryController {
                         .then(response => response.json())
                             .then(data => {
                                 data = JSON.parse(data);
+                                console.log(data);
                                 Profile.create({
                                     name: data.nome_usuario,
                                     userIdentify: username,
