@@ -1,5 +1,4 @@
 from flask import Flask, jsonify, request
-from typing import Self
 from analytics.analytic import verifyUser
 app = Flask(__name__)
 
@@ -15,7 +14,7 @@ def example():
 @app.route('/api/verifyUsername/<string:username>', methods=['GET'])
 def verifyUsername(username):
 
-    request = verifyUser.verifyUsername(Self, username)
+    request = verifyUser.verifyUsername(username)
     return jsonify(request)
 
 
