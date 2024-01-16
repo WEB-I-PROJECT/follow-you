@@ -1,5 +1,9 @@
 <div class="container">
-    <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#ModalCategory">
+    <div class="title mt-2" style="color: var(--purple-system);">
+        <h1>Categorias</h1>
+    </div>
+
+    <button type="button" class="btn btn-primary mt-1" style="background-color: var(--purple-system);" data-bs-toggle="modal" data-bs-target="#ModalCategory">
         Adicionar Categoria
     </button>
 
@@ -12,7 +16,7 @@
                 </div>
                 <div class="modal-body" style="background-color: var(--gray-system);">
                     <form action="/categoria/create" method="post">
-                        <div class="content-category">
+                        <div class="modal-category">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1">Nome da Categoria</label>
                                 <input type="text" name="name" class="form-control" id="" aria-describedby=""
@@ -22,7 +26,6 @@
                                 <label for="">Adicionar username de perfil</label>
                                 <div class="d-flex gap-2">
                                     <input type="text" class="form-control" name="profile[]" placeholder="username..">
-                                    <button type="button" class="btn btn-danger">Excluir</button>
                                 </div> 
                             </div>
                         </div>    
@@ -32,7 +35,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Adicionar</button>
+                            <button type="submit" class="btn" style="background-color: var(--purple-system); color: white;">Adicionar</button>
                         </div>
                     </form>
                 </div>
@@ -40,25 +43,70 @@
             </div>
         </div>
     </div>
-
-    <table class="table mt-3" border="1">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each categories}}
-                <div class="">
-                    <th scope="row">{{this.id}}</th>
-                    <td>{{this.name}}</td>
-                    <td><a href="/categoria/delete/{{this.id}}"><button>Deletar</button></a></td>
-                    <td><a href="/categoria/details/{{this.id}}"><button>Detalhes</button></a></td>
+    <div class="d-flex content-category mt-3">
+        <div class="table-content w-100 table-responsive">
+            <table class="table" border="1">
+                <thead>
+                    <tr>
+                        <th>#ID</th>
+                        <th>Nome</th>
+                        <th class="text-center">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each categories}}
+                        <td>{{this.id}}</td>
+                        <td>{{this.name}}</td>
+                        <td class="text-center">
+                            <i onclick="actionDetails(event)" class="bi bi-three-dots" style="color: rgb(0, 0, 0); cursor: pointer;"></i>
+ 
+                        </td>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class='card-details text-center p-3 slideInRight'>
+            <div class="title-card">
+                <h5>Categoria</h5>
+                <h3>Desenvolvimento web</h3>
+            </div>
+            <div class="actions">
+                <button class="btn btn-warning"  onclick="actionDetails(event)"><i class="bi bi-pencil-fill" style="color: white;"></i></button>
+                <a href="/categoria/delete/{{this.id}}"><button class="btn btn-danger"><i class="bi bi-x-lg"></i></button></a>
+            </div>
+            <div class="subtitle-card my-3">
+                <h3>Perfis</h3>
+            </div> 
+            <div class="d-flex gap-1 content-profile">
+                <div class="profile">
+                    <div class="photo p-2">
+                        <img src="/img/Wallas.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        <h6 for=""><b>Nome</b></h6>
+                        <h6>Wallas Almeida</h6>
+                    </div>
+                    <div class="username">
+                        <h6 for=""><b>username</b></h6>
+                        <h6>wallas_dev</h6>
+                    </div>
                 </div>
-            {{/each}}
-        </tbody>
-    </table>
+                <div class="profile">
+                    <div class="photo p-2">
+                        <img src="/img/Wallas.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        <h6 for=""><b>Nome</b></h6>
+                        <h6>Wallas Almeida</h6>
+                    </div>
+                    <div class="username">
+                        <h6 for=""><b>username</b></h6>
+                        <h6>wallas_dev</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
 </div>
 
 <script src="/category/category.js"></script>

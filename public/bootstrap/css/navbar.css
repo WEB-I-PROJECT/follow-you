@@ -1,72 +1,75 @@
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    
-  }
+  margin: 0;
+  font-family: 'Arial', sans-serif; 
+}
 
-  .navbar {
-    background-color: white;
-    overflow: hidden;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+.navbar {
+  background-color: white;
+  overflow: hidden;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+
+}
+.nav-item a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 10px;
+  margin: 0 10px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s;
+}
+
+.nav-item a:hover {
+  border-bottom: 2px solid #490088;
+}
+
+.btn-register {
+  background: linear-gradient(180deg, rgba(96, 7, 173, 0.866577) 40.63%, #680459 70.89%);
+  color: white;
+  border: none;
+  padding: 8px 40px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+}
+
+.btn-login {
+  background: white;
+  border: 2px solid #0C0486;
+  color: #0C0486;
+  padding: 8px 40px;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(180deg, #0C0486 49.53%, #0C0486 49.54%, #490088 62.55%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 992px) {
+  .nav-content {
+    flex-direction: column;
+  }
 
   .nav-item a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    padding: 10px;
-    margin: 0 10px;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom 0.3s;
+      display: block;
+      margin: 10px 0;
+      border-bottom: 0px solid transparent;
   }
 
   .nav-item a:hover {
-    border-bottom: 2px solid #490088;
+      border-bottom: 0px;
   }
-
-  @media screen and (max-width: 800px) {
-    .nav-item a {
-        display: block;
-        margin: 10px 0;
-        border-bottom: 0px solid transparent;
-    }
-
-    .nav-item a:hover {
-        border-bottom: 0px;
-    }
-}
-
   
-  .navbar-buttons {
-    float: right;
-    display: inline-block;
-  }
-
-  .btn-register {
-    background: linear-gradient(180deg, rgba(96, 7, 173, 0.866577) 40.63%, #680459 70.89%);
-    color: white;
-    border: none;
-    padding: 8px 40px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-right: 10px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-
-  }
-
-  .btn-login {
-    background: white;
-    border: 2px solid #0C0486;
-    color: #0C0486;
-    padding: 8px 40px;
-    font-size: 16px;
-    cursor: pointer;
-    background: linear-gradient(180deg, #0C0486 49.53%, #0C0486 49.54%, #490088 62.55%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
+}
