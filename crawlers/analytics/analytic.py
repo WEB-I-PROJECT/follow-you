@@ -6,7 +6,7 @@ import sys  # Importe o módulo sys para acessar os argumentos da linha de coman
 
 class verifyUser():
 
-    def verifyUsername(self, username):
+    def verifyUsername(username):
         #print(f"Entrando na função verifyUsername com o username: {username}")
 
         url = "https://www.instagram.com/" + username + "/"
