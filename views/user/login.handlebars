@@ -1,19 +1,18 @@
 <div class="background"></div>
 <div class="container">
-    <div class="login-card">
-        <div class="login-form">
-            <div class="login-heading">Faça Login</div>
-            <div class="register-link">Ainda não tem <a href="#">cadastro</a>?</div>
-            <label for="cpf">CPF</label>
-            <input type="text" placeholder="insira seu CPF" />
-            <label for="senha">Senha</label>
-            <input type="password" placeholder="Insira sua senha" />
-            <div class="forgot-password">Esqueceu a <a href="#">senha</a>?</div>
-            <div>
-                <button class="btn btn-primary">Entrar</button>
-            </div>
-            
-        </div>
-        <div class="login-image"></div>
+  <div class="generic-card">
+    <div class="generic-form">
+      <div class="generic-heading">Faça Login</div>
+      <div class="generic-register-link">Ainda não tem <a href="#">cadastro</a>?</div>
+      <form action="/usuario/login" method="post">
+        <label for="email" class="generic-label">E-mail</label>
+        <input type="email" placeholder="insira seu email" name="email" class="generic-input" required />
+        <label for="senha" class="generic-label">Senha</label>
+        <input type="password" placeholder="Insira sua senha" name="password" class="generic-input" required />
+        <button class="generic-btn-primary">Entrar</button>
+      </form>
+      <div class="generic-forgot-password">Esqueceu a <a href="#">senha</a>?</div>
     </div>
+    <div class="generic-image"></div>
+  </div>
 </div>

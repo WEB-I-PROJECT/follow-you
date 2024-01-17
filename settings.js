@@ -7,6 +7,9 @@ const path = require('path');
 const session = require('express-session');
 const flash = require('connect-flash');
 const {marked} = require('marked');
+const user = require('./routes/user');
+const passport = require("passport")
+require('./config/auth')(passport);
 
 //session
 app.use(session({
@@ -14,11 +17,14 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
 
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
+    res.locals.user = req.user || null;
     next();
 })
 

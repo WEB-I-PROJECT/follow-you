@@ -9,8 +9,11 @@ const category = require('./routes/category');
 const analyticByKeywords = require('./routes/analyticByKeywords');
 const analyticByProfile = require('./routes/analyticByProfile');
 
+
+
 const PORT = 8001;
 
+app.use('/', user)
 app.use('/usuario', user);
 app.use('/usuario/perfil', clientProfile);
 app.use('/conta-instagram', instagramAccount);
