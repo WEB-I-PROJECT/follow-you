@@ -1,0 +1,43 @@
+
+
+{{#each erros}}
+<div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+{{/each}}
+<div class="background"></div>
+<div class="container">
+    <div class="custom-login-card">
+        <form class="custom-login-form" action="" method="post">
+            <div class="custom-login-heading">Cadastre-se</div>
+            <div class="custom-register-link">Já tem cadastro? <a href="/login" class="text-white">Faça login.</a></div>
+            <label for="nome" class="custom-label">Nome</label>
+            <input type="text" name="name" placeholder="Insira seu nome completo" required class="custom-input" />
+            <label for="email" class="custom-label">E-mail</label>
+            <input type="email" name="email" placeholder="Insira seu e-mail" required class="custom-input" />
+            <label for="endereco" class="custom-label">Endereço</label>
+            <input type="address" name="address" placeholder="Insira seu endereço" required class="custom-input" />
+            <label for="cpf" class="custom-label">CPF</label>
+            <input type="cpf" name="cpf" id="cpf" placeholder="Insira seu CPF" required class="custom-input" />
+            <label for="telefone" class="custom-label">Telefone</label>
+            <input type="phone" name="phone" id="phone" placeholder="Insira seu telefone" required class="custom-input" />
+            <label for="senha" class="custom-label">Senha</label>
+            <input type="password" name="password" placeholder="Insira sua senha" required class="custom-input" />
+
+            <button type="submit" class="btn custom-btn-primary">Cadastrar</button>
+        </form>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                // Máscara para o campo de CPF
+                $('#cpf').inputmask('999.999.999-99', { placeholder: '___.___.___-__' });
+
+                // Máscara para o campo de telefone
+                $('#phone').inputmask('(99) 99999-9999', { placeholder: '(__) _____-____' });
+            });
+        </script>
+        <div class="custom-login-image"></div>
+    </div>
+</div>
