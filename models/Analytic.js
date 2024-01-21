@@ -2,16 +2,35 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const analyticSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
     createdAt: {
         type: Date,
         default: Date.now()
     },
-    instagramAccount: {
+    type: {
+        type: String, // by-keywords ou by-category
+        required: true
+    },
+    User: {
         type: Schema.Types.ObjectId,
-        ref: 'instagram_accounts',
+        ref: 'users',
         required: true
     }
 });
+
+// Middleware para verificar se o campo 'type' é válido
+analyticSchema.pre('save', function(next) {
+    const validTypes = ['by-keywords', 'by-category'];
+    if (!validTypes.includes(this.type)) {
+        const error = new Error('Tipo inválido. Deve ser "by-keywords" ou "by-category".');
+        return next(error);
+    }
+    next();
+});
+
 
 const Analytic = mongoose.model('analytics', analyticSchema);
 
