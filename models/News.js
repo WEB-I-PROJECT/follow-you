@@ -10,9 +10,14 @@ const newsSchema = new Schema({
         type: String, 
         required: true
     },
+    Origin: {
+        type: String,
+        required: true
+    },
     keywords: {
         type: Array,
         required: true
+    
     },
     tags: {
         type: Array,
