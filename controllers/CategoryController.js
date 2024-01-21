@@ -1,5 +1,4 @@
 const Category = require('../models/Category');
-const Profile = require('../models/Profile');
 const User = require('../models/User');
 const Slug = require('../services/slug');
 
