@@ -6,7 +6,7 @@ function add_profile(event) {
     <div class="mb-3">
         <label for="">Adicionar username de perfil</label>
         <div class="d-flex gap-2">
-            <input type="text" class="form-control" name="profile[]" placeholder="username..">
+            <input type="text" class="form-control" name="keywords[]" placeholder="username..">
             <button onclick="remove_profile(event)" type="button" class="btn btn-danger"><i class="bi bi-x-lg"></i></button>
         </div> 
     </div>
