@@ -11,18 +11,19 @@ class CategoryController {
     }
 
     create(req, res){
-        console.log(req.body)
-        Category.create({
-            name: req.body.name,
-            slug: Slug(req.body.name),
-            keywords: req.body.keywords,
-            imgPath: req.file.imgPath
-        }).then((data)=>{
-            res.send('Cadastrado com sucesso' + data);
-        }).catch(function(erro){
-            res.send('Erro ao cadastrar' + erro);
-            console.log(erro)
-        })
+        console.log(req.body);
+        console.log(req.file);
+        // Category.create({
+        //     name: req.body.name,
+        //     slug: Slug(req.body.name),
+        //     keywords: req.body.keywords,
+        //     imgPath: req.file.imgPath
+        // }).then((data)=>{
+        //     res.send('Cadastrado com sucesso' + data);
+        // }).catch(function(erro){
+        //     res.send('Erro ao cadastrar' + erro);
+        //     console.log(erro)
+        // })
         
     }
 
