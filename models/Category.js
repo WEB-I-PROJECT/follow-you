@@ -9,6 +9,19 @@ const categorySchema = new Schema({
     slug: {
         type: String, // ex: desenvolvimento-de-sistemas-web
         required: true
+    },
+    keywords: {
+        type: Array,
+        required: true
+    },
+    imgPath: {
+        type: String,
+        required: true
+    },
+    analytic: {
+        type: Schema.Types.ObjectId,
+        ref: 'analytics',
+        required: true
     }
 });
 
