@@ -11,42 +11,14 @@ class CategoryController {
     }
 
     create(req, res){
+        console.log(req.body)
         Category.create({
             name: req.body.name,
-            slug: Slug(req.body.name)
-        }).then((category)=>{
-            let categoryID = category._id;
-            if (req.body && req.body.profile && Array.isArray(req.body.profile)) {
-                req.body.profile.forEach(function(oneUsername) {
-                    const username = oneUsername
-                    try{
-                        fetch(`http://127.0.0.1:5001/api/verifyUsername/${username}`)
-                        .then(response => response.json())
-                            .then(data => {
-                                data = JSON.parse(data);
-                                console.log(data);
-                                Profile.create({
-                                    name: data.nome_usuario,
-                                    userIdentify: username,
-                                    urlImg: data.url_imagem_perfil,
-                                    category_id: categoryID,
-
-                                }).catch(function(erro){
-                                    res.send('Erro ao cadastrar' + erro);
-                                    console.log(erro)
-                                })
-                            })
-                        .catch(error => {
-                            console.error('Erro ao chamar a API:', error);
-                        });
-                    }catch (error) {
-                        console.error('Erro durante a execução do script Python:', error);
-                    }  
-                });
-                res.redirect('/categoria/');
-            } else {
-                console.error('O corpo da requisição ou a propriedade Profile não estão definidos ou não são um array.');
-            }
+            slug: Slug(req.body.name),
+            keywords: req.body.keywords,
+            imgPath: req.file.imgPath
+        }).then((data)=>{
+            res.send('Cadastrado com sucesso' + data);
         }).catch(function(erro){
             res.send('Erro ao cadastrar' + erro);
             console.log(erro)
