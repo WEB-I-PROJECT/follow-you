@@ -25,7 +25,6 @@ class CategoryController {
                         .then(response => response.json())
                             .then(data => {
                                 data = JSON.parse(data);
-                                console.log(data);
                                 Profile.create({
                                     name: data.nome_usuario,
                                     userIdentify: username,
@@ -77,7 +76,6 @@ class CategoryController {
 
             Profile.find({ category_id: category._id })
                 .then(function (profiles) {
-                    console.log({ profiles: profiles, category: category });
                     res.status(200).json({ profiles: profiles, category: category });
                 })
                 .catch(function (error) {

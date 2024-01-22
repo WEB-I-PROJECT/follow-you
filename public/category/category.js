@@ -31,8 +31,6 @@ function actionDetails(event) {
         return response.json();
 
     }).then(data => {
-        console.log(data);
-        console.log(data.profiles);
         card.innerHTML = `
             <div class="title-card">
                 <div class="d-flex w-100 justify-content-end">
