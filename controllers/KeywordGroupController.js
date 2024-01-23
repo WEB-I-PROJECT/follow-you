@@ -6,7 +6,6 @@ class KeywordGroupController {
      //
     }
 
-
 }
 
 module.exports = KeywordGroupController
