@@ -23,6 +23,11 @@ const analyticSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users',
         required: true
+    },
+    category: {
+        type: Schema.Types.ObjectId,
+        ref: 'categories',
+        required: false
     }
 });
 
