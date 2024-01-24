@@ -16,7 +16,7 @@ body {
 
 }
 .nav-item a {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   padding: 10px;
   margin: 0 10px;
@@ -25,12 +25,17 @@ body {
 }
 
 .nav-item a:hover {
-  border-bottom: 2px solid #490088;
+  border-bottom: 2px solid #ffffff;
+}
+
+.navbar-brand {
+  font-size: 30px; /* Tamanho da fonte */
+  color: white;   /* Cor do texto */
 }
 
 .btn-register {
-  background: linear-gradient(180deg, rgba(96, 7, 173, 0.866577) 40.63%, #680459 70.89%);
-  color: white;
+  background: #ffffff;
+  color:#C4170C;
   border: none;
   padding: 8px 40px;
   cursor: pointer;
@@ -43,12 +48,12 @@ body {
 
 .btn-login {
   background: white;
-  border: 2px solid #0C0486;
-  color: #0C0486;
+  border: 2px solid #ffffff;
+  color: #ffffff;
   padding: 8px 40px;
   font-size: 16px;
   cursor: pointer;
-  background: linear-gradient(180deg, #0C0486 49.53%, #0C0486 49.54%, #490088 62.55%);
+  background: #ffffff;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
