@@ -14,12 +14,13 @@ html {
 
 .background-image-container {
     text-align: right;
-    margin-top: -450px;
+    margin-top: -427px;
 }
 
 .background-image-container img {
-    max-width: 72%;
-    height: auto;
+
+    max-width: 85%;
+    height:auto;
     width: auto;
 }
 
@@ -34,31 +35,45 @@ html {
     margin-top: 150px;
     margin-left: 100px;
     white-space: nowrap;
-    background: linear-gradient(180deg, #680459 18.76%, #6007AD 41.72%, #FCBD33 92.76%, #FCBD33 92.77%);
+    background: linear-gradient(180deg, #C4170C 37.62%, #FCBD33 92.76%, #FCBD33 92.77%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-    font-size: 60px;
+    font-size: 80px;
+    font-weight: bold;
+
 }
 
 .custom2-content-container h3 {
-    color: #3A1C55;
+    color: #C4170C;
     margin-left: 100px;
-    font-size: 25px;
+    font-size: 30px;
 }
 
-.custom2-btn-seguidores {
-    background: linear-gradient(180deg, rgba(96, 7, 173, 0.866577) 40.63%, #680459 70.89%);
-    color: white;
-    border: none;
+
+
+
+  
+  .custom2-btn-seguidores {
+    background: #ffffff;
+    color: #C4170C;
+    border: 2px solid #C4170C;
     padding: 8px 40px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 30px;
     margin-left: 120px;
     border-radius: 10px;
     margin-top: 40px;
-}
+
+  }
+  .custom2-btn-seguidores:hover {
+    transition: background-color 0.3s; 
+    background-color: #2980b9;
+  }
+
+
+
 
 @media (max-width: 767px) {
     .background-image-container {
@@ -69,5 +84,9 @@ html {
 @media (max-width: 1024px) {
     .background-image-container {
         margin-top: 20px; 
+    }
+
+    .background-image-container {
+        display: none;
     }
 }
