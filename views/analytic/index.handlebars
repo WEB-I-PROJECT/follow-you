@@ -2,12 +2,13 @@
     <h1 class="text-analytics text-analytics-font  mx-2 bi bi-newspaper mt-4 "> <strong> Analytics</strong></h1>
     <div class="m-4">
         <div id="cards-container">
-            <div class="card-principal d-flex justify-content-center align-items-center" onclick="redirectToAnotherPage()">
+            <div role="button" class="card-principal d-flex justify-content-center align-items-center" onclick="redirectToAnotherPage()">
                 <button class="button-add" id="cardsCounter"><strong><h1 class="text-light">+</h1></strong></button>
             </div>
 
            {{#each analytics}}
-                <div class="card mb-3">
+           <a href="/analytic/{{type}}/{{_id}}">
+             <div class="card mb-3">
                     <div class="card-content">
                         <div class="mx-4 mt-2">
                             <p class="mb-3 text-analytic-name">{{name}}</p>
@@ -15,6 +16,8 @@
                         </div>
                     </div>
                 </div>
+           </a>
+               
             {{/each}}
             <script>
                 document.addEventListener("DOMContentLoaded", function () {

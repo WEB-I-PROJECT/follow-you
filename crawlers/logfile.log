@@ -1,0 +1,745 @@
+Traceback (most recent call last):
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/cron.py", line 2, in <module>
+    from news.cnn import CNNCrawler
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/news/cnn.py", line 2, in <module>
+    from mongo.models import Analytic
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/mongo/models.py", line 2, in <module>
+    from bson import ObjectId
+ModuleNotFoundError: No module named 'bson'
+
+Traceback (most recent call last):
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/cron.py", line 2, in <module>
+    from news.cnn import CNNCrawler
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/news/cnn.py", line 2, in <module>
+    from mongo.models import Analytic
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/mongo/models.py", line 2, in <module>
+    from bson import ObjectId
+ModuleNotFoundError: No module named 'bson'
+Traceback (most recent call last):
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/cron.py", line 2, in <module>
+    from news.cnn import CNNCrawler
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/news/cnn.py", line 2, in <module>
+    from mongo.models import Analytic
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/mongo/models.py", line 2, in <module>
+    from bson import ObjectId
+ModuleNotFoundError: No module named 'bson'
+/bin/sh: 1: conda: not found
+Defaulting to user installation because normal site-packages is not writeable
+Collecting bson
+  Downloading bson-0.5.10.tar.gz (10 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: python-dateutil>=2.4.0 in /usr/local/lib/python3.10/dist-packages (from bson) (2.8.2)
+Requirement already satisfied: six>=1.9.0 in /usr/lib/python3/dist-packages (from bson) (1.16.0)
+Building wheels for collected packages: bson
+  Building wheel for bson (setup.py): started
+  Building wheel for bson (setup.py): finished with status 'done'
+  Created wheel for bson: filename=bson-0.5.10-py3-none-any.whl size=11979 sha256=7ebea18c8fa202b0e8ecf896f6f261cc086035f650981f82c9f13d2f4c3fa9ca
+  Stored in directory: /home/junior/.cache/pip/wheels/36/49/3b/8b33954dfae7a176009c4d721a45af56c8a9c1cdc3ee947945
+Successfully built bson
+Installing collected packages: bson
+Successfully installed bson-0.5.10
+Traceback (most recent call last):
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/cron.py", line 2, in <module>
+    from news.cnn import CNNCrawler
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/news/cnn.py", line 2, in <module>
+    from mongo.models import Analytic
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/mongo/models.py", line 3, in <module>
+    from pymongo import MongoClient
+ModuleNotFoundError: No module named 'pymongo'
+Defaulting to user installation because normal site-packages is not writeable
+Collecting requests_html==0.10.0
+  Downloading requests_html-0.10.0-py3-none-any.whl (13 kB)
+Requirement already satisfied: bson==0.5.10 in ./.local/lib/python3.10/site-packages (from -r /home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/requirements.txt (line 2)) (0.5.10)
+Requirement already satisfied: beautifulsoup4==4.10.0 in /usr/lib/python3/dist-packages (from -r /home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/requirements.txt (line 3)) (4.10.0)
+Collecting pymongo==3.12.0
+  Downloading pymongo-3.12.0.tar.gz (818 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.6/818.6 KB 907.8 kB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from requests_html==0.10.0->-r /home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/requirements.txt (line 1)) (2.31.0)
+Collecting pyquery
+  Downloading pyquery-2.0.0-py3-none-any.whl (22 kB)
+Collecting w3lib
+  Downloading w3lib-2.1.2-py3-none-any.whl (21 kB)
+Collecting parse
+  Downloading parse-1.20.0-py2.py3-none-any.whl (19 kB)
+Collecting fake-useragent
+  Downloading fake_useragent-1.4.0-py3-none-any.whl (15 kB)
+Requirement already satisfied: bs4 in /usr/local/lib/python3.10/dist-packages (from requests_html==0.10.0->-r /home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/requirements.txt (line 1)) (0.0.1)
+Collecting pyppeteer>=0.0.14
+  Downloading pyppeteer-1.0.2-py3-none-any.whl (83 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 83.4/83.4 KB 237.9 kB/s eta 0:00:00
+Requirement already satisfied: python-dateutil>=2.4.0 in /usr/local/lib/python3.10/dist-packages (from bson==0.5.10->-r /home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/requirements.txt (line 2)) (2.8.2)
+Requirement already satisfied: six>=1.9.0 in /usr/lib/python3/dist-packages (from bson==0.5.10->-r /home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/requirements.txt (line 2)) (1.16.0)
+Requirement already satisfied: certifi>=2021 in /usr/local/lib/python3.10/dist-packages (from pyppeteer>=0.0.14->requests_html==0.10.0->-r /home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/requirements.txt (line 1)) (2023.7.22)
+Collecting pyee<9.0.0,>=8.1.0
+  Downloading pyee-8.2.2-py2.py3-none-any.whl (12 kB)
+Requirement already satisfied: importlib-metadata>=1.4 in /usr/lib/python3/dist-packages (from pyppeteer>=0.0.14->requests_html==0.10.0->-r /home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/requirements.txt (line 1)) (4.6.4)
+Requirement already satisfied: urllib3<2.0.0,>=1.25.8 in /usr/lib/python3/dist-packages (from pyppeteer>=0.0.14->requests_html==0.10.0->-r /home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/requirements.txt (line 1)) (1.26.5)
+Collecting appdirs<2.0.0,>=1.4.3
+  Downloading appdirs-1.4.4-py2.py3-none-any.whl (9.6 kB)
+Collecting websockets<11.0,>=10.0
+  Downloading websockets-10.4-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (106 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 106.8/106.8 KB 296.5 kB/s eta 0:00:00
+Requirement already satisfied: tqdm<5.0.0,>=4.42.1 in /usr/local/lib/python3.10/dist-packages (from pyppeteer>=0.0.14->requests_html==0.10.0->-r /home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/requirements.txt (line 1)) (4.65.0)
+Collecting cssselect>=1.2.0
+  Downloading cssselect-1.2.0-py2.py3-none-any.whl (18 kB)
+Requirement already satisfied: lxml>=2.1 in /usr/local/lib/python3.10/dist-packages (from pyquery->requests_html==0.10.0->-r /home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/requirements.txt (line 1)) (4.9.3)
+Requirement already satisfied: idna<4,>=2.5 in /usr/lib/python3/dist-packages (from requests->requests_html==0.10.0->-r /home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/requirements.txt (line 1)) (3.3)
+Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests->requests_html==0.10.0->-r /home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/requirements.txt (line 1)) (3.1.0)
+Building wheels for collected packages: pymongo
+  Building wheel for pymongo (setup.py): started
+  Building wheel for pymongo (setup.py): finished with status 'done'
+  Created wheel for pymongo: filename=pymongo-3.12.0-cp310-cp310-linux_x86_64.whl size=508666 sha256=56005ade4c08a3f4e54cc01be1140f8f807843bab176c547238a88f7e80d0456
+  Stored in directory: /home/junior/.cache/pip/wheels/85/80/00/4fe7548929ec60f30771db04ad99441daf083b53a1d8eea82c
+Successfully built pymongo
+Installing collected packages: pyee, parse, fake-useragent, appdirs, websockets, w3lib, pymongo, cssselect, pyquery, pyppeteer, requests_html
+  WARNING: The script pyppeteer-install is installed in '/home/junior/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed appdirs-1.4.4 cssselect-1.2.0 fake-useragent-1.4.0 parse-1.20.0 pyee-8.2.2 pymongo-3.12.0 pyppeteer-1.0.2 pyquery-2.0.0 requests_html-0.10.0 w3lib-2.1.2 websockets-10.4
+https://cidadeverde.com/buscar/noticias/PT
+Coletando imagens...
+https://cidadeverde.com/noticias/393953/se-o-pt-se-baseasse-em-pesquisa-o-lula-nao-era-presidente-diz-dudu-sobre-pre-candidato
+https://cidadeverde.com/temporeal/122974/florentino-diz-ao-pt-que-esta-disponivel-para-candidatura-em-parnaiba
+https://cidadeverde.com/noticias/397043/pt-e-psd-disputam-prefeitura-de-sao-lourenco-em-eleicao-suplementar-no-domingo
+https://cidadeverde.com/noticias/399553/franze-silva-entregara-decisao-sobre-futuro-mandato-ao-pt-e-nao-descarta-senado
+https://cidadeverde.com/noticias/398217/petistas-se-reunem-e-fabio-novo-diz-que-pt-nao-pode-mais-esperar-para-definir-nome
+https://cidadeverde.com/noticias/401383/silvio-mendes-diz-que-barbara-tem-suas-razoes-para-se-aliar-ao-pt-e-nega-chapa-com-jeova-alencar
+https://cidadeverde.com/temporeal/123792/pt-unido-com-fabio-novo
+https://cidadeverde.com/temporeal/124952/mdb-decide-esta-semana-alianca-com-pt-em-teresina
+https://cidadeverde.com/noticias/405540/presidente-do-pt-pede-que-vereadores-entreguem-cargos-no-palacio-da-cidade
+https://cidadeverde.com/temporeal/124083/pt-larga-na-frente-em-frente-em-teresina
+https://cidadeverde.com/noticias/405914/ricardo-lewandowski-deve-preservar-pt-e-esvaziar-psb-no-2o-escalao
+https://cidadeverde.com/noticias/404914/agressao-de-deputado-do-pt-e-comportamento-de-bolsonaristas-desmoralizam-congresso-diz-lira
+https://cidadeverde.com/noticias/402782/wellington-dias-evita-falar-sobre-filiacoes-de-opositores-ao-pt-e-partidos-da-federacao
+https://cidadeverde.com/noticias/405591/elzuila-calisto-afirma-que-seguira-orientacao-do-pt-sobre-palacio-da-cidade
+https://cidadeverde.com/noticias/400089/grupo-no-pt-lanca-manifesto-para-que-vice-de-fabio-novo-seja-mulher
+https://cidadeverde.com/noticias/404851/vice-presidente-do-pt-da-tapa-na-cara-de-deputado-durante-sessao-na-camara
+https://cidadeverde.com/temporeal/123721/rafael-fonteles-entra-em-campo-e-unifica-pt-de-teresina
+https://cidadeverde.com/noticias/397820/barbara-do-firmino-descarta-apoio-ao-pt-e-diz-que-seguira-com-grupo-da-oposicao
+https://cidadeverde.com/noticias/398714/valdemar-rejeita-aliancas-do-pl-de-bolsonaro-com-o-pt-de-lula-somos-oposicao
+https://cidadeverde.com/noticias/398143/franze-silva-afirma-que-acordo-com-fabio-novo-no-pt-sera-revisto
+https://cidadeverde.com/noticias/401167/boulos-reune-partidos-aliados-para-eleicao-e-pt-promete-lula-no-palanque
+https://cidadeverde.com/noticias/398223/criem-juizo-adverte-wellington-dias-sobre-disputa-por-pre-candidatura-do-pt
+https://cidadeverde.com/noticias/405780/marta-suplicy-recebe-convite-para-voltar-ao-pt-em-novo-passo-para-negociar-vice-de-boulos
+https://cidadeverde.com/noticias/406641/pl-e-pt-terao-as-maiores-parcelas-do-fundo-eleitoral-bilionario-de-2024
+https://cidadeverde.com/temporeal/125115/joao-de-deus-convoca-pt-para-discutir-casos-de-infidelidade-partidaria
+https://cidadeverde.com/noticias/399278/henrique-fontana-acredita-que-pt-pode-vencer-disputa-pelo-palacio-da-cidade
+https://cidadeverde.com/noticias/397821/cicero-magalhaes-afirma-que-pt-nao-precisa-importar-vice-para-eleicoes-de-2024
+https://cidadeverde.com/noticias/393838/fabio-novo-quer-unificar-pt-e-diz-que-adesoes-fortalecem-pre-candidatura
+https://cidadeverde.com/noticias/396111/franze-silva-garante-unificacao-do-pt-em-agosto-para-disputar-palacio-da-cidade
+https://cidadeverde.com/temporeal/123818/carmelita-vence-queda-de-braco-com-pt-em-sao-raimundo-nonato
+https://cidadeverde.com/noticias/398420/pt-adia-deliberacao-e-aguarda-acordo-entre-novo-e-franze-nesta-quarta-feira
+https://cidadeverde.com/noticias/405856/maycon-silva-entrega-cargo-na-fundacao-e-bancada-do-pt-decide-sair-da-gestao-de-dr-pessoa
+https://cidadeverde.com/noticias/398373/executiva-municipal-do-pt-adia-escolha-de-pre-candidato-em-teresina
+https://cidadeverde.com/noticias/398832/executiva-do-pt-fara-reuniao-com-governador-e-prefeitos-sobre-2024
+https://cidadeverde.com/noticias/398450/franze-diz-que-nao-contestara-decisao-do-pt-sobre-pre-candidato
+https://cidadeverde.com/noticias/401799/fabio-novo-faz-aceno-a-tucanos-e-relembra-ja-houve-chapa-pt-e-psdb-no-estado
+https://cidadeverde.com/noticias/397954/divulgada-pesquisa-para-ajudar-a-definir-o-candidato-do-pt-em-teresina-veja-numeros
+https://cidadeverde.com/temporeal/125055/agora-e-oficial-pt-formaliza-alianca-com-mdb-em-parnaiba
+https://cidadeverde.com/noticias/398507/presidente-do-pt-diz-nao-reconhecer-diretorio-que-elegeu-fabio-novo-pre-candidato
+https://cidadeverde.com/noticias/400180/refazer-escolha-de-pre-candidato-seria-um-erro-diz-presidente-do-pt-sobre-nova-resolucao
+https://cidadeverde.com/noticias/396385/vice-no-diretorio-municipal-do-pt-oficializa-apoio-a-fabio-novo
+https://cidadeverde.com/temporeal/124510/sucessao-em-sao-raimundo-nonato-pt-confirma-pre-candidatura-de-isaias-neto
+https://cidadeverde.com/noticias/395193/em-reuniao-lideres-do-pt-decidem-que-pre-candidato-sera-escolhido-em-agosto
+https://cidadeverde.com/noticias/406585/pl-e-pt-terao-quase-r-15-bi-para-gastar-nas-campanhas
+https://cidadeverde.com/saviabarreto/124750/coluna-13-12-23
+https://cidadeverde.com/noticias/403962/rafael-fonteles-diz-acreditar-em-alianca-entre-pt-e-mdb-ainda-no-1o-turno-de-2024
+https://cidadeverde.com/noticias/396800/rafael-fonteles-defende-pesquisa-como-criterio-do-pt-para-escolher-pre-candidato
+https://cidadeverde.com/noticias/399120/teresa-britto-manda-recado-para-fabio-novo-una-se-ao-pt-primeiro
+https://cidadeverde.com/noticias/396435/olavo-rebelo-e-ze-santana-se-filiam-no-pt-na-proxima-sexta-feira-28
+https://cidadeverde.com/temporeal/123138/pesquisas-vereadores-e-deputados-decidirao-candidato-do-pt-a-prefeito-de-teresina
+https://cidadeverde.com/noticias/393953/se-o-pt-se-baseasse-em-pesquisa-o-lula-nao-era-presidente-diz-dudu-sobre-pre-candidato
+<pymongo.results.InsertOneResult object at 0x7fb14c0786c0> 
+
+https://cidadeverde.com/temporeal/122974/florentino-diz-ao-pt-que-esta-disponivel-para-candidatura-em-parnaiba
+<pymongo.results.InsertOneResult object at 0x7fb14cacbc00> 
+
+https://cidadeverde.com/noticias/397043/pt-e-psd-disputam-prefeitura-de-sao-lourenco-em-eleicao-suplementar-no-domingo
+<pymongo.results.InsertOneResult object at 0x7fb14cf38440> 
+
+https://cidadeverde.com/noticias/399553/franze-silva-entregara-decisao-sobre-futuro-mandato-ao-pt-e-nao-descarta-senado
+<pymongo.results.InsertOneResult object at 0x7fb14f4c6a40> 
+
+https://cidadeverde.com/noticias/398217/petistas-se-reunem-e-fabio-novo-diz-que-pt-nao-pode-mais-esperar-para-definir-nome
+<pymongo.results.InsertOneResult object at 0x7fb14cb90600> 
+
+https://cidadeverde.com/noticias/401383/silvio-mendes-diz-que-barbara-tem-suas-razoes-para-se-aliar-ao-pt-e-nega-chapa-com-jeova-alencar
+<pymongo.results.InsertOneResult object at 0x7fb14ca44980> 
+
+https://cidadeverde.com/temporeal/123792/pt-unido-com-fabio-novo
+<pymongo.results.InsertOneResult object at 0x7fb14e7c2880> 
+
+https://cidadeverde.com/temporeal/124952/mdb-decide-esta-semana-alianca-com-pt-em-teresina
+<pymongo.results.InsertOneResult object at 0x7fb14c218740> 
+
+https://cidadeverde.com/noticias/405540/presidente-do-pt-pede-que-vereadores-entreguem-cargos-no-palacio-da-cidade
+<pymongo.results.InsertOneResult object at 0x7fb14c7c9dc0> 
+
+https://cidadeverde.com/temporeal/124083/pt-larga-na-frente-em-frente-em-teresina
+<pymongo.results.InsertOneResult object at 0x7fb14ca75040> 
+
+https://cidadeverde.com/noticias/405914/ricardo-lewandowski-deve-preservar-pt-e-esvaziar-psb-no-2o-escalao
+<pymongo.results.InsertOneResult object at 0x7fb14cee6780> 
+
+https://cidadeverde.com/noticias/404914/agressao-de-deputado-do-pt-e-comportamento-de-bolsonaristas-desmoralizam-congresso-diz-lira
+<pymongo.results.InsertOneResult object at 0x7fb14caac800> 
+
+https://cidadeverde.com/noticias/402782/wellington-dias-evita-falar-sobre-filiacoes-de-opositores-ao-pt-e-partidos-da-federacao
+<pymongo.results.InsertOneResult object at 0x7fb14c1ad180> 
+
+https://cidadeverde.com/noticias/405591/elzuila-calisto-afirma-que-seguira-orientacao-do-pt-sobre-palacio-da-cidade
+<pymongo.results.InsertOneResult object at 0x7fb14ca449c0> 
+
+https://cidadeverde.com/noticias/400089/grupo-no-pt-lanca-manifesto-para-que-vice-de-fabio-novo-seja-mulher
+<pymongo.results.InsertOneResult object at 0x7fb14cb65780> 
+
+https://cidadeverde.com/noticias/404851/vice-presidente-do-pt-da-tapa-na-cara-de-deputado-durante-sessao-na-camara
+<pymongo.results.InsertOneResult object at 0x7fb14cdb1a00> 
+
+https://cidadeverde.com/temporeal/123721/rafael-fonteles-entra-em-campo-e-unifica-pt-de-teresina
+<pymongo.results.InsertOneResult object at 0x7fb14e7c2440> 
+
+https://cidadeverde.com/noticias/397820/barbara-do-firmino-descarta-apoio-ao-pt-e-diz-que-seguira-com-grupo-da-oposicao
+<pymongo.results.InsertOneResult object at 0x7fb14e7a6280> 
+
+https://cidadeverde.com/noticias/398714/valdemar-rejeita-aliancas-do-pl-de-bolsonaro-com-o-pt-de-lula-somos-oposicao
+<pymongo.results.InsertOneResult object at 0x7fb14e7a6240> 
+
+https://cidadeverde.com/noticias/398143/franze-silva-afirma-que-acordo-com-fabio-novo-no-pt-sera-revisto
+<pymongo.results.InsertOneResult object at 0x7fb14c825d00> 
+
+https://cidadeverde.com/noticias/401167/boulos-reune-partidos-aliados-para-eleicao-e-pt-promete-lula-no-palanque
+<pymongo.results.InsertOneResult object at 0x7fb14c56e740> 
+
+https://cidadeverde.com/noticias/398223/criem-juizo-adverte-wellington-dias-sobre-disputa-por-pre-candidatura-do-pt
+<pymongo.results.InsertOneResult object at 0x7fb14ca5c6c0> 
+
+https://cidadeverde.com/noticias/405780/marta-suplicy-recebe-convite-para-voltar-ao-pt-em-novo-passo-para-negociar-vice-de-boulos
+<pymongo.results.InsertOneResult object at 0x7fb14cbc3fc0> 
+
+https://cidadeverde.com/noticias/406641/pl-e-pt-terao-as-maiores-parcelas-do-fundo-eleitoral-bilionario-de-2024
+<pymongo.results.InsertOneResult object at 0x7fb14e7a5440> 
+
+https://cidadeverde.com/temporeal/125115/joao-de-deus-convoca-pt-para-discutir-casos-de-infidelidade-partidaria
+<pymongo.results.InsertOneResult object at 0x7fb14e7a5700> 
+
+https://cidadeverde.com/noticias/399278/henrique-fontana-acredita-que-pt-pode-vencer-disputa-pelo-palacio-da-cidade
+<pymongo.results.InsertOneResult object at 0x7fb14cf453c0> 
+
+https://cidadeverde.com/noticias/397821/cicero-magalhaes-afirma-que-pt-nao-precisa-importar-vice-para-eleicoes-de-2024
+<pymongo.results.InsertOneResult object at 0x7fb14c54ad00> 
+
+https://cidadeverde.com/noticias/393838/fabio-novo-quer-unificar-pt-e-diz-que-adesoes-fortalecem-pre-candidatura
+<pymongo.results.InsertOneResult object at 0x7fb14cb62140> 
+
+https://cidadeverde.com/noticias/396111/franze-silva-garante-unificacao-do-pt-em-agosto-para-disputar-palacio-da-cidade
+<pymongo.results.InsertOneResult object at 0x7fb14c8ed2c0> 
+
+https://cidadeverde.com/temporeal/123818/carmelita-vence-queda-de-braco-com-pt-em-sao-raimundo-nonato
+<pymongo.results.InsertOneResult object at 0x7fb14c626b00> 
+
+https://cidadeverde.com/noticias/398420/pt-adia-deliberacao-e-aguarda-acordo-entre-novo-e-franze-nesta-quarta-feira
+<pymongo.results.InsertOneResult object at 0x7fb14ca58d00> 
+
+https://cidadeverde.com/noticias/405856/maycon-silva-entrega-cargo-na-fundacao-e-bancada-do-pt-decide-sair-da-gestao-de-dr-pessoa
+<pymongo.results.InsertOneResult object at 0x7fb14cb88800> 
+
+https://cidadeverde.com/noticias/398373/executiva-municipal-do-pt-adia-escolha-de-pre-candidato-em-teresina
+<pymongo.results.InsertOneResult object at 0x7fb14f294a80> 
+
+https://cidadeverde.com/noticias/398832/executiva-do-pt-fara-reuniao-com-governador-e-prefeitos-sobre-2024
+<pymongo.results.InsertOneResult object at 0x7fb14c982980> 
+
+https://cidadeverde.com/noticias/398450/franze-diz-que-nao-contestara-decisao-do-pt-sobre-pre-candidato
+<pymongo.results.InsertOneResult object at 0x7fb14cd0a480> 
+
+https://cidadeverde.com/noticias/401799/fabio-novo-faz-aceno-a-tucanos-e-relembra-ja-houve-chapa-pt-e-psdb-no-estado
+<pymongo.results.InsertOneResult object at 0x7fb14cb46500> 
+
+https://cidadeverde.com/noticias/397954/divulgada-pesquisa-para-ajudar-a-definir-o-candidato-do-pt-em-teresina-veja-numeros
+<pymongo.results.InsertOneResult object at 0x7fb14c2add80> 
+
+https://cidadeverde.com/temporeal/125055/agora-e-oficial-pt-formaliza-alianca-com-mdb-em-parnaiba
+<pymongo.results.InsertOneResult object at 0x7fb14ccf05c0> 
+
+https://cidadeverde.com/noticias/398507/presidente-do-pt-diz-nao-reconhecer-diretorio-que-elegeu-fabio-novo-pre-candidato
+<pymongo.results.InsertOneResult object at 0x7fb14f42dec0> 
+
+https://cidadeverde.com/noticias/400180/refazer-escolha-de-pre-candidato-seria-um-erro-diz-presidente-do-pt-sobre-nova-resolucao
+<pymongo.results.InsertOneResult object at 0x7fb14c8e8880> 
+
+https://cidadeverde.com/noticias/396385/vice-no-diretorio-municipal-do-pt-oficializa-apoio-a-fabio-novo
+<pymongo.results.InsertOneResult object at 0x7fb14c7f1040> 
+
+https://cidadeverde.com/temporeal/124510/sucessao-em-sao-raimundo-nonato-pt-confirma-pre-candidatura-de-isaias-neto
+<pymongo.results.InsertOneResult object at 0x7fb14cb46140> 
+
+https://cidadeverde.com/noticias/395193/em-reuniao-lideres-do-pt-decidem-que-pre-candidato-sera-escolhido-em-agosto
+<pymongo.results.InsertOneResult object at 0x7fb14e7a6180> 
+
+https://cidadeverde.com/noticias/406585/pl-e-pt-terao-quase-r-15-bi-para-gastar-nas-campanhas
+<pymongo.results.InsertOneResult object at 0x7fb14c6a1f80> 
+
+https://cidadeverde.com/saviabarreto/124750/coluna-13-12-23
+
+-- ERROR: 'NoneType' object has no attribute 'text' 
+
+https://cidadeverde.com/noticias/403962/rafael-fonteles-diz-acreditar-em-alianca-entre-pt-e-mdb-ainda-no-1o-turno-de-2024
+<pymongo.results.InsertOneResult object at 0x7fb14e7c1c40> 
+
+https://cidadeverde.com/noticias/396800/rafael-fonteles-defende-pesquisa-como-criterio-do-pt-para-escolher-pre-candidato
+<pymongo.results.InsertOneResult object at 0x7fb14c8e8780> 
+
+https://cidadeverde.com/noticias/399120/teresa-britto-manda-recado-para-fabio-novo-una-se-ao-pt-primeiro
+<pymongo.results.InsertOneResult object at 0x7fb14ca47c80> 
+
+https://cidadeverde.com/buscar/noticias/Lula
+Coletando imagens...
+https://cidadeverde.com/noticias/406244/lula-confirma-poupanca-para-alunos-do-ensino-medio-confira-as-regras
+https://cidadeverde.com/noticias/406582/decreto-fixa-exigencias-para-aquisicao-de-produtos-e-servicos-nacionais-dentro-do-novo-pac
+https://cidadeverde.com/noticias/406623/lewandowski-promete-foco-na-seguranca-publica-e-continuidade-ao-trabalho-de-flavio-dino
+https://cidadeverde.com/noticias/406448/lei-rouanet-e-indispensavel-diz-claudia-raia-agora-na-pele-de-tarsila-do-amaral
+https://cidadeverde.com/noticias/405913/nunes-diz-ainda-manter-respeito-por-marta-e-minimiza-impacto-para-boulos
+https://cidadeverde.com/noticias/406778/lula-justifica-viagens-ao-exterior-e-diz-que-o-brasil-nunca-antes-esteve-tao-respeitado
+https://cidadeverde.com/noticias/406644/lewandowski-diz-a-dino-que-deve-trocar-secretario-de-justica-mas-preservara-parte-da-equipe
+https://cidadeverde.com/noticias/406741/grupo-lancara-pre-candidato-independente-de-dr-helio-diz-florentino-neto
+https://cidadeverde.com/noticias/406577/governo-faz-radiografia-e-ira-anunciar-possiveis-cortes-de-gastos-este-ano-diz-haddad
+https://cidadeverde.com/noticias/406446/homem-que-matou-apoiadores-de-lula-e-condenado-a-51-anos-de-prisao
+https://cidadeverde.com/noticias/406507/sera-uma-honra-diz-alckmin-sobre-apoio-a-tabata-para-prefeitura-de-sp
+https://cidadeverde.com/noticias/406045/ricardo-lewandowski-tem-historico-de-votos-favoraveis-a-petistas-no-stf
+https://cidadeverde.com/noticias/406614/para-receita-arrecadacao-de-2023-manteve-praticamente-nivel-de-2022
+https://cidadeverde.com/noticias/405937/presidente-lula-anuncia-ricardo-lewandowski-como-novo-ministro-da-justica-e-seguranca-publica
+https://cidadeverde.com/noticias/405914/ricardo-lewandowski-deve-preservar-pt-e-esvaziar-psb-no-2o-escalao
+https://cidadeverde.com/noticias/405972/cappelli-promete-ajudar-lewandowski-na-transicao-mas-sai-de-ferias-e-recebe-aceno-de-paes
+https://cidadeverde.com/noticias/405880/planalto-avisa-a-ministros-do-supremo-que-lewandowski-ira-para-a-justica
+https://cidadeverde.com/noticias/406857/oposicao-se-mobiliza-por-pec-que-busca-dificultar-buscas-da-pf-no-congresso
+https://cidadeverde.com/noticias/406049/resultado-do-enem-2023-sera-divulgado-na-terca-feira-16-veja-como-acessar
+https://cidadeverde.com/noticias/406081/vice-presidente-geraldo-alckmin-deve-cumprir-nova-agenda-no-piaui-em-fevereiro
+https://cidadeverde.com/noticias/406641/pl-e-pt-terao-as-maiores-parcelas-do-fundo-eleitoral-bilionario-de-2024
+https://cidadeverde.com/noticias/406060/tse-mudara-sistema-apos-falsa-filiacao-de-lula-ao-pl-partido-de-bolsonaro
+https://cidadeverde.com/noticias/406539/anitta-diz-nao-se-importar-mais-com-sucesso-e-quer-evitar-politica-para-cuidar-da-saude
+https://cidadeverde.com/noticias/406605/presidente-lula-promete-isencao-do-imposto-de-renda-para-quem-ganha-ate-dois-salarios-minimos
+https://cidadeverde.com/noticias/406602/lula-deve-vir-ao-piaui-para-visitar-obras-do-pac-e-reforcar-pre-campanhas-do-pt
+https://cidadeverde.com/noticias/406328/em-audiencia-com-lula-rafael-fonteles-apresenta-projetos-e-pede-mais-investimentos-para-o-piaui
+https://cidadeverde.com/noticias/405973/servidores-terao-de-devolver-diaria-e-passagem-para-festa-em-aracaju
+https://cidadeverde.com/parnaiba/125112/lula-nomeia-primeiro-reitor-para-a-universidade-do-delta-do-parnaiba
+https://cidadeverde.com/noticias/406011/rafael-fonteles-anuncia-expansao-do-piaui-saude-digital-para-mais-20-municipios-saiba-quais
+https://cidadeverde.com/noticias/406104/sancionada-lei-que-criminaliza-bullying-e-cyberbullying-com-punicoes-maiores-confira
+https://cidadeverde.com/noticias/406317/receita-suspende-isencao-fiscal-a-lideres-religiosos-concedida-no-governo-de-jair-bolsonaro
+https://cidadeverde.com/noticias/406859/minha-casa-minha-vida-deve-levar-credito-imobiliario-a-recorde-em-2024
+https://cidadeverde.com/noticias/406803/centro-de-referencia-esperanca-garcia-passa-a-funcionar-na-casa-de-mulher-brasileira-em-fevereiro
+https://cidadeverde.com/noticias/406146/reajuste-salarial-das-categorias-sera-linear-e-superior-a-inflacao-garante-governador
+https://cidadeverde.com/noticias/406323/regular-inteligencia-artificial-e-imperativo-diz-barroso
+https://cidadeverde.com/noticias/406207/premio-de-apostas-esportivas-tera-tributacao-menor-que-mega-sena-fumo-e-bebida
+https://cidadeverde.com/noticias/406266/em-brasilia-governador-pede-apoio-de-lula-para-o-hidrogenio-verde-e-obras-que-ligam-sul-ao-norte
+https://cidadeverde.com/noticias/406389/governo-suspendeu-beneficio-a-pastores-apos-alerta-sobre-improbidade-e-pressao-do-tcu
+https://cidadeverde.com/noticias/406101/posso-ser-um-cara-horrivel-mas-o-outro-cara-e-pessimo-diz-bolsonaro-sobre-lula
+https://cidadeverde.com/noticias/406854/lula-mantem-no-primeiro-ano-gasto-e-investimento-militar-de-bolsonaro
+https://cidadeverde.com/noticias/406224/alunos-do-3o-ano-vao-receber-incentivo-financeiro-para-fazer-enem
+https://cidadeverde.com/noticias/405850/governo-anuncia-passagem-de-aviao-a-r-200-para-aposentados-e-estudantes
+https://cidadeverde.com/noticias/406806/bolsa-do-ensino-medio-sera-de-r-200-por-mes-e-tera-com-bonus-de-r-200-para-enem
+https://cidadeverde.com/noticias/406505/lula-sanciona-orcamento-de-2024-nesta-segunda-feira-apos-reuniao-com-tebet-rui-e-padilha
+https://cidadeverde.com/noticias/406175/bolsonaro-e-valdemar-conversam-apos-elogio-a-lula-que-expos-fissura-no-pl
+https://cidadeverde.com/noticias/406177/toffoli-abre-inquerito-contra-moro-por-suspeita-de-fraude-em-delacao
+https://cidadeverde.com/noticias/406057/lula-passa-por-exames-em-sp-no-hospital-sirio-libanes
+https://cidadeverde.com/noticias/406585/pl-e-pt-terao-quase-r-15-bi-para-gastar-nas-campanhas
+https://cidadeverde.com/noticias/406245/pt-da-aval-a-filiacao-de-marta-e-rejeita-previas-para-escolha-de-vice-de-boulos
+https://cidadeverde.com/noticias/406824/pe-de-meia-quais-estudantes-podem-receber-incentivo-do-governo
+https://cidadeverde.com/noticias/406244/lula-confirma-poupanca-para-alunos-do-ensino-medio-confira-as-regras
+<pymongo.results.InsertOneResult object at 0x7fb14ccdfdc0> 
+
+https://cidadeverde.com/noticias/406582/decreto-fixa-exigencias-para-aquisicao-de-produtos-e-servicos-nacionais-dentro-do-novo-pac
+<pymongo.results.InsertOneResult object at 0x7fb14c1f5640> 
+
+https://cidadeverde.com/noticias/406623/lewandowski-promete-foco-na-seguranca-publica-e-continuidade-ao-trabalho-de-flavio-dino
+<pymongo.results.InsertOneResult object at 0x7fb14c5aaa00> 
+
+https://cidadeverde.com/noticias/406448/lei-rouanet-e-indispensavel-diz-claudia-raia-agora-na-pele-de-tarsila-do-amaral
+<pymongo.results.InsertOneResult object at 0x7fb14e7a6140> 
+
+https://cidadeverde.com/noticias/405913/nunes-diz-ainda-manter-respeito-por-marta-e-minimiza-impacto-para-boulos
+<pymongo.results.InsertOneResult object at 0x7fb14c471f00> 
+
+https://cidadeverde.com/noticias/406778/lula-justifica-viagens-ao-exterior-e-diz-que-o-brasil-nunca-antes-esteve-tao-respeitado
+<pymongo.results.InsertOneResult object at 0x7fb14c82b940> 
+
+https://cidadeverde.com/noticias/406644/lewandowski-diz-a-dino-que-deve-trocar-secretario-de-justica-mas-preservara-parte-da-equipe
+<pymongo.results.InsertOneResult object at 0x7fb14c63eb40> 
+
+https://cidadeverde.com/noticias/406741/grupo-lancara-pre-candidato-independente-de-dr-helio-diz-florentino-neto
+<pymongo.results.InsertOneResult object at 0x7fb14cbeea00> 
+
+https://cidadeverde.com/noticias/406577/governo-faz-radiografia-e-ira-anunciar-possiveis-cortes-de-gastos-este-ano-diz-haddad
+<pymongo.results.InsertOneResult object at 0x7fb14c6a1e80> 
+
+https://cidadeverde.com/noticias/406446/homem-que-matou-apoiadores-de-lula-e-condenado-a-51-anos-de-prisao
+<pymongo.results.InsertOneResult object at 0x7fb14cd9e880> 
+
+https://cidadeverde.com/noticias/406507/sera-uma-honra-diz-alckmin-sobre-apoio-a-tabata-para-prefeitura-de-sp
+<pymongo.results.InsertOneResult object at 0x7fb14c597e00> 
+
+https://cidadeverde.com/noticias/406045/ricardo-lewandowski-tem-historico-de-votos-favoraveis-a-petistas-no-stf
+<pymongo.results.InsertOneResult object at 0x7fb14c63e580> 
+
+https://cidadeverde.com/noticias/406614/para-receita-arrecadacao-de-2023-manteve-praticamente-nivel-de-2022
+<pymongo.results.InsertOneResult object at 0x7fb14c92e5c0> 
+
+https://cidadeverde.com/noticias/405937/presidente-lula-anuncia-ricardo-lewandowski-como-novo-ministro-da-justica-e-seguranca-publica
+<pymongo.results.InsertOneResult object at 0x7fb14cd78880> 
+
+https://cidadeverde.com/noticias/405914/ricardo-lewandowski-deve-preservar-pt-e-esvaziar-psb-no-2o-escalao
+<pymongo.results.InsertOneResult object at 0x7fb14cb46480> 
+
+https://cidadeverde.com/noticias/405972/cappelli-promete-ajudar-lewandowski-na-transicao-mas-sai-de-ferias-e-recebe-aceno-de-paes
+<pymongo.results.InsertOneResult object at 0x7fb14c7a3b40> 
+
+https://cidadeverde.com/noticias/405880/planalto-avisa-a-ministros-do-supremo-que-lewandowski-ira-para-a-justica
+<pymongo.results.InsertOneResult object at 0x7fb14c0e4440> 
+
+https://cidadeverde.com/noticias/406857/oposicao-se-mobiliza-por-pec-que-busca-dificultar-buscas-da-pf-no-congresso
+<pymongo.results.InsertOneResult object at 0x7fb14ccfd7c0> 
+
+https://cidadeverde.com/noticias/406049/resultado-do-enem-2023-sera-divulgado-na-terca-feira-16-veja-como-acessar
+<pymongo.results.InsertOneResult object at 0x7fb14c24d300> 
+
+https://cidadeverde.com/noticias/406081/vice-presidente-geraldo-alckmin-deve-cumprir-nova-agenda-no-piaui-em-fevereiro
+<pymongo.results.InsertOneResult object at 0x7fb14cee65c0> 
+
+https://cidadeverde.com/noticias/406641/pl-e-pt-terao-as-maiores-parcelas-do-fundo-eleitoral-bilionario-de-2024
+<pymongo.results.InsertOneResult object at 0x7fb14c825cc0> 
+
+https://cidadeverde.com/noticias/406060/tse-mudara-sistema-apos-falsa-filiacao-de-lula-ao-pl-partido-de-bolsonaro
+<pymongo.results.InsertOneResult object at 0x7fb14c8ed380> 
+
+https://cidadeverde.com/noticias/406539/anitta-diz-nao-se-importar-mais-com-sucesso-e-quer-evitar-politica-para-cuidar-da-saude
+<pymongo.results.InsertOneResult object at 0x7fb14e7a6440> 
+
+https://cidadeverde.com/noticias/406605/presidente-lula-promete-isencao-do-imposto-de-renda-para-quem-ganha-ate-dois-salarios-minimos
+<pymongo.results.InsertOneResult object at 0x7fb14ce4f800> 
+
+https://cidadeverde.com/noticias/406602/lula-deve-vir-ao-piaui-para-visitar-obras-do-pac-e-reforcar-pre-campanhas-do-pt
+<pymongo.results.InsertOneResult object at 0x7fb14c7de4c0> 
+
+https://cidadeverde.com/noticias/406328/em-audiencia-com-lula-rafael-fonteles-apresenta-projetos-e-pede-mais-investimentos-para-o-piaui
+<pymongo.results.InsertOneResult object at 0x7fb14cbbb0c0> 
+
+https://cidadeverde.com/noticias/405973/servidores-terao-de-devolver-diaria-e-passagem-para-festa-em-aracaju
+<pymongo.results.InsertOneResult object at 0x7fb14c5aa8c0> 
+
+https://cidadeverde.com/parnaiba/125112/lula-nomeia-primeiro-reitor-para-a-universidade-do-delta-do-parnaiba
+<pymongo.results.InsertOneResult object at 0x7fb14c9cc480> 
+
+https://cidadeverde.com/noticias/406011/rafael-fonteles-anuncia-expansao-do-piaui-saude-digital-para-mais-20-municipios-saiba-quais
+<pymongo.results.InsertOneResult object at 0x7fb14c7de100> 
+
+https://cidadeverde.com/noticias/406104/sancionada-lei-que-criminaliza-bullying-e-cyberbullying-com-punicoes-maiores-confira
+<pymongo.results.InsertOneResult object at 0x7fb14c09ac40> 
+
+https://cidadeverde.com/noticias/406317/receita-suspende-isencao-fiscal-a-lideres-religiosos-concedida-no-governo-de-jair-bolsonaro
+<pymongo.results.InsertOneResult object at 0x7fb14ca5c500> 
+
+https://cidadeverde.com/noticias/406859/minha-casa-minha-vida-deve-levar-credito-imobiliario-a-recorde-em-2024
+<pymongo.results.InsertOneResult object at 0x7fb14c099b00> 
+
+https://cidadeverde.com/noticias/406803/centro-de-referencia-esperanca-garcia-passa-a-funcionar-na-casa-de-mulher-brasileira-em-fevereiro
+<pymongo.results.InsertOneResult object at 0x7fb14c126500> 
+
+https://cidadeverde.com/noticias/406146/reajuste-salarial-das-categorias-sera-linear-e-superior-a-inflacao-garante-governador
+<pymongo.results.InsertOneResult object at 0x7fb14c08ea00> 
+
+https://cidadeverde.com/noticias/406323/regular-inteligencia-artificial-e-imperativo-diz-barroso
+<pymongo.results.InsertOneResult object at 0x7fb14cbea0c0> 
+
+https://cidadeverde.com/noticias/406207/premio-de-apostas-esportivas-tera-tributacao-menor-que-mega-sena-fumo-e-bebida
+<pymongo.results.InsertOneResult object at 0x7fb14e7a6040> 
+
+https://cidadeverde.com/noticias/406266/em-brasilia-governador-pede-apoio-de-lula-para-o-hidrogenio-verde-e-obras-que-ligam-sul-ao-norte
+<pymongo.results.InsertOneResult object at 0x7fb14ca756c0> 
+
+https://cidadeverde.com/noticias/406389/governo-suspendeu-beneficio-a-pastores-apos-alerta-sobre-improbidade-e-pressao-do-tcu
+<pymongo.results.InsertOneResult object at 0x7fb14ccf1200> 
+
+https://cidadeverde.com/noticias/406101/posso-ser-um-cara-horrivel-mas-o-outro-cara-e-pessimo-diz-bolsonaro-sobre-lula
+<pymongo.results.InsertOneResult object at 0x7fb14c8fdf00> 
+
+https://cidadeverde.com/noticias/406854/lula-mantem-no-primeiro-ano-gasto-e-investimento-militar-de-bolsonaro
+<pymongo.results.InsertOneResult object at 0x7fb14c982f00> 
+
+https://cidadeverde.com/noticias/406224/alunos-do-3o-ano-vao-receber-incentivo-financeiro-para-fazer-enem
+<pymongo.results.InsertOneResult object at 0x7fb14c7d2580> 
+
+https://cidadeverde.com/noticias/405850/governo-anuncia-passagem-de-aviao-a-r-200-para-aposentados-e-estudantes
+<pymongo.results.InsertOneResult object at 0x7fb14cbd4340> 
+
+https://cidadeverde.com/noticias/406806/bolsa-do-ensino-medio-sera-de-r-200-por-mes-e-tera-com-bonus-de-r-200-para-enem
+<pymongo.results.InsertOneResult object at 0x7fb14c9967c0> 
+
+https://cidadeverde.com/noticias/406505/lula-sanciona-orcamento-de-2024-nesta-segunda-feira-apos-reuniao-com-tebet-rui-e-padilha
+<pymongo.results.InsertOneResult object at 0x7fb14c7de240> 
+
+https://cidadeverde.com/noticias/406175/bolsonaro-e-valdemar-conversam-apos-elogio-a-lula-que-expos-fissura-no-pl
+<pymongo.results.InsertOneResult object at 0x7fb14cb2e2c0> 
+
+https://cidadeverde.com/noticias/406177/toffoli-abre-inquerito-contra-moro-por-suspeita-de-fraude-em-delacao
+<pymongo.results.InsertOneResult object at 0x7fb14cb2e2c0> 
+
+https://cidadeverde.com/noticias/406057/lula-passa-por-exames-em-sp-no-hospital-sirio-libanes
+<pymongo.results.InsertOneResult object at 0x7fb14c318200> 
+
+https://cidadeverde.com/noticias/406585/pl-e-pt-terao-quase-r-15-bi-para-gastar-nas-campanhas
+<pymongo.results.InsertOneResult object at 0x7fb14ce4fe40> 
+
+https://cidadeverde.com/buscar/noticias/Dilma
+Coletando imagens...
+https://cidadeverde.com/noticias/398500/no-piaui-lula-elogia-wellington-dias-e-pede-aos-militantes-pelo-amor-de-deus-nao-desanimem
+https://cidadeverde.com/noticias/399447/delacao-de-mauro-cid-alimenta-bastidores-da-indicacao-do-presidente-lula-a-pgr
+https://cidadeverde.com/noticias/405586/seis-familias-tiveram-casas-alagadas-no-residencial-dilma-rousseff-teresina-tem-56-areas-de-risco
+https://cidadeverde.com/noticias/403508/lula-indica-flavio-dino-para-vaga-de-ministro-do-supremo-tribunal-federal-stf
+https://cidadeverde.com/noticias/399843/direitos-politicos-de-dilma-sao-mantidos-com-aval-do-stf-mesmo-com-impeachment
+https://cidadeverde.com/noticias/401904/avanco-do-centrao-sobre-cargos-e-verbas-gera-queixas-entre-aliados-de-lula
+https://cidadeverde.com/noticias/406778/lula-justifica-viagens-ao-exterior-e-diz-que-o-brasil-nunca-antes-esteve-tao-respeitado
+https://cidadeverde.com/noticias/406644/lewandowski-diz-a-dino-que-deve-trocar-secretario-de-justica-mas-preservara-parte-da-equipe
+https://cidadeverde.com/noticias/404158/lula-e-aprovado-por-38-e-reprovado-por-30-apos-11-meses-mostra-datafolha
+https://cidadeverde.com/noticias/402147/relator-quer-militares-fora-de-ministerios-a-partir-de-2025-e-ja-fora-das-eleicoes-de-2024
+https://cidadeverde.com/noticias/401050/whindersson-nunes-perde-luta-de-boxe-e-vira-meme
+https://cidadeverde.com/noticias/397852/pochmann-fala-em-novo-ibge-ao-tomar-posse-e-diz-que-instituto-passou-por-vendaval-toxico
+https://cidadeverde.com/noticias/400756/estrategia-da-petrobras-compensa-volatilidade-do-petroleo-diz-prates
+https://cidadeverde.com/noticias/406045/ricardo-lewandowski-tem-historico-de-votos-favoraveis-a-petistas-no-stf
+https://cidadeverde.com/noticias/405784/lula-provoca-jair-bolsonaro-e-diz-que-filhos-deveriam-renunciar-ja-que-duvidam-das-urnas-eletronicas
+https://cidadeverde.com/noticias/405478/chuva-alaga-casas-na-zona-norte-de-teresina-defesa-civil-monitora-areas-de-risco
+https://cidadeverde.com/noticias/404392/lula-exonera-wellington-dias-de-ministerio-para-votacao-de-flavio-dino-para-stf
+https://cidadeverde.com/noticias/405716/defesa-civil-monitora-familias-atingidas-por-chuvas-em-teresina-e-areas-criticas
+https://cidadeverde.com/noticias/401789/governador-busca-financiamento-com-banco-dos-brics-para-intermodal-do-vale-do-parnaiba
+https://cidadeverde.com/noticias/399805/stf-forma-maioria-para-manter-direitos-politicos-de-dilma-apos-impeachment
+https://cidadeverde.com/noticias/398813/homem-e-morto-com-tiros-e-facadas-na-zona-norte-de-teresina-mae-tambem-foi-ferida
+https://cidadeverde.com/noticias/403329/lula-veta-desoneracao-da-folha-congresso-e-empresarios-reagem
+https://cidadeverde.com/noticias/398511/no-piaui-lula-fala-sobre-crise-do-fpm-e-diz-que-prefeitos-nao-podem-ser-esquecidos
+https://cidadeverde.com/noticias/401677/lula-troca-comando-da-caixa-economica-federal
+https://cidadeverde.com/noticias/400141/barroso-e-empossado-no-cargo-de-presidente-do-stf
+https://cidadeverde.com/noticias/398482/plano-que-sera-lancado-por-lula-no-piaui-visa-erradicar-fome-no-brasil-ate-2030
+https://cidadeverde.com/noticias/397994/trf-1-mantem-arquivamento-de-acao-contra-dilma-rousseff
+https://cidadeverde.com/noticias/402681/pt-aproveita-efeito-lula-cresce-para-2024-e-filia-prefeitos-ate-do-pl
+https://cidadeverde.com/noticias/405780/marta-suplicy-recebe-convite-para-voltar-ao-pt-em-novo-passo-para-negociar-vice-de-boulos
+https://cidadeverde.com/noticias/405849/marta-entrega-carta-de-demissao-a-nunes-apos-dizer-a-lula-que-aceita-ser-vice-de-boulos
+https://cidadeverde.com/noticias/399006/augusto-aras-compara-delacao-de-cid-com-as-de-palocci-e-cabral
+https://cidadeverde.com/noticias/403469/lula-decide-indicar-flavio-dino-ao-stf-e-paulo-gonet-a-pgr
+https://cidadeverde.com/noticias/394799/ronda-cidadao-sera-retomado-em-novo-formato-e-nas-areas-mais-violentas-de-teresina
+https://cidadeverde.com/noticias/406164/teresina-possui-655-familias-em-situacao-de-desabrigamento
+https://cidadeverde.com/noticias/401480/rafael-fonteles-inicia-agenda-na-asia-governador-deve-se-reunir-com-dilma-rousseff
+https://cidadeverde.com/noticias/406266/em-brasilia-governador-pede-apoio-de-lula-para-o-hidrogenio-verde-e-obras-que-ligam-sul-ao-norte
+https://cidadeverde.com/noticias/398544/ministro-dos-transportes-inaugura-obras-do-viaduto-e-duplicacao-da-br-316
+https://cidadeverde.com/noticias/406854/lula-mantem-no-primeiro-ano-gasto-e-investimento-militar-de-bolsonaro
+https://cidadeverde.com/noticias/400095/rosa-deixa-marca-no-stf-com-julgamentos-mas-enfrenta-criticas-do-legislativo
+https://cidadeverde.com/noticias/398017/wellington-dias-sobre-decisao-do-trf-1-que-inocentou-dilma-o-bem-venceu
+https://cidadeverde.com/noticias/397292/comissao-mista-aprova-mp-do-salario-minimo-com-politica-de-valorizacao
+https://cidadeverde.com/noticias/406175/bolsonaro-e-valdemar-conversam-apos-elogio-a-lula-que-expos-fissura-no-pl
+https://cidadeverde.com/noticias/405108/lula-deixa-assinado-decreto-que-reajusta-salario-minimo-para-r-1412
+https://cidadeverde.com/noticias/401970/demora-de-lula-para-comando-da-pgr-bate-recorde-na-redemocratizacao
+https://cidadeverde.com/noticias/405597/moradores-relatam-desespero-e-sufoco-com-casas-alagadas-no-residencial-dilma-rousseff
+https://cidadeverde.com/noticias/401702/lula-amarra-pgr-na-maior-demora-em-30-anos-para-indicar-seu-novo-chefe
+https://cidadeverde.com/noticias/399700/onda-de-calor-veja-quais-sao-os-bairros-mais-quentes-de-teresina
+https://cidadeverde.com/noticias/404247/senado-sabatinara-dino-e-gonet-juntos-em-formato-superficial-e-inedito-para-stf-e-pgr
+https://cidadeverde.com/noticias/406245/pt-da-aval-a-filiacao-de-marta-e-rejeita-previas-para-escolha-de-vice-de-boulos
+https://cidadeverde.com/noticias/405027/cob-investe-e-isaquias-treinara-em-quintal-de-casa-rumo-ao-bi-olimpico
+https://cidadeverde.com/noticias/398500/no-piaui-lula-elogia-wellington-dias-e-pede-aos-militantes-pelo-amor-de-deus-nao-desanimem
+<pymongo.results.InsertOneResult object at 0x7fb14c7a8200> 
+
+https://cidadeverde.com/noticias/399447/delacao-de-mauro-cid-alimenta-bastidores-da-indicacao-do-presidente-lula-a-pgr
+<pymongo.results.InsertOneResult object at 0x7fb14e7c2400> 
+
+https://cidadeverde.com/noticias/405586/seis-familias-tiveram-casas-alagadas-no-residencial-dilma-rousseff-teresina-tem-56-areas-de-risco
+<pymongo.results.InsertOneResult object at 0x7fb14cb76800> 
+
+https://cidadeverde.com/noticias/403508/lula-indica-flavio-dino-para-vaga-de-ministro-do-supremo-tribunal-federal-stf
+<pymongo.results.InsertOneResult object at 0x7fb14c6acc40> 
+
+https://cidadeverde.com/noticias/399843/direitos-politicos-de-dilma-sao-mantidos-com-aval-do-stf-mesmo-com-impeachment
+<pymongo.results.InsertOneResult object at 0x7fb14ccbe300> 
+
+https://cidadeverde.com/noticias/401904/avanco-do-centrao-sobre-cargos-e-verbas-gera-queixas-entre-aliados-de-lula
+<pymongo.results.InsertOneResult object at 0x7fb14c8ed480> 
+
+https://cidadeverde.com/noticias/406778/lula-justifica-viagens-ao-exterior-e-diz-que-o-brasil-nunca-antes-esteve-tao-respeitado
+<pymongo.results.InsertOneResult object at 0x7fb14c1c6cc0> 
+
+https://cidadeverde.com/noticias/406644/lewandowski-diz-a-dino-que-deve-trocar-secretario-de-justica-mas-preservara-parte-da-equipe
+<pymongo.results.InsertOneResult object at 0x7fb14c3b5b40> 
+
+https://cidadeverde.com/noticias/404158/lula-e-aprovado-por-38-e-reprovado-por-30-apos-11-meses-mostra-datafolha
+<pymongo.results.InsertOneResult object at 0x7fb14c2fca80> 
+
+https://cidadeverde.com/noticias/402147/relator-quer-militares-fora-de-ministerios-a-partir-de-2025-e-ja-fora-das-eleicoes-de-2024
+<pymongo.results.InsertOneResult object at 0x7fb14cbd43c0> 
+
+https://cidadeverde.com/noticias/401050/whindersson-nunes-perde-luta-de-boxe-e-vira-meme
+<pymongo.results.InsertOneResult object at 0x7fb14c262100> 
+
+https://cidadeverde.com/noticias/397852/pochmann-fala-em-novo-ibge-ao-tomar-posse-e-diz-que-instituto-passou-por-vendaval-toxico
+<pymongo.results.InsertOneResult object at 0x7fb14c5a8100> 
+
+https://cidadeverde.com/noticias/400756/estrategia-da-petrobras-compensa-volatilidade-do-petroleo-diz-prates
+<pymongo.results.InsertOneResult object at 0x7fb14c93b1c0> 
+
+https://cidadeverde.com/noticias/406045/ricardo-lewandowski-tem-historico-de-votos-favoraveis-a-petistas-no-stf
+<pymongo.results.InsertOneResult object at 0x7fb14cb27a80> 
+
+https://cidadeverde.com/noticias/405784/lula-provoca-jair-bolsonaro-e-diz-que-filhos-deveriam-renunciar-ja-que-duvidam-das-urnas-eletronicas
+<pymongo.results.InsertOneResult object at 0x7fb14c472200> 
+
+https://cidadeverde.com/noticias/405478/chuva-alaga-casas-na-zona-norte-de-teresina-defesa-civil-monitora-areas-de-risco
+<pymongo.results.InsertOneResult object at 0x7fb14c3b5b80> 
+
+https://cidadeverde.com/noticias/404392/lula-exonera-wellington-dias-de-ministerio-para-votacao-de-flavio-dino-para-stf
+<pymongo.results.InsertOneResult object at 0x7fb14c85a0c0> 
+
+https://cidadeverde.com/noticias/405716/defesa-civil-monitora-familias-atingidas-por-chuvas-em-teresina-e-areas-criticas
+<pymongo.results.InsertOneResult object at 0x7fb14ca86100> 
+
+https://cidadeverde.com/noticias/401789/governador-busca-financiamento-com-banco-dos-brics-para-intermodal-do-vale-do-parnaiba
+<pymongo.results.InsertOneResult object at 0x7fb14c5ab000> 
+
+https://cidadeverde.com/noticias/399805/stf-forma-maioria-para-manter-direitos-politicos-de-dilma-apos-impeachment
+<pymongo.results.InsertOneResult object at 0x7fb14c9385c0> 
+
+https://cidadeverde.com/noticias/398813/homem-e-morto-com-tiros-e-facadas-na-zona-norte-de-teresina-mae-tambem-foi-ferida
+<pymongo.results.InsertOneResult object at 0x7fb14ca54d40> 
+
+https://cidadeverde.com/noticias/403329/lula-veta-desoneracao-da-folha-congresso-e-empresarios-reagem
+<pymongo.results.InsertOneResult object at 0x7fb14c63fa80> 
+
+https://cidadeverde.com/noticias/398511/no-piaui-lula-fala-sobre-crise-do-fpm-e-diz-que-prefeitos-nao-podem-ser-esquecidos
+<pymongo.results.InsertOneResult object at 0x7fb14c7a0140> 
+
+https://cidadeverde.com/noticias/401677/lula-troca-comando-da-caixa-economica-federal
+<pymongo.results.InsertOneResult object at 0x7fb14c08ff80> 
+
+https://cidadeverde.com/noticias/400141/barroso-e-empossado-no-cargo-de-presidente-do-stf
+<pymongo.results.InsertOneResult object at 0x7fb14cd0a180> 
+
+https://cidadeverde.com/noticias/398482/plano-que-sera-lancado-por-lula-no-piaui-visa-erradicar-fome-no-brasil-ate-2030
+<pymongo.results.InsertOneResult object at 0x7fb14cb45f40> 
+
+https://cidadeverde.com/noticias/397994/trf-1-mantem-arquivamento-de-acao-contra-dilma-rousseff
+<pymongo.results.InsertOneResult object at 0x7fb14cee66c0> 
+
+https://cidadeverde.com/noticias/402681/pt-aproveita-efeito-lula-cresce-para-2024-e-filia-prefeitos-ate-do-pl
+<pymongo.results.InsertOneResult object at 0x7fb14c63e700> 
+
+https://cidadeverde.com/noticias/405780/marta-suplicy-recebe-convite-para-voltar-ao-pt-em-novo-passo-para-negociar-vice-de-boulos
+<pymongo.results.InsertOneResult object at 0x7fb14cb46380> 
+
+https://cidadeverde.com/noticias/405849/marta-entrega-carta-de-demissao-a-nunes-apos-dizer-a-lula-que-aceita-ser-vice-de-boulos
+<pymongo.results.InsertOneResult object at 0x7fb14c98d540> 
+
+https://cidadeverde.com/noticias/399006/augusto-aras-compara-delacao-de-cid-com-as-de-palocci-e-cabral
+<pymongo.results.InsertOneResult object at 0x7fb14c98d540> 
+
+https://cidadeverde.com/noticias/403469/lula-decide-indicar-flavio-dino-ao-stf-e-paulo-gonet-a-pgr
+<pymongo.results.InsertOneResult object at 0x7fb14c0a5bc0> 
+
+https://cidadeverde.com/noticias/394799/ronda-cidadao-sera-retomado-em-novo-formato-e-nas-areas-mais-violentas-de-teresina
+<pymongo.results.InsertOneResult object at 0x7fb14ca08100> 
+
+https://cidadeverde.com/noticias/406164/teresina-possui-655-familias-em-situacao-de-desabrigamento
+<pymongo.results.InsertOneResult object at 0x7fb14ce051c0> 
+
+https://cidadeverde.com/noticias/401480/rafael-fonteles-inicia-agenda-na-asia-governador-deve-se-reunir-com-dilma-rousseff
+<pymongo.results.InsertOneResult object at 0x7fb14cee6700> 
+
+https://cidadeverde.com/buscar/noticias/PT
+Coletando imagens...
+https://cidadeverde.com/noticias/399553/franze-silva-entregara-decisao-sobre-futuro-mandato-ao-pt-e-nao-descarta-senado
+https://cidadeverde.com/noticias/395193/em-reuniao-lideres-do-pt-decidem-que-pre-candidato-sera-escolhido-em-agosto
+https://cidadeverde.com/noticias/399120/teresa-britto-manda-recado-para-fabio-novo-una-se-ao-pt-primeiro
+https://cidadeverde.com/noticias/396435/olavo-rebelo-e-ze-santana-se-filiam-no-pt-na-proxima-sexta-feira-28
+https://cidadeverde.com/temporeal/123138/pesquisas-vereadores-e-deputados-decidirao-candidato-do-pt-a-prefeito-de-teresina
+https://cidadeverde.com/saviabarreto/124750/coluna-13-12-23
+https://cidadeverde.com/noticias/398420/pt-adia-deliberacao-e-aguarda-acordo-entre-novo-e-franze-nesta-quarta-feira
+https://cidadeverde.com/noticias/397954/divulgada-pesquisa-para-ajudar-a-definir-o-candidato-do-pt-em-teresina-veja-numeros
+https://cidadeverde.com/noticias/396111/franze-silva-garante-unificacao-do-pt-em-agosto-para-disputar-palacio-da-cidade
+https://cidadeverde.com/noticias/401167/boulos-reune-partidos-aliados-para-eleicao-e-pt-promete-lula-no-palanque
+https://cidadeverde.com/noticias/393838/fabio-novo-quer-unificar-pt-e-diz-que-adesoes-fortalecem-pre-candidatura
+https://cidadeverde.com/noticias/396800/rafael-fonteles-defende-pesquisa-como-criterio-do-pt-para-escolher-pre-candidato
+https://cidadeverde.com/noticias/405591/elzuila-calisto-afirma-que-seguira-orientacao-do-pt-sobre-palacio-da-cidade
+https://cidadeverde.com/noticias/398832/executiva-do-pt-fara-reuniao-com-governador-e-prefeitos-sobre-2024
+https://cidadeverde.com/noticias/403962/rafael-fonteles-diz-acreditar-em-alianca-entre-pt-e-mdb-ainda-no-1o-turno-de-2024
+https://cidadeverde.com/temporeal/123792/pt-unido-com-fabio-novo
+https://cidadeverde.com/noticias/405856/maycon-silva-entrega-cargo-na-fundacao-e-bancada-do-pt-decide-sair-da-gestao-de-dr-pessoa
+https://cidadeverde.com/noticias/398507/presidente-do-pt-diz-nao-reconhecer-diretorio-que-elegeu-fabio-novo-pre-candidato
+https://cidadeverde.com/noticias/405914/ricardo-lewandowski-deve-preservar-pt-e-esvaziar-psb-no-2o-escalao
+https://cidadeverde.com/temporeal/123721/rafael-fonteles-entra-em-campo-e-unifica-pt-de-teresina
+https://cidadeverde.com/noticias/398223/criem-juizo-adverte-wellington-dias-sobre-disputa-por-pre-candidatura-do-pt
+https://cidadeverde.com/noticias/406585/pl-e-pt-terao-quase-r-15-bi-para-gastar-nas-campanhas
+https://cidadeverde.com/temporeal/125115/joao-de-deus-convoca-pt-para-discutir-casos-de-infidelidade-partidaria
+https://cidadeverde.com/noticias/400089/grupo-no-pt-lanca-manifesto-para-que-vice-de-fabio-novo-seja-mulher
+https://cidadeverde.com/noticias/398373/executiva-municipal-do-pt-adia-escolha-de-pre-candidato-em-teresina
+https://cidadeverde.com/noticias/397820/barbara-do-firmino-descarta-apoio-ao-pt-e-diz-que-seguira-com-grupo-da-oposicao
+https://cidadeverde.com/noticias/397043/pt-e-psd-disputam-prefeitura-de-sao-lourenco-em-eleicao-suplementar-no-domingo
+https://cidadeverde.com/noticias/402782/wellington-dias-evita-falar-sobre-filiacoes-de-opositores-ao-pt-e-partidos-da-federacao
+https://cidadeverde.com/noticias/398450/franze-diz-que-nao-contestara-decisao-do-pt-sobre-pre-candidato
+https://cidadeverde.com/temporeal/123818/carmelita-vence-queda-de-braco-com-pt-em-sao-raimundo-nonato
+https://cidadeverde.com/noticias/406641/pl-e-pt-terao-as-maiores-parcelas-do-fundo-eleitoral-bilionario-de-2024
+https://cidadeverde.com/noticias/401383/silvio-mendes-diz-que-barbara-tem-suas-razoes-para-se-aliar-ao-pt-e-nega-chapa-com-jeova-alencar
+https://cidadeverde.com/noticias/398143/franze-silva-afirma-que-acordo-com-fabio-novo-no-pt-sera-revisto
+https://cidadeverde.com/temporeal/124952/mdb-decide-esta-semana-alianca-com-pt-em-teresina
+https://cidadeverde.com/noticias/401799/fabio-novo-faz-aceno-a-tucanos-e-relembra-ja-houve-chapa-pt-e-psdb-no-estado
+https://cidadeverde.com/noticias/396385/vice-no-diretorio-municipal-do-pt-oficializa-apoio-a-fabio-novo
+https://cidadeverde.com/noticias/399278/henrique-fontana-acredita-que-pt-pode-vencer-disputa-pelo-palacio-da-cidade
+https://cidadeverde.com/noticias/397821/cicero-magalhaes-afirma-que-pt-nao-precisa-importar-vice-para-eleicoes-de-2024
+https://cidadeverde.com/temporeal/124083/pt-larga-na-frente-em-frente-em-teresina
+https://cidadeverde.com/noticias/404851/vice-presidente-do-pt-da-tapa-na-cara-de-deputado-durante-sessao-na-camara
+https://cidadeverde.com/noticias/398714/valdemar-rejeita-aliancas-do-pl-de-bolsonaro-com-o-pt-de-lula-somos-oposicao
+https://cidadeverde.com/noticias/393953/se-o-pt-se-baseasse-em-pesquisa-o-lula-nao-era-presidente-diz-dudu-sobre-pre-candidato
+https://cidadeverde.com/temporeal/124510/sucessao-em-sao-raimundo-nonato-pt-confirma-pre-candidatura-de-isaias-neto
+https://cidadeverde.com/temporeal/125055/agora-e-oficial-pt-formaliza-alianca-com-mdb-em-parnaiba
+https://cidadeverde.com/noticias/404914/agressao-de-deputado-do-pt-e-comportamento-de-bolsonaristas-desmoralizam-congresso-diz-lira
+https://cidadeverde.com/noticias/405780/marta-suplicy-recebe-convite-para-voltar-ao-pt-em-novo-passo-para-negociar-vice-de-boulos
+https://cidadeverde.com/noticias/400180/refazer-escolha-de-pre-candidato-seria-um-erro-diz-presidente-do-pt-sobre-nova-resolucao
+https://cidadeverde.com/temporeal/122974/florentino-diz-ao-pt-que-esta-disponivel-para-candidatura-em-parnaiba
+https://cidadeverde.com/noticias/398217/petistas-se-reunem-e-fabio-novo-diz-que-pt-nao-pode-mais-esperar-para-definir-nome
+https://cidadeverde.com/noticias/405540/presidente-do-pt-pede-que-vereadores-entreguem-cargos-no-palacio-da-cidade
+https://cidadeverde.com/noticias/399553/franze-silva-entregara-decisao-sobre-futuro-mandato-ao-pt-e-nao-descarta-senado
+<pymongo.results.InsertOneResult object at 0x7f74e1fe4880> 
+
+https://cidadeverde.com/noticias/395193/em-reuniao-lideres-do-pt-decidem-que-pre-candidato-sera-escolhido-em-agosto
+<pymongo.results.InsertOneResult object at 0x7f74e28738c0> 
+
+https://cidadeverde.com/noticias/399120/teresa-britto-manda-recado-para-fabio-novo-una-se-ao-pt-primeiro
+<pymongo.results.InsertOneResult object at 0x7f74e2798d80> 
+
+https://cidadeverde.com/noticias/396435/olavo-rebelo-e-ze-santana-se-filiam-no-pt-na-proxima-sexta-feira-28
+<pymongo.results.InsertOneResult object at 0x7f74e29b88c0> 
+
+https://cidadeverde.com/temporeal/123138/pesquisas-vereadores-e-deputados-decidirao-candidato-do-pt-a-prefeito-de-teresina
+<pymongo.results.InsertOneResult object at 0x7f74e28586c0> 
+
+https://cidadeverde.com/saviabarreto/124750/coluna-13-12-23
+
+-- ERROR: 'NoneType' object has no attribute 'text' 
+
+https://cidadeverde.com/noticias/398420/pt-adia-deliberacao-e-aguarda-acordo-entre-novo-e-franze-nesta-quarta-feira
+<pymongo.results.InsertOneResult object at 0x7f74e1fc8b00> 
+
+https://cidadeverde.com/noticias/397954/divulgada-pesquisa-para-ajudar-a-definir-o-candidato-do-pt-em-teresina-veja-numeros
+<pymongo.results.InsertOneResult object at 0x7f74e28723c0> 
+
+https://cidadeverde.com/noticias/396111/franze-silva-garante-unificacao-do-pt-em-agosto-para-disputar-palacio-da-cidade
+<pymongo.results.InsertOneResult object at 0x7f74e2046600> 
+
+https://cidadeverde.com/noticias/401167/boulos-reune-partidos-aliados-para-eleicao-e-pt-promete-lula-no-palanque
+<pymongo.results.InsertOneResult object at 0x7f74e289f0c0> 
+
+https://cidadeverde.com/noticias/393838/fabio-novo-quer-unificar-pt-e-diz-que-adesoes-fortalecem-pre-candidatura
+<pymongo.results.InsertOneResult object at 0x7f74e28bf700> 
+
+https://cidadeverde.com/noticias/396800/rafael-fonteles-defende-pesquisa-como-criterio-do-pt-para-escolher-pre-candidato
+<pymongo.results.InsertOneResult object at 0x7f74e453a3c0> 
+
+https://cidadeverde.com/noticias/405591/elzuila-calisto-afirma-que-seguira-orientacao-do-pt-sobre-palacio-da-cidade
+<pymongo.results.InsertOneResult object at 0x7f74e29b8880> 
+
+https://cidadeverde.com/noticias/398832/executiva-do-pt-fara-reuniao-com-governador-e-prefeitos-sobre-2024
+<pymongo.results.InsertOneResult object at 0x7f74e279b3c0> 
+

@@ -22,5 +22,4 @@ router.post('/deny-user/:userId', isAdmin, new UserController().denyUser);
 
 
 
-
 module.exports = router;
