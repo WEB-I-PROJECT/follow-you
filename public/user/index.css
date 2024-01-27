@@ -4,13 +4,13 @@
 
 .background-image-container {
     text-align: right;
-    margin-top: -427px;
+    margin-top: -430px;
 }
 
 .background-image-container img {
 
-    max-width: 85%;
-    height:auto;
+    max-width: 80%;
+    height:650px;
     width: auto;
 }
 

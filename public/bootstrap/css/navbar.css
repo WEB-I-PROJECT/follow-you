@@ -1,36 +1,42 @@
+
 .navbar {
-  background-color: white;
-  overflow: hidden;
+  background-color: #C4170C;
   padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .nav-content {
   display: flex;
   justify-content: space-between;
-
 }
+
 .nav-item a {
   color: rgb(255, 255, 255);
   text-decoration: none;
-  padding: 10px;
+  padding: 1px;
   margin: 0 10px;
   border-bottom: 2px solid transparent;
   transition: border-bottom 0.3s;
 }
 
-.nav-item a:hover {
-  border-bottom: 2px solid #ffffff;
-}
+
 
 .navbar-brand {
-  font-size: 30px; /* Tamanho da fonte */
-  color: white;   /* Cor do texto */
+  font-size: 30px;
+  /* Tamanho da fonte */
+  color: rgb(255, 255, 255);
+  /* Cor do texto */
+}
+
+.navbar-toggler {
+  border: none;
+  color: #ffffff;
 }
 
 .btn-register {
   background: #ffffff;
-  color:#C4170C;
+  color: #C4170C;
   border: none;
   padding: 8px 40px;
   cursor: pointer;
@@ -38,7 +44,6 @@
   margin-right: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
-
 }
 
 .btn-login {
@@ -54,22 +59,31 @@
   color: transparent;
   border-radius: 10px;
   margin-bottom: 10px;
-}
+  margin-right: 10px;
+  /* Adiciona uma margem à direita */
 
+}
 
 @media screen and (max-width: 992px) {
   .nav-content {
     flex-direction: column;
   }
 
-  .nav-item a {
-      display: block;
-      margin: 10px 0;
-      border-bottom: 0px solid transparent;
+  .navbar-collapse {
+    background-color: #C4170C;
   }
 
-  .nav-item a:hover {
-      border-bottom: 0px;
+  .navbar-nav {
+    width: 100%;
   }
-  
+
+  .nav-item {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .navbar-toggler {
+    margin-top: 10px;
+  }
 }
