@@ -17,8 +17,10 @@ const keywordGroupSchema = new Schema({
     analytic: {
         type: Schema.Types.ObjectId,
         ref: 'analytics',
-        required: true
-    }
+        required: false
+    },
+
+
 });
 
 const KeywordGroup = mongoose.model('keyword_groups', keywordGroupSchema);

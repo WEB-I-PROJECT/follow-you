@@ -30,34 +30,36 @@
 }
 
 .table-content table {
-    border: 3px solid var(--bs-purple);
+    border: 3px solid var(--red-primary-system);
     
 }
 
-.btn-details {
+.btn-table {
     background-color: transparent;
-    border: 2px solid var(--purple-system);
+    border: 2px solid var(--red-primary-system);
     padding: 5px 10px;
     border-radius: 8px;
-    color: var(--purple-system);
-    transition: all .5s;
+    color: var(--red-primary-system);
+    transition: all .2s;
 }
 
-.btn-details:hover {
-    background-color: var(--purple-system);
+.btn-table:hover {
+    background-color: var(--red-primary-system);
     color: white;
 }
 
 .card-details {
-    max-width: 315px;
+    max-width: 290px;
+    min-width: 290px;
     position: absolute;
+    background-color: var(--white-system);
     top: 0;
     right: 0;
     display: none;
     border: 1px solid rgb(219, 219, 219);
     max-height: 640px;
     overflow-y: auto;
-    border: 3px solid var(--bs-purple);
+    border: 3px solid var(--red-primary-system);
     border-radius: 5px;
 
 }
@@ -68,9 +70,15 @@
 }
 
 .card-details::-webkit-scrollbar-thumb {
-    background-color: var(--purple-system);
+    background-color: var(--red-primary-system);
     border-radius: 5px;
     padding: 0 2px;
+}
+
+.photo img{
+    border: 3px solid var(--red-primary-system);
+    width: 90px;
+    border-radius: 100px;
 }
 
 .visible {
@@ -82,23 +90,22 @@
     display: none;
 }
 
-.subtitle-card, .title-card h3{
-    color: var(--purple-system);
+.subtitle-card, .title-card{
+    color: var(--red-primary-system);
 }
 
 .content-profile{
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.profile {
+.keywords {
     padding: 5px;
-    border: 2px solid var(--purple-system);
+    border: 2px solid var(--red-primary-system);
     border-radius: 10px;
+}.key h6{
+    margin-bottom: 0.2rem;
 }
-.photo img{
-    width: 90px;
-    border-radius: 100px;
-}
+

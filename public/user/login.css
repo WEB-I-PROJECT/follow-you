@@ -4,8 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(122.33deg, #490088 15.21%, #680459 69.38%);
-  z-index: -1;
+  background: linear-gradient(356.63deg, #A20505 41%, #FCBD33 83.33%);  z-index: -1;
 }
 
 .generic-card {
@@ -26,6 +25,11 @@
   z-index: -1;
 }
 
+.a-register{
+  color: #890101;
+
+}
+
 .generic-form {
   flex: 1;
   padding: 20px;
@@ -39,21 +43,21 @@
   font-weight: bold;
   margin-bottom: 5px;
   margin-top: 0;
-  color: #490088;
+  color: #890101;
   margin-left: 70px;
 }
 
 .generic-image {
   flex: 1.3;
   margin-left: 10;
-  background: url('/img/login.png');
+  background: url('/img/login2.png');
   background-size: cover;
 }
 
 .generic-input {
   margin-bottom: 10px;
-  padding: 10px 70px;
-  border: 1px solid #490088;
+  padding: 8px 70px;
+  border: 2px solid #890101;
   border-radius: 20px;
   font-size: 14px;
   
@@ -63,13 +67,13 @@
   display: block;
   font-size: 14px;
   margin-bottom: 5px;
-  color: #490088;
+  color: #890101;
 }
 
 .generic-btn-primary {
   text-align: center;
   padding: 5px 30px;
-  background-color: #490088;
+  background-color: #890101;
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -80,18 +84,18 @@
 }
 
 .generic-btn-primary:hover {
-  background-color: #680459;
+  background-color: #dfc608;
 }
 
 .generic-input::placeholder {
-  color: #490088;
+  color: #890101;
 }
 
 .generic-forgot-password {
   margin-top: 10px;
   text-align: left;
   font-size: 14px;
-  color: #490088;
+  color: #890101;
   cursor: pointer;
 }
 
@@ -99,7 +103,7 @@
   margin-top: 1px;
   margin-bottom: 20px;
   font-size: 14px;
-  color: #490088;
+  color: #890101;
   cursor: pointer;
   text-decoration: none;
   margin-left: 50px;
@@ -112,7 +116,7 @@
   }
 }
 
-@media screen and (max-width: 375px), (max-width: 668px), (max-width: 692px), (max-width: 319px), (max-width: 640px) {
+@media screen and (max-width: 375px), (max-width: 668px), (max-width: 692px), (max-width: 319px), (max-width: 640px), (max-width: 414px) {
   .generic-card {
       width: 80%;
       height: 80%;
@@ -121,7 +125,7 @@
   .generic-btn-primary {
       text-align: center;
       padding: 2px 10px;
-      background-color: #490088;
+      background-color: #890101;
       color: #fff;
       border: none;
       border-radius: 10px;
@@ -139,12 +143,12 @@
       font-weight: bold;
       margin-bottom: 1px;
       margin-top: 0;
-      color: #490088;
+      color: #890101;
       margin-left: 70px;
   }
 }
 
-  @media screen and (max-width: 319px) {
+  @media screen and (max-width: 319px), (max-width: 440px) {
       .generic-card {
           width: 80%;
           height: 80%;
@@ -153,7 +157,7 @@
       .generic-btn-primary {
           text-align: center;
           padding: 2px 10px;
-          background-color: #490088;
+          background-color: #890101;
           color: #fff;
           border: none;
           border-radius: 10px;
@@ -167,30 +171,31 @@
       }
 
       .generic-heading {
-          font-size: 10px;
+          font-size: 12px;
           font-weight: bold;
           margin-bottom: 1px;
           margin-top: 10px;
-          color: #490088;
+          color: #890101;
           margin-left: 70px;
       }
 
       .generic-register-link {
         margin-top: 1px;
         margin-bottom: 20px;
-        font-size: 14px;
-        color: #490088;
+        font-size: 10px;
+        color: #890101;
         cursor: pointer;
         text-decoration: none;
-        margin-left: 50px;
+        margin-left: 40px;
       }
       
       .generic-input {
             margin-bottom: 10px;
             padding: 10px;
-            border: 1px solid #490088;
+            border: 1px solid #890101;
             border-radius: 20px;
             font-size: 14px;
+            margin-left: -5px;
         }
       
     }

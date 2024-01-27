@@ -1,36 +1,42 @@
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif; 
-}
 
 .navbar {
-  background-color: white;
-  overflow: hidden;
+  background-color: #C4170C;
   padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .nav-content {
   display: flex;
   justify-content: space-between;
-
 }
+
 .nav-item a {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-decoration: none;
-  padding: 10px;
+  padding: 1px;
   margin: 0 10px;
   border-bottom: 2px solid transparent;
   transition: border-bottom 0.3s;
 }
 
-.nav-item a:hover {
-  border-bottom: 2px solid #490088;
+
+
+.navbar-brand {
+  font-size: 30px;
+  /* Tamanho da fonte */
+  color: rgb(255, 255, 255);
+  /* Cor do texto */
+}
+
+.navbar-toggler {
+  border: none;
+  color: #ffffff;
 }
 
 .btn-register {
-  background: linear-gradient(180deg, rgba(96, 7, 173, 0.866577) 40.63%, #680459 70.89%);
-  color: white;
+  background: #ffffff;
+  color: #C4170C;
   border: none;
   padding: 8px 40px;
   cursor: pointer;
@@ -38,38 +44,46 @@ body {
   margin-right: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
-
 }
 
 .btn-login {
   background: white;
-  border: 2px solid #0C0486;
-  color: #0C0486;
+  border: 2px solid #ffffff;
+  color: #ffffff;
   padding: 8px 40px;
   font-size: 16px;
   cursor: pointer;
-  background: linear-gradient(180deg, #0C0486 49.53%, #0C0486 49.54%, #490088 62.55%);
+  background: #ffffff;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   border-radius: 10px;
   margin-bottom: 10px;
-}
+  margin-right: 10px;
+  /* Adiciona uma margem à direita */
 
+}
 
 @media screen and (max-width: 992px) {
   .nav-content {
     flex-direction: column;
   }
 
-  .nav-item a {
-      display: block;
-      margin: 10px 0;
-      border-bottom: 0px solid transparent;
+  .navbar-collapse {
+    background-color: #C4170C;
   }
 
-  .nav-item a:hover {
-      border-bottom: 0px;
+  .navbar-nav {
+    width: 100%;
   }
-  
+
+  .nav-item {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .navbar-toggler {
+    margin-top: 10px;
+  }
 }

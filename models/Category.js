@@ -16,13 +16,9 @@ const categorySchema = new Schema({
     },
     imgPath: {
         type: String,
-        required: true
+        required: false
     },
-    analytic: {
-        type: Schema.Types.ObjectId,
-        ref: 'analytics',
-        required: true
-    }
+
 });
 
 const Category = mongoose.model('categories', categorySchema);

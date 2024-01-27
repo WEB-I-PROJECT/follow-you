@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg" style="background-color: #C4170C;">
   <div class="container-fluid">
-    <img class="navbar-brand" src="/img/logo.svg" alt="Logo" height="50">
+    <a class="navbar-brand" href="#">HUBNews</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -8,22 +8,59 @@
     <div class="nav-content collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+          <a class="nav-link" href="/">Inicio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Sobre</a>
         </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true">
+           Clientes
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/admin">Solicitações</a></li>
+            <li><a class="dropdown-item" href="/listar-aprovados">Controle</a></li>
+
+          </ul>
+        </li>
       </ul>
-      <div class="navbar-buttons">
-      {{#if user}}
+      
+      <ul class="navbar-nav">
+        {{#if user}}
+        {{#if user.isAdmin}}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+                      <i class="bi bi-person"></i> {{user.name}}
+                                <a class="" href="/admin">Painel do Administrador</a>
+
+
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="" href="/logout">Sair</a>
+          </div>
+        </li>
+        {{else}}
+        
         <a href="/logout" class="btn btn-login">Sair</a>
-      {{else}}
+        
+        {{/if}}
+        {{else}}
         <a href="/login" class="btn btn-login">Login</a>
         <a href="/registro" class="btn btn-register">Cadastro</a>
 
-      {{/if}}
-      </div>
+        {{/if}}
+      </ul>
     </div>
+
 
   </div>
 </nav>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

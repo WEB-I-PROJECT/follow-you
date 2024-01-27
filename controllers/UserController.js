@@ -4,10 +4,34 @@ const passport = require('passport');
 const express = require('express');
 
 
+
+
 class UserController {
 
     index(req, res) {
         res.render("user/index")
+
+    }
+
+    list(req, res) {
+        User.find().sort({date:'desc'}).lean().then((user) => {
+             res.render("user/list", {user: user})
+        }).catch((err) => {
+            req.flash("error_msg", "Houve um erro ao listar usuarios")
+            res.redirect("/")
+        }) 
+        
+
+    }
+
+    listAll(req, res) {
+        User.find().sort({date:'desc'}).lean().then((user) => {
+             res.render("user/listAll", {user: user})
+        }).catch((err) => {
+            req.flash("error_msg", "Houve um erro ao listar usuarios")
+            res.redirect("/")
+        }) 
+        
 
     }
     auth(req, res, next) {
@@ -110,6 +134,47 @@ class UserController {
             res.status(500).send('Erro interno do servidor');
         }
     }
+//para aprovar
+async approveUser(req, res) {
+    const userId = req.params.userId;
+
+    try {
+        const user = await User.findByIdAndUpdate(userId, { approved: true });
+
+        if (!user) {
+            req.flash("error_msg", "Usuário não encontrado");
+            return res.redirect("/admin");
+        }
+
+        req.flash("success_msg", "Usuário aprovado com sucesso!");
+        res.redirect("/admin");
+    } catch (err) {
+        console.error("Erro ao aprovar usuário:", err);
+        req.flash("error_msg", "Houve um erro ao aprovar o usuário");
+        res.redirect("/admin");
+    }
+}
+
+    // Método para negar um usuário
+    async denyUser(req, res) {
+        const userId = req.params.userId;
+
+    try {
+        const user = await User.findByIdAndUpdate(userId, { approved: false });
+
+        if (!user) {
+            req.flash("error_msg", "Usuário não encontrado");
+            return res.redirect("/admin");
+        }
+
+        req.flash("success_msg", "Usuário negado com sucesso!");
+        res.redirect("/admin");
+    } catch (err) {
+        console.error("Erro ao negar usuário:", err);
+        req.flash("error_msg", "Houve um erro ao negar o usuário");
+        res.redirect("/admin");
+    }
+}
     
 
 }

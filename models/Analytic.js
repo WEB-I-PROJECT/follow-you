@@ -14,6 +14,11 @@ const analyticSchema = new Schema({
         type: String, // by-keywords ou by-category
         required: true
     },
+    category: {
+        type: Schema.Types.ObjectId,
+        ref: 'categories',
+        required: false
+    },
     User: {
         type: Schema.Types.ObjectId,
         ref: 'users',
@@ -30,6 +35,8 @@ analyticSchema.pre('save', function(next) {
     }
     next();
 });
+
+
 
 
 const Analytic = mongoose.model('analytics', analyticSchema);

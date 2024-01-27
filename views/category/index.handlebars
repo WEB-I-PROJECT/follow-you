@@ -1,9 +1,9 @@
 <div class="container">
-    <div class="title mt-2" style="color: var(--purple-system);">
+    <div class="title mt-2" style="color: var(--red-primary-system);">
         <h1>Categorias</h1>
     </div>
 
-    <button type="button" class="btn btn-primary mt-1" style="background-color: var(--purple-system);" data-bs-toggle="modal" data-bs-target="#ModalCategory">
+    <button type="button" class="btn mt-1" style="background-color: var(--red-primary-system); color: var(--white-system);" data-bs-toggle="modal" data-bs-target="#ModalCategory">
         Adicionar Categoria
     </button>
 
@@ -11,11 +11,11 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" style="color: var(--purple-system);" id="ModalLabel">Adicionar uma categoria</h1>
+                    <h1 class="modal-title fs-5" id="ModalLabel">Adicionar uma categoria</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" style="background-color: var(--gray-system);">
-                    <form action="/categoria/create" method="post">
+                    <form action="/categoria/create" enctype="multipart/form-data" method="post">
                         <div class="modal-category">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1">Nome da Categoria</label>
@@ -23,19 +23,23 @@
                                     placeholder="Digite">
                             </div>
                             <div class="mb-3">
-                                <label for="">Adicionar username de perfil</label>
+                                <label for="exampleInputEmail1">Imagem da Categoria</label>
+                                <input type="file" name="imgPath" class="form-control" id="" aria-describedby="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="">Adicionar palavra chave</label>
                                 <div class="d-flex gap-2">
-                                    <input type="text" class="form-control" name="profile[]" placeholder="username..">
+                                    <input type="text" class="form-control" name="keywords[]" placeholder="username..">
                                 </div> 
                             </div>
                         </div>    
-                        <div class="my-4">
-                            <button onclick="add_profile(event)" id="newRoom" class="me-4 btn btn-success text-light fs-6 d-flex justify-content-around align-self-center">
-                            <i class="fa fa-plus-circle me-1 mt-1" aria-hidden="true"></i> <span>Novo perfil</span> </button>
+                        <div class="my-3">
+                            <button onclick="add_key(event, '')" id="ModalCategory" class="me-4 btn btn-success text-light fs-6 d-flex justify-content-around align-self-center">
+                            <i class="fa fa-plus-circle me-1 mt-1" aria-hidden="true"></i> <span>Nova Chave</span> </button>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn" style="background-color: var(--purple-system); color: white;">Adicionar</button>
+                            <button type="submit" class="btn" style="background-color: var(--red-primary-system); color: white;">Adicionar</button>
                         </div>
                     </form>
                 </div>
@@ -43,6 +47,49 @@
             </div>
         </div>
     </div>
+
+    {{!-- #ModalEditCategory --}}
+    <div class="modal fade" id="ModalEditCategory" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="ModalLabel">Editar categoria</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="background-color: var(--gray-system);">
+                    <form action="/categoria/edit/" enctype="multipart/form-data" method="post">
+                        <div class="modal-category">
+                            <div class="mb-3">
+                                <label for="name">Nome da Categoria</label>
+                                <input type="text" name="name" class="form-control" id="name" aria-describedby=""
+                                    placeholder="Digite">
+                            </div>
+                            <div class="mb-3">
+                                <label for="imgPath">Imagem da Categoria</label>
+                                <input type="file" name="imgPath" class="form-control" id="imgPath" aria-describedby="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="keywords">Adicionar palavra chave</label>
+                                <div class="d-flex gap-2">
+                                    <input type="text" class="form-control" name="keywords[]"  id="keywords" placeholder="username..">
+                                </div> 
+                            </div>
+                        </div>    
+                        <div class="my-3">
+                            <button onclick="add_key(event, '')" id="ModalEditCategory" class="me-4 btn btn-success text-light fs-6 d-flex justify-content-around align-self-center">
+                            <i class="fa fa-plus-circle me-1 mt-1" aria-hidden="true"></i> <span>Nova Chave</span> </button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn" style="background-color: var(--red-primary-system); color: white;">Editar</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
     <div class="d-flex content-category mt-3">
         <div class="table-content w-100 table-responsive">
             <table class="table">
@@ -50,6 +97,7 @@
                     <tr>
                         <th>#ID</th>
                         <th>Nome</th>
+                        <th class="text-center">Buscar</th>
                         <th class="text-center">Detalhes</th>
                     </tr>
                 </thead>
@@ -59,7 +107,10 @@
                             <td>{{this.id}}</td>
                             <td>{{this.name}}</td>
                             <td class="text-center">
-                                <button type="button" class="btn-details" data-bs-id="{{this.id}}" onclick="actionDetails(event)" >Ver</button>
+                                <a href="/categoria/buscar/{{this.id}}"><button type="button" class="btn-table">Pesquisar</button></a>
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="btn-table" data-bs-id="{{this.id}}" onclick="actionDetails(event)" >Ver</button>
                             </td>
                         </tr>
                     {{/each}}

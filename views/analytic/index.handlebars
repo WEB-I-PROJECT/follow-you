@@ -1,0 +1,34 @@
+<div id="bg-analytic">
+    <h1 class="text-analytics text-analytics-font  mx-2 bi bi-newspaper mt-4 "> <strong> Analytics</strong></h1>
+    <div class="m-4">
+        <div id="cards-container">
+            <div class="card-principal d-flex justify-content-center align-items-center" onclick="redirectToAnotherPage()">
+                <button class="button-add" id="cardsCounter"><strong><h1 class="text-light">+</h1></strong></button>
+            </div>
+
+           {{#each analytics}}
+                <div class="card mb-3">
+                    <div class="card-content">
+                        <div class="mx-4 mt-2">
+                            <p class="mb-3 text-analytic-name">{{name}}</p>
+                            <p class="bi bi-calendar-check-fill text-date"> {{createdAtFormattedDate}}</p>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    var cards = document.querySelectorAll('.card:not(.card-principal)');
+                    var cardPrincipal = document.querySelector('.card-principal');
+
+                    if (cards.length >= 3) {
+                        cardPrincipal.classList.add('disabled');
+                    }
+                });
+            </script>
+
+        </div>
+    </div>
+
+ 
+</div>

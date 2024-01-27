@@ -123,11 +123,12 @@
   --bs-form-valid-border-color: #198754;
   --bs-form-invalid-color: #dc3545;
   --bs-form-invalid-border-color: #dc3545;
-  --gray-system: #F5F4F4;
-  --pink-system: #8F047B;
-  --purple-system: #6007AD;
-  --blue-system: #0D02BB;
-  --orange-system: #DD8E3F;
+  --red-primary-system: #C4170C;
+  --red-secondary-system: #890101;
+  --red-third-system: #620B06;
+  --white-system: #FFFFFF;
+  --black-system: #000000;
+  --yellow-system: #FCBD33;
 }
 
 [data-bs-theme=dark] {
@@ -200,13 +201,14 @@
 
 body {
   margin: 0;
+  padding: 0;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  background-color: #fdf8f8;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -2148,9 +2150,9 @@ progress {
 .form-control:focus {
   color: var(--bs-body-color);
   background-color: var(--bs-body-bg);
-  border-color: #86b7fe;
+  border-color: #e02424;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(253, 13, 13, 0.25);
 }
 .form-control::-webkit-date-and-time-value {
   min-width: 85px;
@@ -5584,12 +5586,15 @@ textarea.form-control-lg {
   flex-shrink: 0;
   align-items: center;
   justify-content: space-between;
+  background-color: var(--red-primary-system);
+  color: var(--white-system);
   padding: var(--bs-modal-header-padding);
   border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
   border-top-left-radius: var(--bs-modal-inner-border-radius);
   border-top-right-radius: var(--bs-modal-inner-border-radius);
 }
 .modal-header .btn-close {
+  color: var(--white-system);
   padding: calc(var(--bs-modal-header-padding-y) * 0.5) calc(var(--bs-modal-header-padding-x) * 0.5);
   margin: calc(-0.5 * var(--bs-modal-header-padding-y)) calc(-0.5 * var(--bs-modal-header-padding-x)) calc(-0.5 * var(--bs-modal-header-padding-y)) auto;
 }
