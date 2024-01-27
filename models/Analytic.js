@@ -23,11 +23,6 @@ const analyticSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users',
         required: true
-    },
-    category: {
-        type: Schema.Types.ObjectId,
-        ref: 'categories',
-        required: false
     }
 });
 
@@ -40,6 +35,8 @@ analyticSchema.pre('save', function(next) {
     }
     next();
 });
+
+
 
 
 const Analytic = mongoose.model('analytics', analyticSchema);

@@ -14,6 +14,12 @@ const keywordGroupSchema = new Schema({
         type: Array,
         required: true
     },
+    analytic: {
+        type: Schema.Types.ObjectId,
+        ref: 'analytics',
+        required: false
+    },
+
 
 });
 
