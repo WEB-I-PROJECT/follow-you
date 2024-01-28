@@ -7,6 +7,8 @@ class CategoryController {
   index(req, res) {
     Category.find().then(function (categories) {
       res.render("category/index", { categories: categories });
+    }).catch((e) => {
+      req.flash("error_msg", "Houve um erro ao listar categorias");
     });
   }
 
@@ -55,11 +57,12 @@ class CategoryController {
         imgPath: `/category/imgCategory/${req.file.filename}`,
       })
         .then((data) => {
-          //res.send('cadastrado com sucesso');
+          req.flash("success_msg", "Categoria cadastrada com sucesso.");
           res.redirect("/categoria/");
         })
         .catch(function (erro) {
-          res.send("Erro ao cadastrar" + erro);
+          req.flash("error_msg", "Não foi possível cadastrar a categoria.");
+          res.redirect("/categoria/");
           console.log(erro);
         });
     } else {
@@ -71,13 +74,15 @@ class CategoryController {
     Category.deleteOne({ _id: req.params.id })
       .then((result) => {
         if (result.deletedCount > 0) {
+          req.flash("success_msg", "Categoria deletada com sucesso.");
           res.redirect("/categoria/");
         } else {
-          res.send("Essa postagem não existe");
+          req.flash("error_msg", "categoria não encontrada.");
+          res.redirect("/categoria/");
         }
       })
       .catch(function (erro) {
-        res.send(erro);
+        req.flash("error_msg", "Houve um erro ao deletar a categoria.");
       });
   }
 
@@ -90,32 +95,34 @@ class CategoryController {
           if (req.file && req.file.filename) { 
             data.imgPath = `/category/imgCategory/${req.file.filename}`
           }
-
           data.save().then(() => {
+            req.flash("success_msg", "Categoria editada com sucesso.");
             res.redirect("/categoria/");
+          }).catch((erro) => {
+            req.flash("error_msg", "Houve um erro ao editar categoria.");
+            res.redirect("/categoria/");
+            console.log(erro);
           })
         })
         .catch(function (erro) {
-          res.send("Erro ao cadastrar" + erro);
+          req.flash("error_msg", "Houve um erro ao editar categoria.");
+          res.redirect("/categoria/");
           console.log(erro);
         });
     } else {
-      res.status(400).send("Não há dados válidos para cadastrar.");
+      req.flash("error_msg", "Houve um erro ao consultar a categoria.");
+      res.redirect("/categoria/");
     }
   }
 
   details(req, res) {
     Category.findOne({ _id: req.params.id })
       .then(function (category) {
-        if (!category) {
-          return res.status(404).json({ error: "Categoria não encontrada" });
-        }
         res.status(200).json(category);
-
       })
       .catch(function (error) {
-        console.error("Erro ao buscar categoria:", error);
-        res.status(500).json({ error: "Erro interno do servidor" });
+        req.flash("error_msg", "Houve um erro ao consultar a categoria.");
+        res.redirect("/categoria/");
       });
   }
 }

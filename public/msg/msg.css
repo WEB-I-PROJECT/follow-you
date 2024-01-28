@@ -1,0 +1,49 @@
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.msg {
+    position: absolute;
+    top: 78px;
+    right: 4px;
+    padding: 13px;
+    padding-right: 24px;
+    border-radius: 10px;
+    color: white;
+    font-family: sans-serif;
+    animation: slideInRight 0.5s ease-in-out;
+}
+
+.msg-hide {
+    animation: slideOutRight 0.5s ease-in-out;
+}
+
+.msg-content {
+    position: relative;
+}
+
+.close-msg{
+    cursor: pointer;
+    position: absolute;
+    top: -12px;
+    right: -20px;
+    font-family: sans-serif;
+}
