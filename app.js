@@ -11,8 +11,8 @@ app.use('/', user)
 app.use('/usuario', user);
 app.use('/categoria', category);
 app.use('/analytic', analytic);
-app.use('/analytic/categoria/', analyticByCategory);
-app.use('/analytic/palavras-chave/', analyticByKeywordGroup);
+app.use('/analytic/by-category/', analyticByCategory);
+app.use('/analytic/by-keywords/', analyticByKeywordGroup);
 
 app.listen(PORT, () => {
     console.log('Aplicação rodando no endereço: http://localhost:%s/', PORT)

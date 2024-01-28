@@ -8,13 +8,20 @@ class Crawler():
     
     def access_page(self, url: str):
         print(url)
-        response = requests.get(url)
-        if response.status_code == 200:
-            return BeautifulSoup(response.text, 'html.parser')
-        return None
+        try:
+            response = requests.get(url)
+            if response.status_code == 200:
+                return BeautifulSoup(response.text, 'html.parser')
+            return None
+        except Exception as e:
+            return self.access_page(url)
+            
     
     def access_news_list(self, keyword: str):
-        return self.access_page(self.url + keyword)
+        _list = self.access_page(self.url + keyword)
+        if(_list is None):
+            return self.access_news_list(keyword)
+        return _list
     
     def get_images(self, tag: str, reference: str, doc: BeautifulSoup) :
         imgs = doc.find(tag, {'class': reference}).find_all('img') if doc.find(tag, {'class': reference}) else []
