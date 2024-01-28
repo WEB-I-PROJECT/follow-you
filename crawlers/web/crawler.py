@@ -18,7 +18,10 @@ class Crawler():
             
     
     def access_news_list(self, keyword: str):
-        return self.access_page(self.url + keyword)
+        _list = self.access_page(self.url + keyword)
+        if(_list is None):
+            return self.access_news_list(keyword)
+        return _list
     
     def get_images(self, tag: str, reference: str, doc: BeautifulSoup) :
         imgs = doc.find(tag, {'class': reference}).find_all('img') if doc.find(tag, {'class': reference}) else []
