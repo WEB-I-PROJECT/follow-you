@@ -2,6 +2,7 @@ const Analytic = require('../models/Analytic');
 const Category = require('../models/Category');
 const User = require('../models/User');
 const KeywordGroup = require('../models/KeywordGroup');
+
 class AnalyticController {
 
     index(req, res) {
@@ -169,8 +170,7 @@ class AnalyticController {
                 res.status(500).send(error.message);
             });
     }
-    
-    
+       
 
 }
 

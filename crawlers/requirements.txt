@@ -1,0 +1,4 @@
+requests_html==0.10.0
+bson==0.5.10
+beautifulsoup4==4.10.0
+pymongo==3.12.0

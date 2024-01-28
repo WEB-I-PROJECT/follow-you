@@ -88,14 +88,16 @@
     transition: background-color 0.3s ease; /* Adiciona transição de cor */
 }
 
-
+.card-principal:hover{
+    background-color: #a5212f;
+}
 
 .button-add {
     justify-content: center;
     align-items: center !important;
-    background-color: var(--bs-red); 
     border: none !important;
     border-radius: 50%;
+    background-color: transparent !important;
 }
 
 
