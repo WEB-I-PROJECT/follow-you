@@ -95,8 +95,8 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>#ID</th>
-                        <th>Nome</th>
+                        <th class="text-center">#ID</th>
+                        <th class="text-center">Nome</th>
                         <th class="text-center">Buscar</th>
                         <th class="text-center">Detalhes</th>
                     </tr>
@@ -104,8 +104,8 @@
                 <tbody>
                     {{#each categories}}
                         <tr>
-                            <td>{{this.id}}</td>
-                            <td>{{this.name}}</td>
+                            <td class="text-center"><b>{{@index}}</b></td>
+                            <td class="text-center">{{this.name}}</td>
                             <td class="text-center">
                                 <a href="/categoria/buscar/{{this.id}}"><button type="button" class="btn-table">Pesquisar</button></a>
                             </td>
@@ -117,7 +117,10 @@
                 </tbody>
             </table>
         </div>
-        <div class='card-details text-center p-2 slideInRight'></div>
+        <div onclick="removeCard()" class="modal-card">
+            <div onclick="stopPropagation(event)" class='card-details text-center p-2 slideInRight'></div>
+        </div>
+        
     </div>   
 </div>
 

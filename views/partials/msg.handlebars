@@ -1,7 +1,19 @@
 {{#if success_msg}}
-    <div class="alert alert-success">{{success_msg}}</div>
+    <div class="msg" style="background-color: #42e104;">
+        <div class="msg-content">
+            <div onclick="removeMsg()" class="close-msg"><i class="bi bi-x"></i></div>
+            {{success_msg}}
+        </div>
+    </div>
 {{/if}}
 
 {{#if error_msg}}
-    <div class="alert alert-danger">{{error_msg}}</div>
+    <div class="msg" style="background-color: #fb4a4a;">
+        <div class="msg-content">
+            <div onclick="removeMsg()" class="close-msg"><i class="bi bi-x"></i></div>
+            {{error_msg}}
+        </div>
+    </div>
 {{/if}}
+
+<script src="/msg/msg.js"></script>
