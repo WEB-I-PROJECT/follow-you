@@ -74,7 +74,6 @@
 }
 
 
-
 .card-principal{
     justify-content: center;
     align-items: center;
@@ -93,6 +92,7 @@
 }
 
 .button-add {
+    display: flex;
     justify-content: center;
     align-items: center !important;
     border: none !important;
@@ -191,4 +191,16 @@
     .border-sm-0 {
         border: none !important;
     }
+}
+
+.bg-danger, .btn-danger {
+    background-color:   #ec0e0e !important;
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn:active{
+    background-color: #C4170C !important;
+}
+
+.text-danger{
+    color: #C4170C !important;
 }

@@ -8,10 +8,14 @@ class Crawler():
     
     def access_page(self, url: str):
         print(url)
-        response = requests.get(url)
-        if response.status_code == 200:
-            return BeautifulSoup(response.text, 'html.parser')
-        return None
+        try:
+            response = requests.get(url)
+            if response.status_code == 200:
+                return BeautifulSoup(response.text, 'html.parser')
+            return None
+        except Exception as e:
+            return self.access_page(url)
+            
     
     def access_news_list(self, keyword: str):
         return self.access_page(self.url + keyword)
