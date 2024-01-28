@@ -13,7 +13,7 @@ function add_key(event, value) {
     newDiv.classList.add('mb-3');
 
     const newLabel = document.createElement('label');
-    newLabel.textContent = 'Adicionar username de perfil';
+    newLabel.textContent = 'Adicionar palavra chave';
 
     const newFlexDiv = document.createElement('div');
     newFlexDiv.classList.add('d-flex', 'gap-2');

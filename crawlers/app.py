@@ -35,7 +35,7 @@ app.config['DEBUG'] = True
  
 @app.route('/api/analytic/<string:id>/cron-group-keyword', methods=['POST'])
 def execute_group_keywords(id):
-    # remove_all_cron_jobs()
+    remove_all_cron_jobs()
     # add_cron_job(f'python3 {PATH_TO_CRON} {id} >> {script_dir}/logfile.log 2>&1', '50 15 * * 6')
 
     add_cron_job(f'python3 {PATH_TO_CRON} {id}', '0 0 * * 6')  # Roda todo sabado de madrugada

@@ -2,10 +2,13 @@
     <h1 class="text-analytics text-analytics-font  mx-2 bi bi-newspaper mt-4 "> <strong> Analytics</strong></h1>
     <div class="m-4">
         <div id="cards-container">
+            
+            {{#if canAddMore}}
             <div role="button" class="card-principal d-flex justify-content-center align-items-center" onclick="redirectToAnotherPage()">
                 <button class="button-add" id="cardsCounter"><strong><h1 class="text-light">+</h1></strong></button>
             </div>
-
+            {{/if}}
+    
            {{#each analytics}}
            <a href="/analytic/{{type}}/{{_id}}">
              <div class="card mb-3">

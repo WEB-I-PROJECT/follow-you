@@ -16,10 +16,11 @@ class AnalyticController {
                 analytics.forEach((analytic, i) => {
                     let data = new Date(analytic.createdAt);
                     analytics[i].createdAtFormattedDate = `${("0" + data.getDate()).slice(-2)}/${("0" + (data.getMonth() + 1)).slice(-2)}/${data.getFullYear()} ${("0" + data.getHours()).slice(-2)}:${("0" + data.getMinutes()).slice(-2)}`;
+                    
                     console.log(`${("0" + data.getDate()).slice(-2)}/${("0" + (data.getMonth() + 1)).slice(-2)}/${data.getFullYear()} ${("0" + data.getHours()).slice(-2)}:${("0" + data.getMinutes()).slice(-2)}`);
                 });
 
-                res.render('analytic/index', { analytics: analytics });
+                res.render('analytic/index', { analytics: analytics, canAddMore: analytics.length >= 3 ? false : true });
             })
             .catch((err) => {
                 console.log(err);

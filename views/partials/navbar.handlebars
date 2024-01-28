@@ -13,10 +13,12 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Sobre</a>
         </li>
-        
+
+        {{#if user}}
+        {{#if user.isAdmin}}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true">
-           Clientes
+            Clientes
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/admin">Solicitações</a></li>
@@ -24,27 +26,37 @@
 
           </ul>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/categoria">Categorias</a>
+        </li>
+        {{else}}
+
+          <li class="nav-item">
+          <a class="nav-link" href="/analytic">Analytics</a>
+        </li>
+
+        {{/if}}
+        {{/if}}
       </ul>
-      
+
       <ul class="navbar-nav">
         {{#if user}}
         {{#if user.isAdmin}}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-                      <i class="bi bi-person"></i> {{user.name}}
-                                <a class="" href="/admin">Painel do Administrador</a>
-
-
+            <i class="bi bi-person"></i> {{user.name}}
+            <a class="" href="/admin">Painel do Administrador</a>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="" href="/logout">Sair</a>
           </div>
         </li>
         {{else}}
-        
+
         <a href="/logout" class="btn btn-login">Sair</a>
-        
+
         {{/if}}
         {{else}}
         <a href="/login" class="btn btn-login">Login</a>
