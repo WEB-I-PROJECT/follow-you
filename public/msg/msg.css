@@ -22,12 +22,12 @@
 
 .msg {
     position: absolute;
-    top: 78px;
-    right: 4px;
+    top: 86px;
+    right: 8px;
     padding: 13px;
     padding-right: 24px;
     border-radius: 10px;
-    color: white;
+    color: #C4170C;
     font-family: sans-serif;
     animation: slideInRight 0.5s ease-in-out;
 }
@@ -40,10 +40,24 @@
     position: relative;
 }
 
+.msg-error {
+    background-color: #FCBD33;
+}
+
+.msg-success {
+    background-color: #FFFFFF;
+    border: 2px solid #C4170C;
+}
+
 .close-msg{
+    font-weight: bold;
     cursor: pointer;
     position: absolute;
-    top: -12px;
-    right: -20px;
+    top: -18px;
+    right: -24px;
     font-family: sans-serif;
+}
+
+.close-msg i {
+    font-size: 22px;
 }

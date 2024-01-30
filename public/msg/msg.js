@@ -4,9 +4,9 @@ function removeMsg() {
     msg.classList.add('msg-hide');
     setTimeout(() => {
         msg.remove();
-    }, 500);
+    }, 490);
 }
 
 setTimeout(() => {
     removeMsg()
-}, 4000);
+}, 7000);
