@@ -20,14 +20,20 @@
 
 .text-analytic-name{
     color:#c42737;
-    font-size: 32px !important;
+    font-size: 25px !important;
 }
+
+.text-type{
+    color:#9f8d8d  !important;
+    
+}
+
 .text-analytics-font{
     font-size: 39px !important;
 }
 
 .text-date{
-    font-size: 20px !important;
+    font-size: 15px !important;
 }
 
 
@@ -57,7 +63,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 20px;
-    margin-top: 20px;
+   
 }
 
 

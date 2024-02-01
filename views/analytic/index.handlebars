@@ -10,18 +10,19 @@
             {{/if}}
     
            {{#each analytics}}
-           <a href="/analytic/{{type}}/{{_id}}">
-             <div class="card mb-3">
-                    <div class="card-content">
-                        <div class="mx-4 mt-2">
-                            <p class="mb-3 text-analytic-name">{{name}}</p>
-                            <p class="bi bi-calendar-check-fill text-date"> {{createdAtFormattedDate}}</p>
+                <a href="/analytic/{{type}}/{{_id}}">
+                    <div class="card mb-3">
+                        <div class="card-content">
+                            <div class="mx-4 mt-1">
+                                <p class=" mb-5 text-analytic-name">{{name}}</p>
+                                 {{displayType type}}
+                                <p class=" bi bi-calendar-check-fill text-date"> {{createdAtFormattedDate}}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-           </a>
-               
+                </a>
             {{/each}}
+
             <script>
                 document.addEventListener("DOMContentLoaded", function () {
                     var cards = document.querySelectorAll('.card:not(.card-principal)');
@@ -35,6 +36,4 @@
 
         </div>
     </div>
-
- 
 </div>
