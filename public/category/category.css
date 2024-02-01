@@ -42,6 +42,7 @@
     }
 }
 
+
 .content-category {
     position: relative;
 }
@@ -90,7 +91,7 @@
     right: 0;
     display: none;
     border: 1px solid rgb(219, 219, 219);
-    max-height: 640px;
+    max-height: 424px;
     overflow-y: auto;
     border: 3px solid var(--red-primary-system);
     border-radius: 5px;
@@ -111,23 +112,24 @@
 .photo img{
     border: 3px solid var(--red-primary-system);
     width: 90px;
+    height: 90px;
     border-radius: 100px;
 }
 
 .visible-card {
     margin-top: 40px;
     position: initial;
-    max-height: 420px;
+    max-height: 390px;
     animation: slideInTop 0.5s ease-in-out;
+}
+
+.visible {
+    animation: slideInRight 0.5s ease-in-out;
 }
 
 .hide-card {
     animation: slideOutTop 0.5s ease-in-out;
     display: none;
-}
-
-.visible {
-    animation: slideInRight 0.5s ease-in-out;
 }
 
 .hide {
@@ -153,4 +155,5 @@
 }.key h6{
     margin-bottom: 0.2rem;
 }
+
 

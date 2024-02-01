@@ -13,6 +13,7 @@ class CategoryController {
   }
 
   search(req, res) {
+    
     Category.findOne({ _id: req.params.id }).then((category) => {
       const categoryKeywords = category.keywords;
       let news = [];

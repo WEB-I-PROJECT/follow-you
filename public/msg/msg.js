@@ -1,10 +1,12 @@
 
 function removeMsg() {
     const msg = document.querySelector('.msg');
-    msg.classList.add('msg-hide');
-    setTimeout(() => {
-        msg.remove();
-    }, 490);
+    if (msg) {
+        msg.classList.add('msg-hide');
+        setTimeout(() => {
+            msg.remove();
+        }, 490);
+    }  
 }
 
 setTimeout(() => {
