@@ -5,12 +5,12 @@ import requests
 class analyticCategory():
     
     def requestNews(category):   
-        data = []
+        data = {}
+        
         try:
             url = 'https://www.cnnbrasil.com.br/?s='+category+'&orderby=date&order=desc'
-            data.append('Notícias CNN Brasil:')
             response = requests.get(url)
-            
+            data["CNN"] = []
             if response.status_code == 200:
                 soup = BeautifulSoup(response.text, 'html.parser')
                 articles = soup.find_all('a', class_='home__list__tag')
@@ -20,8 +20,7 @@ class analyticCategory():
                     img = picture.find('img')['src'] if picture and picture.find('img') else None
                     title = tags.get('title')
                     link = tags.get('href')
-                    
-                    data.append({
+                    data["CNN"].append({
                         'title': title,
                         'link': link,
                         'img_src': img
@@ -32,8 +31,7 @@ class analyticCategory():
         
         try:
             url = 'https://search.folha.uol.com.br/?q='+category+'&site=todos'
-            data.append('')
-            data.append('Notícias Folha de São Paulo:')
+            data["Folha"] = []
             response = requests.get(url)
 
             if response.status_code == 200:
@@ -48,7 +46,7 @@ class analyticCategory():
                     title_element = tags.find('h2', class_='c-headline__title')
                     title_text = title_element.get_text(strip=True) if title_element else "N/A"
                     
-                    data.append({
+                    data['Folha'].append({
                         'title': title_text,
                         'img_src': img,
                         'link': link
@@ -59,8 +57,7 @@ class analyticCategory():
             
         try:
             url = 'https://busca.ig.com.br/buscar/?q='+category
-            data.append('')
-            data.append('Notícias IG:')
+            data["IG"] = []
             response = requests.get(url)
 
             if response.status_code == 200:

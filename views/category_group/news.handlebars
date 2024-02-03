@@ -1,0 +1,31 @@
+<div id="tokens" class="row fs-3">
+    {{#each news}}
+    <div class="col-12 col-md-6 col-lg-4 mb-2">
+        <div
+            class="row m-1 justify-content-between bg-light border border-1 p-2 px-4 bg-white align-items-center rounded-3">
+            <div class="text-center" style="word-wrap: break-word;">
+                {{#each CNN}}
+                    <p>{{this.title}}</p>
+                    <br>
+                    <p>{{this.link}}</p>
+                {{/each}}
+                {{#each Folha}}
+                <p>{{this.title}}</p>
+                <br>
+                <p>{{this.link}}</p>
+                {{/each}}
+                {{#each IG}}
+                <p>{{this.title}}</p>
+                <br>
+                <p>{{this.link}}</p>
+                {{/each}}
+            </div>
+            <small class="fs-6 badge badge-danger bg-danger badge-pill p-1">
+                <strong>
+                    {{this.img_path}}
+                </strong>
+            </small>
+        </div>
+    </div>
+    {{/each}}
+</div>
