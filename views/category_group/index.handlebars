@@ -1,0 +1,133 @@
+<div class="d-flex bg-light p-2 shadow text-dark justify-content-between mb-3">
+    <div class="d-flex align-items-center">
+        <div class="ms-2 bg-danger px-2 text-white rounded-1 d-flex justify-content-center align-items-center">
+            <div class="bi bi-newspaper "></div> <h5 class="m-0 py-2 px-2 ">{{ analytic.name }}</h5>
+        </div>
+    </div>
+    <div class="d-flex align-items-center">
+        <button class="btn btn-outline-danger">
+           <i class="fa fa-trash" aria-hidden="true"></i> Deletar Analytic
+        </button>
+    </div>
+</div>
+<div class="mx-4 p-0">
+
+    <div class="row">
+        <div class="col-12 col-sm-5 col-lg-4">
+            <ul>
+            </ul>
+            <div class="m-1 card h-auto shadow mb-3">
+                <div class="card-header bg-danger text-light">
+                    Categoria - <span class="fw-bold">{{category.name}}</span>
+                </div>
+                <ul class="list-group d-block rounded-0">
+                    <div>
+                    </div>
+                    {{#each category.keywords}}
+                    <a role="button"
+                        class="text-dark list-group-item list-group-item-action  d-flex justify-content-between align-items-center">{{name}}
+                        <span class="badge badge-danger bg-danger badge-pill">{{this}}</span>
+                    </a>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-7 col-lg-8 mt-3 text-start">
+            <p>
+
+                <button class="btn btn-danger" type="button" data-toggle="collapse"
+                    data-target="#multiCollapseExample2" aria-expanded="false"
+                    aria-controls="multiCollapseExample2" onclick="requestNews()"> Notícias </button>
+
+                <button class="btn btn-danger" type="button" data-toggle="collapse"
+                    data-target="#multiCollapseExample2" aria-expanded="false"
+                    aria-controls="multiCollapseExample2">Ocorrência de palavras </button>
+
+                 <button class="btn btn-danger" type="button" data-toggle="collapse"
+                    data-target="#multiCollapseExample2" aria-expanded="false"
+                    aria-controls="multiCollapseExample2">Gráficos</button>
+
+                
+
+            </p>
+            <div class="row">
+
+                <div class="col">
+                    <div class="collapse multi-collapse" id="multiCollapseExample2">
+                        <div class="card h-auto card-body">
+                            <div class="text-center" id="tokenizes">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function requestTokens() {
+        try {
+            const tokenizesContainer = document.getElementById('tokenizes');
+            tokenizesContainer.innerHTML = '<div class="spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+            const response = await fetch('/analytic/by-keywords/tokenizar/{{ analytic.id }}');
+
+            if (!response.ok) {
+                throw new Error('Erro na requisição', response.error);
+            }
+
+            const html = await response.text();
+
+            const tempElement = document.createElement('div');
+            tempElement.innerHTML = html;
+
+            const tokensElement = tempElement.querySelector('#tokens');
+
+            if (tokensElement) {
+
+                tokenizesContainer.innerHTML = '';
+
+                tokenizesContainer.appendChild(tokensElement);
+            } else {
+                console.error('Tag com id "tokens" não encontrada no HTML recebido');
+            }
+        } catch (error) {
+            console.error('Erro na requisição:', error.message);
+        }
+    }
+
+    async function requestNews() {
+            try {
+                const tokenizesContainer = document.getElementById('tokenizes');
+                tokenizesContainer.innerHTML = '<div class="spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+                const response = await fetch('/analytic/by-category/news/{{category.id}}');
+
+                if (!response.ok) {
+                    throw new Error('Erro na requisição', response.error);
+                }
+
+                const html = await response.text();
+
+                const tempElement = document.createElement('div');
+                tempElement.innerHTML = html;
+
+                const tokensElement = tempElement.querySelector('#tokens');
+
+                if (tokensElement) {
+
+                    tokenizesContainer.innerHTML = '';
+
+                    tokenizesContainer.appendChild(tokensElement);
+                } else {
+                    console.error('Tag com id "tokens" não encontrada no HTML recebido');
+                }
+            } catch (error) {
+                console.error('Erro na requisição:', error.message);
+            }
+        }
+
+    requestTokens();
+
+</script>

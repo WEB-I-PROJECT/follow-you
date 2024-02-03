@@ -50,6 +50,7 @@ def execute_group_keywords(id):
 def searchCategory(category):
     print(category)
     data = analyticCategory.requestNews(category)
+    print(data)
     return jsonify(data)
 
 
