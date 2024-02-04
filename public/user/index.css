@@ -41,9 +41,6 @@
     font-size: 30px;
 }
 
-
-
-
   
   .custom2-btn-seguidores {
     background: #ffffff;
@@ -59,7 +56,7 @@
   }
   .custom2-btn-seguidores:hover {
     transition: background-color 0.3s; 
-    background-color: #2980b9;
+    background-color: #ffc229;
   }
 
 
