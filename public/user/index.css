@@ -1,18 +1,3 @@
-.custom2-container-fluid {
-    padding: 0;
-}
-
-.background-image-container {
-    text-align: right;
-    margin-top: -430px;
-}
-
-.background-image-container img {
-
-    max-width: 80%;
-    height:650px;
-    width: auto;
-}
 
 .custom2-content-container {
     display: flex;
@@ -23,7 +8,6 @@
 
 .custom2-content-container h1 {
     margin-top: 150px;
-    margin-left: 100px;
     white-space: nowrap;
     background: linear-gradient(180deg, #C4170C 37.62%, #FCBD33 92.76%, #FCBD33 92.77%);
     -webkit-background-clip: text;
@@ -37,7 +21,7 @@
 
 .custom2-content-container h3 {
     color: #C4170C;
-    margin-left: 100px;
+    margin-left: 9px;
     font-size: 30px;
 }
 
@@ -59,21 +43,97 @@
     background-color: #ffc229;
   }
 
+  .background-container {
+    background-image: url('/img/inicial.png');
+    background-size: cover;
+    background-position: bottom;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+  }
+  .custom2-container-fluid {
+    position: relative;
+    padding: 2px;
+    margin-left: 30px; 
+  }
+  .custom2-content-container {
+    text-align: center;
+  }
+  .background-image-container {
+    margin-top: 20px; 
+  }
 
+  @media (max-width: 1559px) {
+.custom2-content-container h1 {
+  font-size: 4.5em; 
+      margin-left: 50px;
+      margin-top: 20px;
 
+}
+  .custom2-content-container h3 {
+  font-size: 2em; 
+      margin-left: 50px;
 
-@media (max-width: 767px) {
-    .background-image-container {
-        margin-top: 20px; 
-    }
 }
 
-@media (max-width: 1024px) {
-    .background-image-container {
-        margin-top: 20px; 
-    }
-
-    .background-image-container {
-        display: none;
-    }
+.custom2-content-container .custom2-btn-seguidores {
+  font-size: 1.0em; 
+  margin-left: 47px;
 }
+}
+@media (min-width: 569px) and (max-width: 1200px) {
+.background-container {
+  margin-top: 2px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.custom2-content-container h1 {
+  font-size: 4.5em; 
+      margin-left: 50px;
+
+}
+  .custom2-content-container h3 {
+  font-size: 2em; 
+      margin-left: 50px;
+
+}
+
+.custom2-content-container .custom2-btn-seguidores {
+  font-size: 1.0em; 
+  margin-left: 50px;
+}
+}
+
+@media (max-width: 576px) {
+.background-container {
+  margin-top: -75px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+}
+
+@media (max-width: 576px) {
+.custom2-content-container h1 {
+  font-size: 2.5em; 
+      margin-left: 50px;
+
+}
+  .custom2-content-container h3 {
+  font-size: 1em; 
+      margin-left: 50px;
+
+}
+
+.custom2-content-container .custom2-btn-seguidores {
+  font-size: 0.8em; 
+  margin-left: 50px;
+}
+}
+
+
+
+
+
+
+
