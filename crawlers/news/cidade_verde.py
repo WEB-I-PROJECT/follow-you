@@ -57,3 +57,17 @@ class CidadeVerdeCrawler(Analytic):
         
         self.urls = list(set(urls))
         return list(set(urls))
+
+    def format_news(self, doc: BeautifulSoup):
+        news_dict = []
+        news = doc.find('div', {'class': 'ultimas'}).find_all('li')
+        for new in news:
+            if new.find('a'):
+                news_dict.append({
+                    'title': new.find('a').text,
+                    'date': new.find('p', {'class': 'post-date'}).text,
+                    'url':  new.find('a').get('href'),
+                    'img': '',
+                })
+        return news_dict
+        

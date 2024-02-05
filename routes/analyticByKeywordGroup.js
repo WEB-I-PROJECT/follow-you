@@ -4,5 +4,6 @@ const AnalyticByKeywordGroupController = require('../controllers/AnalyticByKeywo
 
 router.get('/:id', new AnalyticByKeywordGroupController().index);
 router.get('/tokenizar/:id', new AnalyticByKeywordGroupController().tokenize);
+router.get('/noticias/:type/:id', new AnalyticByKeywordGroupController().getNews)
 
 module.exports = router;
