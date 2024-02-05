@@ -7,15 +7,10 @@ class Crawler():
     doc = BeautifulSoup()
     
     def access_page(self, url: str):
-        print(url)
-        try:
-            response = requests.get(url)
-            if response.status_code == 200:
-                return BeautifulSoup(response.text, 'html.parser')
-            return None
-        except Exception as e:
-            return self.access_page(url)
-            
+        response = requests.get(url)
+        if response.status_code == 200:
+            return BeautifulSoup(response.text, 'html.parser')
+        return None       
     
     def access_news_list(self, keyword: str):
         _list = self.access_page(self.url + keyword)
@@ -60,7 +55,7 @@ class CrawlerImplicitWait():
         session = HTMLSession()
         response = session.get(url)
 
-        response.html.render(timeout=2, sleep=1)
+        response.html.render(timeout=10, sleep=1)
 
         content = response.html.html
                 

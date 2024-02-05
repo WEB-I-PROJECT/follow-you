@@ -1,3 +1,4 @@
+import re
 from bs4 import BeautifulSoup
 from mongo.models import Analytic
 from datetime import datetime
@@ -67,4 +68,32 @@ class IGrawler(Analytic):
                 urls.append(url)
                 
         return list(set(urls))
+    
+    
+    def extract_data(self, text):
+        complete_date_pattern = re.compile(r'\d{1,2} de [a-zA-Z]+\. de \d{4}')
+        match_complete_date = complete_date_pattern.search(text)
+
+        if match_complete_date:
+            return match_complete_date.group()
+
+        relative_date_pattern = re.compile(r'in \d+ (day|days|months|years)')
+        match_relative_date = relative_date_pattern.search(text)
+
+        if match_relative_date:
+            return match_relative_date.group()
+
+        return None
+        
+    def format_news(self, doc: BeautifulSoup):
+        news_dict = []
+        news = doc.find_all('div', {'class': 'gsc-webResult'})
+        for new in news:
+            news_dict.append({
+                'title': new.find('a', {'class': 'gs-title'}).text,
+                'date': self.extract_data(new.find({'id': 'text'}).text),
+                'url': new.find('a', {'class': 'gs-title'}).get('href'),
+                'img': new.find('img', {'class': 'gs-image'}).get('src'),
+            })
+        return news_dict
     

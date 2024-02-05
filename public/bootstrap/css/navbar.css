@@ -33,6 +33,7 @@
 
 .btn-register {
   background: #ffffff;
+  border: 2px solid white !important;
   color: #C4170C;
   border: none;
   padding: 8px 40px;
