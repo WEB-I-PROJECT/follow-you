@@ -3851,7 +3851,7 @@ textarea.form-control-lg {
 }
 .nav-link:hover, .nav-link:focus {
   color: #FFFFFF;
-  border-bottom: 4px solid white;
+  border-bottom: 2px solid white;
   padding-bottom: 0;
 }
 .nav-link:focus-visible {

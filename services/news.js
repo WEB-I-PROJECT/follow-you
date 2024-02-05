@@ -1,7 +1,7 @@
 const News = require('../models/News');
 const compromise = require('compromise');
 const natural = require('natural');
-const stopwords = require('stopwords-pt'); // array of stopwords
+const stopwords = require('stopwords-pt');  
 
 function sortAndTakeMostFrequent(words) {
     const wordArray = Object.entries(words);
@@ -43,7 +43,7 @@ async function tokenizeNews(id) {
             const contentDoc = compromise(news.content);
             const titleDoc = compromise(news.title);
 
-            const exclusionTerms = ['Fonte', 'Foto', 'Por', 'Jornal', '.com', '@','compartilhe', 'plataformasyoutubetiktokinstagramtwitter' ];
+            const exclusionTerms = ['Fonte', 'Foto', 'Por', 'Jornal', '.com', '@','compartilhe', 'plataformasyoutubetiktokinstagramtwitter', 'disse'];
 
             const regex = /[^a-zA-Z]/g;;
 

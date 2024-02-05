@@ -15,11 +15,11 @@
 }
 
 .text-analytics {
-    color: var(--bs-red);
+    color:#cf1326;
 }
 
 .text-analytic-name{
-    color:#c42737;
+    color:#cf1326;
     font-size: 25px !important;
 }
 
@@ -83,7 +83,7 @@
 .card-principal{
     justify-content: center;
     align-items: center;
-    background-color: var(--bs-red);
+    background-color: #dd1126;
     box-shadow: 0 5px 8px rgba(137, 1, 1, 0.479);
     margin: 0; 
     width: 100%; /* Ocupa a largura total do grid */
@@ -94,7 +94,7 @@
 }
 
 .card-principal:hover{
-    background-color: #a5212f;
+    background-color: #b80e1f;
 }
 
 .button-add {
