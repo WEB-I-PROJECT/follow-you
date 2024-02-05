@@ -72,24 +72,25 @@ class Analytic(Crawler):
         for keyword_group in self.keyword_groups:
             for keyword in keyword_group.get('keywords'):
                 doc =  self.access_news_list(keyword)
-                
-                news_links = self.get_news_url(
-                    self.news_link.get('class'),
-                    doc
-                )
-                
-                images_url = self.get_images(self.image.get('tag'), self.image.get('class'), doc)
+                if doc:       
+                    news_links = self.get_news_url(
+                        self.news_link.get('class'),
+                        doc
+                    )
+                    
+                    images_url = self.get_images(self.image.get('tag'), self.image.get('class'), doc)
 
-                self.push_news({
-                  'news_links': news_links,
-                  'images': images_url  
-                }, keyword_group.get('_id'), keyword)
+                    self.push_news({
+                    'news_links': news_links,
+                    'images': images_url  
+                    }, keyword_group.get('_id'), keyword)
     
     def get_news_partial(self):
         news = []
         for keyword_group in self.keyword_groups:
             for keyword in keyword_group.get('keywords'):
                 doc = self.access_news_list(keyword)
-                news.append(self.format_news(doc))
-        return {self.origin: sum(news, [])}
+                if doc:
+                    news.append(self.format_news(doc))
+        return {'news': sum(reversed(news), [])}
                 

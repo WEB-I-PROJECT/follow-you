@@ -1,6 +1,5 @@
 const News = require('../models/News');
 const compromise = require('compromise');
-const natural = require('natural');
 const stopwords = require('stopwords-pt');
 
 function sortAndTakeMostFrequent(words) {
@@ -10,8 +9,6 @@ function sortAndTakeMostFrequent(words) {
         word: word,
         frequency
     }));
-
-    // console.log(stemmedWords);
 
     stemmedWords.sort((a, b) => b.frequency - a.frequency);
 

@@ -11,11 +11,11 @@ if len(sys.argv) != 2:
 id = sys.argv[1]
 
 crawlers = [
-    IGrawler, CNNCrawler, BrasildeFatoCrawler, CidadeVerdeCrawler
+   CidadeVerdeCrawler, IGrawler, CNNCrawler, BrasildeFatoCrawler, 
 ]
 
 for Crawler in crawlers:
     crawler = Crawler(id)
-    # crawler.get_news()
-    print(crawler.get_news_partial())
+    crawler.get_news()
+    # print(crawler.get_news_partial())
     

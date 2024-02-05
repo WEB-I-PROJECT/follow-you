@@ -2,6 +2,8 @@ const Analytic = require('../models/Analytic');
 const KeywordGroup = require('../models/KeywordGroup');
 const News = require('../models/News');
 const tokenizeNews = require('../services/news');
+const axios = require('axios');
+
 
 class AnalyticByKewordGroupController {
   async index(req, res) {
@@ -46,6 +48,19 @@ class AnalyticByKewordGroupController {
   async tokenize(req, res) {
     return res.render('keyword_group/tokenize', await tokenizeNews(req.params.id));
   }
+
+  getNews(req, res) {
+
+    const url = `http://localhost:5001/api/analytic/${req.params.type}/${req.params.id}`;
+    var data = {};
+    axios.get(url)
+      .then(response => {
+        res.render('keyword_group/news', response.data);
+      })
+      .catch(error => {
+        return '';
+      });
+    }
 
 }
 

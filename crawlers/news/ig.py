@@ -89,11 +89,12 @@ class IGrawler(Analytic):
         news_dict = []
         news = doc.find_all('div', {'class': 'gsc-webResult'})
         for new in news:
-            news_dict.append({
-                'title': new.find('a', {'class': 'gs-title'}).text,
-                'date': self.extract_data(new.find({'id': 'text'}).text),
-                'url': new.find('a', {'class': 'gs-title'}).get('href'),
-                'img': new.find('img', {'class': 'gs-image'}).get('src'),
-            })
+            if new.find('a', {'class': 'gs-title'}):
+                news_dict.append({
+                    'title': new.find('a', {'class': 'gs-title'}).text,
+                    'date': self.extract_data(new.find('div', {'class': 'gs-bidi-start-align'}).text),
+                    'url': new.find('a', {'class': 'gs-title'}).get('href'),
+                    'img': new.find('img', {'class': 'gs-image'}).get('src') if new.find('img', {'class': 'gs-image'}) else '',
+                })
         return news_dict
     
