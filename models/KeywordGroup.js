@@ -6,10 +6,6 @@ const keywordGroupSchema = new Schema({
         type: String,  
         required: true
     },
-    slug: {
-        type: String, 
-        required: true
-    },
     keywords: {
         type: Array,
         required: true

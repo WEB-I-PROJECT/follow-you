@@ -33,6 +33,8 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
+
+//no de Vanúbia a porta roda no 27018
 mongoose.connect("mongodb://127.0.0.1:27017/hubnews").then(() =>{
     console.log("Banco de dados conectado!");
 }).catch((error) =>{
@@ -66,6 +68,16 @@ Handlebars.registerHelper('truncate', function (text, length, options) {
         return new Handlebars.SafeString(text.substring(0, length) + "...");
     }
     return new Handlebars.SafeString(text);
+});
+
+Handlebars.registerHelper('displayType', function (type, options) {
+    if (type === 'by-category') {
+        return new Handlebars.SafeString('<small class="text-type bi bi-ui-checks"> Por categoria</small>');
+    } else if (type === 'by-keywords') {
+        return new Handlebars.SafeString('<small class="text-type bi bi-card-heading"> Por palavras-chave</small>');
+    }
+    
+    return new Handlebars.SafeString('<p>Tipo desconhecido</p>');
 });
 
 //engine template

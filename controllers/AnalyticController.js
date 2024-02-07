@@ -68,17 +68,14 @@ class AnalyticController {
                 // buscando os grupos de palavras-chave
                 if (Array.isArray(req.body.listName)) {
                     if (
-                        req.body.listName.length === req.body.listSlug.length &&
                         req.body.listName.length === req.body.keywords.length
                     ) {
                         req.body.listName.forEach((element, i) => {
                             if (
-                                req.body.listSlug[i] !== undefined &&
                                 req.body.keywords[i] !== undefined
                             ) {
                                 newGroupKeyWords[i] = {
                                     listName: element,
-                                    listSlug: req.body.listSlug[i],
                                     keywords: req.body.keywords[i].split(',').map(keyword => keyword.trim())
                                 };
     
@@ -86,7 +83,6 @@ class AnalyticController {
                                 if (req.body.type === 'by-keywords') {
                                     savePromises.push(KeywordGroup.create({
                                         name: newGroupKeyWords[i].listName,
-                                        slug: newGroupKeyWords[i].listSlug,
                                         keywords: newGroupKeyWords[i].keywords,
                                         analytic: undefined, // atualizar posteriormente
                                     }));
@@ -102,7 +98,6 @@ class AnalyticController {
                     // Save only one group of keywords
                     newGroupKeyWords[0] = {
                         listName: req.body.listName,
-                        listSlug: req.body.listSlug,
                         keywords: req.body.keywords.split(',').map(keyword => keyword.trim())
                     };
     
@@ -111,7 +106,6 @@ class AnalyticController {
                     if (req.body.type === 'by-keywords') {
                         savePromises.push(KeywordGroup.create({
                             name: newGroupKeyWords[0].listName,
-                            slug: newGroupKeyWords[0].listSlug,
                             keywords: newGroupKeyWords[0].keywords,
                             analytic: undefined, // atualizar posteriormente
                         }));
