@@ -8,8 +8,6 @@ class AnalyticController {
     index(req, res) {
         const user = res.locals.user;
     
-        console.log(user);
-    
         Analytic.find({ User: user._id })
             .populate('category')
             .then((analytics) => {
@@ -125,13 +123,11 @@ class AnalyticController {
                         savedKeywordGroups.forEach((savedKeywordGroup, index) => {
                             if (req.body.type === 'by-keywords') {
                                 newGroupKeyWords[index].analytic = savedKeywordGroup._id;
-                                console.log(newGroupKeyWords);
                             }
                         });
     
                         if (analytic.type === 'by-keywords') {
                             analytic.category = undefined;
-                            console.log(analytic.type);
     
                             analytic.save()
                                 .then(savedAnalytic => {

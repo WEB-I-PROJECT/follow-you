@@ -1,31 +1,43 @@
-<div id="tokens" class="row fs-3">
+<div id="tokens" class="row fs-3 overflow-auto" style="max-height: 400px;">
     {{#each news}}
-    <div class="col-12 col-md-6 col-lg-4 mb-2">
-        <div
-            class="row m-1 justify-content-between bg-light border border-1 p-2 px-4 bg-white align-items-center rounded-3">
-            <div class="text-center" style="word-wrap: break-word;">
-                {{#each CNN}}
-                    <p>{{this.title}}</p>
-                    <br>
-                    <p>{{this.link}}</p>
-                {{/each}}
-                {{#each Folha}}
-                <p>{{this.title}}</p>
-                <br>
-                <p>{{this.link}}</p>
-                {{/each}}
-                {{#each IG}}
-                <p>{{this.title}}</p>
-                <br>
-                <p>{{this.link}}</p>
-                {{/each}}
-            </div>
-            <small class="fs-6 badge badge-danger bg-danger badge-pill p-1">
-                <strong>
-                    {{this.img_path}}
-                </strong>
-            </small>
-        </div>
-    </div>
+        {{#each CNN}}
+            <div class="new-content my-2">
+                <div class="d-flex news w-100 gap-2">
+                    <div class="img">
+                        <img class="rounded-3" style="width: 230px;" src="{{this.img_src}}" alt="">
+                    </div>
+                    <div class="d-flex flex-column justify-content-between content">
+                        <div class="title"><h6><b>CNN: </b>{{this.title}}</h6></div>
+                        <div class="link"><a href="{{this.link}}" target="_blank"><button class="btn btn-secondary" style="font-size: 10px;">ver mais...</button></a></div>   
+                    </div>
+                </div>
+            </div> 
+        {{/each}}
+        {{#each Folha}}
+            <div class="new-content my-2">
+                <div class="d-flex news w-100 gap-2">
+                    <div class="img">
+                        <img class="rounded-3" style="width: 230px;" src="{{this.img_src}}" alt="">
+                    </div>
+                    <div class="d-flex flex-column justify-content-between content">
+                        <div class="title"><h6><b>FOLHA: </b>{{this.title}}</h6></div>
+                        <div class="link"><a href="{{this.link}}" target="_blank"><button class="btn btn-secondary" style="font-size: 10px;">ver mais...</button></a></div>   
+                    </div>
+                </div>
+            </div> 
+        {{/each}}
+        {{#each IG}}
+            <div class="new-content my-2">
+                <div class="d-flex news w-100 gap-2">
+                    <div class="img">
+                        <img class="rounded-3" style="width: 230px;" src="{{this.img_src}}" alt="">
+                    </div>
+                    <div class="d-flex flex-column justify-content-between content">
+                        <div class="title"><h6><b>IG: </b>{{this.title}}</h6></div>
+                        <div class="link"><a href="{{this.link}}" target="_blank"><button class="btn btn-secondary" style="font-size: 10px;">ver mais...</button></a></div>   
+                    </div>
+                </div>
+            </div> 
+        {{/each}}
     {{/each}}
 </div>
