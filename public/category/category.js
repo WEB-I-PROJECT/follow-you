@@ -88,7 +88,7 @@ function actionDetails(event) {
             card.innerHTML = `
                 <div class="title-card">
                     <div class="d-flex w-100 justify-content-end">
-                        <h5 style="margin-right: 25%; font-weight: bold;">Categoria</h5>
+                        <h5 style="margin-right: 24%; font-weight: bold;">Categoria</h5>
                         <button type="button" onclick="removeCard()" class="btn-close" aria-label="Close"></button>  
                     </div>
                     <div class="photo p-2">
@@ -166,3 +166,38 @@ function removeCard() {
 function stopPropagation(event) {
     event.stopPropagation();
 }
+
+function searchCategory(event) {
+
+    const categoryId = event.currentTarget.id;
+    const url = `/categoria/buscar/${categoryId}`
+
+    const loadingSpinner = document.querySelector('.c-loader');
+    loadingSpinner.style.display = 'block';
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json',
+        },
+    })
+    .then(response => {
+        if (!response.ok) {
+        throw new Error(`Erro na solicitação: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+    })
+    .finally(() => {
+        loadingSpinner.style.display = 'none';
+    });
+}
+
+// window.addEventListener("load", function (event) {
+//     console.log("Todos os recursos terminaram o carregamento!");
+// });
