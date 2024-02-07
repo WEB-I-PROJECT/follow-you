@@ -5,7 +5,7 @@ from web.crawler import Crawler
 
 # '65b4fecb4acfe9eb522a1a06'
 #no de vanúbia é 27018
-MONGO_ACCESS = "mongodb://localhost:27018/"
+MONGO_ACCESS = "mongodb://localhost:27017/"
 ANALYTIC_COLLECTION = 'analytics'
 KEYWORD_GROUP_COLLECTION = 'keyword_groups'
 NEWS_COLLECTION = 'news'

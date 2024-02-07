@@ -35,7 +35,7 @@ mongoose.Promise = global.Promise;
 
 
 //no de Vanúbia a porta roda no 27018
-mongoose.connect("mongodb://127.0.0.1:27018/hubnews").then(() =>{
+mongoose.connect("mongodb://127.0.0.1:27017/hubnews").then(() =>{
     console.log("Banco de dados conectado!");
 }).catch((error) =>{
     console.log("Erro ao conectar no banco de dados: " + error)
