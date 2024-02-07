@@ -1,3 +1,4 @@
+
 function toggleFields() {
     const selectedType = document.getElementById("type").value;
     const keywordFields = document.getElementById("keywordFields");
@@ -13,11 +14,23 @@ function toggleFields() {
 }
 
 // Function to dynamically add keyword group input fields
-let clickCount = 0; // Contador de cliques
+let clickCount = 0; // Certifique-se de declarar clickCount fora da função
+
+function addRemoveGroupButton(keywordGroupDiv) {
+    const removeGroupButton = document.createElement('button');
+    removeGroupButton.className = 'btn btn-danger mt-1 mb-2 bi bi-trash';
+    removeGroupButton.textContent = ' Desfazer Grupo';
+    removeGroupButton.onclick = function () {
+        keywordGroupDiv.remove();
+        const addKeywordGroupBtn = document.getElementById("addKeywordGroupBtn");
+        addKeywordGroupBtn.disabled = false;
+    };
+    keywordGroupDiv.querySelector('.group-button-container').appendChild(removeGroupButton);
+}
 
 function addKeywordGroup() {
     const dynamicKeywordGroups = document.getElementById("groupSession");
-    const addKeywordGroupBtn = document.getElementById("addKeywordGroupBtn"); // Certifique-se de ter o ID correto do botão
+    const addKeywordGroupBtn = document.getElementById("addKeywordGroupBtn"); 
 
     // Incrementar o contador de cliques
     clickCount++;
@@ -41,13 +54,18 @@ function addKeywordGroup() {
                 <label class="mt-3 text-analytics text-label" for="keywords">Palavras chave *</label><br>
                 <small class="mb-5 text-analytics">Você só pode adicionar 3 grupos de palavras chave</small>
                 <input type="text" class="mb-3 form-control" name="keywords" placeholder="Coloque as palavras separadas por vírgula. Ex: futebol, flamengo, jogos, brasileirão">
+                <div class="group-button-container ">
+                </div>
+            
             </div>
         </div>
     `;
     dynamicKeywordGroups.appendChild(keywordGroupDiv);
+    addRemoveGroupButton(keywordGroupDiv);
 }
 
 const addKeywordGroupBtn = document.getElementById("addKeywordGroupBtn");
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const tooltips = document.querySelectorAll('[data-tooltip]');
@@ -68,6 +86,7 @@ function validateForm() {
     const nameInput = document.getElementById("name");
 
     const maxNameLength = 30;
+    
 
     if (nameInput.value.trim() === "" || nameInput.value.length > maxNameLength) {
         displayErrorMessage(`Por favor, preencha o campo Nome com no máximo ${maxNameLength} caracteres.`);
