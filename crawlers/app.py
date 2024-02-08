@@ -1,3 +1,4 @@
+from typing import Self
 from flask import Flask, jsonify
 from category.analyticCategory import analyticCategory
 from crontab import CronTab
@@ -69,9 +70,7 @@ def newsBrasilDeFato(id):
 
 @app.route('/api/analyticCategory/<string:category>', methods=['GET'])
 def searchCategory(category):
-    print(category)
     data = analyticCategory.requestNews(category)
-    print(data)
     return jsonify(data)
 
 
