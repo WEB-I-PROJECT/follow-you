@@ -1,19 +1,20 @@
 <div class="d-flex bg-light p-2 shadow text-dark justify-content-between mb-3">
     <div class="d-flex align-items-center">
         <div class="ms-2 bg-danger px-2 text-white rounded-1 d-flex justify-content-center align-items-center">
-            <div class="bi bi-newspaper "></div> <h5 class="m-0 py-2 px-2 ">{{ analytic.name }}</h5>
+            <div class="bi bi-newspaper "></div>
+            <h5 class="m-0 py-2 px-2 ">{{ analytic.name }}</h5>
         </div>
     </div>
     <div class="d-flex align-items-center">
         <button class="btn btn-outline-danger">
-           <i class="fa fa-trash" aria-hidden="true"></i> Deletar Analytic
+            <i class="fa fa-trash" aria-hidden="true"></i> Deletar Analytic
         </button>
     </div>
 </div>
 <div class="mx-4 p-0">
 
     <div class="row">
-        <div class="col-12 col-sm-5 col-lg-4">
+        <div class="col-12 col-md-5 col-lg-4">
             {{#each @root.keywordGroups}}
             <ul>
 
@@ -38,41 +39,121 @@
             {{/each}}
         </div>
 
-        <div class="col-12 col-sm-7 col-lg-8 mt-3 text-start">
+        <div class="col-12 col-md-7 col-lg-8 mt-3 text-start">
             <p>
 
-                <button class="btn btn-danger btn-toggle" type="button" data-toggle="collapse"
-                    data-target="#news" aria-expanded="false"
-                    aria-controls="news"> Notícias </button>
+                <button id="news-btn" class="btn btn-danger btn-toggle" type="button" data-toggle="collapse"
+                    data-target="#news" aria-expanded="false" aria-controls="news"> Notícias </button>
 
-                <button class="btn btn-danger btn-toggle" type="button" data-toggle="collapse"
-                    data-target="#words" aria-expanded="false"
-                    aria-controls="words">Ocorrência de palavras </button>
+                <button class="btn btn-danger btn-toggle" type="button" data-toggle="collapse" data-target="#words"
+                    aria-expanded="false" aria-controls="words">Ocorrência de palavras </button>
 
-                 <button class="btn btn-danger btn-toggle" type="button" data-toggle="collapse"
-                    data-target="#charts" aria-expanded="false"
-                    aria-controls="charts">Gráficos</button>
+                <button id="charts-btn" class="btn btn-danger btn-toggle" type="button" data-toggle="collapse"
+                    data-target="#charts" aria-expanded="false" aria-controls="charts">Gráficos</button>
 
-                
+
 
             </p>
             <div class="row">
 
                 <div class="col-12">
-                    <div class="collapse multi-collapse" id="words">
+                    <div class="collapse multi-collapse overflow-auto" style="max-height: 400px;" id="words">
                         <div class="card h-auto card-body">
                             <div class="text-center" id="tokenizes">
-                                
+
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-12 mt-3">
-                    <div class="collapse multi-collapse" id="news">
+                    <div class="collapse multi-collapse overflow-auto" style="max-height: 400px;" id="news">
                         <div class="card h-auto card-body">
                             <div class="text-center" id="news-list">
-                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="collapse multi-collapse overflow-auto" style="max-height: 400px;" id="charts">
+                        <div class="card h-auto card-body">
+                            <div class="text-center" id="charts-data">
+                                <div class="line-chart">
+                                    <form id="chart-line-tokens" onsubmit="chartLineTokens(event)" class="row justify-content-start align-items-center mb-3">
+                                        <input id="change-input" type="hidden" name="change-input" value="true">
+                                        <div class="form-group h-100 col-md-12 col-lg-3 mt-3">
+                                            <select id="keyword" name="keyword" id="" class="form-control">
+                                                {{#each @root.keywordGroups}}
+
+                                                {{#each keywords}}
+                                                <option class="text-dark" value="{{../_id}},{{name}}">{{name}}</option>
+                                                {{/each}}
+
+                                                {{/each}}
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-10 col-lg-7 mt-3">
+                                            <div class="row justify-content-between">
+                                                <div class="col-xs-4 col-3 col-md-2 nopad text-center">
+                                                    <label class="image-checkbox">
+                                                        <img class="col-12" height="20" class="img-responsive"
+                                                            src="/img/CNN-Logo.png" />
+                                                        <input class="origin-line" type="checkbox" name="origin[]"
+                                                            value="cnn" checked="checked" />
+
+                                                    </label>
+                                                </div>
+                                                <div class="col-xs-4 col-3 col-md-2 nopad text-center">
+                                                    <label class="image-checkbox">
+                                                        <img height="20" class="col-12" class="img-responsive"
+                                                            src="/img/cidade-verde.webp" />
+                                                        <input class="origin-line" type="checkbox" name="origin[]"
+                                                            value="cidade-verde" checked="checked" />
+
+                                                    </label>
+                                                </div>
+                                                <div class="col-xs-4 col-3 col-md-2 nopad text-center">
+                                                    <label class="image-checkbox">
+                                                        <img height="20" class="col-12" class="img-responsive"
+                                                            src="/img/brasil-de-fato.png" />
+                                                        <input class="origin-line" type="checkbox" name="origin[]"
+                                                            value="brasil-de-fato" checked="checked" />
+
+                                                    </label>
+                                                </div>
+
+                                                <div class="col-xs-4 col-3 col-md-2 nopad text-center">
+                                                    <label class="image-checkbox">
+                                                        <img height="20" class="col-12" class="img-responsive"
+                                                            src="/img/ig.webp" />
+                                                        <input class="origin-line" type="checkbox" name="origin[]"
+                                                            value="ig" checked="checked" />
+
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-2 col-lg-2 mt-3">
+                                            <button class="btn btn-danger">
+                                                
+                                             <i class="bi bi-filter"></i>
+                                             <span class="d-md-none">
+                                                    Filtrar
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <div id="chart-line-container">
+                                        <canvas id="chart-line" class="my-3" style="width: 100%;" height="150"></canvas>
+                                    </div>
+                                    <hr>
+
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -81,8 +162,15 @@
         </div>
     </div>
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+    document.getElementById("charts-btn").click();
+    chartLineTokens();
+    requestTokens();
+    requestNews();
+
+    var chartLine;
+
     async function requestTokens() {
         try {
             const tokenizesContainer = document.getElementById('tokenizes');
@@ -94,7 +182,7 @@
             }
 
             const html = await response.text();
-            
+
             const tempElement = document.createElement('div');
             tempElement.innerHTML = html;
 
@@ -113,33 +201,33 @@
         }
     }
 
-     async function requestNews() {
+    async function requestNews() {
         try {
             const newsContainer = document.getElementById('news-list');
             newsContainer.innerHTML = '<div id="spinner-news" class="spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
-            
+
             var cnn = 'cnn';
             var cidadeVerde = 'cidade-verde';
             var brasilDeFato = 'brasil-de-fato';
 
             const responseCNN = await fetch(`/analytic/by-keywords/noticias/${cnn}/{{ analytic.id }}`);
             putInHTML(responseCNN);
-           
-            const reponseCidadeVerde =  await fetch(`/analytic/by-keywords/noticias/${cidadeVerde}/{{ analytic.id }}`);
+
+            const reponseCidadeVerde = await fetch(`/analytic/by-keywords/noticias/${cidadeVerde}/{{ analytic.id }}`);
             putInHTML(reponseCidadeVerde);
 
-            const reponseBrasilDeFato =  await fetch(`/analytic/by-keywords/noticias/${brasilDeFato}/{{ analytic.id }}`);
+            const reponseBrasilDeFato = await fetch(`/analytic/by-keywords/noticias/${brasilDeFato}/{{ analytic.id }}`);
 
             putInHTML(reponseBrasilDeFato);
 
             document.getElementById('spinner-news').remove();
-          
+
         } catch (error) {
             console.error('Erro na requisição:', error.message);
         }
     }
 
-    async function putInHTML(response){
+    async function putInHTML(response) {
         const newsContainer = document.getElementById('news-list');
         if (!response.ok) {
             throw new Error('Erro na requisição', response.error);
@@ -159,13 +247,108 @@
         }
     }
 
-    requestTokens();
-    requestNews();
 
-    $(document).ready(function() {
-    $('.btn-toggle').on('click', function() {
-      
-        $('.collapse').not($(this).data('target')).collapse('hide');
+
+    $(document).ready(function () {
+        $('.btn-toggle').on('click', function () {
+
+            $('.collapse').not($(this).data('target')).collapse('hide');
+        });
+
+
+
+        $(".image-checkbox").each(function () {
+            if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
+                $(this).addClass('image-checkbox-checked');
+            }
+            else {
+                $(this).removeClass('image-checkbox-checked');
+            }
+        });
+
+        $(".image-checkbox").on("click", function (e) {
+            $(this).toggleClass('image-checkbox-checked');
+            var $checkbox = $(this).find('input[type="checkbox"]');
+
+            if ($checkbox.attr("checked")) {
+                $checkbox.removeAttr("checked");
+            }
+            else {
+                $checkbox.attr("checked", "checked")
+            }
+            document.getElementById('change-input').value = $checkbox.val();
+
+            e.preventDefault();
+        });
+
+        $('#chart-line-tokens').change(function (event) {
+            event.preventDefault();
+
+            chartLineTokens();
+        });
     });
-    });
+
+    
+
+
+    async function chartLineTokens(event = null) {
+        if(event){
+            event.preventDefault();
+        }
+        if (chartLine) {
+            chartLine.destroy();
+        }
+
+        var container = document.getElementById('chart-line-container');
+        container.innerHTML = '<div id="spinner-news" class="spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+
+        var keywords = document.getElementById("keyword").value.split(",");
+        var origin = [];
+        var inputs = document.querySelectorAll('input[name="origin[]"]');
+
+
+        inputs.forEach(function (input) {
+            if (input.getAttribute("checked")) {
+                origin.push(input.value);
+            }
+        });
+
+        const response = await fetch(`/analytic/by-keywords/tokens/grafico`, {
+            method: "POST",
+            body: JSON.stringify({
+                id: keywords[0],
+                origin: origin,
+                keyword: keywords[1]
+            }),
+            headers: { "Content-type": "application/json; charset=UTF-8" }
+        });
+        const json = await response.json();
+
+
+        const data = {
+            labels: json.labels,
+            datasets: [{
+                label: `Noticias contendo "${keywords[1]}"`,
+                data: json.data,
+                borderColor: 'red',
+                backgroundColor: 'red',
+                tension: 0.1
+            }]
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+        };
+
+        container.innerHTML = ' <canvas id="chart-line" class="my-3" style="width: 100%;" height="250"></canvas>';
+
+        chartLine = new Chart(
+            document.getElementById('chart-line'),
+            config
+        );
+    }
+
+
+
 </script>

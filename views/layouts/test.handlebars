@@ -1,0 +1,63 @@
+<style>
+    #inspector {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        background: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        z-index: 9999;
+        max-width: 300px;
+    }
+    
+    .inspected {
+        outline: 2px solid red !important;
+        background-color: #ffccccd3 !important; /* Cor de fundo mais intensa */
+        
+    }
+</style>
+</head>
+<body>
+
+<div id="inspector">
+    <h3>HTML Inspector</h3>
+    <p>Click on an element to inspect</p>
+</div>
+
+<script>
+    document.addEventListener('click', function(event) {
+        var target = event.target;
+
+        var inspector = document.getElementById('inspector');
+        inspector.innerHTML = '<h3>HTML Inspector</h3>';
+        
+        var tagName = target.tagName.toLowerCase();
+        var id = target.id ? 'ID: ' + target.id : '';
+        var classes = target.classList.length > 0 ? 'Classes: ' + Array.from(target.classList).join(', ') : '';
+        
+        var attributes = Array.from(target.attributes)
+            .map(function(attr) {
+                return attr.name + ': ' + attr.value;
+            })
+            .join('<br>');
+        
+        var html = '<p>Type: ' + tagName + '</p>';
+        if (id) html += '<p>' + id + '</p>';
+        if (classes) html += '<p>' + classes + '</p>';
+        if (attributes) html += '<p>' + attributes + '</p>';
+
+        inspector.innerHTML += html;
+
+        event.stopPropagation();
+    });
+
+    document.addEventListener('mouseover', function(event) {
+        var target = event.target;
+        target.classList.add('inspected');
+    });
+
+    document.addEventListener('mouseout', function(event) {
+        var target = event.target;
+        target.classList.remove('inspected');
+    });
+</script>
