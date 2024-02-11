@@ -13,6 +13,84 @@ class UserController {
 
     }
 
+    
+
+    edit(req, res) {
+        try {
+            const userId = req.user.id; 
+            const { name, email, address, cpf, phone, password } = req.body;
+            const erros = [];
+    
+            if (!userId) {
+                erros.push({ texto: "Usuário não autenticado" });
+            }
+    
+            if (!name || typeof name === undefined || name === null) {
+                erros.push({ texto: "Nome inválido" });
+            }
+            if (!email || typeof email === undefined || email === null) {
+                erros.push({ texto: "E-mail inválido" });
+            }
+    
+            if (erros.length > 0) {
+                res.render("user/edit", { erros: erros });
+            } else {
+                User.findById(userId).then((user) => {
+                    if (!user) {
+                        
+                        res.redirect("/");
+                    } else {
+                        user.name = name;
+                        user.email = email;
+                        user.address = address;
+                        user.cpf = cpf;
+                        user.phone = phone;
+    
+                        
+                        if (password) {
+                            bcrypt.genSalt(10, (erro, salt) => {
+                                bcrypt.hash(password, salt, (erro, hash) => {
+                                    if (erro) {
+                                        req.flash("error_msg", "Houve um erro durante a atualização do usuário");
+                                        res.render("user/edit");
+                                    }
+    
+                                    user.password = hash;
+                                    user.save().then(() => {
+                                        req.flash("success_msg", "Usuário atualizado com sucesso!");
+                                        res.redirect("/"); 
+
+                                    }).catch((err) => {
+                                        req.flash("error_msg", "Houve um erro ao atualizar o usuário, tente novamente!");
+                                        console.error(err);
+                                        res.render("user/edit");
+                                    });
+                                });
+                            });
+                        } else {
+                            
+                            user.save().then(() => {
+                                req.flash("success_msg", "Usuário atualizado com sucesso!");
+                                res.redirect("/"); 
+                            }).catch((err) => {
+                                req.flash("error_msg", "Houve um erro ao atualizar o usuário, tente novamente!");
+                                console.error(err);
+                                res.render("user/edit");
+                            });
+                        }
+                    }
+                }).catch((err) => {
+                    req.flash("error_msg", "Houve um erro interno");
+                    console.error(err);
+                    res.redirect("/");
+                });
+            }
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Erro interno do servidor');
+        }
+    }
+
     list(req, res) {
         User.find().sort({date:'desc'}).lean().then((user) => {
              res.render("user/list", {user: user})
@@ -146,7 +224,7 @@ class UserController {
             res.status(500).send('Erro interno do servidor');
         }
     }
-//para aprovar
+
 async approveUser(req, res) {
     const userId = req.params.userId;
 
@@ -186,7 +264,6 @@ async activateUser(req, res) {
     }
 }
 
-    // Método para negar um usuário
     async denyUser(req, res) {
         const userId = req.params.userId;
 
@@ -229,28 +306,26 @@ add(req, res) {
         const { name, email, address, cpf, phone, password } = req.body;
         const errors = [];
 
-        // Verifica se os campos obrigatórios foram fornecidos
         if (!name || !email || !password) {
             errors.push({ texto: "Nome, e-mail e senha são obrigatórios" });
         }
 
-        // Verifica se a senha tem pelo menos 4 caracteres
         if (password.length < 4) {
             errors.push({ texto: "A senha deve ter pelo menos 4 caracteres" });
         }
 
         if (errors.length > 0) {
-            // Se houver erros, renderiza a página de registro com os erros
+
             res.render("/listar-aprovados", { errors });
         } else {
-            // Verifica se já existe um usuário com o mesmo e-mail
+
             User.findOne({ email }).then((user) => {
                 if (user) {
-                    // Se já existir um usuário com o mesmo e-mail, exibe uma mensagem de erro
+                    
                     errors.push({ texto: "Já existe uma conta com este e-mail no nosso sistema" });
                     res.render("/listar-aprovados", { errors });
                 } else {
-                    // Se não existir um usuário com o mesmo e-mail, cria um novo usuário
+                    
                     const newUser = new User({
                         name,
                         email,
@@ -258,20 +333,19 @@ add(req, res) {
                         cpf,
                         phone,
                         address,
-                        isAdmin: true // Define o atributo isAdmin como true para indicar que é um administrador
+                        isAdmin: true 
                     });
 
-                    // Gera o hash da senha e salva o usuário no banco de dados
                     bcrypt.genSalt(10, (err, salt) => {
                         bcrypt.hash(newUser.password, salt, (err, hash) => {
                             if (err) throw err;
                             newUser.password = hash;
                             newUser.save().then(() => {
-                                // Redireciona para a página de login após o registro
+                                
                                 req.flash("success_msg", "Usuário registrado como administrador com sucesso!");
                                 res.redirect("/listar-aprovados");
                             }).catch((err) => {
-                                // Se ocorrer um erro ao salvar o usuário, exibe uma mensagem de erro
+                                
                                 req.flash("error_msg", "Houve um erro ao criar o usuário, tente novamente!");
                                 console.log(err);
                                 res.render("/listar-aprovados");
@@ -280,20 +354,17 @@ add(req, res) {
                     });
                 }
             }).catch((err) => {
-                // Se ocorrer um erro interno, exibe uma mensagem de erro
+                
                 req.flash("error_msg", "Houve um erro interno");
                 res.redirect("/listar-aprovados");
             });
         }
     } catch (error) {
-        // Se ocorrer um erro interno, exibe uma mensagem de erro
+        
         console.error(error);
         res.status(500).send('Erro interno do servidor');
     }
 }
-
-
-    
 
 }
 

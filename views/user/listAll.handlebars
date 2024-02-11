@@ -95,11 +95,9 @@
     document.getElementById('submitAdminForm').addEventListener('click', function (event) {
         event.preventDefault();
 
-        // Obter todos os campos do formulário
         var form = document.getElementById('adminForm');
         var formData = $(form).serializeArray();
 
-        // Verificar se todos os campos estão preenchidos
         var isValid = true;
         formData.forEach(function (field) {
             if (field.value.trim() === '') {
@@ -113,29 +111,27 @@
             return;
         }
 
-        // Se algum campo estiver vazio, exibir uma mensagem de erro e interromper o envio do formulário
+        
         if (!isValid) {
             alert('Por favor, preencha todos os campos do formulário.');
             return;
         }
 
-        // Converter o array de objetos em um objeto JSON
         var jsonData = {};
         formData.forEach(function (field) {
             jsonData[field.name] = field.value;
         });
 
-        // Enviar os dados JSON via fetch
         fetch('/adicionar-adm', {
             method: 'POST',
-            body: JSON.stringify(jsonData), // Converter o objeto JSON em uma string JSON
+            body: JSON.stringify(jsonData), 
             headers: {
                 'Content-Type': 'application/json'
             }
         })
             .then(response => {
                 if (response.ok) {
-                    window.location.href = '/listar-aprovados'; // Por exemplo, redirecionar para a página de administrador
+                    window.location.href = '/listar-aprovados'; 
                 } else {
                     throw new Error('Erro ao adicionar administrador');
                 }
@@ -144,20 +140,21 @@
                 console.error('Erro:', error);
             });
     });
+
+    
   
 </script>
 
-
-
 <div class="container">
 
-    <h2>Controle de Clientes</h2>
-    <div class="search-bar-container">
-        <input type="text" class="search-input" placeholder="Pesquisar...">
-        <div class="search-icon">
-            <i class="bi bi-search"></i>
-        </div>
+    <br><h2>Controle de Usuários</h2>
+   <div class="search-bar-container">
+    <input type="text" class="search-input" id="searchInput" placeholder="Pesquisar...">
+    <div class="search-icon">
+        <i class="bi bi-search"></i>
     </div>
+</div>
+
 
     <div class="container table-responsive"><br>
         <div class="btn">
@@ -204,3 +201,40 @@
         </table>
     </div>
 </div>
+
+<script>
+    const searchInput = document.querySelector('.search-input');
+    const searchIcon = document.querySelector('.search-icon');
+
+    searchIcon.addEventListener('click', function() {
+        searchTable();
+    });
+
+    searchInput.addEventListener('input', function() {
+        searchTable();
+    });
+
+    function searchTable() {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        const table = document.querySelector('.table');
+        const rows = table.querySelectorAll('tbody tr');
+
+        rows.forEach(row => {
+            const cells = row.querySelectorAll('td');
+            let found = false;
+
+            cells.forEach(cell => {
+                if (cell.textContent.toLowerCase().includes(searchTerm)) {
+                    found = true;
+                }
+            });
+
+            if (found) {
+                row.style.display = 'table-row';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+</script>
