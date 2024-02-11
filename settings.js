@@ -80,6 +80,26 @@ Handlebars.registerHelper('displayType', function (type, options) {
     return new Handlebars.SafeString('<p>Tipo desconhecido</p>');
 });
 
+
+Handlebars.registerHelper('capitalize', function (kay, options) {
+    // Substitui todas as ocorrências de "-" por espaços em branco
+    kay = kay.replace(/-/g, " ");
+    return kay.charAt(0).toUpperCase() + kay.slice(1);
+});
+
+Handlebars.registerHelper('sentimentTag', function (key, options) {
+    if (key === "Positivas") {
+        return new Handlebars.SafeString('<small class="bi bi-emoji-heart-eyes "> Positivas </small>');
+    } else if (key === "Negativas") {
+        return new Handlebars.SafeString('<small class="bi bi-emoji-tear " > Negativas </small>');
+    } else if (key === "Neutras") {
+        return new Handlebars.SafeString('<small class="bi bi-emoji-neutral  "> Neutras </small>');
+    } else {
+        return '';
+    }
+});
+
+
 //engine template
 app.engine('.handlebars', hbs.engine);
 app.set('view engine', '.handlebars');
