@@ -6,6 +6,6 @@ router.get('/:id', new AnalyticByKeywordGroupController().index);
 router.get('/tokenizar/:id', new AnalyticByKeywordGroupController().tokenize);
 router.get('/noticias/:type/:id', new AnalyticByKeywordGroupController().getNews)
 router.get('/sentiment_analysis/:id', new AnalyticByKeywordGroupController().sentimentAnalysis)
-
+router.post('/tokens/grafico', new AnalyticByKeywordGroupController().tokensCharts)
 
 module.exports = router;

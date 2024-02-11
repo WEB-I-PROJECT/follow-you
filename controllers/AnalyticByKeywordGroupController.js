@@ -58,7 +58,6 @@ class AnalyticByKewordGroupController {
   getNews(req, res) {
 
     const url = `http://localhost:5001/api/analytic/${req.params.type}/${req.params.id}`;
-    var data = {};
     axios.get(url)
       .then(response => {
         res.render('keyword_group/news', response.data);
@@ -66,8 +65,71 @@ class AnalyticByKewordGroupController {
       .catch(error => {
         return '';
       });
-    }
+  }
 
+  async tokensCharts(req, res) {
+    console.log(req.body)
+    try{
+    const group = await KeywordGroup.findOne({ _id: req.body.id })
+
+      News.aggregate([
+        {
+          $match: {
+            keywordGroup: group._id, // Filtro para documentos com keywordGroup específico
+            origin: {$in : req.body.origin },
+            $or: [
+              { content: { $regex: '.*'+ req.body.keyword + '.*' } },
+              { title: { $regex: '.*'+ req.body.keyword  + '.*'  } }
+            ]
+          }
+        },
+        {
+          $group: {
+            _id: {
+              year: { $year: "$date" },
+              month: { $month: "$date" },
+              day: { $dayOfMonth: "$date" }
+            },
+            count: { $sum: 1 } // Conta os logs para cada grupo de data,
+          }
+        },
+        {
+          $sort: {
+            "_id.year": 1,
+            "_id.month": 1,
+            "_id.day": 1
+          }
+        }
+      ]).then((data) => {
+        const countArray = [];
+        const dateArray = [];
+  
+        data.forEach(result => {
+          const count = result.count;
+          const year = result._id.year;
+          const month = result._id.month;
+          const day = result._id.day;
+  
+          const formattedDate = `${day}-${month}-${year}`;
+  
+          countArray.push(count);
+          dateArray.push(formattedDate);
+        });
+  
+        res.json({
+          labels: dateArray,
+          data: countArray
+        })
+      });
+    } 
+
+    catch(e){
+      res.status(404).json({
+        error: 'KeywordGroup not found!'
+      });
+    }
+    
+  }
  
 
 
