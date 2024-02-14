@@ -1,5 +1,6 @@
 const Analytic = require('../models/Analytic');
 const Category = require('../models/Category');
+const tokenizeNews = require('../services/news');
 
 class AnalyticByCategoryController {
 
@@ -50,7 +51,10 @@ class AnalyticByCategoryController {
         }
     }
 
-
+    async tokenize(req, res) {
+        console.log(req.params.id);
+        return res.render('category_group/tokenize', await tokenizeNews(req.params.id));
+    }
 }
 
 module.exports = AnalyticByCategoryController
