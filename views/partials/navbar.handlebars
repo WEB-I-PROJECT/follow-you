@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #C4170C;">
   <div class="container-fluid">
-<a class="navbar-brand" href="#" style="color: #ffffff;">HUBNews</a>
-       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#" style="color: #ffffff;">HUBNews</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -37,74 +38,85 @@
       </ul>
 
       {{#if user}}
-      {{#if user.isAdmin}}
 
       <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-                        <i class="bi bi-person"></i> {{user.name}}
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+              aria-expanded="true">
+              {{#if user.profilePicture}}
+              <img src="{{user.profilePicture}}" alt="Imagem de Perfil" style="width: 25px; height: 25px"
+                class="rounded-circle" />
+              {{else}}
+              <img src="/user/img/user.png" alt="Imagem Padrão de Perfil" style="width: 25px; height: 25px"
+                class="rounded-circle" />
+              {{/if}}
+              {{user.name}}
 
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><a class="dropdown-item" href="/admin">Painel</a></li>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDarkDropdownMenuLink">
+              {{#if user.isAdmin}}
+              <li><a class="dropdown-item" href="/admin">Painel</a></li>
+              {{/if}}
               <li>
-                    <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      Editar
-                    </button>
-                  </li>
-            <li><a class="dropdown-item" href="/logout">Sair</a></li>
-            <li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Atualizar Dados</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Editar
+                </button>
+              </li>
+              <li><a class="dropdown-item" href="/logout">Sair</a></li>
+              <li>
+            </ul>
+          </li>
+        </ul>
       </div>
-      <div class="modal-body">
-        <form action="/edit" method="post">
-          <!-- Campos do formulário preenchidos com os dados atuais do usuário -->
-          <div class="mb-3">
-            <label for="name" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="name" name="name" value="{{user.name}}">
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Atualizar Dados</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="/edit" method="post" enctype="multipart/form-data">
+                <!-- Campos do formulário preenchidos com os dados atuais do usuário -->
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="name" name="name" value="{{user.name}}">
+                </div>
+                <div class="mb-3">
+                  <label for="profile_picture" class="form-label">Foto de Perfil</label>
+                  <input type="file" class="form-control" id="profile_picture" name="profile_picture">
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" value="{{user.email}}">
+                </div>
+                <div class="mb-3">
+                  <label for="address" class="form-label">Endereço</label>
+                  <input type="text" class="form-control" id="address" name="address" value="{{user.address}}">
+                </div>
+                <div class="mb-3">
+                  <label for="cpf" class="form-label">CPF</label>
+                  <input type="text" class="form-control" id="cpf" name="cpf" value="{{user.cpf}}">
+                </div>
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Telefone</label>
+                  <input type="text" class="form-control" id="phone" name="phone" value="{{user.phone}}">
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Nova Senha</label>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Nova senha">
+                </div>
+                <button type="submit" class="btn btn-primary">Atualizar</button>
+              </form>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" value="{{user.email}}">
-          </div>
-          <div class="mb-3">
-            <label for="address" class="form-label">Endereço</label>
-            <input type="text" class="form-control" id="address" name="address" value="{{user.address}}">
-          </div>
-          <div class="mb-3">
-            <label for="cpf" class="form-label">CPF</label>
-            <input type="text" class="form-control" id="cpf" name="cpf" value="{{user.cpf}}">
-          </div>
-          <div class="mb-3">
-            <label for="phone" class="form-label">Telefone</label>
-            <input type="text" class="form-control" id="phone" name="phone" value="{{user.phone}}">
-          </div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Nova Senha</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Nova senha">
-          </div>
-          <button type="submit" class="btn btn-primary">Atualizar</button>
-        </form>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
 
 
-      {{else}}
-      
 
-      {{/if}}
+
       {{else}}
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
@@ -118,9 +130,9 @@
     </div>
   </div>
 </nav>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+  integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+  integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>

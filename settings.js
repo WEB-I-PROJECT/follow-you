@@ -10,6 +10,9 @@ const {marked} = require('marked');
 const user = require('./routes/user');
 const passport = require("passport")
 require('./config/auth')(passport);
+const multer = require('multer');
+
+
 
 //session
 app.use(session({
@@ -98,6 +101,20 @@ Handlebars.registerHelper('sentimentTag', function (key, options) {
         return '';
     }
 });
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'public/uploads/');
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+
+const upload = multer({ storage: storage }).single('profile_picture');
+
+
+
 
 
 //engine template
