@@ -2,9 +2,13 @@ const User = require('../models/User');
 const bcrypt = require("bcryptjs");
 const passport = require('passport');
 const express = require('express');
+const fs = require('fs');
+const path = require('path');
 
-
-
+const targetDir = path.join(__dirname, '../public/uploads/');
+if (!fs.existsSync(targetDir)) {
+    fs.mkdirSync(targetDir, { recursive: true });
+}
 
 class UserController {
 
@@ -13,13 +17,19 @@ class UserController {
 
     }
 
-    
+    about(req, res) {
+        res.render("user/about")
+
+    }
+ 
 
     edit(req, res) {
         try {
             const userId = req.user.id; 
             const { name, email, address, cpf, phone, password } = req.body;
             const erros = [];
+
+            console.log(req.body);
     
             if (!userId) {
                 erros.push({ texto: "Usuário não autenticado" });
@@ -33,12 +43,11 @@ class UserController {
             }
     
             if (erros.length > 0) {
-                res.render("user/edit", { erros: erros });
+                res.render("user/index", { erros: erros });
             } else {
                 User.findById(userId).then((user) => {
                     if (!user) {
-                        
-                        res.redirect("/");
+                        res.redirect("user/index");
                     } else {
                         user.name = name;
                         user.email = email;
@@ -46,43 +55,45 @@ class UserController {
                         user.cpf = cpf;
                         user.phone = phone;
     
-                        
-                        if (password) {
-                            bcrypt.genSalt(10, (erro, salt) => {
-                                bcrypt.hash(password, salt, (erro, hash) => {
-                                    if (erro) {
-                                        req.flash("error_msg", "Houve um erro durante a atualização do usuário");
-                                        res.render("user/edit");
-                                    }
-    
-                                    user.password = hash;
-                                    user.save().then(() => {
-                                        req.flash("success_msg", "Usuário atualizado com sucesso!");
-                                        res.redirect("/"); 
+                        // Verifica se um arquivo de imagem foi enviado
+                        console.log("File uploaded:", req.file);
 
-                                    }).catch((err) => {
-                                        req.flash("error_msg", "Houve um erro ao atualizar o usuário, tente novamente!");
-                                        console.error(err);
-                                        res.render("user/edit");
-                                    });
+                        if (req.file) {
+                            const tempPath = req.file.path; // Define o caminho temporário do arquivo
+                            const targetDir = path.join(__dirname, '../public/uploads/');
+                            const targetPath = path.join(targetDir, req.file.originalname); // Define o caminho onde a imagem será salva
+                            fs.mkdirSync(targetDir, { recursive: true }); // Verifica se o diretório de destino existe; se não, cria o diretório
+                            fs.rename(tempPath, targetPath, (err) => { // Move o arquivo temporário para o destino final
+                                if (err) {
+                                    console.error(err);
+                                    req.flash("error_msg", "Erro ao fazer upload da imagem");
+                                    return res.redirect("/");
+                                }
+                                user.profilePicture = '/uploads/' + req.file.originalname; // Salva o caminho da imagem no usuário
+                                user.save().then(() => {
+                                    req.flash("success_msg", "Usuário atualizado com sucesso!");
+                                    res.redirect("/"); 
+                                }).catch((err) => {
+                                    req.flash("error_msg", "Houve um erro ao atualizar o usuário, tente novamente!");
+                                    console.error(err);
+                                    res.render("/");
                                 });
                             });
                         } else {
-                            
                             user.save().then(() => {
                                 req.flash("success_msg", "Usuário atualizado com sucesso!");
                                 res.redirect("/"); 
                             }).catch((err) => {
                                 req.flash("error_msg", "Houve um erro ao atualizar o usuário, tente novamente!");
                                 console.error(err);
-                                res.render("user/edit");
+                                res.render("/");
                             });
                         }
                     }
                 }).catch((err) => {
                     req.flash("error_msg", "Houve um erro interno");
                     console.error(err);
-                    res.redirect("/");
+                    res.redirect("user/index");
                 });
             }
         } catch (error) {

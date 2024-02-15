@@ -2014,8 +2014,8 @@ progress {
 }
 
 .table-danger {
-  --bs-table-color: #000;
-  --bs-table-bg: #f8d7da;
+  --bs-table-color: #fff;
+  --bs-table-bg: #ec0e0e ;
   --bs-table-border-color: #c6acae;
   --bs-table-striped-bg: #eccccf;
   --bs-table-striped-color: #000;
