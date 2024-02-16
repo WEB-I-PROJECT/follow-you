@@ -230,27 +230,37 @@ class AnalyticByKewordGroupController {
     
          
           if (groupedSentimentResults[keywordGroup.name].length <15) {
-            // Perform sentiment analysis
+          
             const result = sentiment(newsItem.content);
     
-            // Extract positive and negative words efficiently
-            const positiveWords = result.positive.join(', ');
-            const negativeWords = result.negative.join(', ');
+            const uniquePositiveWords = new Set(result.positive);
+            const uniqueNegativeWords = new Set(result.negative);
+
+            const positiveWordsArray = Array.from(uniquePositiveWords);
+            const negativeWordsArray = Array.from(uniqueNegativeWords);
+
+            const totalPositiveWords = positiveWordsArray.length;
+            const totalNegativeWords = negativeWordsArray.length;
+
+            //console.log(negativeWordsArray)
+            //console.log(positiveWordsArray)            
             
             groupedSentimentResults[keywordGroup.name].push({
               image,
               title,
               origin,
               tags,
-              positiveWords,
-              negativeWords,
+              totalPositiveWords,
+              positiveWords: positiveWordsArray.join(', '), // Join with comma and space
+              totalNegativeWords,
+              negativeWords: negativeWordsArray.join(', '),
               date 
             });
           }
         }
     
     
-        console.log(groupedSentimentResults);
+       console.log(groupedSentimentResults);
         return res.render('keyword_group/news_sentiment', {
           newsSentimentGrup: groupedSentimentResults
         });

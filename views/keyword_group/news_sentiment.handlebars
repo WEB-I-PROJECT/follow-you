@@ -34,7 +34,7 @@
 
             <div class="card-footer bg-footer-news-sentiment">
               <button
-                class="col-md-12 col-12 btn-view-more bi bi-eye-fill border border-gray rounded bg-group-sentiment-news mb-1 mt-1"> Análise
+                class="col-md-12 col-12 btn-view-more  border border-gray rounded bg-group-sentiment-news mb-1 mt-1 bi bi-eye-fill" > Análise
                 de sentimentos</button>
 
               <div class="card-content-news">
@@ -42,7 +42,7 @@
                   <p
                     class="col-md-12 btn-view-more border border-gray rounded bg-news-sentiment-positive p-1">
                     <strong class="px-2  bi bi-heart-fill text-font-news">
-                      Palavras positivas</strong>
+                      Palavras positivas - {{totalPositiveWords}} </strong>
                   </p>
                   <p class="p-1 mx-2">{{verificWords positiveWords}}</p>
                 </div>
@@ -50,7 +50,7 @@
                   <p
                     class="col-md-12 btn-view-more border border-gray rounded bg-news-sentiment-negative p-1">
                     <strong class=" px-2 bi bi-heartbreak-fill text-font-news">
-                      Palavras Negativas</strong>
+                      Palavras Negativas - {{totalNegativeWords}} </strong>
                   </p>
                   <p class="p-1 mx-2">{{verificWords negativeWords}}</p>
                 </div>
@@ -66,3 +66,5 @@
   </div>
   {{/each}}
 </div>
+
+
