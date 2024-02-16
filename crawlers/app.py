@@ -1,4 +1,3 @@
-from typing import Self
 from flask import Flask, jsonify
 from category.analyticCategory import analyticCategory
 from crontab import CronTab

@@ -16,18 +16,78 @@
 
 .text-group {
     color:#cf1326;
-    font-size: 30px !important;
+    font-size: 26px !important;
+}
+
+.text-news-title{
+    color:#cf1326;
+    font-size: 15px !important;
+
+}
+
+.text-news-tags{
+    color:#c50c1e;
+    font-size: 15px !important;
+
+}
+.text-font-news{
+    font-size: 15px !important;
 }
 
 .bg-group-sentiment-news{
-    background-color: #cf1326;
+    background-color:#ea071d;
     color:#ffffff;
+    font-size: 20px !important;
+   text-shadow: #b80e1f;
+}
+
+.bg-news-sentiment-positive{
+    background-color:#00805ecc;
+    color:#ffffff;
+    font-size: 20px !important;
     
+}
+
+.bg-news-sentiment-negative{
+    background-color:#b11810d0;
+    color:#ffffff;
+    font-size: 20px !important;
+    
+}
+
+.bg-footer-news-sentiment{
+    background-color:#f9f6f6;
+}
+
+
+.border-gray{
+    border-color:#e4e7ea ;
 
 }
 
+
+
+   
+.card-img-right {
+    float: right;
+    width: 40%; 
+    margin-left: 10px; 
+}
+
+
+.card-content-news {
+    display: none;
+} 
+
+.card-title, .card-text {
+    word-break: break-word;
+    overflow-wrap: break-word; 
+}
+
+
+
 .text-kay-name{
-    color: #a31f1a;
+    color: #ea071d;
     font-size: 15px !important; 
 }
 

@@ -38,7 +38,7 @@ mongoose.Promise = global.Promise;
 
 
 //no de Vanúbia a porta roda no 27018
-mongoose.connect("mongodb://127.0.0.1:27017/hubnews").then(() =>{
+mongoose.connect("mongodb://127.0.0.1:27018/hubnews").then(() =>{
     console.log("Banco de dados conectado!");
 }).catch((error) =>{
     console.log("Erro ao conectar no banco de dados: " + error)
@@ -112,6 +112,41 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage }).single('profile_picture');
+
+
+
+
+
+Handlebars.registerHelper('verificTags', function(tags, options) {
+    if (Array.isArray(tags) && tags.length === 0) {
+        return new Handlebars.SafeString('Sem tags...');
+    } else {
+        var capitalizedTags = tags.map(function(tag) {
+            return tag.charAt(0).toUpperCase() + tag.slice(1);
+        });
+        return new Handlebars.SafeString(capitalizedTags.join(', ')); 
+    }
+});
+
+Handlebars.registerHelper('verificWords', function(words, options) {
+    if (typeof words === 'string') {
+        var wordArray = words.split(',');
+        var capitalizedWords = wordArray.map(function(word) {
+            return word.trim().charAt(0).toUpperCase() + word.trim().slice(1);
+        });
+        return new Handlebars.SafeString(capitalizedWords.join(', '));
+    } else if (Array.isArray(words)) {
+        var capitalizedWords = words.map(function(word) {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        });
+        return new Handlebars.SafeString(capitalizedWords.join(', '));
+    } else {
+        return new Handlebars.SafeString('Sem palavras');
+    }
+});
+
+
+
 
 
 

@@ -22,6 +22,8 @@ class AnalyticByKewordGroupController {
 
       const keywordGroups = await KeywordGroup.find({ analytic: analytic });
 
+      
+
       const promises = keywordGroups.map(async (group) => {
         group.keywords = await Promise.all(
           group.keywords.map(async (keyword) => {
@@ -133,11 +135,10 @@ class AnalyticByKewordGroupController {
  
 
 
-    
-
     async sentimentAnalysis(req, res) {
         try {
             const groupId = req.params.id;
+            console.log("grup id recebido na rquisição"+groupId)
             const keywordGroup = await KeywordGroup.findOne({ _id: groupId });
     
             if (!keywordGroup) {
@@ -155,7 +156,7 @@ class AnalyticByKewordGroupController {
                 const { origin, content, keyword } = newsItem;
                 const result = sentiment(content);
                
-                console.log(result);
+                //console.log(result);
                 
     
                 if (!sentimentAnalysisResults[origin]) {
@@ -201,13 +202,66 @@ class AnalyticByKewordGroupController {
             res.status(500).json({ error: 'Erro ao processar o groupId.' });
         }
     }
-    
 
   
+    async newsSentiment(req, res) {
+      try {
+        const analyticId = req.params.id;
     
+        // Retrieve news analytics and populate keyword groups efficiently
+        const news_analitic = await News.find({ analytic: analyticId })
+          .populate('keywordGroup', 'name')
+          .sort({ date: -1 }); // Classifique por data em ordem decrescente
+    
+        if (!news_analitic || news_analitic.length === 0) {
+          return res.status(404).json({ error: 'Análise não encontrada.' });
+        }
+    
+       
+        const groupedSentimentResults = {};
+    
+        for (const newsItem of news_analitic) {
+          const { title, image, origin, tags, keywordGroup, date } = newsItem;
+          
+          // Group results by keyword group name
+          if (!groupedSentimentResults[keywordGroup.name]) {
+            groupedSentimentResults[keywordGroup.name] = [];
+          }
+    
+         
+          if (groupedSentimentResults[keywordGroup.name].length <15) {
+            // Perform sentiment analysis
+            const result = sentiment(newsItem.content);
+    
+            // Extract positive and negative words efficiently
+            const positiveWords = result.positive.join(', ');
+            const negativeWords = result.negative.join(', ');
+            
+            groupedSentimentResults[keywordGroup.name].push({
+              image,
+              title,
+              origin,
+              tags,
+              positiveWords,
+              negativeWords,
+              date 
+            });
+          }
+        }
+    
+    
+        console.log(groupedSentimentResults);
+        return res.render('keyword_group/news_sentiment', {
+          newsSentimentGrup: groupedSentimentResults
+        });
+      } catch (error) {
+        console.error('Ocorreu um erro ao buscar as noticias ', error);
+        res.status(500).json({ error: 'Erro ao buscar as noticias' });
+      }
+    }
     
   
-
+    
 
 }
 
