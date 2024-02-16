@@ -12078,4 +12078,15 @@ textarea.form-control-lg {
   }
 }
 
+#scrollTopButton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  box-shadow: var(--bs-box-shadow);
+  border-radius: 10px !important;
+  
+}
+
 /*# sourceMappingURL=bootstrap.css.map */
