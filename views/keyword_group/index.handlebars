@@ -550,12 +550,29 @@ $(document).ready(function() {
                     
                     sentimentContainer.appendChild(sentimentElement);
                     
-                    $(document).ready(function(){
+                        $(document).ready(function(){
 
-                    $('.btn-view-more').click(function(){
-                        $(this).closest('.card').find('.card-content-news').first().slideToggle();
-                    });
-                });
+                            
+                            
+
+                            $('.btn-view-more').click(function(){
+                                $(this).closest('.card').find('.card-content-news').first().slideToggle();
+
+                                    /*
+                                var estadoBotao = "fechado";
+                                
+                                // Alternar classes e texto do botão
+                                if (estadoBotao === "fechado" || !$(this).hasClass("bi bi-eye-fill")) {
+                                    $(this).removeClass("bi bi-eye-fill").addClass("bi bi-eye-slash-fill");
+                                    $(this).text(" Ocultar análise");
+                                    estadoBotao = "aberto";
+                                } 
+                                */
+
+                            });
+
+                        });
+                
                 }
             } else {
                 console.error('Tag com id "news-sentiment-template" não encontrada no HTML recebido');
@@ -573,28 +590,6 @@ $(document).ready(function() {
     }
   });
 });
-
-
-
-
-/*
-
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('sentiment-btn').addEventListener('click', function() {
-        const sentimentDiv = document.getElementById('sentiment-div');
-        const isExpanded = sentimentDiv.classList.contains('show');
-        if (!isExpanded) {
-            $('#sentiment-div').collapse('show');
-
-            const idAnalytic = $(this).data('id');
-            console.log(idAnalytic);
-
-            // Use Promise-based approach with jQuery.ajax()
-            
-        }
-    });
-});
-*/
 
 
 </script>
