@@ -5,6 +5,9 @@ const analytic = require('./routes/analytic');
 const analyticByCategory = require('./routes/analyticByCategory');
 const analyticByKeywordGroup = require('./routes/analyticByKeywordGroup');
 
+const analyticApi = require('./routes/api/analytic');
+const analyticByKeywordGroupApi = require('./routes/api/analyticByKeywordGroup');
+
 const PORT = 8001;
 
 app.use('/', user)
@@ -13,6 +16,10 @@ app.use('/categoria', category);
 app.use('/analytic', analytic);
 app.use('/analytic/by-category/', analyticByCategory);
 app.use('/analytic/by-keywords/', analyticByKeywordGroup);
+
+// API ROUTES
+app.use('/api/analytic/by-keywords/', analyticByKeywordGroupApi)
+app.use('/api/analytic/', analyticApi)
 
 app.listen(PORT, () => {
     console.log('Aplicação rodando no endereço: http://localhost:%s/', PORT)

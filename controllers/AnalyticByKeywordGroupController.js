@@ -3,11 +3,14 @@ const KeywordGroup = require('../models/KeywordGroup');
 const News = require('../models/News');
 const tokenizeNews = require('../services/news');
 const axios = require('axios');
-
-
 const sentiment = require('sentiment-ptbr');
 
-// Instanciar o analisador de sentimento para o português
+
+const types = {
+  'cnn': 'CNN',
+  'cidade-verde': 'Cidade Verde',
+  'brasil-de-fato': 'Brasil de Fato'
+};
 
 
 class AnalyticByKewordGroupController {
@@ -57,31 +60,63 @@ class AnalyticByKewordGroupController {
     return res.render('keyword_group/tokenize', await tokenizeNews(req.params.id));
   }
 
-  getNews(req, res) {
+  async tokenizeApi(req, res) {
+    const analytic = await Analytic.findOne({
+      _id: req.params.id
+    })
 
-    const url = `http://localhost:5001/api/analytic/${req.params.type}/${req.params.id}`;
-    axios.get(url)
-      .then(response => {
-        res.render('keyword_group/news', response.data);
-      })
-      .catch(error => {
-        return '';
-      });
+    if(analytic){
+      const data = await tokenizeNews(req.params.id)
+      console.log(data);
+      return res.status(200).json({...data});
+
+    }
+
+    return res.status(404).json({
+      error: 'Analytic id not found!'
+    });
   }
 
+  async getNewsTemplate(req, res){
+    const json = await getNews(req, res);
+    if(json){
+     return  res.render('keyword_group/news', {...json, type: types[req.params.type]})
+    }
+    return res.status(404).json(
+      {
+        error: 'News not found'
+      }
+    )
+  }
+
+  async getNewsApi(req, res){
+    const json =  await getNews(req, res);
+    console.log(json);
+    if(json){
+     return  res.status(200).json({...json, type: types[req.params.type]})
+    }
+    return res.status(404).json(
+      {
+        error: 'News not found'
+      }
+    )
+  }
+
+ 
+
   async tokensCharts(req, res) {
-    // console.log(req.body)
+    console.log(req.query)
     try{
-    const group = await KeywordGroup.findOne({ _id: req.body.id })
+    const group = await KeywordGroup.findOne({ _id: req.query.id })
 
       News.aggregate([
         {
           $match: {
             keywordGroup: group._id, // Filtro para documentos com keywordGroup específico
-            origin: {$in : req.body.origin },
+            origin: {$in : req.query.origin.split(',') },
             $or: [
-              { content: { $regex: '.*'+ req.body.keyword + '.*' } },
-              { title: { $regex: '.*'+ req.body.keyword  + '.*'  } }
+              { content: { $regex: '.*'+ req.query.keyword + '.*' } },
+              { title: { $regex: '.*'+ req.query.keyword  + '.*'  } }
             ]
           }
         },
@@ -138,7 +173,6 @@ class AnalyticByKewordGroupController {
     async sentimentAnalysis(req, res) {
         try {
             const groupId = req.params.id;
-            console.log("grup id recebido na rquisição"+groupId)
             const keywordGroup = await KeywordGroup.findOne({ _id: groupId });
     
             if (!keywordGroup) {
@@ -146,21 +180,16 @@ class AnalyticByKewordGroupController {
             }
     
             const news = await News.find({ keywordGroup: groupId });
-    
             
             const sentimentAnalysisResults = {};
     
-            // Analisar o sentimento do conteúdo de cada notícia
-             //fazer uma função com isso depois, para ser usada em outra função
             for (const newsItem of news) {
                 const { origin, content, keyword } = newsItem;
                 const result = sentiment(content);
                
-                //console.log(result);
-                
-    
                 if (!sentimentAnalysisResults[origin]) {
-                    sentimentAnalysisResults[origin] = {};
+                    sentimentAnalysisResults[origin] = {
+                    };
                 }
     
                 if (!sentimentAnalysisResults[origin][keyword]) {
@@ -182,13 +211,11 @@ class AnalyticByKewordGroupController {
                     sentimentLabel = 'Neutras';
                 }
     
-                // Incrementar o contador de acordo com o sentimento
                 sentimentAnalysisResults[origin][keyword][sentimentLabel]++;
                 
                 
             }
     
-            // Retornar os resultados
             
             console.log(sentimentAnalysisResults)
             
@@ -273,6 +300,19 @@ class AnalyticByKewordGroupController {
   
     
 
+}
+
+
+async function getNews(req, res) {
+
+  const url = `http://localhost:5001/api/analytic/${req.params.type}/${req.params.id}`;
+  const response = await fetch(url);
+  if(response.status == 200){
+    return await response.json();
+  }
+
+  return null;
+  
 }
 
 module.exports = AnalyticByKewordGroupController

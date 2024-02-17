@@ -59,10 +59,6 @@ def newsCNN(id):
 def newsCidadeVerde(id):
     return jsonify(CidadeVerdeCrawler(id).get_news_partial())
 
-@app.route('/api/analytic/ig/<string:id>', methods=['GET'])
-def newsIG(id):
-    return jsonify(IGrawler(id).get_news_partial())
-
 @app.route('/api/analytic/brasil-de-fato/<string:id>', methods=['GET'])
 def newsBrasilDeFato(id):
     return jsonify(BrasildeFatoCrawler(id).get_news_partial())

@@ -7,9 +7,9 @@
         </div>
     </div>
     <div class="d-flex align-items-center">
-        <button class="btn btn-outline-danger">
-            <i class="fa fa-trash" aria-hidden="true"></i> Deletar Analytic
-        </button>
+        <a href="/analytic/remover/{{analytic._id}}" class="btn btn-outline-danger">
+            <i class="fa fa-trash" aria-hidden="true"></i> Deletar
+        </a>
     </div>
 </div>
 <div class="mx-4 p-0">
@@ -400,15 +400,8 @@
             }
         });
 
-        const response = await fetch(`/analytic/by-keywords/tokens/grafico`, {
-            method: "POST",
-            body: JSON.stringify({
-                id: keywords[0],
-                origin: origin,
-                keyword: keywords[1]
-            }),
-            headers: { "Content-type": "application/json; charset=UTF-8" }
-        });
+       const response = await fetch(`/analytic/by-keywords/tokens/grafico?id=${keywords[0]}&origin=${origin}&keyword=${keywords[1]}`);
+
         const json = await response.json();
 
 

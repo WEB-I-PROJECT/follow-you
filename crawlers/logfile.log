@@ -3264,3 +3264,732 @@ https://ultimosegundo.ig.com.br/politica/2018-05-19/bolsonaro-campanha-ibroxavel
 'NoneType' object has no attribute 'get'
 None 
 
+Traceback (most recent call last):
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/cron.py", line 2, in <module>
+    from news.cnn import CNNCrawler
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/news/cnn.py", line 2, in <module>
+    from mongo.models import Analytic
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/mongo/models.py", line 2, in <module>
+    from bson import ObjectId
+ModuleNotFoundError: No module named 'bson'
+https://www.cnnbrasil.com.br/?s=PT
+https://www.cnnbrasil.com.br/politica/pt-apresenta-acao-para-derrubar-privatizacao-da-sabesp/
+14/12/2023 09:44
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-quer-janja-como-cabo-eleitoral-em-2024-dizem-fontes/
+03/10/2023 15:17
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-intensifica-campanha-publica-por-marco-aurelio-carvalho-na-justica/
+15/12/2023 08:51 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-lanca-tv-partidaria-via-satelite-recurso-nao-precisa-de-concessao/
+10/08/2023 17:10
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/no-pt-cantoria-ao-telefone-e-frases-como-a-espera-acabou-e-a-casa-caiu/
+08/02/2024 13:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-avalia-impacto-reduzido-da-operacao-contra-bolsonaro-nas-eleicoes/
+08/02/2024 12:54
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-planeja-barrar-privatizacao-da-sabesp-na-justica/
+06/12/2023 21:02
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/alckmin-maluf-marta-relembre-movimentos-politicos-de-lula-com-criticos-do-pt/
+12/01/2024 04:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/partido-dos-trabalhadores-tem-encontro-com-oea-para-discutir-eleicoes/
+27/09/2022 12:32
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/odair-cunha-vai-assumir-a-lideranca-do-pt-na-camara/
+06/02/2024 22:24
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/centrao-quer-dar-alvara-para-apostas-mas-ala-do-pt-resiste/
+06/09/2023 17:02
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-adota-cautela-sobre-crescimento-de-bolsonaro/
+12/08/2022 21:19
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-quer-evitar-pauta-de-costumes-nas-eleicoes-de-2024/
+04/02/2024 04:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/marta-suplicy-deixa-decisao-sobre-refiliacao-ao-pt-para-2024/
+18/12/2023 12:54
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/centrao-derrota-pt-e-emplaca-diretor-financeiro-de-itaipu/
+06/04/2023 06:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/pt-tenta-barrar-decreto-que-facilita-privatizacao-da-sabesp/
+25/08/2023 13:56
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/a-articulacao-do-pt-para-negociar-a-governabilidade/
+04/11/2022 09:14 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-tem-condicionado-apoio-a-boulos-em-sao-paulo-a-candidato-a-vice-prefeito/
+04/04/2023 06:55 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-resiste-a-meirelles-como-referencia-economica/
+21/09/2022 20:58
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-prepara-emenda-para-marco-fiscal/
+18/04/2023 17:53
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-planeja-megaevento-para-filiacao-de-marta-em-fevereiro/
+10/01/2024 12:55 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-quer-aproveitar-cpmi-para-combater-discurso-bolsonarista/
+25/05/2023 20:45
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/ala-do-pt-tenta-impugnar-filiacao-de-marta-suplicy/
+18/01/2024 12:10
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/pt-aciona-tribunal-de-contas-contra-privatizacao-da-sabesp/
+11/04/2023 15:08
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-avalia-nomes-para-substituir-gleisi-caso-petista-vire-ministra-dizem-fontes/
+05/12/2023 13:38
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/ww-especial-presidenciaveis-lula-pt/
+13/09/2022 08:34 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-apresenta-projeto-para-anular-impeachment-de-dilma/
+28/08/2023 15:54
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-deve-apresentar-rui-falcao-para-ccj-da-camara/
+01/02/2023 10:32 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/jose-dirceu-em-podcast-do-pt-direita-esta-ganhando-disputa-politico-cultural/
+15/01/2024 19:34
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-cede-e-vice-presidencia-do-senado-continuara-com-mdb/
+31/01/2023 18:13 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/?s=Lula
+https://www.cnnbrasil.com.br/politica/lula-propoe-canal-direto-de-dialogo-com-stf/
+27/11/2023 13:54 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/waack-centrao-como-fenomeno-politico-antecede-lula/
+25/07/2023 22:29 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/sob-lula-sindicatos-retomam-protagonismo-no-governo-federal/
+01/04/2023 12:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/entenda-a-disputa-pelo-ministerio-do-turismo-no-governo-lula/
+14/06/2023 04:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-demite-comandante-do-exercito/
+21/01/2023 14:50
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-tenta-emplacar-petista-no-comando-do-sebrae/
+07/03/2023 07:43
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-tera-encontro-reservado-com-maduro-em-belem/
+07/08/2023 15:40
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/alcolumbre-procura-lira-e-defende-entendimento-com-lula/
+05/06/2023 14:23
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-volta-a-receber-indicados-para-a-pgr/
+07/11/2023 16:14 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-oferece-a-petro-ajuda-para-combater-incendios-na-colombia/
+29/01/2024 19:09
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-decidiu-por-vetar-o-marco-temporal-respeitando-a-constituicao-diz-padilha/
+20/10/2023 17:52
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/esportes/lula-sobre-corinthians-ta-caindo-aos-pedacos/
+13/06/2023 13:08
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-nomeia-quatro-novos-conselheiros-para-o-cade/
+27/12/2023 09:46
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-recebera-diagnostico-sobre-articulacao-politica-apos-africa/
+13/02/2024 12:39 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-nomeia-lewandowski-para-assumir-ministerio-da-justica/
+22/01/2024 17:46
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/nacional/pesquisa-aponta-atuacao-de-lula-aprovada-por-60/
+16/08/2023 18:29 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/cotados-para-a-pgr-buscam-interlocucao-com-lula/
+14/08/2023 11:45 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-desembarca-em-madri-apos-viagem-a-portugal/
+25/04/2023 09:15
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/bolsonaro-quer-tolerancia-zero-para-elogios-publicos-a-lula/
+23/01/2024 12:18
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/a-estabilidade-no-futuro-governo-lula/
+07/11/2022 09:14 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/campanha-de-lula-aciona-tse-para-tirar-do-ar-site-lula-flix/
+14/09/2022 12:15
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pf-vai-investigar-ameaca-a-lula-nas-redes-sociais/
+26/12/2023 18:43
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/waack-lula-quer-despolitizar-as-forcas-armadas/
+28/11/2022 22:12 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/waack-a-lingua-de-lula-esta-bastante-solta/
+29/08/2023 22:09
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/a-incerteza-economica-no-governo-lula/
+11/11/2022 08:40 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/lula-saciona-programa-desenrola-sem-vetos/
+03/10/2023 17:55
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/aliados-de-lula-falam-em-boa-quimica-entre-lula-e-zelensky/
+21/09/2023 18:30
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/nacional/lula-confirma-indicacao-de-advogado-pessoal-para-stf/
+01/06/2023 18:12
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/nacional/a-agenda-de-lula-na-china/
+11/04/2023 18:41 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-planeja-maratona-de-inauguracoes-ate-abril/
+06/02/2023 08:21 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/?s=Dilma
+https://www.cnnbrasil.com.br/politica/pacheco-e-lira-sao-contra-anulacao-de-impeachment-de-dilma-dizem-aliados/
+29/08/2023 16:50
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/encontro-de-dilma-rousseff-com-putin-foi-protocolar-avalia-professor/
+27/07/2023 08:16
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/em-xangai-dilma-tem-primeiro-dia-como-presidente-do-banco-dos-brics/
+28/03/2023 08:50 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/dilma-rousseff-vai-discursar-sobre-conflitos-em-conselho-de-seguranca-da-onu/
+17/11/2023 10:11
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-quer-reparacao-para-dilma-depois-do-arquivamento-da-acao-das-pedaladas-fiscais/
+27/08/2023 14:16
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-defende-que-dilma-merece-desculpas-pelo-impeachment/
+31/08/2023 20:16
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/joel-pinheiro-e-injustica-tratar-dilma-como-desqualificada/
+24/03/2023 19:17 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/dilma-toma-posse-como-presidente-do-banco-dos-brics-em-xangai/
+13/04/2023 01:19
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/dilma-deve-ir-com-lula-a-china-para-sacramentar-presidencia-de-banco-dos-brics/
+24/02/2023 08:51
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/no-marrocos-haddad-tera-reunioes-bilaterais-com-dilma-e-ministros-de-franca-reino-unido-e-india/
+10/10/2023 12:16
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/saiba-de-quanto-sera-o-salario-de-dilma-no-banco-dos-brics/
+24/03/2023 12:39
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/lula-publica-foto-com-dilma-em-dia-de-lancamento-do-novo-pac/
+11/08/2023 17:11 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/rosa-weber-vota-para-rejeitar-analise-de-acoes-sobre-direitos-politicos-de-dilma/
+15/09/2023 14:20 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/dilma-se-encontra-com-putin-em-sao-petersburgo/
+26/07/2023 15:56
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/dilma-quer-banco-dos-brics-dizem-aliados/
+09/02/2023 19:33
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/dilma-nao-ficou-inelegivel-apos-sofrer-impeachment-em-2016-entenda/
+30/06/2023 12:46 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/dilma-e-eleita-presidente-do-banco-dos-brics/
+24/03/2023 10:25
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/dilma-e-eleita-mulher-economista-2023-por-conselhos-de-economia/
+12/12/2023 12:46 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/boris-casoy-impressao-e-que-lula-vai-impor-politica-do-governo-dilma/
+11/11/2022 12:12
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/stf-forma-maioria-para-nao-suspender-direitos-politicos-de-dilma-rousseff/
+22/09/2023 00:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/meirelles-diz-que-apoio-a-lula-nao-e-endosso-a-gestao-dilma/
+19/09/2022 15:18
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/dilma-tem-agenda-na-colombia-com-politicos-de-esquerda/
+04/11/2022 21:29
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/bolsonaro-pede-a-tse-mesmo-criterio-de-julgamento-da-chapa-dilma-temer/
+21/06/2023 14:04
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/stf-julga-direitos-politicos-de-dilma-apos-impeachment/
+15/09/2023 00:01
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/lula-indica-dilma-rousseff-para-comandar-banco-dos-brics/
+10/02/2023 20:34 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/no-governo-dilma-ministerio-da-micro-empresa-durou-menos-de-tres-anos-e-teve-centrao-no-comando/
+29/08/2023 12:29 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-apresenta-projeto-para-anular-impeachment-de-dilma/
+28/08/2023 15:54
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/michel-temer-provoca-lula-dilma-e-bolsonaro-no-twitter/
+12/01/2023 22:10
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/entenda-como-funciona-o-banco-dos-brics-que-deve-ser-presidido-por-dilma/
+13/03/2023 12:01 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/justica-mantem-decisao-que-isenta-dilma-rousseff-de-pedaladas-fiscais/
+21/08/2023 22:21
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/?s=Haddad
+https://www.cnnbrasil.com.br/politica/haddad-quer-evitar-que-desoneracao-da-folha-contamine-votacoes-dizem-fontes/
+11/12/2023 16:44
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/mesmo-critico-haddad-acata-pochmann-no-ibge-dizem-aliados/
+27/07/2023 18:22
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/esportes/bia-haddad-se-aproxima-de-premiacao-milionaria-no-australian-open-veja-valores/
+17/01/2024 09:34
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/no-marrocos-haddad-deve-defender-desenvolvimento-sustentavel-do-brasil/
+09/10/2023 19:25 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/contingenciamento-pode-chegar-a-r-23-bilhoes-em-2024-diz-haddad/
+17/11/2023 17:57
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/conselheiros-do-carf-criticam-haddad-apos-ministro-comparar-representantes-com-detentos/
+26/09/2023 16:36
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/macroeconomia/apos-reuniao-com-haddad-febraban-sinaliza-apoio-a-reformas-microeconomicas-do-governo/
+16/02/2024 16:49 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-defende-esforco-concentrado-por-aprovacao-de-medidas-fiscais-no-congresso/
+16/11/2023 10:41
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-anuncia-pacote-economico-veja-medidas/
+12/01/2023 16:05
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-detalha-plano-de-voo-na-fazenda-a-aliados/
+09/12/2022 18:38
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-vai-discutir-com-lula-programa-para-baratear-eletrodomesticos/
+13/07/2023 12:15
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/esportes/bia-haddad-estreia-no-austrlian-open-com-vitoria/
+15/01/2024 08:53
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/governo-deve-anunciar-medidas-para-impulsionar-a-industria-automobilistica-diz-haddad/
+24/05/2023 16:17 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/cota-do-brasil-no-fmi-pode-ser-revista-diz-haddad/
+12/10/2023 18:48
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/governo-discutira-nova-regra-para-gastos-obrigatorios-afirma-haddad/
+08/04/2023 10:02
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/emissao-de-titulos-verdes-pode-chegar-a-r-10-bilhoes-confirma-haddad/
+18/09/2023 12:55 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/esportes/bia-haddad-e-americana-comecam-duplas-femininas-com-vitoria-no-australian-open/
+16/01/2024 08:40
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-endossa-criticas-de-lula-ao-banco-central/
+13/02/2023 16:19
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/reforma-tributaria-haddad-diz-que-governadores-terao-uma-boa-surpresa/
+24/10/2023 19:43
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/macroeconomia/varejistas-pressionam-haddad-pela-tributacao-das-empresas-chinesas/
+01/02/2024 19:36 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/esportes/bia-haddad-maia-estreia-com-vitoria-no-us-open/
+28/08/2023 16:46
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/esportes/bia-haddad-vence-com-facilidade-e-vai-a-3a-rodada-do-australian-open/
+17/01/2024 06:22
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/senado-nao-deixara-de-avaliar-propostas-economicas-do-governo-diz-haddad/
+07/12/2023 10:51
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-reforma-tributaria-foi-uma-vitoria-mas-temos-muitos-desafios/
+15/12/2023 19:45 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-defende-medidas-para-manter-fluxo-comercial-com-a-argentina/
+17/05/2023 12:38
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/esportes/bia-haddad-maia-e-eliminada-na-terceira-rodada-do-australian-open/
+19/01/2024 07:51
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/eurasia-agenda-economica-de-haddad-parece-imune-a-dificuldades/
+09/06/2023 18:10
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-admite-fatiamento-de-tributaria-para-preservar-espinha-dorsal-da-reforma/
+10/11/2023 15:20
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/esportes/tenis-liderado-por-bia-haddad-brasil-enfrenta-espanha-na-united-cup/
+28/12/2023 07:09 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-anuncia-nova-regra-fiscal-do-governo-acompanhe/
+30/03/2023 10:47
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/?s=anarquista
+https://www.cnnbrasil.com.br/internacional/eleicao-nos-eua-melhores-e-piores-momentos-da-4-noite-da-convencao-republicana/
+28/08/2020 10:34 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/manifestantes-ocupam-casa-de-oligarca-russo-em-londres/
+14/03/2022 21:19 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/inteligencia-da-policia-dos-eua-foi-trocada-dias-antes-da-invasao-ao-capitolio/
+08/11/2021 16:49
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/trump-compartilha-carta-que-chama-manifestantes-de-terroristas/
+05/06/2020 04:00 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/violencia-irrompe-em-protestos-de-1o-de-maio-em-paris-manifestantes-criticam-macron/
+01/05/2022 16:44
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/toques-de-recolher-em-los-angeles-e-nova-york-sao-os-mais-severos-em-decadas/
+02/06/2020 09:20 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/entretenimento/viva-o-gordo-jo-onze-e-meia-xango-de-baker-street-os-marcos-de-jo-soares/
+05/08/2022 17:31 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/trump-condena-todos-os-supremacistas-brancos-apos-polemica-em-debate/
+02/10/2020 07:40 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/entretenimento/jo-soares-para-alem-da-tv-10-curiosidades-sobre-a-vida-do-apresentador/
+05/08/2022 19:37
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/primeiro-ministro-israelense-demite-ministro-da-defesa/
+26/03/2023 16:45 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/?s=ditadura
+https://www.cnnbrasil.com.br/internacional/governo-de-netanyahu-esta-tentando-transformar-israel-em-ditadura-diz-ex-primeiro-ministro/
+27/03/2023 09:40
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/nacional/rj-policia-investiga-pichacoes-com-alusao-a-ditadura-militar-no-tre-e-oab-no-rj/
+25/11/2022 17:18
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/temendo-polarizacao-uerj-adia-cancelamento-de-homenagem-a-general-da-ditadura/
+24/08/2022 15:47
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/nacional/nao-ha-registros-na-imprensa-internacional-de-suposta-ditadura-do-stf-e-tse/
+12/11/2022 16:21 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/neto-de-ex-presidente-da-ditadura-e-investigado-pela-pf-por-plano-de-golpe/
+11/02/2024 17:24
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/lifestyle/bienal-de-sp-sofreu-boicote-de-artistas-brasileiros-e-estrangeiros-durante-ditadura-militar/
+10/09/2023 04:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/filho-de-general-da-ditadura-maquiadora-que-propoe-renuncia-da-paternidade-defensor-de-rompimento-com-vaticano-quem-sao-os-eleitos-do-grupo-de-milei-ao-congresso-da-argentina/
+23/10/2023 16:25
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/hebe-de-bonafini-a-mae-que-desafiou-a-ditadura-argentina-morre-aos-93-anos/
+20/11/2022 15:34
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/nacional/estudantes-mortos-na-ditadura-sao-diplomados-pela-usp/
+25/12/2023 10:31 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/audios-do-superior-tribunal-militar-revelam-tortura-contra-presos-durante-a-ditadura/
+18/04/2022 17:35 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/milei-nao-nega-a-ditadura-tenta-minimizar-os-efeitos-negativos-dela-diz-especialista-a-cnn/
+02/10/2023 11:34
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-lembra-ditadura-e-diz-que-militares-se-apoderaram-do-7-de-setembro/
+05/09/2023 10:19
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/stj-decide-se-familia-de-ustra-deve-indenizar-vitima-de-tortura-na-ditadura-militar/
+08/08/2023 04:00
+'NoneType' object has no attribute 'get'
+None 
+

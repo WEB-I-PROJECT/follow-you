@@ -5,7 +5,7 @@ from web.crawler import Crawler
 
 # '65b4fecb4acfe9eb522a1a06'
 #no de vanúbia é 27018
-MONGO_ACCESS = "mongodb://localhost:27018/"
+MONGO_ACCESS = "mongodb://localhost:27017/"
 ANALYTIC_COLLECTION = 'analytics'
 KEYWORD_GROUP_COLLECTION = 'keyword_groups'
 NEWS_COLLECTION = 'news'
@@ -88,10 +88,11 @@ class Analytic(Crawler):
     def get_news_partial(self):
         news = []
         for keyword_group in self.keyword_groups:
-            for keyword in keyword_group.get('keywords'):
+            for idx, keyword in enumerate(keyword_group.get('keywords')):
                 doc = self.access_news_list(keyword)
                 if doc:
                     news.append(self.format_news(doc))
-            
+                if idx > 4:
+                    break
         return {'news': sum(reversed(news), [])}
                 
