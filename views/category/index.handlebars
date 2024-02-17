@@ -20,7 +20,7 @@
                             <div class="mb-3">
                                 <label for="exampleInputEmail1">Nome da Categoria</label>
                                 <input type="text" name="name" class="form-control" id="" aria-describedby=""
-                                    placeholder="Digite">
+                                    placeholder="Digite" required>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1">Imagem da Categoria</label>
@@ -29,7 +29,7 @@
                             <div class="mb-3">
                                 <label for="">Adicionar palavra chave</label>
                                 <div class="d-flex gap-2">
-                                    <input type="text" class="form-control" name="keywords[]" placeholder="username..">
+                                    <input type="text" class="form-control" name="keywords[]" placeholder="Palavra chave.." required>
                                 </div> 
                             </div>
                         </div>    
@@ -56,13 +56,13 @@
                     <h1 class="modal-title fs-5" id="ModalLabel">Editar categoria</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" style="background-color: var(--gray-system);">
+                <div class="modal-body needs-validation" style="background-color: var(--gray-system);">
                     <form action="/categoria/edit/" enctype="multipart/form-data" method="post">
                         <div class="modal-category">
                             <div class="mb-3">
                                 <label for="name">Nome da Categoria</label>
                                 <input type="text" name="name" class="form-control" id="name" aria-describedby=""
-                                    placeholder="Digite">
+                                    placeholder="Digite..." required>
                             </div>
                             <div class="mb-3">
                                 <label for="imgPath">Imagem da Categoria</label>
@@ -71,8 +71,11 @@
                             <div class="mb-3">
                                 <label for="keywords">Adicionar palavra chave</label>
                                 <div class="d-flex gap-2">
-                                    <input type="text" class="form-control" name="keywords[]"  id="keywords" placeholder="username..">
-                                </div> 
+                                    <input type="text" class="form-control" name="keywords[]"  id="keywords" placeholder="Palavra chave.." required>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please provide a valid zip.
+                                </div>
                             </div>
                         </div>    
                         <div class="my-3">

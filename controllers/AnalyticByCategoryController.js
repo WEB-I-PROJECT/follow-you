@@ -41,6 +41,7 @@ class AnalyticByCategoryController {
                     return null;
                 }
             });
+
             const news = await Promise.all(promises);
             res.render('category_group/news', { news: news });
             //res.status(200).json({ news });
