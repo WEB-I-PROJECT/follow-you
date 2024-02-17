@@ -34,7 +34,10 @@ class AnalyticByKewordGroupController {
       
           // Waiting for all promises to resolve before rendering
           await Promise.all(promises);
-      
+          console.log({
+            analytic: analytic,
+            keywordGroups: keywordGroups,
+          })
           return res.render('keyword_group/index', {
             analytic: analytic,
             keywordGroups: keywordGroups,

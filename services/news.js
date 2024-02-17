@@ -11,7 +11,6 @@ function sortAndTakeMostFrequent(words) {
         frequency
     }));
 
-    console.log(stemmedWords);
 
     // // Count the frequency of each stemmed word
     // const frequencyMap = stemmedWords.reduce((map, { word }) => {
@@ -35,7 +34,6 @@ function sortAndTakeMostFrequent(words) {
 
 async function tokenizeNews(id) {
     try {
-        console.log(id);
         
         const allNews = await News.find({ analytic: id });
 
