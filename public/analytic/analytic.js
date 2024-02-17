@@ -104,11 +104,12 @@ function validateForm() {
 
         // Validate keyword groups
         let totalKeywords = 0;
+        
 
         for (const keywordInput of dynamicKeywordGroups) {
             const keywordsValue = keywordInput.value.trim();
 
-            if (keywordsValue === "" || keywordsValue.includes(".")) {
+            if (keywordsValue === "") {
                 displayErrorMessage("Por favor, preencha todos os campos de palavras-chave separados por ',' ");
                 return false; // Prevent form submission
             }

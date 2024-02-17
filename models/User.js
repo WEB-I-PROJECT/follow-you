@@ -17,6 +17,7 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+
     cpf: {
         type: String,
         required: true
@@ -31,18 +32,26 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+
+    profilePicture: {
+        type: String
+    },
+
     isAdmin: {
         type: Boolean,
         default: false
     },
+
     approved: { 
         type: Boolean, 
-        default: false 
+        default: true 
     },
+
     createdAt: {
         type: Date,
         default: Date.now()
     },
+    
     updatedAt: {
         type: Date,
         default: Date.now()

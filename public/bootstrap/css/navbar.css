@@ -11,13 +11,12 @@
   justify-content: space-between;
 }
 .navbar-brand:hover {
-  text-shadow: 2px 2px 5px #FCBD33; /* Adiciona sombra amarela ao passar o mouse */
+  text-shadow: 2px 2px 5px #FCBD33;  
 }
 
 .navbar-brand {
   font-size: 30px;
   color: rgb(255, 255, 255);
-  text-shadow: 2px 3px 4px #ffffff; /* Adiciona sombra amarela */
 
 }
 
@@ -26,8 +25,8 @@
   color: #ffffff;
 }
 .btn-register:hover {
-  background-color: #FCBD33; /* Nova cor de fundo ao passar o mouse */
-  color: #ffffff; /* Nova cor do texto ao passar o mouse */
+  background-color: #FCBD33; 
+  color: #ffffff; 
 }
 
 
