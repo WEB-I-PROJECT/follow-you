@@ -19,8 +19,7 @@ function sortAndTakeMostFrequent(words) {
 
 async function tokenizeNews(id) {
     try {
-        console.log(id);
-
+        
         const allNews = await News.find({ analytic: id });
 
         const wordsAnalysis = allNews.reduce((analysis, news) => {
