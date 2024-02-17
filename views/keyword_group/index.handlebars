@@ -41,28 +41,38 @@
         <div class="col-12 col-sm-7 col-lg-8 mt-3 text-start">
             <p>
 
-                <button class="btn btn-danger" type="button" data-toggle="collapse"
-                    data-target="#multiCollapseExample2" aria-expanded="false"
-                    aria-controls="multiCollapseExample2"> Notícias </button>
+                <button class="btn btn-danger btn-toggle" type="button" data-toggle="collapse"
+                    data-target="#news" aria-expanded="false"
+                    aria-controls="news"> Notícias </button>
 
-                <button class="btn btn-danger" type="button" data-toggle="collapse"
-                    data-target="#multiCollapseExample2" aria-expanded="false"
-                    aria-controls="multiCollapseExample2">Ocorrência de palavras </button>
+                <button class="btn btn-danger btn-toggle" type="button" data-toggle="collapse"
+                    data-target="#words" aria-expanded="false"
+                    aria-controls="words">Ocorrência de palavras </button>
 
-                 <button class="btn btn-danger" type="button" data-toggle="collapse"
-                    data-target="#multiCollapseExample2" aria-expanded="false"
-                    aria-controls="multiCollapseExample2">Gráficos</button>
+                 <button class="btn btn-danger btn-toggle" type="button" data-toggle="collapse"
+                    data-target="#charts" aria-expanded="false"
+                    aria-controls="charts">Gráficos</button>
 
                 
 
             </p>
             <div class="row">
 
-                <div class="col">
-                    <div class="collapse multi-collapse" id="multiCollapseExample2">
+                <div class="col-12">
+                    <div class="collapse multi-collapse" id="words">
                         <div class="card h-auto card-body">
                             <div class="text-center" id="tokenizes">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="col-12 mt-3">
+                    <div class="collapse multi-collapse" id="news">
+                        <div class="card h-auto card-body">
+                            <div class="text-center" id="news-list">
+                                
                             </div>
                         </div>
                     </div>
@@ -103,5 +113,59 @@
         }
     }
 
+     async function requestNews() {
+        try {
+            const newsContainer = document.getElementById('news-list');
+            newsContainer.innerHTML = '<div id="spinner-news" class="spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+            
+            var cnn = 'cnn';
+            var cidadeVerde = 'cidade-verde';
+            var brasilDeFato = 'brasil-de-fato';
+
+            const responseCNN = await fetch(`/analytic/by-keywords/noticias/${cnn}/{{ analytic.id }}`);
+            putInHTML(responseCNN);
+           
+            const reponseCidadeVerde =  await fetch(`/analytic/by-keywords/noticias/${cidadeVerde}/{{ analytic.id }}`);
+            putInHTML(reponseCidadeVerde);
+
+            const reponseBrasilDeFato =  await fetch(`/analytic/by-keywords/noticias/${brasilDeFato}/{{ analytic.id }}`);
+
+            putInHTML(reponseBrasilDeFato);
+
+            document.getElementById('spinner-news').remove();
+          
+        } catch (error) {
+            console.error('Erro na requisição:', error.message);
+        }
+    }
+
+    async function putInHTML(response){
+        const newsContainer = document.getElementById('news-list');
+        if (!response.ok) {
+            throw new Error('Erro na requisição', response.error);
+        }
+
+        const html = await response.text();
+
+        const tempElement = document.createElement('div');
+        tempElement.innerHTML = html;
+
+        const tokensElement = tempElement.querySelector('#news-backend');
+
+        if (tokensElement) {
+            newsContainer.appendChild(tokensElement);
+        } else {
+            console.error('Tag com id "news" não encontrada no HTML recebido');
+        }
+    }
+
     requestTokens();
+    requestNews();
+
+    $(document).ready(function() {
+    $('.btn-toggle').on('click', function() {
+      
+        $('.collapse').not($(this).data('target')).collapse('hide');
+    });
+    });
 </script>

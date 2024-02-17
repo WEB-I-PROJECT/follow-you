@@ -1,3 +1,4 @@
+
 function toggleFields() {
     const selectedType = document.getElementById("type").value;
     const keywordFields = document.getElementById("keywordFields");
@@ -13,11 +14,23 @@ function toggleFields() {
 }
 
 // Function to dynamically add keyword group input fields
-let clickCount = 0; // Contador de cliques
+let clickCount = 0; // Certifique-se de declarar clickCount fora da função
+
+function addRemoveGroupButton(keywordGroupDiv) {
+    const removeGroupButton = document.createElement('button');
+    removeGroupButton.className = 'btn btn-danger mt-1 mb-2 bi bi-trash';
+    removeGroupButton.textContent = ' Desfazer Grupo';
+    removeGroupButton.onclick = function () {
+        keywordGroupDiv.remove();
+        const addKeywordGroupBtn = document.getElementById("addKeywordGroupBtn");
+        addKeywordGroupBtn.disabled = false;
+    };
+    keywordGroupDiv.querySelector('.group-button-container').appendChild(removeGroupButton);
+}
 
 function addKeywordGroup() {
     const dynamicKeywordGroups = document.getElementById("groupSession");
-    const addKeywordGroupBtn = document.getElementById("addKeywordGroupBtn"); // Certifique-se de ter o ID correto do botão
+    const addKeywordGroupBtn = document.getElementById("addKeywordGroupBtn"); 
 
     // Incrementar o contador de cliques
     clickCount++;
@@ -35,23 +48,24 @@ function addKeywordGroup() {
         <label class="mt-3 text-analytics text-label" for="listName">Nome do Grupo *</label>
         <input type="text"  class="form-control"  name="listName" placeholder="Ex: Nome da lista de palavras chave. Ex: lista sobre o Flamengo">
 
-        <label class="mt-3 text-analytics text-label" for="listSlug">Slug *</label><br>
-        <input type="text" class="form-control" name="listSlug" placeholder="Ex: esportes">
-        <div id="slugError" class="error-message"></div> 
-
         <div>
             <!-- Initial keyword group input field -->
             <div class="form-group">
                 <label class="mt-3 text-analytics text-label" for="keywords">Palavras chave *</label><br>
                 <small class="mb-5 text-analytics">Você só pode adicionar 3 grupos de palavras chave</small>
                 <input type="text" class="mb-3 form-control" name="keywords" placeholder="Coloque as palavras separadas por vírgula. Ex: futebol, flamengo, jogos, brasileirão">
+                <div class="group-button-container ">
+                </div>
+            
             </div>
         </div>
     `;
     dynamicKeywordGroups.appendChild(keywordGroupDiv);
+    addRemoveGroupButton(keywordGroupDiv);
 }
 
 const addKeywordGroupBtn = document.getElementById("addKeywordGroupBtn");
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const tooltips = document.querySelectorAll('[data-tooltip]');
@@ -68,47 +82,59 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function validateForm() {
-const selectedType = document.getElementById("type").value;
-const nameInput = document.getElementById("name");
+    const selectedType = document.getElementById("type").value;
+    const nameInput = document.getElementById("name");
 
-if (nameInput.value.trim() === "") {
-    displayErrorMessage("Por favor, preencha o campo Nome.");
-    return false; // Prevent form submission
-}
+    const maxNameLength = 30;
+    
 
-if (selectedType === "by-keywords") {
-    const listNameInput = document.getElementById("listName");
-    const listSlugInput = document.getElementById("listSlug");
-    const dynamicKeywordGroups = document.querySelectorAll("#groupSession [name='keywords']");
-
-    if (listNameInput.value.trim() === "" || listSlugInput.value.trim() === "") {
-        displayErrorMessage("Por favor, preencha os campos obrigatórios para Palavras-Chave.");
-        return false; // Prevent form submission
+    if (nameInput.value.trim() === "" || nameInput.value.length > maxNameLength) {
+        displayErrorMessage(`Por favor, preencha o campo Nome com no máximo ${maxNameLength} caracteres.`);
+        return false; // Evitar a submissão do formulário
     }
 
-    // Validate slug format
-    if (!/^[a-z]+(-[a-z]+)?$/.test(listSlugInput.value.trim())) {
-        displayErrorMessage("O slug deve conter apenas uma palavra, caso seja palavras compostas, separe com '-' , as letras devem ser minúsculas, e não deve conter o caractere '.'.");
-        return false; // Prevent form submission
-    }
+    if (selectedType === "by-keywords") {
+        const listNameInput = document.getElementById("listName");
+        const dynamicKeywordGroups = document.querySelectorAll("#groupSession [name='keywords']");
 
-    // Validate keyword groups
-    for (const keywordInput of dynamicKeywordGroups) {
-        const keywordsValue = keywordInput.value.trim();
-        if (keywordsValue === "" || keywordsValue.includes(".")) {
-            displayErrorMessage("Por favor, preencha todos os campos de palavras-chave separado por ',' ");
+        if (listNameInput.value.trim() === "") {
+            displayErrorMessage("Por favor, preencha os campos obrigatórios para Palavras-Chave.");
             return false; // Prevent form submission
         }
+
+        // Validate keyword groups
+        let totalKeywords = 0;
+
+        for (const keywordInput of dynamicKeywordGroups) {
+            const keywordsValue = keywordInput.value.trim();
+
+            if (keywordsValue === "" || keywordsValue.includes(".")) {
+                displayErrorMessage("Por favor, preencha todos os campos de palavras-chave separados por ',' ");
+                return false; // Prevent form submission
+            }
+
+            const keywordsArray = keywordsValue.split(',');
+
+            if (keywordsArray.length > 10) {
+                displayErrorMessage("No máximo, 10 palavras-chave separadas por vírgula são permitidas em cada grupo.");
+                return false; // Prevent form submission
+            }
+
+            totalKeywords += keywordsArray.length;
+        }
+
+        // Removed the check for totalKeywords here, as it's not needed for your specific requirement.
+
     }
+
+    // Clear previous error message
+    clearErrorMessage();
+
+    // You can add additional validation if needed
+
+    return true; // Allow form submission
 }
 
-// Clear previous error message
-clearErrorMessage();
-
-// You can add additional validation if needed
-
-return true; // Allow form submission
-}
 
 function displayErrorMessage(message) {
     const errorMessageElement = document.getElementById("errorMessage");

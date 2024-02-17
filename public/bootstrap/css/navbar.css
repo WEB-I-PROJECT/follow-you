@@ -10,32 +10,30 @@
   display: flex;
   justify-content: space-between;
 }
-
-.nav-item a {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  padding: 1px;
-  margin: 0 10px;
-  border-bottom: 2px solid transparent;
-  transition: border-bottom 0.3s;
+.navbar-brand:hover {
+  text-shadow: 2px 2px 5px #FCBD33; /* Adiciona sombra amarela ao passar o mouse */
 }
-
-
 
 .navbar-brand {
   font-size: 30px;
-  /* Tamanho da fonte */
   color: rgb(255, 255, 255);
-  /* Cor do texto */
+  text-shadow: 2px 3px 4px #ffffff; /* Adiciona sombra amarela */
+
 }
 
 .navbar-toggler {
   border: none;
   color: #ffffff;
 }
+.btn-register:hover {
+  background-color: #FCBD33; /* Nova cor de fundo ao passar o mouse */
+  color: #ffffff; /* Nova cor do texto ao passar o mouse */
+}
+
 
 .btn-register {
   background: #ffffff;
+  border: 2px solid white !important;
   color: #C4170C;
   border: none;
   padding: 8px 40px;
@@ -44,6 +42,12 @@
   margin-right: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
+}
+
+.btn-login:hover {
+  background-color: #ffffff; 
+  color: #FCBD33; 
+  border-color: #FCBD33; 
 }
 
 .btn-login {
@@ -60,9 +64,8 @@
   border-radius: 10px;
   margin-bottom: 10px;
   margin-right: 10px;
-  /* Adiciona uma margem à direita */
-
 }
+
 
 @media screen and (max-width: 992px) {
   .nav-content {

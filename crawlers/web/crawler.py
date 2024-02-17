@@ -8,19 +8,14 @@ class Crawler():
     
     def access_page(self, url: str):
         print(url)
-        try:
-            response = requests.get(url)
-            if response.status_code == 200:
-                return BeautifulSoup(response.text, 'html.parser')
-            return None
-        except Exception as e:
-            return self.access_page(url)
-            
+        response = requests.get(url)
+        if response.status_code == 200:
+            return BeautifulSoup(response.text, 'html.parser')
+        return None       
     
     def access_news_list(self, keyword: str):
         _list = self.access_page(self.url + keyword)
-        if(_list is None):
-            return self.access_news_list(keyword)
+      
         return _list
     
     def get_images(self, tag: str, reference: str, doc: BeautifulSoup) :
@@ -60,7 +55,7 @@ class CrawlerImplicitWait():
         session = HTMLSession()
         response = session.get(url)
 
-        response.html.render(timeout=2, sleep=1)
+        response.html.render(timeout=30, sleep=1)
 
         content = response.html.html
                 
