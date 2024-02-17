@@ -92,5 +92,6 @@ class Analytic(Crawler):
                 doc = self.access_news_list(keyword)
                 if doc:
                     news.append(self.format_news(doc))
+            
         return {'news': sum(reversed(news), [])}
                 

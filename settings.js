@@ -10,6 +10,9 @@ const {marked} = require('marked');
 const user = require('./routes/user');
 const passport = require("passport")
 require('./config/auth')(passport);
+const multer = require('multer');
+
+
 
 //session
 app.use(session({
@@ -79,6 +82,75 @@ Handlebars.registerHelper('displayType', function (type, options) {
     
     return new Handlebars.SafeString('<p>Tipo desconhecido</p>');
 });
+
+
+Handlebars.registerHelper('capitalize', function (kay, options) {
+    // Substitui todas as ocorrências de "-" por espaços em branco
+    kay = kay.replace(/-/g, " ");
+    return kay.charAt(0).toUpperCase() + kay.slice(1);
+});
+
+Handlebars.registerHelper('sentimentTag', function (key, options) {
+    if (key === "Positivas") {
+        return new Handlebars.SafeString('<small class="bi bi-emoji-heart-eyes "> Positivas </small>');
+    } else if (key === "Negativas") {
+        return new Handlebars.SafeString('<small class="bi bi-emoji-tear " > Negativas </small>');
+    } else if (key === "Neutras") {
+        return new Handlebars.SafeString('<small class="bi bi-emoji-neutral  "> Neutras </small>');
+    } else {
+        return '';
+    }
+});
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'public/uploads/');
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+
+const upload = multer({ storage: storage }).single('profile_picture');
+
+
+
+
+
+Handlebars.registerHelper('verificTags', function(tags, options) {
+    if (Array.isArray(tags) && tags.length === 0) {
+        return new Handlebars.SafeString('Sem tags...');
+    } else {
+        var capitalizedTags = tags.map(function(tag) {
+            return tag.charAt(0).toUpperCase() + tag.slice(1);
+        });
+        return new Handlebars.SafeString(capitalizedTags.join(', ')); 
+    }
+});
+
+Handlebars.registerHelper('verificWords', function(words, options) {
+    if (typeof words === 'string') {
+        var wordArray = words.split(',');
+        var capitalizedWords = wordArray.map(function(word) {
+            return word.trim().charAt(0).toUpperCase() + word.trim().slice(1);
+        });
+        return new Handlebars.SafeString(capitalizedWords.join(', '));
+    } else if (Array.isArray(words)) {
+        var capitalizedWords = words.map(function(word) {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        });
+        return new Handlebars.SafeString(capitalizedWords.join(', '));
+    } else {
+        return new Handlebars.SafeString('Sem palavras');
+    }
+});
+
+
+
+
+
+
+
 
 //engine template
 app.engine('.handlebars', hbs.engine);

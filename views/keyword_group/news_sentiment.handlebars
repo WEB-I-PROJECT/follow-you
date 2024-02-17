@@ -1,0 +1,70 @@
+
+<div id="news-sentiment-template">
+  {{#each @root.newsSentimentGrup}}
+  <div class="container mb-5 border border-gray rounded mt-2">
+
+    <h2 class="mt-4 mb-4 p-2 text-group text-center">Análise de Sentimentos das
+      Notícias do grupo <strong>{{capitalize @key}}</strong></h2>
+
+    <div class="container">
+      <div class="row">
+        {{#each this}}
+        <div class="col-lg-12 col-md-12 mb-4">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-wrap align-items-start">
+              <img class="col-lg-3 col-md-12 card-img-left mr-lg-1 col-auto"
+                style="width: 120px; height: 120px;" src="{{image}}">
+
+              <div
+                class="col-lg-9 col-md-6 mx-2 word-wrap text-left position-relative">
+                <p class="card-title mb-0">
+                  <strong class="mt-1 mt-md-0  text-news-title"
+                    style="line-height: 1.2; max-height: 2.4em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">{{capitalize
+                    title}}</strong>
+                </p>
+                <p
+                  class="word-wrap card-text mt-0 text-news-tags bi bi-pencil-square mb-5"
+                  style="flex-grow: 0; flex-shrink: 0; width: auto;">
+                  {{verificTags tags}}</p>
+                <p
+                  class=" card-text badge badge-danger bg-danger badge-pill mb-0 position-absolute"
+                  style="bottom: 0;">{{capitalize origin}}</p>
+              </div>
+            </div>
+
+            <div class="card-footer bg-footer-news-sentiment">
+              <button
+                class="col-md-12 col-12 btn-view-more  border border-gray rounded bg-group-sentiment-news mb-1 mt-1 bi bi-eye-fill" > Análise
+                de sentimentos</button>
+
+              <div class="card-content-news">
+                <div class="mt-2">
+                  <p
+                    class="col-md-12 btn-view-more border border-gray rounded bg-news-sentiment-positive p-1">
+                    <strong class="px-2  bi bi-heart-fill text-font-news">
+                      Palavras positivas - {{totalPositiveWords}} </strong>
+                  </p>
+                  <p class="p-1 mx-2">{{verificWords positiveWords}}</p>
+                </div>
+                <div>
+                  <p
+                    class="col-md-12 btn-view-more border border-gray rounded bg-news-sentiment-negative p-1">
+                    <strong class=" px-2 bi bi-heartbreak-fill text-font-news">
+                      Palavras Negativas - {{totalNegativeWords}} </strong>
+                  </p>
+                  <p class="p-1 mx-2">{{verificWords negativeWords}}</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        {{/each}}
+        <!--outro card aqui-->
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+

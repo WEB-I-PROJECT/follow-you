@@ -14,6 +14,83 @@
     }
 }
 
+.text-group {
+    color:#cf1326;
+    font-size: 26px !important;
+}
+
+.text-news-title{
+    color:#cf1326;
+    font-size: 15px !important;
+
+}
+
+.text-news-tags{
+    color:#c50c1e;
+    font-size: 15px !important;
+
+}
+.text-font-news{
+    font-size: 15px !important;
+}
+
+.bg-group-sentiment-news{
+    background-color:#ea071d;
+    color:#ffffff;
+    font-size: 20px !important;
+   text-shadow: #b80e1f;
+}
+
+.bg-news-sentiment-positive{
+    background-color:#00805ecc;
+    color:#ffffff;
+    font-size: 20px !important;
+    
+}
+
+.bg-news-sentiment-negative{
+    background-color:#b11810d0;
+    color:#ffffff;
+    font-size: 20px !important;
+    
+}
+
+.bg-footer-news-sentiment{
+    background-color:#f9f6f6;
+}
+
+
+.border-gray{
+    border-color:#e4e7ea ;
+
+}
+
+
+
+   
+.card-img-right {
+    float: right;
+    width: 40%; 
+    margin-left: 10px; 
+}
+
+
+.card-content-news {
+    display: none;
+} 
+
+.card-title, .card-text {
+    word-break: break-word;
+    overflow-wrap: break-word; 
+}
+
+
+
+.text-kay-name{
+    color: #ea071d;
+    font-size: 15px !important; 
+}
+
 .text-analytics {
     color:#cf1326;
 }
@@ -70,13 +147,28 @@
 .new-card,
 .card {
     background-color: #fff;
-    box-shadow: 0 5px 8px rgba(137, 1, 1, 0.479);
+    box-shadow: 0 5px 8px rgba(232, 87, 87, 0.479);
     margin: 0; 
     width: 100%; /* Ocupa a largura total do grid */
     height: 150px;
     border-radius: 5px;
     display: inline-block;
     transition: background-color 0.3s ease; /* Adiciona transição de cor */
+}
+
+.shadow-sentiment-cont-positive{
+    border-radius: 5px;
+    box-shadow: 0 5px 8px rgba(16, 71, 10, 0.479);
+}
+
+.shadow-sentiment-cont-negative{
+    border-radius: 5px;
+    box-shadow: 0 5px 8px rgba(242, 48, 5, 0.479);
+}
+
+.shadow-sentiment-cont-neutro{
+    border-radius: 5px;
+    box-shadow: 0 5px 8px rgba(241, 200, 78, 0.528);
 }
 
 
@@ -209,4 +301,39 @@
 
 .text-danger{
     color: #C4170C !important;
+}
+
+.nopad {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+/*image gallery*/
+.image-checkbox {
+	cursor: pointer;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 2px solid transparent;
+	margin-bottom: 0;
+	outline: 0;
+    padding: 5px !important;
+    border-radius: 5px;
+}
+.image-checkbox input[type="checkbox"] {
+	display: none;
+}
+
+.image-checkbox-checked {
+	border-color: #ec0e0e;
+}
+.image-checkbox .fa {
+  position: absolute;
+  color: #ec0e0e;
+  background-color: #fff;
+  padding: 10px;
+  top: 0;
+  right: 0;
+}
+.image-checkbox-checked .fa {
+  display: block !important;
 }

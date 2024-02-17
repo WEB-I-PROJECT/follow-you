@@ -743,3 +743,2524 @@ https://cidadeverde.com/noticias/405591/elzuila-calisto-afirma-que-seguira-orien
 https://cidadeverde.com/noticias/398832/executiva-do-pt-fara-reuniao-com-governador-e-prefeitos-sobre-2024
 <pymongo.results.InsertOneResult object at 0x7f74e279b3c0> 
 
+Traceback (most recent call last):
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/cron.py", line 2, in <module>
+    from news.cnn import CNNCrawler
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/news/cnn.py", line 2, in <module>
+    from mongo.models import Analytic
+  File "/home/junior/Documentos/ADS5/WEB2/hub-news/crawlers/mongo/models.py", line 2, in <module>
+    from bson import ObjectId
+ModuleNotFoundError: No module named 'bson'
+https://www.cnnbrasil.com.br/?s=PT
+https://www.cnnbrasil.com.br/politica/pt-planeja-megaevento-para-filiacao-de-marta-em-fevereiro/
+10/01/2024 12:55 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-aguarda-consenso-para-nomear-ministra-do-esporte/
+20/12/2022 13:17 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/odair-cunha-vai-assumir-a-lideranca-do-pt-na-camara/
+06/02/2024 22:24
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-prepara-emenda-para-marco-fiscal/
+18/04/2023 17:53
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/ww-especial-presidenciaveis-lula-pt/
+13/09/2022 08:34 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-planeja-barrar-privatizacao-da-sabesp-na-justica/
+06/12/2023 21:02
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-prepara-agenda-eleitoral-para-lula-nas-disputas-de-2024/
+01/12/2023 18:59
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-estuda-como-evitar-onda-de-direita-no-senado-em-2026/
+23/01/2024 12:51
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-adota-cautela-sobre-crescimento-de-bolsonaro/
+12/08/2022 21:19
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-deve-apresentar-rui-falcao-para-ccj-da-camara/
+01/02/2023 10:32 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/pt-aciona-tribunal-de-contas-contra-privatizacao-da-sabesp/
+11/04/2023 15:08
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/pt-aprova-resolucao-defendendo-convocacao-de-campos-neto/
+13/02/2023 17:48
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-e-pt-se-reunem-para-discutir-regra-fiscal/
+15/05/2023 17:51
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/alas-do-pt-avaliam-barroso-conservador-mas-aberto-ao-dialogo/
+28/09/2023 16:36
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/secretario-do-pt-insiste-por-divisao-do-ministerio-da-justica/
+02/10/2023 17:17
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-resiste-a-meirelles-como-referencia-economica/
+21/09/2022 20:58
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-quer-aproveitar-cpmi-para-combater-discurso-bolsonarista/
+25/05/2023 20:45
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-avalia-impacto-reduzido-da-operacao-contra-bolsonaro-nas-eleicoes/
+08/02/2024 12:54
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-quer-evitar-pauta-de-costumes-nas-eleicoes-de-2024/
+04/02/2024 04:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-apresenta-acao-para-derrubar-privatizacao-da-sabesp/
+14/12/2023 09:44
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-quer-janja-como-cabo-eleitoral-em-2024-dizem-fontes/
+03/10/2023 15:17
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/ala-do-pt-tenta-impugnar-filiacao-de-marta-suplicy/
+18/01/2024 12:10
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-e-psol-vao-ao-stf-contra-privatizacao-da-sabesp/
+03/10/2023 16:23
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/nao-sera-um-governo-do-pt-sera-um-governo-chefiado-pelo-pt-diz-emidio-de-souza/
+11/11/2022 17:34
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-intensifica-campanha-publica-por-marco-aurelio-carvalho-na-justica/
+15/12/2023 08:51 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/crescem-as-chances-de-pt-manter-principal-vice-presidencia-da-caixa/
+27/10/2023 16:50
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/marta-suplicy-deixa-decisao-sobre-refiliacao-ao-pt-para-2024/
+18/12/2023 12:54
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/a-articulacao-do-pt-para-negociar-a-governabilidade/
+04/11/2022 09:14 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/pt-tenta-barrar-decreto-que-facilita-privatizacao-da-sabesp/
+25/08/2023 13:56
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-apresenta-projeto-para-anular-impeachment-de-dilma/
+28/08/2023 15:54
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/?s=Lula
+https://www.cnnbrasil.com.br/politica/lula-decreta-intervencao-federal-2/
+08/01/2023 17:56
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/a-politica-economica-do-governo-lula/
+03/01/2023 09:49 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-discute-desoneracao-light-tambem-para-municipios/
+19/01/2024 13:03
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/waack-a-lingua-de-lula-esta-bastante-solta/
+29/08/2023 22:09
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/waack-centrao-como-fenomeno-politico-antecede-lula/
+25/07/2023 22:29 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/aliados-de-lula-falam-em-boa-quimica-entre-lula-e-zelensky/
+21/09/2023 18:30
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-desembarca-em-madri-apos-viagem-a-portugal/
+25/04/2023 09:15
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/a-estabilidade-no-futuro-governo-lula/
+07/11/2022 09:14 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/lula-recria-programa-para-fortalecer-agricultura-familiar/
+20/07/2023 17:13 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/campanha-de-lula-aciona-tse-para-tirar-do-ar-site-lula-flix/
+14/09/2022 12:15
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pf-vai-investigar-ameaca-a-lula-nas-redes-sociais/
+26/12/2023 18:43
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/bolsonaro-quer-tolerancia-zero-para-elogios-publicos-a-lula/
+23/01/2024 12:18
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-decidiu-por-vetar-o-marco-temporal-respeitando-a-constituicao-diz-padilha/
+20/10/2023 17:52
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/waack-os-horizontes-de-lula-no-cenario-internacional/
+04/12/2023 22:04
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/nos-vamos-garantir-equilibrio-fiscal-diz-lula/
+07/11/2023 12:42
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-mais-interrogacoes-menos-certezas/
+31/10/2022 16:56
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-propoe-canal-direto-de-dialogo-com-stf/
+27/11/2023 13:54 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/equivoco-de-lula/
+01/06/2022 19:56
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/nomes-para-seis-ministros-estariam-definidos-por-lula-outros-13-foram-consultados-e-devem-dar-resposta-ate-o-fim-de-semana/
+08/12/2022 12:27
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-nomeia-lewandowski-para-assumir-ministerio-da-justica/
+22/01/2024 17:46
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-demite-comandante-do-exercito/
+21/01/2023 14:50
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-nomeia-quatro-novos-conselheiros-para-o-cade/
+27/12/2023 09:46
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-volta-a-receber-indicados-para-a-pgr/
+07/11/2023 16:14 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/nacional/a-agenda-de-lula-na-china/
+11/04/2023 18:41 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-e-diplomado-no-tse-assista/
+12/12/2022 13:41
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/falta-equilibrio-emocional-a-lula-diz-mourao/
+23/03/2023 17:57
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/a-incerteza-economica-no-governo-lula/
+11/11/2022 08:40 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/cotados-para-a-pgr-buscam-interlocucao-com-lula/
+14/08/2023 11:45 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/lula-saciona-programa-desenrola-sem-vetos/
+03/10/2023 17:55
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/esportes/lula-sobre-corinthians-ta-caindo-aos-pedacos/
+13/06/2023 13:08
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/?s=Dilma
+https://www.cnnbrasil.com.br/economia/a-frente-do-banco-dos-brics-dilma-tem-desafio-de-consolidar-entidade-no-mundo/
+22/08/2023 04:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/dilma-e-eleita-mulher-economista-2023-por-conselhos-de-economia/
+12/12/2023 12:46 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/encontro-de-dilma-rousseff-com-putin-foi-protocolar-avalia-professor/
+27/07/2023 08:16
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/stf-julga-direitos-politicos-de-dilma-apos-impeachment/
+15/09/2023 00:01
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/joel-pinheiro-e-injustica-tratar-dilma-como-desqualificada/
+24/03/2023 19:17 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/bolsonaro-pede-a-tse-mesmo-criterio-de-julgamento-da-chapa-dilma-temer/
+21/06/2023 14:04
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pacheco-e-lira-sao-contra-anulacao-de-impeachment-de-dilma-dizem-aliados/
+29/08/2023 16:50
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/entenda-como-funciona-o-banco-dos-brics-que-deve-ser-presidido-por-dilma/
+13/03/2023 12:01 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/no-governo-dilma-ministerio-da-micro-empresa-durou-menos-de-tres-anos-e-teve-centrao-no-comando/
+29/08/2023 12:29 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/dilma-quer-banco-dos-brics-dizem-aliados/
+09/02/2023 19:33
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/rosa-weber-vota-para-rejeitar-analise-de-acoes-sobre-direitos-politicos-de-dilma/
+15/09/2023 14:20 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/dilma-e-eleita-presidente-do-banco-dos-brics/
+24/03/2023 10:25
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/lula-publica-foto-com-dilma-em-dia-de-lancamento-do-novo-pac/
+11/08/2023 17:11 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/stf-forma-maioria-para-nao-suspender-direitos-politicos-de-dilma-rousseff/
+22/09/2023 00:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/dilma-nao-ficou-inelegivel-apos-sofrer-impeachment-em-2016-entenda/
+30/06/2023 12:46 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/justica-mantem-decisao-que-isenta-dilma-rousseff-de-pedaladas-fiscais/
+21/08/2023 22:21
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/no-marrocos-haddad-tera-reunioes-bilaterais-com-dilma-e-ministros-de-franca-reino-unido-e-india/
+10/10/2023 12:16
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/michel-temer-provoca-lula-dilma-e-bolsonaro-no-twitter/
+12/01/2023 22:10
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/lula-indica-dilma-rousseff-para-comandar-banco-dos-brics/
+10/02/2023 20:34 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/em-xangai-dilma-tem-primeiro-dia-como-presidente-do-banco-dos-brics/
+28/03/2023 08:50 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/dilma-se-encontra-com-putin-em-sao-petersburgo/
+26/07/2023 15:56
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/saiba-de-quanto-sera-o-salario-de-dilma-no-banco-dos-brics/
+24/03/2023 12:39
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/dilma-tem-agenda-na-colombia-com-politicos-de-esquerda/
+04/11/2022 21:29
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/dilma-toma-posse-como-presidente-do-banco-dos-brics-em-xangai/
+13/04/2023 01:19
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/dilma-rousseff-vai-discursar-sobre-conflitos-em-conselho-de-seguranca-da-onu/
+17/11/2023 10:11
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-defende-que-dilma-merece-desculpas-pelo-impeachment/
+31/08/2023 20:16
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-quer-reparacao-para-dilma-depois-do-arquivamento-da-acao-das-pedaladas-fiscais/
+27/08/2023 14:16
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/posses-no-planalto-revisitam-prisao-de-lula-e-impeachment-de-dilma/
+02/01/2023 17:12 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/pt-apresenta-projeto-para-anular-impeachment-de-dilma/
+28/08/2023 15:54
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/meirelles-diz-que-apoio-a-lula-nao-e-endosso-a-gestao-dilma/
+19/09/2022 15:18
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/?s=Haddad
+https://www.cnnbrasil.com.br/economia/haddad-vai-discutir-com-lula-programa-para-baratear-eletrodomesticos/
+13/07/2023 12:15
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-endossa-criticas-de-lula-ao-banco-central/
+13/02/2023 16:19
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/conversa-com-guedes-foi-excelente-diz-haddad/
+08/12/2022 12:29
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/esportes/bia-haddad-vence-com-facilidade-e-vai-a-3a-rodada-do-australian-open/
+17/01/2024 06:22
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/esportes/bia-haddad-vence-de-virada-na-estreia-em-wimbledon/
+05/07/2023 14:45 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-defende-esforco-concentrado-por-aprovacao-de-medidas-fiscais-no-congresso/
+16/11/2023 10:41
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/eurasia-agenda-economica-de-haddad-parece-imune-a-dificuldades/
+09/06/2023 18:10
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-inicia-agenda-internacional-com-foco-em-cop28/
+29/11/2023 09:27 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/cota-do-brasil-no-fmi-pode-ser-revista-diz-haddad/
+12/10/2023 18:48
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/helio-beltrao-haddad-fez-interferencia-politica-na-petrobras/
+01/03/2023 19:35 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-entrega-proposta-de-arcabouco-fiscal-a-lula/
+15/03/2023 12:26
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-e-haddad-articulam-encontro-com-mdb/
+28/11/2022 11:02
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/em-meio-a-conflito-haddad-fala-em-proteger-a-economia-brasileira/
+09/10/2023 12:45
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-anuncia-nova-regra-fiscal-do-governo-acompanhe/
+30/03/2023 10:47
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/no-marrocos-haddad-deve-defender-desenvolvimento-sustentavel-do-brasil/
+09/10/2023 19:25 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-defende-medidas-para-manter-fluxo-comercial-com-a-argentina/
+17/05/2023 12:38
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/caio-junqueira-o-dia-em-que-lula-desautorizou-haddad/
+27/10/2023 22:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-sobre-desenrola-medida-provisoria-tem-que-ser-votada/
+25/09/2023 12:47 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/contingenciamento-pode-chegar-a-r-23-bilhoes-em-2024-diz-haddad/
+17/11/2023 17:57
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/macroeconomia/varejistas-pressionam-haddad-pela-tributacao-das-empresas-chinesas/
+01/02/2024 19:36 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/comunicado-do-bc-e-preocupante-diz-haddad/
+22/03/2023 20:20
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/mesmo-critico-haddad-acata-pochmann-no-ibge-dizem-aliados/
+27/07/2023 18:22
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/esportes/bia-haddad-maia-estreia-com-vitoria-no-wta-elite-trophy/
+24/10/2023 10:03 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/acompanhamos-com-interesse-diz-haddad-sobre-eleicoes-na-argentina/
+23/10/2023 10:41
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/esportes/bia-haddad-maia-estreia-com-vitoria-no-us-open/
+28/08/2023 16:46
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/reforma-tributaria-haddad-diz-que-governadores-terao-uma-boa-surpresa/
+24/10/2023 19:43
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-chega-a-toquio-para-agendas-da-cupula-do-g-7-encontro-com-yellen-ocorre-na-quinta-feira/
+10/05/2023 08:24 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/haddad-anuncia-pacote-economico-veja-medidas/
+12/01/2023 16:05
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/reuniao-de-evangelicos-com-haddad-desagrada-grupo-ligado-a-bolsonaro/
+19/01/2024 14:39
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/esportes/bia-haddad-estreia-no-austrlian-open-com-vitoria/
+15/01/2024 08:53
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/?s=anarquista
+https://www.cnnbrasil.com.br/internacional/primeiro-ministro-israelense-demite-ministro-da-defesa/
+26/03/2023 16:45 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/toques-de-recolher-em-los-angeles-e-nova-york-sao-os-mais-severos-em-decadas/
+02/06/2020 09:20 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/violencia-irrompe-em-protestos-de-1o-de-maio-em-paris-manifestantes-criticam-macron/
+01/05/2022 16:44
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/inteligencia-da-policia-dos-eua-foi-trocada-dias-antes-da-invasao-ao-capitolio/
+08/11/2021 16:49
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/entretenimento/viva-o-gordo-jo-onze-e-meia-xango-de-baker-street-os-marcos-de-jo-soares/
+05/08/2022 17:31 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/manifestantes-ocupam-casa-de-oligarca-russo-em-londres/
+14/03/2022 21:19 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/trump-compartilha-carta-que-chama-manifestantes-de-terroristas/
+05/06/2020 04:00 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/entretenimento/jo-soares-para-alem-da-tv-10-curiosidades-sobre-a-vida-do-apresentador/
+05/08/2022 19:37
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/trump-condena-todos-os-supremacistas-brancos-apos-polemica-em-debate/
+02/10/2020 07:40 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/eleicao-nos-eua-melhores-e-piores-momentos-da-4-noite-da-convencao-republicana/
+28/08/2020 10:34 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/?s=ditadura
+https://www.cnnbrasil.com.br/internacional/artista-argentino-usa-inteligencia-artificial-para-buscar-bebes-desaparecidos-na-ditadura/
+25/07/2023 19:21 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/milei-nao-nega-a-ditadura-tenta-minimizar-os-efeitos-negativos-dela-diz-especialista-a-cnn/
+02/10/2023 11:34
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/juan-guaido-dispara-contra-presidente-da-colombia-ficou-do-lado-da-ditadura/
+28/04/2023 17:43
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/entretenimento/presa-gravida-e-musica-sobre-menstruacao-censurada-rita-lee-foi-alvo-da-ditadura/
+09/05/2023 13:19
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/economia/ex-funcionaria-da-itaipu-perseguida-na-ditadura-e-reintegrada-46-anos-apos-demissao/
+10/07/2023 19:33
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/conselho-para-quem-clama-por-ditadura-militar-no-brasil-va-pra-cuba-ou-venezuela/
+07/11/2022 18:55
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/temendo-polarizacao-uerj-adia-cancelamento-de-homenagem-a-general-da-ditadura/
+24/08/2022 15:47
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/lifestyle/bienal-de-sp-sofreu-boicote-de-artistas-brasileiros-e-estrangeiros-durante-ditadura-militar/
+10/09/2023 04:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/esportes/real-madrid-rebate-presidente-do-barcelona-quem-foi-o-clube-da-ditadura/
+18/04/2023 09:51
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/hebe-de-bonafini-a-mae-que-desafiou-a-ditadura-argentina-morre-aos-93-anos/
+20/11/2022 15:34
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/audios-do-superior-tribunal-militar-revelam-tortura-contra-presos-durante-a-ditadura/
+18/04/2022 17:35 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/entretenimento/marieta-severo-estrela-duetto-pessoas-precisam-saber-o-que-foi-a-ditadura/
+29/09/2022 12:05 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/o-grande-debate-cardozo-diz-que-bolsonaro-defende-golpe-copolla-que-lula-bajula-ditaduras/
+27/04/2023 14:28
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/governo-de-netanyahu-esta-tentando-transformar-israel-em-ditadura-diz-ex-primeiro-ministro/
+27/03/2023 09:40
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/nacional/nao-ha-registros-na-imprensa-internacional-de-suposta-ditadura-do-stf-e-tse/
+12/11/2022 16:21 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/internacional/uruguai-e-chile-criticam-fala-de-lula-de-criacao-de-narrativa-sobre-ditadura-na-venezuela/
+30/05/2023 18:55
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/hacker-plano-de-golpe-ditadura-e-brilhante-ustra-as-perguntas-que-general-heleno-nao-respondeu-a-cpmi/
+26/09/2023 19:31
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/ministro-do-tse-manda-remover-postagens-que-associam-lula-a-ditadura-na-nicaragua/
+04/10/2022 16:13 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/tarcisio-defende-no-stf-homenagem-a-coronel-dos-anos-de-chumbo-nao-ha-noticia-de-condenacao/
+04/09/2023 23:26
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/lula-lembra-ditadura-e-diz-que-militares-se-apoderaram-do-7-de-setembro/
+05/09/2023 10:19
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/stj-decide-se-familia-de-ustra-deve-indenizar-vitima-de-tortura-na-ditadura-militar/
+08/08/2023 04:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/stj-suspende-julgamento-sobre-indenizacao-de-ustra-a-familia-de-vitima-de-tortura-na-ditadura/
+08/08/2023 18:22 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/nacional/rj-policia-investiga-pichacoes-com-alusao-a-ditadura-militar-no-tre-e-oab-no-rj/
+25/11/2022 17:18
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/a-cnn-bolsonaro-critica-maduro-no-brasil-e-triste-ver-essa-aproximacao-com-ditaduras/
+29/05/2023 18:15
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/carmen-lucia-pede-explicacoes-ao-governo-de-sp-sobre-homenagem-a-expoente-da-ditadura/
+27/08/2023 18:25
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/bolsonaro-inelegivel-ditadura-e-aborto-os-posicionamentos-de-gonet-indicado-a-pgr/
+27/11/2023 15:25
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/fernando-molica-todos-os-candidatos-deviam-condenar-todas-as-ditaduras/
+25/10/2022 13:36 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/nacional/estudantes-mortos-na-ditadura-sao-diplomados-pela-usp/
+25/12/2023 10:31 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/esportes/na-ultima-vez-que-o-vila-nova-jogou-a-serie-a-brasil-ainda-era-uma-ditadura-militar/
+25/11/2023 16:02 
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/politica/dino-critica-no-senado-falsas-solucoes-para-mudancas-no-stf-e-nega-ditadura-judicial/
+07/02/2024 19:05
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.cnnbrasil.com.br/?s=imbroxável
+https://www.brasildefato.com.br/pesquisar?utf8=✓&q=PT
+https://www.brasildefato.com.br/2024/02/10/orcamento-de-universidades-ainda-nao-cobre-perdas-ocorridas-nos-governos-temer-e-bolsonaro
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/09/tse-multa-bolsonaro-em-r-15-mil-por-noticias-falsas-contra-lula
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/09/observatorio-da-educacao-publica-do-rs-revela-escolas-fechadas-reducao-de-concursados-e-evasao-escolar
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/09/pt-ano-44
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/09/na-favela-ate-quando-se-ganha-se-perde
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/carnaval-de-sp-nunes-e-vaiado-e-boulos-ouve-gritos-de-prefeito-dos-folioes
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/lula-pede-volta-as-raizes-debate-em-igrejas-e-ocupacao-das-ruas-ao-celebrar-44-anos-do-pt
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/09/do-cafe-entre-lula-e-lira-aos-10-anos-da-campanha-da-constituinte-um-sistema-politico-agonizante
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/09/vacinas-sim-uai
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/temporal-provoca-alagamentos-e-deixa-parte-da-unb-debaixo-d-agua-especialistas-apontam-solucoes
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/pesquisar?utf8=✓&q=Lula
+https://www.brasildefato.com.br/2024/02/10/orcamento-de-universidades-ainda-nao-cobre-perdas-ocorridas-nos-governos-temer-e-bolsonaro
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/brasil-envelhece-como-a-europa
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/carnaval-de-sp-nunes-e-vaiado-e-boulos-ouve-gritos-de-prefeito-dos-folioes
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/lula-pede-volta-as-raizes-debate-em-igrejas-e-ocupacao-das-ruas-ao-celebrar-44-anos-do-pt
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/forcas-armadas-investiram-em-espionagem-seis-vezes-mais-do-que-a-abin-aponta-jeferson-miola
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/understanding-the-federal-police-operation-in-brazil-why-bolsonaro-and-allies-could-be-arrested
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/operacao-sobre-tentativa-de-golpe-e-apenas-uma-das-tres-frentes-que-pf-tem-contra-bolsonaro
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/09/vacinas-sim-uai
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/a-luta-dos-yanomami-na-sapucai
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/forcas-armadas-investiram-em-espionagem-seis-vezes-mais-do-que-a-abin-alerta-jeferson-miola
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/pesquisar?utf8=✓&q=Dilma
+https://www.brasildefato.com.br/2024/02/02/abandonar-o-retrovisor
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/04/opiniao-i-as-contradicoes-do-novo-governo-lula-e-a-urgente-necessidade-da-luta-contra-hegemonica
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/01/boulos-e-marta-lancarao-pre-campanha-em-tradicional-reduto-da-ex-prefeita-na-cidade
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/09/pt-ano-44
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/07/a-luta-dos-servidores-publicos-no-governo-lula
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/forcas-armadas-investiram-em-espionagem-seis-vezes-mais-do-que-a-abin-aponta-jeferson-miola
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/09/do-cafe-entre-lula-e-lira-aos-10-anos-da-campanha-da-constituinte-um-sistema-politico-agonizante
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/02/marta-retorna-ao-pt-em-ato-com-lula-e-boulos-estou-de-volta-ao-meu-aconchego
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/06/celso-rocha-de-barros-frente-ampla-e-eleicoes-municipais-podem-causar-tensao-no-governo-lula
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/forcas-armadas-investiram-em-espionagem-seis-vezes-mais-do-que-a-abin-alerta-jeferson-miola
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/pesquisar?utf8=✓&q=Haddad
+https://www.brasildefato.com.br/2024/02/05/conheca-as-novas-etapas-da-reforma-tributaria-que-o-governo-pretende-priorizar-em-2024
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/09/carnaval-educacao-e-politica
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/09/pesquisador-defende-que-estado-tenha-politica-publica-para-incentivar-sem-cercear-o-carnaval
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/06/celso-rocha-de-barros-frente-ampla-e-eleicoes-municipais-podem-causar-tensao-no-governo-lula
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/forcas-armadas-investiram-em-espionagem-seis-vezes-mais-do-que-a-abin-aponta-jeferson-miola
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/07/governo-promete-enviar-projeto-para-tirar-reoneracao-da-folha-de-mp
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/09/tic-tac
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/06/em-encontro-com-senadores-haddad-discute-proposta-de-reoneracao-da-folha-salarial
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/08/milton-leite-ricardo-nunes-e-tarcisio-de-freitas-interesses-pessoais-definirao-o-futuro-da-sabesp
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/forcas-armadas-investiram-em-espionagem-seis-vezes-mais-do-que-a-abin-alerta-jeferson-miola
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/pesquisar?utf8=✓&q=anarquista
+https://www.brasildefato.com.br/2023/06/26/o-jornalista-sindical-e-um-megafone-um-instrumento-de-quem-tem-a-voz-silenciada
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2023/06/29/seminario-em-porto-alegre-vai-debater-visoes-e-impasses-dos-protestos-de-2013-apos-uma-decada
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2023/06/30/protestos-de-2013-seminario-em-porto-alegre-vai-debater-visoes-e-impasses-apos-uma-decada
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2023/12/10/quem-sao-os-libertarios-argentinos-a-influencia-dos-eua
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2023/12/08/quienes-son-los-libertarios-argentinos-la-influencia-norteamericana
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2023/07/06/agenda-cultural-bdf-rs-6-a-13-de-julho
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2023/08/29/carta-requiem-para-enid-backes
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2023/06/29/aos-10-anos-de-junho-de-2013-movimentos-fazem-ato-contra-a-tarifa-em-sp-nesta-quinta-29
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2023/10/10/meu-banco-e-as-estatuas-bebadas
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2023/07/20/reformas-trabalhistas-de-temer-e-bolsonaro-nao-cumprem-promessa-de-mais-emprego
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/pesquisar?utf8=✓&q=ditadura
+https://www.brasildefato.com.br/2024/02/10/ah-se-nao-fosse-o-ile-aiye-50-anos-de-resistencia-e-pioneirismo-marcam-a-historia-do-bloco-afro-mais-antigo-do-pais
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/lula-pede-volta-as-raizes-debate-em-igrejas-e-ocupacao-das-ruas-ao-celebrar-44-anos-do-pt
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/forcas-armadas-investiram-em-espionagem-seis-vezes-mais-do-que-a-abin-aponta-jeferson-miola
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/09/do-cafe-entre-lula-e-lira-aos-10-anos-da-campanha-da-constituinte-um-sistema-politico-agonizante
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/08/operacao-da-policia-federal-pl-de-bolsonaro-e-valdemar-costa-neto-pode-sofrer-graves-consequencias-apos-ligacao-com-tentativa-de-golpe
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/conheca-11-filmes-premiados-de-diretoras-brasileiras
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/09/organizacoes-denunciam-milei-a-corte-interamericana-por-ataques-contra-comunicacao-na-argentina
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/ah-se-nao-fosse-o-ile-aiye-bloco-afro-mais-antigo-do-pais-celebra-50-anos-de-resistencia-e-pioneirismo
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/10/forcas-armadas-investiram-em-espionagem-seis-vezes-mais-do-que-a-abin-alerta-jeferson-miola
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/2024/02/09/operacao-da-pf-deixa-nitido-que-golpe-era-orquestrado-pela-alta-cupula-do-governo-bolsonaro
+'NoneType' object has no attribute 'get'
+None 
+
+https://www.brasildefato.com.br/pesquisar?utf8=✓&q=imbroxável
+https://cidadeverde.com/buscar/noticias/PT
+Coletando imagens...
+https://cidadeverde.com/temporeal/124952/mdb-decide-esta-semana-alianca-com-pt-em-teresina
+https://cidadeverde.com/noticias/398420/pt-adia-deliberacao-e-aguarda-acordo-entre-novo-e-franze-nesta-quarta-feira
+https://cidadeverde.com/noticias/399553/franze-silva-entregara-decisao-sobre-futuro-mandato-ao-pt-e-nao-descarta-senado
+https://cidadeverde.com/noticias/398373/executiva-municipal-do-pt-adia-escolha-de-pre-candidato-em-teresina
+https://cidadeverde.com/noticias/396385/vice-no-diretorio-municipal-do-pt-oficializa-apoio-a-fabio-novo
+https://cidadeverde.com/noticias/406641/pl-e-pt-terao-as-maiores-parcelas-do-fundo-eleitoral-bilionario-de-2024
+https://cidadeverde.com/noticias/400180/refazer-escolha-de-pre-candidato-seria-um-erro-diz-presidente-do-pt-sobre-nova-resolucao
+https://cidadeverde.com/noticias/398223/criem-juizo-adverte-wellington-dias-sobre-disputa-por-pre-candidatura-do-pt
+https://cidadeverde.com/noticias/401383/silvio-mendes-diz-que-barbara-tem-suas-razoes-para-se-aliar-ao-pt-e-nega-chapa-com-jeova-alencar
+https://cidadeverde.com/noticias/398217/petistas-se-reunem-e-fabio-novo-diz-que-pt-nao-pode-mais-esperar-para-definir-nome
+https://cidadeverde.com/noticias/401167/boulos-reune-partidos-aliados-para-eleicao-e-pt-promete-lula-no-palanque
+https://cidadeverde.com/noticias/405591/elzuila-calisto-afirma-que-seguira-orientacao-do-pt-sobre-palacio-da-cidade
+https://cidadeverde.com/noticias/393953/se-o-pt-se-baseasse-em-pesquisa-o-lula-nao-era-presidente-diz-dudu-sobre-pre-candidato
+https://cidadeverde.com/noticias/395193/em-reuniao-lideres-do-pt-decidem-que-pre-candidato-sera-escolhido-em-agosto
+https://cidadeverde.com/noticias/397821/cicero-magalhaes-afirma-que-pt-nao-precisa-importar-vice-para-eleicoes-de-2024
+https://cidadeverde.com/saviabarreto/124750/coluna-13-12-23
+https://cidadeverde.com/noticias/398450/franze-diz-que-nao-contestara-decisao-do-pt-sobre-pre-candidato
+https://cidadeverde.com/noticias/406585/pl-e-pt-terao-quase-r-15-bi-para-gastar-nas-campanhas
+https://cidadeverde.com/noticias/402782/wellington-dias-evita-falar-sobre-filiacoes-de-opositores-ao-pt-e-partidos-da-federacao
+https://cidadeverde.com/temporeal/122974/florentino-diz-ao-pt-que-esta-disponivel-para-candidatura-em-parnaiba
+https://cidadeverde.com/temporeal/123138/pesquisas-vereadores-e-deputados-decidirao-candidato-do-pt-a-prefeito-de-teresina
+https://cidadeverde.com/noticias/403962/rafael-fonteles-diz-acreditar-em-alianca-entre-pt-e-mdb-ainda-no-1o-turno-de-2024
+https://cidadeverde.com/noticias/405856/maycon-silva-entrega-cargo-na-fundacao-e-bancada-do-pt-decide-sair-da-gestao-de-dr-pessoa
+https://cidadeverde.com/noticias/405914/ricardo-lewandowski-deve-preservar-pt-e-esvaziar-psb-no-2o-escalao
+https://cidadeverde.com/noticias/396435/olavo-rebelo-e-ze-santana-se-filiam-no-pt-na-proxima-sexta-feira-28
+https://cidadeverde.com/noticias/397954/divulgada-pesquisa-para-ajudar-a-definir-o-candidato-do-pt-em-teresina-veja-numeros
+https://cidadeverde.com/noticias/400089/grupo-no-pt-lanca-manifesto-para-que-vice-de-fabio-novo-seja-mulher
+https://cidadeverde.com/temporeal/124510/sucessao-em-sao-raimundo-nonato-pt-confirma-pre-candidatura-de-isaias-neto
+https://cidadeverde.com/noticias/401799/fabio-novo-faz-aceno-a-tucanos-e-relembra-ja-houve-chapa-pt-e-psdb-no-estado
+https://cidadeverde.com/noticias/399278/henrique-fontana-acredita-que-pt-pode-vencer-disputa-pelo-palacio-da-cidade
+https://cidadeverde.com/noticias/396800/rafael-fonteles-defende-pesquisa-como-criterio-do-pt-para-escolher-pre-candidato
+https://cidadeverde.com/noticias/396111/franze-silva-garante-unificacao-do-pt-em-agosto-para-disputar-palacio-da-cidade
+https://cidadeverde.com/noticias/398832/executiva-do-pt-fara-reuniao-com-governador-e-prefeitos-sobre-2024
+https://cidadeverde.com/temporeal/125115/joao-de-deus-convoca-pt-para-discutir-casos-de-infidelidade-partidaria
+https://cidadeverde.com/noticias/405780/marta-suplicy-recebe-convite-para-voltar-ao-pt-em-novo-passo-para-negociar-vice-de-boulos
+https://cidadeverde.com/noticias/404851/vice-presidente-do-pt-da-tapa-na-cara-de-deputado-durante-sessao-na-camara
+https://cidadeverde.com/noticias/398714/valdemar-rejeita-aliancas-do-pl-de-bolsonaro-com-o-pt-de-lula-somos-oposicao
+https://cidadeverde.com/noticias/407316/pl-e-pt-disputam-prefeituras-de-122-cidades-nas-eleicoes-municipais-deste-ano
+https://cidadeverde.com/noticias/405540/presidente-do-pt-pede-que-vereadores-entreguem-cargos-no-palacio-da-cidade
+https://cidadeverde.com/temporeal/125055/agora-e-oficial-pt-formaliza-alianca-com-mdb-em-parnaiba
+https://cidadeverde.com/noticias/404914/agressao-de-deputado-do-pt-e-comportamento-de-bolsonaristas-desmoralizam-congresso-diz-lira
+https://cidadeverde.com/temporeal/123721/rafael-fonteles-entra-em-campo-e-unifica-pt-de-teresina
+https://cidadeverde.com/temporeal/123818/carmelita-vence-queda-de-braco-com-pt-em-sao-raimundo-nonato
+https://cidadeverde.com/temporeal/123792/pt-unido-com-fabio-novo
+https://cidadeverde.com/noticias/398143/franze-silva-afirma-que-acordo-com-fabio-novo-no-pt-sera-revisto
+https://cidadeverde.com/temporeal/124083/pt-larga-na-frente-em-frente-em-teresina
+https://cidadeverde.com/noticias/397820/barbara-do-firmino-descarta-apoio-ao-pt-e-diz-que-seguira-com-grupo-da-oposicao
+https://cidadeverde.com/noticias/399120/teresa-britto-manda-recado-para-fabio-novo-una-se-ao-pt-primeiro
+https://cidadeverde.com/noticias/397043/pt-e-psd-disputam-prefeitura-de-sao-lourenco-em-eleicao-suplementar-no-domingo
+https://cidadeverde.com/noticias/398507/presidente-do-pt-diz-nao-reconhecer-diretorio-que-elegeu-fabio-novo-pre-candidato
+https://cidadeverde.com/temporeal/124952/mdb-decide-esta-semana-alianca-com-pt-em-teresina
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/398420/pt-adia-deliberacao-e-aguarda-acordo-entre-novo-e-franze-nesta-quarta-feira
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/399553/franze-silva-entregara-decisao-sobre-futuro-mandato-ao-pt-e-nao-descarta-senado
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/398373/executiva-municipal-do-pt-adia-escolha-de-pre-candidato-em-teresina
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/396385/vice-no-diretorio-municipal-do-pt-oficializa-apoio-a-fabio-novo
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406641/pl-e-pt-terao-as-maiores-parcelas-do-fundo-eleitoral-bilionario-de-2024
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/400180/refazer-escolha-de-pre-candidato-seria-um-erro-diz-presidente-do-pt-sobre-nova-resolucao
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/398223/criem-juizo-adverte-wellington-dias-sobre-disputa-por-pre-candidatura-do-pt
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/401383/silvio-mendes-diz-que-barbara-tem-suas-razoes-para-se-aliar-ao-pt-e-nega-chapa-com-jeova-alencar
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/398217/petistas-se-reunem-e-fabio-novo-diz-que-pt-nao-pode-mais-esperar-para-definir-nome
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/401167/boulos-reune-partidos-aliados-para-eleicao-e-pt-promete-lula-no-palanque
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405591/elzuila-calisto-afirma-que-seguira-orientacao-do-pt-sobre-palacio-da-cidade
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/393953/se-o-pt-se-baseasse-em-pesquisa-o-lula-nao-era-presidente-diz-dudu-sobre-pre-candidato
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/395193/em-reuniao-lideres-do-pt-decidem-que-pre-candidato-sera-escolhido-em-agosto
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/397821/cicero-magalhaes-afirma-que-pt-nao-precisa-importar-vice-para-eleicoes-de-2024
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/saviabarreto/124750/coluna-13-12-23
+
+-- ERROR: 'NoneType' object has no attribute 'text' 
+
+https://cidadeverde.com/noticias/398450/franze-diz-que-nao-contestara-decisao-do-pt-sobre-pre-candidato
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406585/pl-e-pt-terao-quase-r-15-bi-para-gastar-nas-campanhas
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/402782/wellington-dias-evita-falar-sobre-filiacoes-de-opositores-ao-pt-e-partidos-da-federacao
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/temporeal/122974/florentino-diz-ao-pt-que-esta-disponivel-para-candidatura-em-parnaiba
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/temporeal/123138/pesquisas-vereadores-e-deputados-decidirao-candidato-do-pt-a-prefeito-de-teresina
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/403962/rafael-fonteles-diz-acreditar-em-alianca-entre-pt-e-mdb-ainda-no-1o-turno-de-2024
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405856/maycon-silva-entrega-cargo-na-fundacao-e-bancada-do-pt-decide-sair-da-gestao-de-dr-pessoa
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405914/ricardo-lewandowski-deve-preservar-pt-e-esvaziar-psb-no-2o-escalao
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/396435/olavo-rebelo-e-ze-santana-se-filiam-no-pt-na-proxima-sexta-feira-28
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/397954/divulgada-pesquisa-para-ajudar-a-definir-o-candidato-do-pt-em-teresina-veja-numeros
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/400089/grupo-no-pt-lanca-manifesto-para-que-vice-de-fabio-novo-seja-mulher
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/temporeal/124510/sucessao-em-sao-raimundo-nonato-pt-confirma-pre-candidatura-de-isaias-neto
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/401799/fabio-novo-faz-aceno-a-tucanos-e-relembra-ja-houve-chapa-pt-e-psdb-no-estado
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/399278/henrique-fontana-acredita-que-pt-pode-vencer-disputa-pelo-palacio-da-cidade
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/396800/rafael-fonteles-defende-pesquisa-como-criterio-do-pt-para-escolher-pre-candidato
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/396111/franze-silva-garante-unificacao-do-pt-em-agosto-para-disputar-palacio-da-cidade
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/398832/executiva-do-pt-fara-reuniao-com-governador-e-prefeitos-sobre-2024
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/temporeal/125115/joao-de-deus-convoca-pt-para-discutir-casos-de-infidelidade-partidaria
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405780/marta-suplicy-recebe-convite-para-voltar-ao-pt-em-novo-passo-para-negociar-vice-de-boulos
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404851/vice-presidente-do-pt-da-tapa-na-cara-de-deputado-durante-sessao-na-camara
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/398714/valdemar-rejeita-aliancas-do-pl-de-bolsonaro-com-o-pt-de-lula-somos-oposicao
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407316/pl-e-pt-disputam-prefeituras-de-122-cidades-nas-eleicoes-municipais-deste-ano
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405540/presidente-do-pt-pede-que-vereadores-entreguem-cargos-no-palacio-da-cidade
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/temporeal/125055/agora-e-oficial-pt-formaliza-alianca-com-mdb-em-parnaiba
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404914/agressao-de-deputado-do-pt-e-comportamento-de-bolsonaristas-desmoralizam-congresso-diz-lira
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/temporeal/123721/rafael-fonteles-entra-em-campo-e-unifica-pt-de-teresina
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/temporeal/123818/carmelita-vence-queda-de-braco-com-pt-em-sao-raimundo-nonato
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/temporeal/123792/pt-unido-com-fabio-novo
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/398143/franze-silva-afirma-que-acordo-com-fabio-novo-no-pt-sera-revisto
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/temporeal/124083/pt-larga-na-frente-em-frente-em-teresina
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/397820/barbara-do-firmino-descarta-apoio-ao-pt-e-diz-que-seguira-com-grupo-da-oposicao
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/399120/teresa-britto-manda-recado-para-fabio-novo-una-se-ao-pt-primeiro
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/buscar/noticias/Lula
+Coletando imagens...
+https://cidadeverde.com/noticias/407029/no-piaui-cerca-de-10-mil-alunos-podem-receber-poupanca-de-r-9200-conhecam-os-criterios
+https://cidadeverde.com/noticias/407347/tarcisio-e-meu-irmao-diz-bolsonaro-sobre-afagos-entre-governador-e-lula
+https://cidadeverde.com/noticias/407285/governador-confirma-entrega-da-obra-de-rebaixamento-da-avenida-joao-xxiii-para-o-mes-de-julho
+https://cidadeverde.com/noticias/407173/marden-menezes-diz-que-segue-no-progressistas-mesmo-fora-da-oposicao
+https://cidadeverde.com/noticias/406859/minha-casa-minha-vida-deve-levar-credito-imobiliario-a-recorde-em-2024
+https://cidadeverde.com/noticias/406929/congresso-retomara-atividade-com-fake-news-na-mira-do-governo-e-pressao-da-oposicao-ao-stf
+https://cidadeverde.com/noticias/407686/lula-e-arthur-lira-se-reunem-para-tratar-da-relacao-entre-poderes
+https://cidadeverde.com/parnaiba/125112/lula-nomeia-primeiro-reitor-para-a-universidade-do-delta-do-parnaiba
+https://cidadeverde.com/noticias/407599/governo-assina-convenio-de-r-6463-milhoes-com-a-caixa-e-mira-conclusao-da-transcerrados
+https://cidadeverde.com/noticias/407423/em-mensagem-enviada-ao-congresso-lula-defende-acoes-de-infraestrutura-e-politica-industrial
+https://cidadeverde.com/noticias/406623/lewandowski-promete-foco-na-seguranca-publica-e-continuidade-ao-trabalho-de-flavio-dino
+https://cidadeverde.com/noticias/407117/apos-fim-do-recesso-legislativo-alepi-e-camaras-marcam-inicio-dos-trabalhos-para-proxima-semana
+https://cidadeverde.com/noticias/406641/pl-e-pt-terao-as-maiores-parcelas-do-fundo-eleitoral-bilionario-de-2024
+https://cidadeverde.com/noticias/407113/lewandowski-decide-manter-diretor-geral-da-prf-no-cargo
+https://cidadeverde.com/noticias/406824/pe-de-meia-quais-estudantes-podem-receber-incentivo-do-governo
+https://cidadeverde.com/noticias/407486/lula-descumpre-promessas-e-volta-a-atacar-bolsonaro-em-discurso
+https://cidadeverde.com/noticias/406644/lewandowski-diz-a-dino-que-deve-trocar-secretario-de-justica-mas-preservara-parte-da-equipe
+https://cidadeverde.com/noticias/407659/bolsonaro-constrangeu-subordinados-em-reuniao-no-planalto-por-apoio-a-golpe-diz-pf
+https://cidadeverde.com/noticias/407199/marta-fara-discurso-de-volta-para-casa-e-evitara-rusgas-passadas-em-refiliacao-ao-pt
+https://cidadeverde.com/noticias/406890/piaui-podera-retomar-238-obras-de-saude-paralisadas-ou-inacabadas-com-recursos-federais
+https://cidadeverde.com/noticias/406854/lula-mantem-no-primeiro-ano-gasto-e-investimento-militar-de-bolsonaro
+https://cidadeverde.com/noticias/407563/dino-discursa-no-senado-defende-moraes-e-ve-direito-de-o-stf-julgar-parlamentares
+https://cidadeverde.com/noticias/407345/cid-gomes-se-filia-ao-psb-e-sela-rompimento-com-o-irmao-ciro
+https://cidadeverde.com/noticias/406997/congresso-volta-do-recesso-em-fevereiro-com-20-medidas-provisorias-na-pauta
+https://cidadeverde.com/noticias/406927/camara-volta-do-recesso-com-ameaca-de-travar-agenda-do-governo-lula
+https://cidadeverde.com/noticias/407489/tensao-entre-lira-e-governo-lula-faz-camara-cancelar-reuniao-de-lideres-com-haddad
+https://cidadeverde.com/noticias/406857/oposicao-se-mobiliza-por-pec-que-busca-dificultar-buscas-da-pf-no-congresso
+https://cidadeverde.com/noticias/407203/saiba-quem-entra-e-quem-sai-do-ministerio-da-justica-sob-lewandowski
+https://cidadeverde.com/noticias/407562/lula-diz-em-evento-que-nenhuma-mulher-quer-namorar-ajudante-geral
+https://cidadeverde.com/noticias/407159/minha-casa-minha-vida-retoma-contratacoes-para-baixa-renda-apos-cinco-anos-veja-valores
+https://cidadeverde.com/noticias/406806/bolsa-do-ensino-medio-sera-de-r-200-por-mes-e-tera-com-bonus-de-r-200-para-enem
+https://cidadeverde.com/noticias/406803/centro-de-referencia-esperanca-garcia-passa-a-funcionar-na-casa-de-mulher-brasileira-em-fevereiro
+https://cidadeverde.com/noticias/407637/mauro-cid-e-major-fizeram-orcamento-de-r-100-mil-para-levar-golpistas-do-rio-a-manifestacoes-diz-pf
+https://cidadeverde.com/noticias/406778/lula-justifica-viagens-ao-exterior-e-diz-que-o-brasil-nunca-antes-esteve-tao-respeitado
+https://cidadeverde.com/noticias/407128/indicacao-de-bolsonaro-para-vice-de-nunes-esfria-candidatura-de-salles-em-sp
+https://cidadeverde.com/noticias/407362/agricultores-familiares-recebem-tratores-para-19-municipios-do-piaui
+https://cidadeverde.com/noticias/407373/instituto-credibilidade-divulga-nova-pesquisa-de-intencoes-de-votos-para-prefeitura-de-teresina
+https://cidadeverde.com/noticias/407636/decisao-de-moraes-tem-tres-vezes-corno-no-lugar-de-como
+https://cidadeverde.com/noticias/407497/governo-eleva-teto-de-isencao-de-irpf-para-r-282400-dois-salarios-minimos
+https://cidadeverde.com/noticias/407328/deputados-e-senadores-voltam-ao-trabalho-nesta-segunda-feira-05
+https://cidadeverde.com/noticias/406741/grupo-lancara-pre-candidato-independente-de-dr-helio-diz-florentino-neto
+https://cidadeverde.com/noticias/407290/apos-9-anos-marta-suplicy-retorna-ao-pt-nunca-saiu-de-mim
+https://cidadeverde.com/noticias/407288/flavio-dino-quer-proibicao-de-acampamentos-antidemocraticos-em-quarteis
+https://cidadeverde.com/noticias/407638/tse-multa-jair-bolsonaro-por-propaganda-negativa-contra-lula-em-2022
+https://cidadeverde.com/noticias/407316/pl-e-pt-disputam-prefeituras-de-122-cidades-nas-eleicoes-municipais-deste-ano
+https://cidadeverde.com/noticias/407592/bolsonaro-pediu-alteracao-em-minuta-do-golpe-que-previa-prisao-de-moraes-diz-pf
+https://cidadeverde.com/noticias/407413/psb-de-alckmin-oficializa-saida-de-bloco-de-lira-na-camara
+https://cidadeverde.com/noticias/407318/nao-e-nao-saiba-o-que-fazer-se-for-vitima-de-assedio-no-carnaval
+https://cidadeverde.com/noticias/407063/lula-nega-que-atuara-pela-desistencia-de-tabata-para-ajudar-boulos-na-eleicao-de-sp
+https://cidadeverde.com/noticias/407209/saiba-quem-entra-e-quem-sai-do-ministerio-da-justica-sob-lewandowski
+https://cidadeverde.com/noticias/407029/no-piaui-cerca-de-10-mil-alunos-podem-receber-poupanca-de-r-9200-conhecam-os-criterios
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407347/tarcisio-e-meu-irmao-diz-bolsonaro-sobre-afagos-entre-governador-e-lula
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407285/governador-confirma-entrega-da-obra-de-rebaixamento-da-avenida-joao-xxiii-para-o-mes-de-julho
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407173/marden-menezes-diz-que-segue-no-progressistas-mesmo-fora-da-oposicao
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406859/minha-casa-minha-vida-deve-levar-credito-imobiliario-a-recorde-em-2024
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406929/congresso-retomara-atividade-com-fake-news-na-mira-do-governo-e-pressao-da-oposicao-ao-stf
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407686/lula-e-arthur-lira-se-reunem-para-tratar-da-relacao-entre-poderes
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/parnaiba/125112/lula-nomeia-primeiro-reitor-para-a-universidade-do-delta-do-parnaiba
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407599/governo-assina-convenio-de-r-6463-milhoes-com-a-caixa-e-mira-conclusao-da-transcerrados
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407423/em-mensagem-enviada-ao-congresso-lula-defende-acoes-de-infraestrutura-e-politica-industrial
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406623/lewandowski-promete-foco-na-seguranca-publica-e-continuidade-ao-trabalho-de-flavio-dino
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407117/apos-fim-do-recesso-legislativo-alepi-e-camaras-marcam-inicio-dos-trabalhos-para-proxima-semana
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406641/pl-e-pt-terao-as-maiores-parcelas-do-fundo-eleitoral-bilionario-de-2024
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407113/lewandowski-decide-manter-diretor-geral-da-prf-no-cargo
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406824/pe-de-meia-quais-estudantes-podem-receber-incentivo-do-governo
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407486/lula-descumpre-promessas-e-volta-a-atacar-bolsonaro-em-discurso
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406644/lewandowski-diz-a-dino-que-deve-trocar-secretario-de-justica-mas-preservara-parte-da-equipe
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407659/bolsonaro-constrangeu-subordinados-em-reuniao-no-planalto-por-apoio-a-golpe-diz-pf
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407199/marta-fara-discurso-de-volta-para-casa-e-evitara-rusgas-passadas-em-refiliacao-ao-pt
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406890/piaui-podera-retomar-238-obras-de-saude-paralisadas-ou-inacabadas-com-recursos-federais
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406854/lula-mantem-no-primeiro-ano-gasto-e-investimento-militar-de-bolsonaro
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407563/dino-discursa-no-senado-defende-moraes-e-ve-direito-de-o-stf-julgar-parlamentares
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407345/cid-gomes-se-filia-ao-psb-e-sela-rompimento-com-o-irmao-ciro
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406997/congresso-volta-do-recesso-em-fevereiro-com-20-medidas-provisorias-na-pauta
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406927/camara-volta-do-recesso-com-ameaca-de-travar-agenda-do-governo-lula
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407489/tensao-entre-lira-e-governo-lula-faz-camara-cancelar-reuniao-de-lideres-com-haddad
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406857/oposicao-se-mobiliza-por-pec-que-busca-dificultar-buscas-da-pf-no-congresso
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407203/saiba-quem-entra-e-quem-sai-do-ministerio-da-justica-sob-lewandowski
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407562/lula-diz-em-evento-que-nenhuma-mulher-quer-namorar-ajudante-geral
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407159/minha-casa-minha-vida-retoma-contratacoes-para-baixa-renda-apos-cinco-anos-veja-valores
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406806/bolsa-do-ensino-medio-sera-de-r-200-por-mes-e-tera-com-bonus-de-r-200-para-enem
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406803/centro-de-referencia-esperanca-garcia-passa-a-funcionar-na-casa-de-mulher-brasileira-em-fevereiro
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407637/mauro-cid-e-major-fizeram-orcamento-de-r-100-mil-para-levar-golpistas-do-rio-a-manifestacoes-diz-pf
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406778/lula-justifica-viagens-ao-exterior-e-diz-que-o-brasil-nunca-antes-esteve-tao-respeitado
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407128/indicacao-de-bolsonaro-para-vice-de-nunes-esfria-candidatura-de-salles-em-sp
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407362/agricultores-familiares-recebem-tratores-para-19-municipios-do-piaui
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407373/instituto-credibilidade-divulga-nova-pesquisa-de-intencoes-de-votos-para-prefeitura-de-teresina
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407636/decisao-de-moraes-tem-tres-vezes-corno-no-lugar-de-como
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407497/governo-eleva-teto-de-isencao-de-irpf-para-r-282400-dois-salarios-minimos
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407328/deputados-e-senadores-voltam-ao-trabalho-nesta-segunda-feira-05
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406741/grupo-lancara-pre-candidato-independente-de-dr-helio-diz-florentino-neto
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407290/apos-9-anos-marta-suplicy-retorna-ao-pt-nunca-saiu-de-mim
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407288/flavio-dino-quer-proibicao-de-acampamentos-antidemocraticos-em-quarteis
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407638/tse-multa-jair-bolsonaro-por-propaganda-negativa-contra-lula-em-2022
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407316/pl-e-pt-disputam-prefeituras-de-122-cidades-nas-eleicoes-municipais-deste-ano
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407592/bolsonaro-pediu-alteracao-em-minuta-do-golpe-que-previa-prisao-de-moraes-diz-pf
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407413/psb-de-alckmin-oficializa-saida-de-bloco-de-lira-na-camara
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/buscar/noticias/Dilma
+Coletando imagens...
+https://cidadeverde.com/noticias/399006/augusto-aras-compara-delacao-de-cid-com-as-de-palocci-e-cabral
+https://cidadeverde.com/noticias/405784/lula-provoca-jair-bolsonaro-e-diz-que-filhos-deveriam-renunciar-ja-que-duvidam-das-urnas-eletronicas
+https://cidadeverde.com/noticias/401702/lula-amarra-pgr-na-maior-demora-em-30-anos-para-indicar-seu-novo-chefe
+https://cidadeverde.com/noticias/397994/trf-1-mantem-arquivamento-de-acao-contra-dilma-rousseff
+https://cidadeverde.com/noticias/402147/relator-quer-militares-fora-de-ministerios-a-partir-de-2025-e-ja-fora-das-eleicoes-de-2024
+https://cidadeverde.com/noticias/404158/lula-e-aprovado-por-38-e-reprovado-por-30-apos-11-meses-mostra-datafolha
+https://cidadeverde.com/noticias/406644/lewandowski-diz-a-dino-que-deve-trocar-secretario-de-justica-mas-preservara-parte-da-equipe
+https://cidadeverde.com/noticias/399805/stf-forma-maioria-para-manter-direitos-politicos-de-dilma-apos-impeachment
+https://cidadeverde.com/noticias/405027/cob-investe-e-isaquias-treinara-em-quintal-de-casa-rumo-ao-bi-olimpico
+https://cidadeverde.com/noticias/407199/marta-fara-discurso-de-volta-para-casa-e-evitara-rusgas-passadas-em-refiliacao-ao-pt
+https://cidadeverde.com/noticias/406854/lula-mantem-no-primeiro-ano-gasto-e-investimento-militar-de-bolsonaro
+https://cidadeverde.com/noticias/403508/lula-indica-flavio-dino-para-vaga-de-ministro-do-supremo-tribunal-federal-stf
+https://cidadeverde.com/noticias/398511/no-piaui-lula-fala-sobre-crise-do-fpm-e-diz-que-prefeitos-nao-podem-ser-esquecidos
+https://cidadeverde.com/noticias/398017/wellington-dias-sobre-decisao-do-trf-1-que-inocentou-dilma-o-bem-venceu
+https://cidadeverde.com/noticias/398500/no-piaui-lula-elogia-wellington-dias-e-pede-aos-militantes-pelo-amor-de-deus-nao-desanimem
+https://cidadeverde.com/noticias/400756/estrategia-da-petrobras-compensa-volatilidade-do-petroleo-diz-prates
+https://cidadeverde.com/noticias/400141/barroso-e-empossado-no-cargo-de-presidente-do-stf
+https://cidadeverde.com/noticias/407159/minha-casa-minha-vida-retoma-contratacoes-para-baixa-renda-apos-cinco-anos-veja-valores
+https://cidadeverde.com/noticias/405478/chuva-alaga-casas-na-zona-norte-de-teresina-defesa-civil-monitora-areas-de-risco
+https://cidadeverde.com/noticias/405849/marta-entrega-carta-de-demissao-a-nunes-apos-dizer-a-lula-que-aceita-ser-vice-de-boulos
+https://cidadeverde.com/noticias/403329/lula-veta-desoneracao-da-folha-congresso-e-empresarios-reagem
+https://cidadeverde.com/noticias/401970/demora-de-lula-para-comando-da-pgr-bate-recorde-na-redemocratizacao
+https://cidadeverde.com/noticias/401050/whindersson-nunes-perde-luta-de-boxe-e-vira-meme
+https://cidadeverde.com/noticias/399447/delacao-de-mauro-cid-alimenta-bastidores-da-indicacao-do-presidente-lula-a-pgr
+https://cidadeverde.com/noticias/406778/lula-justifica-viagens-ao-exterior-e-diz-que-o-brasil-nunca-antes-esteve-tao-respeitado
+https://cidadeverde.com/noticias/401677/lula-troca-comando-da-caixa-economica-federal
+https://cidadeverde.com/noticias/401789/governador-busca-financiamento-com-banco-dos-brics-para-intermodal-do-vale-do-parnaiba
+https://cidadeverde.com/noticias/406266/em-brasilia-governador-pede-apoio-de-lula-para-o-hidrogenio-verde-e-obras-que-ligam-sul-ao-norte
+https://cidadeverde.com/noticias/402681/pt-aproveita-efeito-lula-cresce-para-2024-e-filia-prefeitos-ate-do-pl
+https://cidadeverde.com/noticias/398482/plano-que-sera-lancado-por-lula-no-piaui-visa-erradicar-fome-no-brasil-ate-2030
+https://cidadeverde.com/noticias/405780/marta-suplicy-recebe-convite-para-voltar-ao-pt-em-novo-passo-para-negociar-vice-de-boulos
+https://cidadeverde.com/noticias/406045/ricardo-lewandowski-tem-historico-de-votos-favoraveis-a-petistas-no-stf
+https://cidadeverde.com/noticias/406164/teresina-possui-655-familias-em-situacao-de-desabrigamento
+https://cidadeverde.com/noticias/399700/onda-de-calor-veja-quais-sao-os-bairros-mais-quentes-de-teresina
+https://cidadeverde.com/noticias/401904/avanco-do-centrao-sobre-cargos-e-verbas-gera-queixas-entre-aliados-de-lula
+https://cidadeverde.com/noticias/397852/pochmann-fala-em-novo-ibge-ao-tomar-posse-e-diz-que-instituto-passou-por-vendaval-toxico
+https://cidadeverde.com/noticias/404247/senado-sabatinara-dino-e-gonet-juntos-em-formato-superficial-e-inedito-para-stf-e-pgr
+https://cidadeverde.com/noticias/406245/pt-da-aval-a-filiacao-de-marta-e-rejeita-previas-para-escolha-de-vice-de-boulos
+https://cidadeverde.com/noticias/405597/moradores-relatam-desespero-e-sufoco-com-casas-alagadas-no-residencial-dilma-rousseff
+https://cidadeverde.com/noticias/398544/ministro-dos-transportes-inaugura-obras-do-viaduto-e-duplicacao-da-br-316
+https://cidadeverde.com/noticias/405716/defesa-civil-monitora-familias-atingidas-por-chuvas-em-teresina-e-areas-criticas
+https://cidadeverde.com/noticias/405586/seis-familias-tiveram-casas-alagadas-no-residencial-dilma-rousseff-teresina-tem-56-areas-de-risco
+https://cidadeverde.com/noticias/404392/lula-exonera-wellington-dias-de-ministerio-para-votacao-de-flavio-dino-para-stf
+https://cidadeverde.com/noticias/401480/rafael-fonteles-inicia-agenda-na-asia-governador-deve-se-reunir-com-dilma-rousseff
+https://cidadeverde.com/noticias/399843/direitos-politicos-de-dilma-sao-mantidos-com-aval-do-stf-mesmo-com-impeachment
+https://cidadeverde.com/noticias/398813/homem-e-morto-com-tiros-e-facadas-na-zona-norte-de-teresina-mae-tambem-foi-ferida
+https://cidadeverde.com/noticias/403469/lula-decide-indicar-flavio-dino-ao-stf-e-paulo-gonet-a-pgr
+https://cidadeverde.com/noticias/405108/lula-deixa-assinado-decreto-que-reajusta-salario-minimo-para-r-1412
+https://cidadeverde.com/noticias/400095/rosa-deixa-marca-no-stf-com-julgamentos-mas-enfrenta-criticas-do-legislativo
+https://cidadeverde.com/noticias/406175/bolsonaro-e-valdemar-conversam-apos-elogio-a-lula-que-expos-fissura-no-pl
+https://cidadeverde.com/noticias/399006/augusto-aras-compara-delacao-de-cid-com-as-de-palocci-e-cabral
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405784/lula-provoca-jair-bolsonaro-e-diz-que-filhos-deveriam-renunciar-ja-que-duvidam-das-urnas-eletronicas
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/401702/lula-amarra-pgr-na-maior-demora-em-30-anos-para-indicar-seu-novo-chefe
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/397994/trf-1-mantem-arquivamento-de-acao-contra-dilma-rousseff
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/402147/relator-quer-militares-fora-de-ministerios-a-partir-de-2025-e-ja-fora-das-eleicoes-de-2024
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404158/lula-e-aprovado-por-38-e-reprovado-por-30-apos-11-meses-mostra-datafolha
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406644/lewandowski-diz-a-dino-que-deve-trocar-secretario-de-justica-mas-preservara-parte-da-equipe
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/399805/stf-forma-maioria-para-manter-direitos-politicos-de-dilma-apos-impeachment
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405027/cob-investe-e-isaquias-treinara-em-quintal-de-casa-rumo-ao-bi-olimpico
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407199/marta-fara-discurso-de-volta-para-casa-e-evitara-rusgas-passadas-em-refiliacao-ao-pt
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406854/lula-mantem-no-primeiro-ano-gasto-e-investimento-militar-de-bolsonaro
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/403508/lula-indica-flavio-dino-para-vaga-de-ministro-do-supremo-tribunal-federal-stf
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/398511/no-piaui-lula-fala-sobre-crise-do-fpm-e-diz-que-prefeitos-nao-podem-ser-esquecidos
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/398017/wellington-dias-sobre-decisao-do-trf-1-que-inocentou-dilma-o-bem-venceu
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/398500/no-piaui-lula-elogia-wellington-dias-e-pede-aos-militantes-pelo-amor-de-deus-nao-desanimem
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/400756/estrategia-da-petrobras-compensa-volatilidade-do-petroleo-diz-prates
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/400141/barroso-e-empossado-no-cargo-de-presidente-do-stf
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407159/minha-casa-minha-vida-retoma-contratacoes-para-baixa-renda-apos-cinco-anos-veja-valores
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405478/chuva-alaga-casas-na-zona-norte-de-teresina-defesa-civil-monitora-areas-de-risco
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405849/marta-entrega-carta-de-demissao-a-nunes-apos-dizer-a-lula-que-aceita-ser-vice-de-boulos
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/403329/lula-veta-desoneracao-da-folha-congresso-e-empresarios-reagem
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/401970/demora-de-lula-para-comando-da-pgr-bate-recorde-na-redemocratizacao
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/401050/whindersson-nunes-perde-luta-de-boxe-e-vira-meme
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/399447/delacao-de-mauro-cid-alimenta-bastidores-da-indicacao-do-presidente-lula-a-pgr
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406778/lula-justifica-viagens-ao-exterior-e-diz-que-o-brasil-nunca-antes-esteve-tao-respeitado
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/401677/lula-troca-comando-da-caixa-economica-federal
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/401789/governador-busca-financiamento-com-banco-dos-brics-para-intermodal-do-vale-do-parnaiba
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406266/em-brasilia-governador-pede-apoio-de-lula-para-o-hidrogenio-verde-e-obras-que-ligam-sul-ao-norte
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/402681/pt-aproveita-efeito-lula-cresce-para-2024-e-filia-prefeitos-ate-do-pl
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/398482/plano-que-sera-lancado-por-lula-no-piaui-visa-erradicar-fome-no-brasil-ate-2030
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405780/marta-suplicy-recebe-convite-para-voltar-ao-pt-em-novo-passo-para-negociar-vice-de-boulos
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406045/ricardo-lewandowski-tem-historico-de-votos-favoraveis-a-petistas-no-stf
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406164/teresina-possui-655-familias-em-situacao-de-desabrigamento
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/399700/onda-de-calor-veja-quais-sao-os-bairros-mais-quentes-de-teresina
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/401904/avanco-do-centrao-sobre-cargos-e-verbas-gera-queixas-entre-aliados-de-lula
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/397852/pochmann-fala-em-novo-ibge-ao-tomar-posse-e-diz-que-instituto-passou-por-vendaval-toxico
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404247/senado-sabatinara-dino-e-gonet-juntos-em-formato-superficial-e-inedito-para-stf-e-pgr
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406245/pt-da-aval-a-filiacao-de-marta-e-rejeita-previas-para-escolha-de-vice-de-boulos
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405597/moradores-relatam-desespero-e-sufoco-com-casas-alagadas-no-residencial-dilma-rousseff
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/398544/ministro-dos-transportes-inaugura-obras-do-viaduto-e-duplicacao-da-br-316
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405716/defesa-civil-monitora-familias-atingidas-por-chuvas-em-teresina-e-areas-criticas
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405586/seis-familias-tiveram-casas-alagadas-no-residencial-dilma-rousseff-teresina-tem-56-areas-de-risco
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404392/lula-exonera-wellington-dias-de-ministerio-para-votacao-de-flavio-dino-para-stf
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/401480/rafael-fonteles-inicia-agenda-na-asia-governador-deve-se-reunir-com-dilma-rousseff
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/399843/direitos-politicos-de-dilma-sao-mantidos-com-aval-do-stf-mesmo-com-impeachment
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/398813/homem-e-morto-com-tiros-e-facadas-na-zona-norte-de-teresina-mae-tambem-foi-ferida
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/403469/lula-decide-indicar-flavio-dino-ao-stf-e-paulo-gonet-a-pgr
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/buscar/noticias/Haddad
+Coletando imagens...
+https://cidadeverde.com/noticias/403475/ministerio-da-saude-lanca-aplicativo-para-conectar-doadores-a-hemocentros
+https://cidadeverde.com/noticias/406577/governo-faz-radiografia-e-ira-anunciar-possiveis-cortes-de-gastos-este-ano-diz-haddad
+https://cidadeverde.com/noticias/402895/haddad-pede-esforco-concentrado-para-aprovar-medidas-que-viabilizam-deficit-zero
+https://cidadeverde.com/noticias/406929/congresso-retomara-atividade-com-fake-news-na-mira-do-governo-e-pressao-da-oposicao-ao-stf
+https://cidadeverde.com/noticias/405343/impostos-sobre-diesel-biodiesel-e-gas-de-cozinha-tem-alta-a-partir-de-hoje-1
+https://cidadeverde.com/noticias/403585/aplicativo-facilitara-doacoes-de-sangue-no-brasil-e-dara-informacao-sobre-saude
+https://cidadeverde.com/noticias/405210/fernando-haddad-anuncia-medidas-para-compensar-rombo-no-orcamento
+https://cidadeverde.com/noticias/404625/cesta-basica-combustivel-servicos-o-que-muda-com-reforma-tributaria
+https://cidadeverde.com/noticias/403785/rafael-fonteles-apresenta-projeto-de-hidrogenio-verde-no-piaui-durante-a-cop-28-em-dubai
+https://cidadeverde.com/noticias/404378/qual-o-problema-diz-lula-sobre-o-pais-se-endividar-para-crescer
+https://cidadeverde.com/noticias/407199/marta-fara-discurso-de-volta-para-casa-e-evitara-rusgas-passadas-em-refiliacao-ao-pt
+https://cidadeverde.com/noticias/403425/derrubada-de-veto-a-desoneracao-da-folha-pode-gerar-impacto-de-quase-r-19-bi
+https://cidadeverde.com/noticias/406101/posso-ser-um-cara-horrivel-mas-o-outro-cara-e-pessimo-diz-bolsonaro-sobre-lula
+https://cidadeverde.com/noticias/402984/economia-e-ecologia-nao-podem-mais-estar-em-contradicao-afirma-haddad
+https://cidadeverde.com/noticias/404011/teresina-e-escolhida-entre-as-cidades-sede-para-encontro-internacional-do-g20
+https://cidadeverde.com/noticias/407641/tabata-amaral-se-encontra-com-jose-serra-e-tenta-buscar-o-apoio-do-psdb-a-sua-candidatura
+https://cidadeverde.com/noticias/404843/camara-encerra-sessao-sem-votar-apostas-esportivas-que-pode-ir-a-plenario-hoje
+https://cidadeverde.com/noticias/407489/tensao-entre-lira-e-governo-lula-faz-camara-cancelar-reuniao-de-lideres-com-haddad
+https://cidadeverde.com/noticias/405372/calendario-esportivo-de-2024-tem-olimpiadas-copa-america-e-eurocopa
+https://cidadeverde.com/noticias/403779/secretario-daniel-oliveira-participa-com-governador-da-cop28-em-dubai
+https://cidadeverde.com/noticias/406146/reajuste-salarial-das-categorias-sera-linear-e-superior-a-inflacao-garante-governador
+https://cidadeverde.com/noticias/404952/congresso-aprova-orcamento-de-2024-com-deficit-zero-e-corte-no-pac
+https://cidadeverde.com/noticias/403407/pacheco-sai-em-defesa-da-desoneracao-e-promete-pautar-veto-ainda-em-2023
+https://cidadeverde.com/noticias/405455/governo-federal-veta-calendario-de-pagamento-de-emendas-e-amplia-atrito-com-congresso
+https://cidadeverde.com/noticias/405114/primeira-tarefa-do-governo-em-2024-sera-regulamentar-a-reforma-tributaria-diz-lider
+https://cidadeverde.com/noticias/403329/lula-veta-desoneracao-da-folha-congresso-e-empresarios-reagem
+https://cidadeverde.com/noticias/404207/encontro-internacional-com-paises-do-g20-ocorre-em-maio-na-cidade-de-teresina-veja-calendario
+https://cidadeverde.com/noticias/406778/lula-justifica-viagens-ao-exterior-e-diz-que-o-brasil-nunca-antes-esteve-tao-respeitado
+https://cidadeverde.com/noticias/407128/indicacao-de-bolsonaro-para-vice-de-nunes-esfria-candidatura-de-salles-em-sp
+https://cidadeverde.com/noticias/405572/lula-comeca-2024-com-desafios-no-congresso-e-sob-ameaca-de-parlamentares
+https://cidadeverde.com/noticias/405452/lula-sanciona-ldo-com-recorde-de-r-49-bilhoes-de-fundo-para-eleicao-municipal
+https://cidadeverde.com/noticias/404199/fernando-haddad-afirma-que-nao-pode-impor-um-ritmo-ao-congresso
+https://cidadeverde.com/noticias/405445/novo-teto-de-juros-para-faturas-de-cartao-de-credito-comeca-a-valer-nesta-4a-feira
+https://cidadeverde.com/noticias/406108/projeto-altera-regras-nos-processos-de-falencia-e-favorece-a-participacao-dos-credores
+https://cidadeverde.com/noticias/404910/sem-acordo-com-bancos-cmn-limita-juros-do-rotativo-a-100-da-divida
+https://cidadeverde.com/noticias/403614/senado-marca-para-o-mesmo-dia-e-deve-encurtar-sabatinas-de-dino-e-gonet
+https://cidadeverde.com/noticias/403059/governo-promove-mutirao-desenrola-na-proxima-quarta-para-incentivar-renegociacoes-de-dividas
+https://cidadeverde.com/noticias/405261/congresso-vai-tentar-barrar-medida-provisoria-que-reonera-setores-que-mais-geram-empregos
+https://cidadeverde.com/noticias/407290/apos-9-anos-marta-suplicy-retorna-ao-pt-nunca-saiu-de-mim
+https://cidadeverde.com/noticias/405409/rotativo-do-cartao-de-credito-passa-a-ter-juros-limitados-a-100-da-divida-entenda
+https://cidadeverde.com/noticias/405244/governo-federal-publica-mp-que-propoe-reoneracao-gradual-da-folha
+https://cidadeverde.com/noticias/405258/ciro-nogueira-moro-damares-e-ex-ministros-lideram-oposicao-ao-governo-no-senado
+https://cidadeverde.com/noticias/404912/lula-reune-ministros-aliados-e-campos-neto-em-confraternizacao-de-fim-de-ano
+https://cidadeverde.com/noticias/405386/reforma-ministerial-no-inicio-de-2024-perde-forca-mas-aliados-esperam-trocas-ate-junho
+https://cidadeverde.com/noticias/404247/senado-sabatinara-dino-e-gonet-juntos-em-formato-superficial-e-inedito-para-stf-e-pgr
+https://cidadeverde.com/noticias/404827/congresso-promulga-emenda-constitucional-da-reforma-tributaria
+https://cidadeverde.com/noticias/406007/governo-e-congresso-avaliam-tributacao-de-compras-internacionais-para-bancar-desoneracao
+https://cidadeverde.com/noticias/406323/regular-inteligencia-artificial-e-imperativo-diz-barroso
+https://cidadeverde.com/noticias/407063/lula-nega-que-atuara-pela-desistencia-de-tabata-para-ajudar-boulos-na-eleicao-de-sp
+https://cidadeverde.com/noticias/404630/pacheco-pede-ao-governo-federal-medidas-contra-seca-no-norte-de-minas-gerais
+https://cidadeverde.com/noticias/403475/ministerio-da-saude-lanca-aplicativo-para-conectar-doadores-a-hemocentros
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406577/governo-faz-radiografia-e-ira-anunciar-possiveis-cortes-de-gastos-este-ano-diz-haddad
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/402895/haddad-pede-esforco-concentrado-para-aprovar-medidas-que-viabilizam-deficit-zero
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406929/congresso-retomara-atividade-com-fake-news-na-mira-do-governo-e-pressao-da-oposicao-ao-stf
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405343/impostos-sobre-diesel-biodiesel-e-gas-de-cozinha-tem-alta-a-partir-de-hoje-1
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/403585/aplicativo-facilitara-doacoes-de-sangue-no-brasil-e-dara-informacao-sobre-saude
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405210/fernando-haddad-anuncia-medidas-para-compensar-rombo-no-orcamento
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404625/cesta-basica-combustivel-servicos-o-que-muda-com-reforma-tributaria
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/403785/rafael-fonteles-apresenta-projeto-de-hidrogenio-verde-no-piaui-durante-a-cop-28-em-dubai
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404378/qual-o-problema-diz-lula-sobre-o-pais-se-endividar-para-crescer
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407199/marta-fara-discurso-de-volta-para-casa-e-evitara-rusgas-passadas-em-refiliacao-ao-pt
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/403425/derrubada-de-veto-a-desoneracao-da-folha-pode-gerar-impacto-de-quase-r-19-bi
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406101/posso-ser-um-cara-horrivel-mas-o-outro-cara-e-pessimo-diz-bolsonaro-sobre-lula
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/402984/economia-e-ecologia-nao-podem-mais-estar-em-contradicao-afirma-haddad
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404011/teresina-e-escolhida-entre-as-cidades-sede-para-encontro-internacional-do-g20
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407641/tabata-amaral-se-encontra-com-jose-serra-e-tenta-buscar-o-apoio-do-psdb-a-sua-candidatura
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404843/camara-encerra-sessao-sem-votar-apostas-esportivas-que-pode-ir-a-plenario-hoje
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407489/tensao-entre-lira-e-governo-lula-faz-camara-cancelar-reuniao-de-lideres-com-haddad
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405372/calendario-esportivo-de-2024-tem-olimpiadas-copa-america-e-eurocopa
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/403779/secretario-daniel-oliveira-participa-com-governador-da-cop28-em-dubai
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406146/reajuste-salarial-das-categorias-sera-linear-e-superior-a-inflacao-garante-governador
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404952/congresso-aprova-orcamento-de-2024-com-deficit-zero-e-corte-no-pac
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/403407/pacheco-sai-em-defesa-da-desoneracao-e-promete-pautar-veto-ainda-em-2023
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405455/governo-federal-veta-calendario-de-pagamento-de-emendas-e-amplia-atrito-com-congresso
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405114/primeira-tarefa-do-governo-em-2024-sera-regulamentar-a-reforma-tributaria-diz-lider
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/403329/lula-veta-desoneracao-da-folha-congresso-e-empresarios-reagem
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404207/encontro-internacional-com-paises-do-g20-ocorre-em-maio-na-cidade-de-teresina-veja-calendario
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406778/lula-justifica-viagens-ao-exterior-e-diz-que-o-brasil-nunca-antes-esteve-tao-respeitado
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407128/indicacao-de-bolsonaro-para-vice-de-nunes-esfria-candidatura-de-salles-em-sp
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405572/lula-comeca-2024-com-desafios-no-congresso-e-sob-ameaca-de-parlamentares
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405452/lula-sanciona-ldo-com-recorde-de-r-49-bilhoes-de-fundo-para-eleicao-municipal
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404199/fernando-haddad-afirma-que-nao-pode-impor-um-ritmo-ao-congresso
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405445/novo-teto-de-juros-para-faturas-de-cartao-de-credito-comeca-a-valer-nesta-4a-feira
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406108/projeto-altera-regras-nos-processos-de-falencia-e-favorece-a-participacao-dos-credores
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404910/sem-acordo-com-bancos-cmn-limita-juros-do-rotativo-a-100-da-divida
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/403614/senado-marca-para-o-mesmo-dia-e-deve-encurtar-sabatinas-de-dino-e-gonet
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/403059/governo-promove-mutirao-desenrola-na-proxima-quarta-para-incentivar-renegociacoes-de-dividas
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405261/congresso-vai-tentar-barrar-medida-provisoria-que-reonera-setores-que-mais-geram-empregos
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407290/apos-9-anos-marta-suplicy-retorna-ao-pt-nunca-saiu-de-mim
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405409/rotativo-do-cartao-de-credito-passa-a-ter-juros-limitados-a-100-da-divida-entenda
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405244/governo-federal-publica-mp-que-propoe-reoneracao-gradual-da-folha
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405258/ciro-nogueira-moro-damares-e-ex-ministros-lideram-oposicao-ao-governo-no-senado
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404912/lula-reune-ministros-aliados-e-campos-neto-em-confraternizacao-de-fim-de-ano
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/405386/reforma-ministerial-no-inicio-de-2024-perde-forca-mas-aliados-esperam-trocas-ate-junho
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404247/senado-sabatinara-dino-e-gonet-juntos-em-formato-superficial-e-inedito-para-stf-e-pgr
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404827/congresso-promulga-emenda-constitucional-da-reforma-tributaria
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/buscar/noticias/anarquista
+Coletando imagens...
+https://cidadeverde.com/noticias/46286/estreia-o-filme-com-historia-de-chacrinha
+https://cidadeverde.com/noticias/20752/anarquistas-gracas-a-deus-de-zelia-gattai-volta-em-dvd
+https://cidadeverde.com/noticias/138284/proibido-rosto-coberto-em-missa-do-papa
+https://cidadeverde.com/noticias/136187/protesto-em-teresina-soma-20-presos-e-dois-pms-feridos
+https://cidadeverde.com/noticias/76814/rodrigo-santoro-interpreta-anarquista-em-novo-longa-metragem
+https://cidadeverde.com/noticias/235425/era-bem-maluquinho-diz-gil-sobre-fidel
+https://cidadeverde.com/noticias/142749/no-piaui-carlos-lupi-admite-apoio-do-pdt-a-dilma-e-wellington-dias
+https://cidadeverde.com/noticias/143896/ator-luis-salem-ataca-idosa-no-rio-diz-jornal
+https://cidadeverde.com/noticias/43244/especial-20-anos-sem-o-cantor-raul-seixas
+https://cidadeverde.com/noticias/318546/provocado-por-tas-jo-soares-fala-de-sexualidade-politica-e-tv
+https://cidadeverde.com/noticias/177089/insatisfacao-com-candidaturas-e-com-processo-eleitoral-reforca-abstencoes
+https://cidadeverde.com/noticias/46286/estreia-o-filme-com-historia-de-chacrinha
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/20752/anarquistas-gracas-a-deus-de-zelia-gattai-volta-em-dvd
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/138284/proibido-rosto-coberto-em-missa-do-papa
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/136187/protesto-em-teresina-soma-20-presos-e-dois-pms-feridos
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/76814/rodrigo-santoro-interpreta-anarquista-em-novo-longa-metragem
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/235425/era-bem-maluquinho-diz-gil-sobre-fidel
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/142749/no-piaui-carlos-lupi-admite-apoio-do-pdt-a-dilma-e-wellington-dias
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/143896/ator-luis-salem-ataca-idosa-no-rio-diz-jornal
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/43244/especial-20-anos-sem-o-cantor-raul-seixas
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/318546/provocado-por-tas-jo-soares-fala-de-sexualidade-politica-e-tv
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/buscar/noticias/ditadura
+Coletando imagens...
+https://cidadeverde.com/noticias/395611/advogado-celso-barros-coelho-um-dos-maiores-juristas-do-brasil-morre-aos-101-anos
+https://cidadeverde.com/noticias/387284/italia-pede-execucao-da-pena-do-ex-atacante-robinho-no-brasil
+https://cidadeverde.com/noticias/385744/eu-nao-a-reconheco-diz-luiz-fernando-guimaraes-sobre-cassia-kis
+https://cidadeverde.com/noticias/384356/silvio-almeida-toma-posse-nos-direitos-humanos-e-diz-que-revisara-atos-de-odio-e-preconceito
+https://cidadeverde.com/noticias/395387/famosos-lamentam-morte-do-diretor-teatral-ze-celso-o-teatro-chora
+https://cidadeverde.com/noticias/398117/aos-88-anos-morre-francisco-dornelles-ex-governador-do-rj
+https://cidadeverde.com/noticias/402147/relator-quer-militares-fora-de-ministerios-a-partir-de-2025-e-ja-fora-das-eleicoes-de-2024
+https://cidadeverde.com/noticias/390652/lula-reduziu-200-militares-da-ativa-no-governo-apos-recorde-sob-bolsonaro
+https://cidadeverde.com/noticias/396596/democracia-nao-foi-abalada-com-o-8-1-diz-carmen-lucia-em-evento-em-sp
+https://cidadeverde.com/noticias/395888/barroso-assumira-presidencia-do-cnj-orgao-que-julga-conduta-de-juizes
+https://cidadeverde.com/noticias/389300/livro-traz-fatos-historicos-do-ex-governador-chagas-rodrigues
+https://cidadeverde.com/noticias/395593/marcos-aurelio-vai-em-evento-do-mdb-e-quer-consenso-com-psd
+https://cidadeverde.com/noticias/391959/rita-lee-foi-presa-durante-a-ditadura-e-teve-sua-casa-invadida-diz-advogado
+https://cidadeverde.com/noticias/406933/carlos-bolsonaro-e-alvo-da-pf-em-nova-fase-de-operacao-sobre-uso-ilegal-da-abin
+https://cidadeverde.com/noticias/390182/de-sarney-a-lula-crises-em-serie-sao-marcas-dos-100-dias-de-presidentes
+https://cidadeverde.com/noticias/406854/lula-mantem-no-primeiro-ano-gasto-e-investimento-militar-de-bolsonaro
+https://cidadeverde.com/noticias/407563/dino-discursa-no-senado-defende-moraes-e-ve-direito-de-o-stf-julgar-parlamentares
+https://cidadeverde.com/noticias/396773/dia-do-orgasmo-mulheres-devem-se-conhecer-mais-para-chegar-la
+https://cidadeverde.com/noticias/395380/morre-ze-celso-dramaturgo-revolucionario-dos-palcos-que-criou-o-teatro-oficina
+https://cidadeverde.com/noticias/384195/lula-entra-para-a-historia-da-redemocratizacao-com-3o-mandato
+https://cidadeverde.com/noticias/384970/ex-diretor-do-barca-chama-messi-de-anao-com-hormonios-e-culpa-astro-por-crise
+https://cidadeverde.com/noticias/384559/primeiro-cessar-fogo-de-putin-na-ucrania-comeca-sob-suspeitas
+https://cidadeverde.com/noticias/389692/entidades-vao-fundar-memorial-no-piaui-contra-a-ditadura-e-lembrar-horrores-do-regime
+https://cidadeverde.com/noticias/388654/morre-o-ex-ministro-eliseu-padilha-aos-77-anos
+https://cidadeverde.com/noticias/384094/impeachment-de-fernando-collor-completa-30-anos-nesta-sexta-feira
+https://cidadeverde.com/noticias/384067/pele-protagonizou-grandes-encontros-com-lideres-mundiais
+https://cidadeverde.com/noticias/404579/morre-carlos-lyra-compositor-historico-da-bossa-nova-aos-90-anos
+https://cidadeverde.com/noticias/384441/rio-inaugura-placa-e-renomeia-rua-que-circunda-o-maracana-com-homenagem-a-pele
+https://cidadeverde.com/noticias/395079/bolsonaro-reconhece-inelegibilidade-mas-diz-que-pais-caminha-para-ditadura
+https://cidadeverde.com/noticias/389370/morre-juca-chaves-compositor-e-humorista-que-ironizou-a-ditadura-militar-aos-84-anos
+https://cidadeverde.com/noticias/389381/francisca-trindade-uma-historia-de-resistencia-20-anos-de-sua-partida
+https://cidadeverde.com/noticias/389683/exercito-ameaca-punir-militar-que-comemorar-aniversario-do-golpe-nesta-sexta-31
+https://cidadeverde.com/noticias/388299/cupula-da-republica-teve-1-mulher-a-cada-16-homens-apos-ditadura
+https://cidadeverde.com/noticias/391916/adeus-a-rainha-rita-lee-rebelde-desde-a-infancia
+https://cidadeverde.com/noticias/395836/pacheco-diz-que-fala-de-barroso-sobre-bolsonarismo-foi-infeliz-inadequada-e-inoportuna
+https://cidadeverde.com/noticias/395038/conceito-de-democracia-e-relativo-diz-lula-sobre-ditadura-da-venezuela
+https://cidadeverde.com/noticias/404270/estudantes-da-rede-publica-visitam-albertao-pela-primeira-vez
+https://cidadeverde.com/noticias/402681/pt-aproveita-efeito-lula-cresce-para-2024-e-filia-prefeitos-ate-do-pl
+https://cidadeverde.com/noticias/384306/margareth-menezes-critica-governo-bolsonaro-desmonte-da-cultura-trouxe-muita-dor
+https://cidadeverde.com/noticias/384456/avenida-rei-pele-e-inaugurada-em-frente-ao-estadio-do-maracana
+https://cidadeverde.com/noticias/395128/morre-ex-ministro-do-stf-sepulveda-pertence-aos-85-anos
+https://cidadeverde.com/noticias/404165/maduro-vai-visitar-putin-na-russia-em-meio-a-crise-da-venezuela-com-guiana
+https://cidadeverde.com/noticias/399327/caetano-veloso-anuncia-mais-dois-shows-do-disco-transa-com-jards-macale
+https://cidadeverde.com/noticias/398876/lula-tem-7-de-setembro-com-chefes-de-poderes-ze-gotinha-e-climao-um-dia-apos-reforma
+https://cidadeverde.com/noticias/402999/pec-que-limita-poderes-dos-ministros-do-stf-pode-ser-votada-na-terca-feira-21
+https://cidadeverde.com/noticias/383933/faixa-presidencial-nao-foi-passada-10-vezes-na-historia-republicana-do-brasil
+https://cidadeverde.com/noticias/402044/professor-de-historia-da-dicas-de-assuntos-que-devem-cair-no-enem-2023-confira
+https://cidadeverde.com/noticias/403066/ultraliberal-javier-milei-rompe-polarizacao-na-argentina-e-e-eleito-presidente
+https://cidadeverde.com/noticias/395306/siqueira-campos-ex-governador-do-tocantins-morre-aos-94-anos
+https://cidadeverde.com/noticias/404938/city-conquista-mundial-com-vitoria-sobre-o-fluminense
+https://cidadeverde.com/noticias/395611/advogado-celso-barros-coelho-um-dos-maiores-juristas-do-brasil-morre-aos-101-anos
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/387284/italia-pede-execucao-da-pena-do-ex-atacante-robinho-no-brasil
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/385744/eu-nao-a-reconheco-diz-luiz-fernando-guimaraes-sobre-cassia-kis
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/384356/silvio-almeida-toma-posse-nos-direitos-humanos-e-diz-que-revisara-atos-de-odio-e-preconceito
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/395387/famosos-lamentam-morte-do-diretor-teatral-ze-celso-o-teatro-chora
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/398117/aos-88-anos-morre-francisco-dornelles-ex-governador-do-rj
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/402147/relator-quer-militares-fora-de-ministerios-a-partir-de-2025-e-ja-fora-das-eleicoes-de-2024
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/390652/lula-reduziu-200-militares-da-ativa-no-governo-apos-recorde-sob-bolsonaro
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/396596/democracia-nao-foi-abalada-com-o-8-1-diz-carmen-lucia-em-evento-em-sp
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/395888/barroso-assumira-presidencia-do-cnj-orgao-que-julga-conduta-de-juizes
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/389300/livro-traz-fatos-historicos-do-ex-governador-chagas-rodrigues
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/395593/marcos-aurelio-vai-em-evento-do-mdb-e-quer-consenso-com-psd
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/391959/rita-lee-foi-presa-durante-a-ditadura-e-teve-sua-casa-invadida-diz-advogado
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406933/carlos-bolsonaro-e-alvo-da-pf-em-nova-fase-de-operacao-sobre-uso-ilegal-da-abin
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/390182/de-sarney-a-lula-crises-em-serie-sao-marcas-dos-100-dias-de-presidentes
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/406854/lula-mantem-no-primeiro-ano-gasto-e-investimento-militar-de-bolsonaro
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/407563/dino-discursa-no-senado-defende-moraes-e-ve-direito-de-o-stf-julgar-parlamentares
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/396773/dia-do-orgasmo-mulheres-devem-se-conhecer-mais-para-chegar-la
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/395380/morre-ze-celso-dramaturgo-revolucionario-dos-palcos-que-criou-o-teatro-oficina
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/384195/lula-entra-para-a-historia-da-redemocratizacao-com-3o-mandato
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/384970/ex-diretor-do-barca-chama-messi-de-anao-com-hormonios-e-culpa-astro-por-crise
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/384559/primeiro-cessar-fogo-de-putin-na-ucrania-comeca-sob-suspeitas
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/389692/entidades-vao-fundar-memorial-no-piaui-contra-a-ditadura-e-lembrar-horrores-do-regime
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/388654/morre-o-ex-ministro-eliseu-padilha-aos-77-anos
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/384094/impeachment-de-fernando-collor-completa-30-anos-nesta-sexta-feira
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/384067/pele-protagonizou-grandes-encontros-com-lideres-mundiais
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404579/morre-carlos-lyra-compositor-historico-da-bossa-nova-aos-90-anos
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/384441/rio-inaugura-placa-e-renomeia-rua-que-circunda-o-maracana-com-homenagem-a-pele
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/395079/bolsonaro-reconhece-inelegibilidade-mas-diz-que-pais-caminha-para-ditadura
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/389370/morre-juca-chaves-compositor-e-humorista-que-ironizou-a-ditadura-militar-aos-84-anos
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/389381/francisca-trindade-uma-historia-de-resistencia-20-anos-de-sua-partida
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/389683/exercito-ameaca-punir-militar-que-comemorar-aniversario-do-golpe-nesta-sexta-31
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/388299/cupula-da-republica-teve-1-mulher-a-cada-16-homens-apos-ditadura
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/391916/adeus-a-rainha-rita-lee-rebelde-desde-a-infancia
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/395836/pacheco-diz-que-fala-de-barroso-sobre-bolsonarismo-foi-infeliz-inadequada-e-inoportuna
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/395038/conceito-de-democracia-e-relativo-diz-lula-sobre-ditadura-da-venezuela
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404270/estudantes-da-rede-publica-visitam-albertao-pela-primeira-vez
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/402681/pt-aproveita-efeito-lula-cresce-para-2024-e-filia-prefeitos-ate-do-pl
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/384306/margareth-menezes-critica-governo-bolsonaro-desmonte-da-cultura-trouxe-muita-dor
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/384456/avenida-rei-pele-e-inaugurada-em-frente-ao-estadio-do-maracana
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/395128/morre-ex-ministro-do-stf-sepulveda-pertence-aos-85-anos
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/404165/maduro-vai-visitar-putin-na-russia-em-meio-a-crise-da-venezuela-com-guiana
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/399327/caetano-veloso-anuncia-mais-dois-shows-do-disco-transa-com-jards-macale
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/398876/lula-tem-7-de-setembro-com-chefes-de-poderes-ze-gotinha-e-climao-um-dia-apos-reforma
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/402999/pec-que-limita-poderes-dos-ministros-do-stf-pode-ser-votada-na-terca-feira-21
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/noticias/383933/faixa-presidencial-nao-foi-passada-10-vezes-na-historia-republicana-do-brasil
+'NoneType' object has no attribute 'get'
+None 
+
+https://cidadeverde.com/buscar/noticias/imbroxável
+Coletando imagens...
+https://cidadeverde.com/noticias/347826/bolsonaro-minimiza-atos-contra-ele-e-diz-que-faltou-maconha-para-manifestantes
+https://cidadeverde.com/noticias/347801/bolsonaristas-espalham-fake-news-sobre-ato-critico-ao-governo
+https://cidadeverde.com/noticias/347826/bolsonaro-minimiza-atos-contra-ele-e-diz-que-faltou-maconha-para-manifestantes
+'NoneType' object has no attribute 'get'
+None 
+
+https://busca.ig.com.br/buscar/?q=PT
+https://ultimosegundo.ig.com.br/colunas/panorama/2023-08-30/pt-contradiz-lula-reeleicao-2026.html
+30/08/2023 17:35
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/colunas/daniel-cesar/2023-05-20/lula-decisao-boulos-briga-pt.html
+20/05/2023 05:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/colunas/panorama/2023-05-18/apos-deixar-rede-sustentabilidade-randolfe-rodrigues-deve-voltar-pt.html
+18/05/2023 12:59
+'NoneType' object has no attribute 'get'
+None 
+
+https://busca.ig.com.br/buscar/?q=Lula
+https://ultimosegundo.ig.com.br/politica/2023-01-09/lula-governadores-caminham-ate-o-stf.html
+
+-- ERROR: 'NoneType' object has no attribute 'text' 
+
+https://ultimosegundo.ig.com.br/colunas/panorama/2023-07-25/lula-antecipa-cirurgia-apos-apelo-de-janja.html
+25/07/2023 15:16
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/politica/2024-02-07/lula-exalta-educacao-no-rio-de-janeiro.html
+07/02/2024 16:10
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/politica/2024-02-09/lula-lidera-pesquisas-presidente.html
+09/02/2024 17:54
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/lula/4f8898dfd14d951b12000154.html
+
+-- ERROR: 'NoneType' object has no attribute 'text' 
+
+https://ultimosegundo.ig.com.br/brasil/2024-02-08/zema-lula-evento-minas.html
+08/02/2024 16:08
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/politica/governo-lula-aumentou-emendas-parlamentares-em-550/n1597061894168.html
+
+-- ERROR: 'NoneType' object has no attribute 'text' 
+
+https://ultimosegundo.ig.com.br/2024-02-07/lula-promete-mais-100-institutos-federais-e-critica-megaempresarios.html
+07/02/2024 13:56
+'NoneType' object has no attribute 'get'
+None 
+
+https://busca.ig.com.br/buscar/?q=Dilma
+https://ultimosegundo.ig.com.br/dilmarousseff/p1237730472540.html
+
+-- ERROR: 'NoneType' object has no attribute 'text' 
+
+https://ultimosegundo.ig.com.br/politica/apos-calar-forcas-armadas-em-31-de-marco-dilma-e-condecorada/n1300028047414.html
+
+-- ERROR: 'NoneType' object has no attribute 'text' 
+
+https://ultimosegundo.ig.com.br/colunas/daniel-cesar/2022-12-05/dilma-governo-lula-cargo.html
+05/12/2022 14:08
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/politica/2023-08-28/dilma-pt-impeachment.html
+28/08/2023 20:04
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/politica/2019-04-12/segurancas-de-dilma-sao-os-funcionarios-que-mais-custaram-a-uniao-em-2019.html
+12/04/2019 16:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/dilma-rousseff/4f884a98d14d951b12000143.html
+
+-- ERROR: 'NoneType' object has no attribute 'text' 
+
+https://ultimosegundo.ig.com.br/brasil/2023-12-14/video-dilma-viagem-primeira-classe-passageira-questiona.html
+14/12/2023 15:44
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/politica/2022-04-05/eleicoes-na-franca--lula-e-dilma-mandam-apoio-a-candidato-de-esquerda.html
+05/04/2022 15:08
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/dilma-rousseff/53e8e018a5fea40938000077.html
+
+-- ERROR: 'NoneType' object has no attribute 'text' 
+
+https://busca.ig.com.br/buscar/?q=Haddad
+https://ultimosegundo.ig.com.br/brasil/sp/2023-08-05/ainda-nao-viramos-a-pagina-da-extrema-direita--diz-haddad.html
+05/08/2023 17:15
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/politica/2022-08-07/haddad-mira-em-doria-ignora-alckmin.html
+07/08/2022 22:10
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/colunas/panorama/2023-10-28/haddad-tranquilo-fala-de-lula-deficit-zero.html
+28/10/2023 16:37
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/politica/2022-08-16/haddad-inicia-campanha-e-critica-fake-news.html
+16/08/2022 13:49
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/politica/2022-08-06/estrategias-haddad-rodrigo-garcia-tarcisio.html
+06/08/2022 14:01
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/politica/2021-06-17/haddad-manifestacoes-contra-bolsonaro-19-junho.html
+17/06/2021 14:46
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/politica/2022-09-06/haddad-cancela-ida-para-presidente-prudente-apos-ser-ameacao.html
+06/09/2022 17:04
+'NoneType' object has no attribute 'get'
+None 
+
+https://busca.ig.com.br/buscar/?q=anarquista
+https://ultimosegundo.ig.com.br/politica/2021-05-27/mourao-defende-punicao-a-pazuello-para--evitar-anarquia-nas-forcas-armadas-.html
+27/05/2021 15:26
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/mundo/nyt/somalia-tenta-se-livrar-de-um-destino-amaldicoado-pela-anarquia/n1237690447963.html
+
+-- ERROR: 'NoneType' object has no attribute 'text' 
+
+https://ultimosegundo.ig.com.br/mundo/2020-09-14/mulher-trans-anarquista-e-satanista-vence-primarias-do-partido-de-trump.html
+14/09/2020 17:32
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/revoltamundoarabe/presidente-do-iemen-diz-que-nao-cedera-a-anarquia/n1238079854918.html
+
+-- ERROR: 'NoneType' object has no attribute 'text' 
+
+https://busca.ig.com.br/buscar/?q=ditadura
+https://ultimosegundo.ig.com.br/brasil/2023-02-02/gloria-maria-general-ditadura.html
+02/02/2023 11:37
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/politica/2022-12-29/pele-defendeu-as-diretas-ja.html
+29/12/2022 17:44
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/brasil/2020-01-22/acusados-de-crimes-na-ditadura-recebem-ate-hoje-pensao-paga-com-dinheiro-publico.html
+22/01/2020 16:03
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/brasil/2020-01-23/sao-paulo-tem-33-ruas-que-homenageiam-personagens-e-datas-da-ditadura.html
+23/01/2020 06:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://busca.ig.com.br/buscar/?q=imbroxável
+https://ultimosegundo.ig.com.br/index.html?p=13190
+
+-- ERROR: 'NoneType' object has no attribute 'text' 
+
+https://ultimosegundo.ig.com.br/brasil/2021-08-31/bolsonaro-medalha-imorrivel-imbroxavel-incomivel.html
+31/08/2021 14:25
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/politica/2019-09-06/bolsonaro-diz-que-e-imbroxavel-em-resposta-a-apoiadores.html
+06/09/2019 21:53
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/brasil/2023-09-07/moro-diz-que-7-de-setembro-foi-vazio-e-nao-teve-povo-na-rua.html
+07/09/2023 16:16
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/politica/2023-01-12/tarcisio-nomeia-irmao-de-michelle-bolsonaro-como-assessor-especial.html
+12/01/2023 18:00
+'NoneType' object has no attribute 'get'
+None 
+
+https://ultimosegundo.ig.com.br/politica/2018-05-19/bolsonaro-campanha-ibroxavel.html
+19/05/2018 16:14
+'NoneType' object has no attribute 'get'
+None 
+

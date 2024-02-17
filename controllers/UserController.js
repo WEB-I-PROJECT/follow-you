@@ -2,15 +2,104 @@ const User = require('../models/User');
 const bcrypt = require("bcryptjs");
 const passport = require('passport');
 const express = require('express');
+const fs = require('fs');
+const path = require('path');
 
-
-
+const targetDir = path.join(__dirname, '../public/uploads/');
+if (!fs.existsSync(targetDir)) {
+    fs.mkdirSync(targetDir, { recursive: true });
+}
 
 class UserController {
 
     index(req, res) {
         res.render("user/index")
 
+    }
+
+    about(req, res) {
+        res.render("user/about")
+
+    }
+ 
+
+    edit(req, res) {
+        try {
+            const userId = req.user.id; 
+            const { name, email, address, cpf, phone, password } = req.body;
+            const erros = [];
+
+            console.log(req.body);
+    
+            if (!userId) {
+                erros.push({ texto: "Usuário não autenticado" });
+            }
+    
+            if (!name || typeof name === undefined || name === null) {
+                erros.push({ texto: "Nome inválido" });
+            }
+            if (!email || typeof email === undefined || email === null) {
+                erros.push({ texto: "E-mail inválido" });
+            }
+    
+            if (erros.length > 0) {
+                res.render("user/index", { erros: erros });
+            } else {
+                User.findById(userId).then((user) => {
+                    if (!user) {
+                        res.redirect("user/index");
+                    } else {
+                        user.name = name;
+                        user.email = email;
+                        user.address = address;
+                        user.cpf = cpf;
+                        user.phone = phone;
+    
+                        // Verifica se um arquivo de imagem foi enviado
+                        console.log("File uploaded:", req.file);
+
+                        if (req.file) {
+                            const tempPath = req.file.path; // Define o caminho temporário do arquivo
+                            const targetDir = path.join(__dirname, '../public/uploads/');
+                            const targetPath = path.join(targetDir, req.file.originalname); // Define o caminho onde a imagem será salva
+                            fs.mkdirSync(targetDir, { recursive: true }); // Verifica se o diretório de destino existe; se não, cria o diretório
+                            fs.rename(tempPath, targetPath, (err) => { // Move o arquivo temporário para o destino final
+                                if (err) {
+                                    console.error(err);
+                                    req.flash("error_msg", "Erro ao fazer upload da imagem");
+                                    return res.redirect("/");
+                                }
+                                user.profilePicture = '/uploads/' + req.file.originalname; // Salva o caminho da imagem no usuário
+                                user.save().then(() => {
+                                    req.flash("success_msg", "Usuário atualizado com sucesso!");
+                                    res.redirect("/"); 
+                                }).catch((err) => {
+                                    req.flash("error_msg", "Houve um erro ao atualizar o usuário, tente novamente!");
+                                    console.error(err);
+                                    res.render("/");
+                                });
+                            });
+                        } else {
+                            user.save().then(() => {
+                                req.flash("success_msg", "Usuário atualizado com sucesso!");
+                                res.redirect("/"); 
+                            }).catch((err) => {
+                                req.flash("error_msg", "Houve um erro ao atualizar o usuário, tente novamente!");
+                                console.error(err);
+                                res.render("/");
+                            });
+                        }
+                    }
+                }).catch((err) => {
+                    req.flash("error_msg", "Houve um erro interno");
+                    console.error(err);
+                    res.redirect("user/index");
+                });
+            }
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Erro interno do servidor');
+        }
     }
 
     list(req, res) {
@@ -26,10 +115,22 @@ class UserController {
 
     listAll(req, res) {
         User.find().sort({date:'desc'}).lean().then((user) => {
-             res.render("user/listAll", {user: user})
+            res.render("user/listAll", {user: user})
         }).catch((err) => {
             req.flash("error_msg", "Houve um erro ao listar usuarios")
             res.redirect("/")
+
+        }) 
+        
+
+    }
+
+    listUsers(req, res) {
+        User.find().sort({date:'desc'}).lean().then((user) => {
+             res.json(user);
+        }).catch((err) => {
+            res.status(500).json({ error: "Houve um erro ao listar usuários" });
+
         }) 
         
 
@@ -134,7 +235,7 @@ class UserController {
             res.status(500).send('Erro interno do servidor');
         }
     }
-//para aprovar
+
 async approveUser(req, res) {
     const userId = req.params.userId;
 
@@ -146,7 +247,7 @@ async approveUser(req, res) {
             return res.redirect("/admin");
         }
 
-        req.flash("success_msg", "Usuário aprovado com sucesso!");
+        req.flash("success_msg", "Usuário ativado com sucesso!");
         res.redirect("/admin");
     } catch (err) {
         console.error("Erro ao aprovar usuário:", err);
@@ -155,7 +256,25 @@ async approveUser(req, res) {
     }
 }
 
-    // Método para negar um usuário
+async activateUser(req, res) {
+    const userId = req.params.userId;
+
+    try {
+        const user = await User.findByIdAndUpdate(userId, { approved: true });
+
+        if (!user) {
+            return res.status(404).json({ error: "Usuário não encontrado" });
+
+        }
+
+        return res.json({ message: "Usuário ativado com sucesso!", user });
+
+    } catch (err) {
+        console.error("Erro ao ativar usuário:", err);
+        return res.status(500).json({ error: "Houve um erro ao ativar o usuário" });
+    }
+}
+
     async denyUser(req, res) {
         const userId = req.params.userId;
 
@@ -167,15 +286,96 @@ async approveUser(req, res) {
             return res.redirect("/admin");
         }
 
-        req.flash("success_msg", "Usuário negado com sucesso!");
+        req.flash("success_msg", "Usuário desativado com sucesso!");
         res.redirect("/admin");
     } catch (err) {
         console.error("Erro ao negar usuário:", err);
-        req.flash("error_msg", "Houve um erro ao negar o usuário");
+        req.flash("error_msg", "Houve um erro ao desativar o usuário");
         res.redirect("/admin");
     }
 }
-    
+async deactivateUser(req, res) {
+    const userId = req.params.userId;
+
+    try {
+        const user = await User.findByIdAndUpdate(userId, { approved: false });
+
+        if (!user) {
+            return res.status(404).json({ error: "Usuário não encontrado" });
+        }
+
+        return res.json({ message: "Usuário desativado com sucesso!", user });
+    } catch (err) {
+        console.error("Erro ao desativar usuário:", err);
+        return res.status(500).json({ error: "Houve um erro ao desativar o usuário" });
+    }
+}
+
+
+add(req, res) {
+    try {
+        const { name, email, address, cpf, phone, password } = req.body;
+        const errors = [];
+
+        if (!name || !email || !password) {
+            errors.push({ texto: "Nome, e-mail e senha são obrigatórios" });
+        }
+
+        if (password.length < 4) {
+            errors.push({ texto: "A senha deve ter pelo menos 4 caracteres" });
+        }
+
+        if (errors.length > 0) {
+
+            res.render("/listar-aprovados", { errors });
+        } else {
+
+            User.findOne({ email }).then((user) => {
+                if (user) {
+                    
+                    errors.push({ texto: "Já existe uma conta com este e-mail no nosso sistema" });
+                    res.render("/listar-aprovados", { errors });
+                } else {
+                    
+                    const newUser = new User({
+                        name,
+                        email,
+                        password,
+                        cpf,
+                        phone,
+                        address,
+                        isAdmin: true 
+                    });
+
+                    bcrypt.genSalt(10, (err, salt) => {
+                        bcrypt.hash(newUser.password, salt, (err, hash) => {
+                            if (err) throw err;
+                            newUser.password = hash;
+                            newUser.save().then(() => {
+                                
+                                req.flash("success_msg", "Usuário registrado como administrador com sucesso!");
+                                res.redirect("/listar-aprovados");
+                            }).catch((err) => {
+                                
+                                req.flash("error_msg", "Houve um erro ao criar o usuário, tente novamente!");
+                                console.log(err);
+                                res.render("/listar-aprovados");
+                            });
+                        });
+                    });
+                }
+            }).catch((err) => {
+                
+                req.flash("error_msg", "Houve um erro interno");
+                res.redirect("/listar-aprovados");
+            });
+        }
+    } catch (error) {
+        
+        console.error(error);
+        res.status(500).send('Erro interno do servidor');
+    }
+}
 
 }
 

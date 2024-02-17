@@ -44,14 +44,15 @@
   }
 
   .background-container {
-    background-image: url('/img/inicial.png');
-    background-size: cover;
+    background-image: url(/img/indexHub3.png);
+    background-size: 56% 105%;
     background-position: bottom;
+    background-repeat: no-repeat;
     position: absolute;
-    width: 100%;
+    width: 129%;
     height: 100vh;
     z-index: -1;
-  }
+}
   .custom2-container-fluid {
     position: relative;
     padding: 2px;
@@ -71,6 +72,9 @@
       margin-top: 20px;
 
 }
+.background-container {
+  background-size: 60% auto; 
+}
   .custom2-content-container h3 {
   font-size: 2em; 
       margin-left: 50px;
@@ -87,6 +91,9 @@
   margin-top: 2px;
   background-size: contain;
   background-repeat: no-repeat;
+}
+.background-container {
+  background-size: 55% auto; 
 }
 .custom2-content-container h1 {
   font-size: 4.5em; 
@@ -107,9 +114,12 @@
 
 @media (max-width: 576px) {
 .background-container {
-  margin-top: -75px;
+  margin-top: 150px;
   background-size: contain;
   background-repeat: no-repeat;
+}
+.background-container {
+  background-size: 55% auto; 
 }
 }
 
