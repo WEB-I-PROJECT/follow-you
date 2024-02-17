@@ -1,7 +1,6 @@
 <div class="d-flex bg-light p-2 shadow text-dark justify-content-between mb-3">
     <div class="d-flex align-items-center">
-        <div
-            class="ms-2 bg-danger px-2 text-white rounded-1 d-flex justify-content-center align-items-center">
+        <div class="ms-2 bg-danger px-2 text-white rounded-1 d-flex justify-content-center align-items-center">
             <div class="bi bi-newspaper "></div>
             <h5 class="m-0 py-2 px-2 ">{{ analytic.name }}</h5>
         </div>
@@ -21,14 +20,12 @@
 
             </ul>
             <div class="m-1 card h-auto shadow mb-3">
-                <div
-                    class="card-header bg-danger text-light d-flex justify-content-between align-items-center">
-                    <span>Grupo de Palavras - <span
-                            class="fw-bold">{{name}}</span></span>
+                <div class="card-header bg-danger text-light d-flex justify-content-between align-items-center">
+                    <span>Grupo de Palavras - <span class="fw-bold">{{name}}</span></span>
 
-                    <a role="button" class="text-white side-chart"
-                        data-name="{{name}}" data-id="{{_id}}"><div
-                            class=" bi-arrow-right-square-fill"></div></a>
+                    <a role="button" class="text-white side-chart" data-name="{{name}}" data-id="{{_id}}">
+                        <div class=" bi-arrow-right-square-fill"></div>
+                    </a>
                 </div>
 
                 <ul class="list-group d-block rounded-0">
@@ -37,8 +34,7 @@
                     {{#each keywords}}
                     <a role="button"
                         class="text-dark list-group-item list-group-item-action  d-flex justify-content-between align-items-center">{{name}}
-                        <span
-                            class="badge badge-danger bg-danger badge-pill">{{quantity}}
+                        <span class="badge badge-danger bg-danger badge-pill">{{quantity}}
                             notícias</span>
                     </a>
                     {{/each}}
@@ -50,25 +46,22 @@
         <div class="col-12 col-md-9 col-lg-9 mt-3 text-start">
             <p>
 
-                <button id="charts-btn" class="btn btn-danger btn-toggle bi bi-graph-up-arrow"
-                    type="button" data-toggle="collapse"
-                    data-target="#charts" aria-expanded="false"
-                    aria-controls="charts"> Gráficos</button>
-                
-                <button id="sentiment-btn" class="slide-sentiment btn btn-danger btn-toggle bi bi-lightbulb-fill"
-                    type="button" data-toggle="collapse" data-id="{{analytic.id}}"
-                    data-target="#sentiment" aria-expanded="false"
-                    aria-controls="sentiment"> Análise de Sentimentos</button>
+                <button id="charts-btn" class="mb-1 btn btn-danger btn-toggle bi bi-graph-up-arrow" type="button"
+                    data-toggle="collapse" data-target="#charts" aria-expanded="false" aria-controls="charts">
+                    Gráficos</button>
 
-                 <button class="btn btn-danger btn-toggle bi bi-layout-text-window-reverse" type="button"
-                    data-toggle="collapse" data-target="#words"
-                    aria-expanded="false" aria-controls="words"> Ocorrência de
+                <button id="sentiment-btn" class="mb-1 slide-sentiment btn btn-danger btn-toggle bi bi-lightbulb-fill"
+                    type="button" data-toggle="collapse" data-id="{{analytic.id}}" data-target="#sentiment"
+                    aria-expanded="false" aria-controls="sentiment"> Análise de Sentimentos</button>
+
+                <button class="mb-1 btn btn-danger btn-toggle bi bi-layout-text-window-reverse" type="button"
+                    data-toggle="collapse" data-target="#words" aria-expanded="false" aria-controls="words"> Ocorrência
+                    de
                     palavras </button>
 
-                <button id="news-btn" class="btn btn-danger btn-toggle bi bi-newspaper"
-                    type="button" data-toggle="collapse"
-                    data-target="#news" aria-expanded="false"
-                    aria-controls="news"> Notícias </button>
+                <button id="news-btn" class="mb-1 btn btn-danger btn-toggle bi bi-newspaper" type="button"
+                    data-toggle="collapse" data-target="#news" aria-expanded="false" aria-controls="news"> Notícias
+                </button>
 
 
             </p>
@@ -99,95 +92,56 @@
                         <div class="card h-auto card-body">
                             <div class="text-center" id="charts-data">
                                 <div class="line-chart">
-                                    <form id="chart-line-tokens"
-                                        onsubmit="chartLineTokens(event)"
+                                    <form id="chart-line-tokens" onsubmit="chartLineTokens(event)"
                                         class="row justify-content-start align-items-center mb-3">
-                                        <input id="change-input" type="hidden"
-                                            name="change-input" value="true">
-                                        <div
-                                            class="form-group h-100 col-md-12 col-lg-3 mt-3">
-                                            <select id="keyword" name="keyword"
-                                                id class="form-control">
+                                        <input id="change-input" type="hidden" name="change-input" value="true">
+                                        <div class="form-group h-100 col-md-12 col-lg-3 mt-3">
+                                            <select id="keyword" name="keyword" id class="form-control">
                                                 {{#each @root.keywordGroups}}
 
                                                 {{#each keywords}}
-                                                <option class="text-dark"
-                                                    value="{{../_id}},{{name}}">{{name}}</option>
+                                                <option class="text-dark" value="{{../_id}},{{name}}">{{name}}</option>
                                                 {{/each}}
 
                                                 {{/each}}
                                             </select>
                                         </div>
-                                        <div
-                                            class="form-group col-sm-10 col-lg-7 mt-3">
-                                            <div
-                                                class="row justify-content-between">
-                                                <div
-                                                    class="col-xs-4 col-3 col-md-2 nopad text-center">
-                                                    <label
-                                                        class="image-checkbox">
-                                                        <img class="col-12"
-                                                            height="20"
-                                                            class="img-responsive"
+                                        <div class="form-group col-sm-10 col-lg-7 mt-3">
+                                            <div class="row justify-content-between">
+                                                <div class="col-xs-4 col-3 col-md-2 nopad text-center">
+                                                    <label class="image-checkbox">
+                                                        <img class="col-12" height="20" class="img-responsive"
                                                             src="/img/cnn-logo.png" />
-                                                        <input
-                                                            class="origin-line"
-                                                            type="checkbox"
-                                                            name="origin[]"
-                                                            value="cnn"
-                                                            checked="checked" />
+                                                        <input class="origin-line" type="checkbox" name="origin[]"
+                                                            value="cnn" checked="checked" />
 
                                                     </label>
                                                 </div>
-                                                <div
-                                                    class="col-xs-4 col-3 col-md-2 nopad text-center">
-                                                    <label
-                                                        class="image-checkbox">
-                                                        <img height="20"
-                                                            class="col-12"
-                                                            class="img-responsive"
+                                                <div class="col-xs-4 col-3 col-md-2 nopad text-center">
+                                                    <label class="image-checkbox">
+                                                        <img height="20" class="col-12" class="img-responsive"
                                                             src="/img/cidade-verde-logo.png" />
-                                                        <input
-                                                            class="origin-line"
-                                                            type="checkbox"
-                                                            name="origin[]"
-                                                            value="cidade-verde"
-                                                            checked="checked" />
+                                                        <input class="origin-line" type="checkbox" name="origin[]"
+                                                            value="cidade-verde" checked="checked" />
 
                                                     </label>
                                                 </div>
-                                                <div
-                                                    class="col-xs-4 col-3 col-md-2 nopad text-center">
-                                                    <label
-                                                        class="image-checkbox">
-                                                        <img height="20"
-                                                            class="col-12"
-                                                            class="img-responsive"
+                                                <div class="col-xs-4 col-3 col-md-2 nopad text-center">
+                                                    <label class="image-checkbox">
+                                                        <img height="20" class="col-12" class="img-responsive"
                                                             src="/img/brasil-de-fato-logo.png" />
-                                                        <input
-                                                            class="origin-line"
-                                                            type="checkbox"
-                                                            name="origin[]"
-                                                            value="brasil-de-fato"
-                                                            checked="checked" />
+                                                        <input class="origin-line" type="checkbox" name="origin[]"
+                                                            value="brasil-de-fato" checked="checked" />
 
                                                     </label>
                                                 </div>
 
-                                                <div
-                                                    class="col-xs-4 col-3 col-md-2 nopad text-center">
-                                                    <label
-                                                        class="image-checkbox">
-                                                        <img height="20"
-                                                            class="col-12"
-                                                            class="img-responsive"
+                                                <div class="col-xs-4 col-3 col-md-2 nopad text-center">
+                                                    <label class="image-checkbox">
+                                                        <img height="20" class="col-12" class="img-responsive"
                                                             src="/img/portal-ig.png" />
-                                                        <input
-                                                            class="origin-line"
-                                                            type="checkbox"
-                                                            name="origin[]"
-                                                            value="ig"
-                                                            checked="checked" />
+                                                        <input class="origin-line" type="checkbox" name="origin[]"
+                                                            value="ig" checked="checked" />
 
                                                     </label>
                                                 </div>
@@ -206,9 +160,7 @@
                                         </div>
                                     </form>
                                     <div id="chart-line-container">
-                                        <canvas id="chart-line" class="my-3"
-                                            style="width: 100%;"
-                                            height="150"></canvas>
+                                        <canvas id="chart-line" class="my-3" style="width: 100%;" height="150"></canvas>
                                     </div>
                                     <hr>
 
@@ -400,7 +352,7 @@
             }
         });
 
-       const response = await fetch(`/analytic/by-keywords/tokens/grafico?id=${keywords[0]}&origin=${origin}&keyword=${keywords[1]}`);
+        const response = await fetch(`/analytic/by-keywords/tokens/grafico?id=${keywords[0]}&origin=${origin}&keyword=${keywords[1]}`);
 
         const json = await response.json();
 
@@ -431,162 +383,162 @@
 
 
 
-    $(document).ready(function() {
+    $(document).ready(function () {
 
-    $('.btn-toggle').on('click', function() {
-        $('.collapse').not($(this).data('target')).collapse('hide');
-        
-    });
+        $('.btn-toggle').on('click', function () {
+            $('.collapse').not($(this).data('target')).collapse('hide');
 
-    
-    $('.side-chart').on('click', async function(e) {
-    var groupId = $(this).data('id'); 
-    var groupName = $(this).data('name');
-
-    
-    if (!document.getElementById("charts").classList.contains("show")) {
-        document.getElementById("chart-button").click();
-    }
-    
-    const sentimentContainer = document.querySelector('#sentiment-container');
-    sentimentContainer.innerHTML = '<div id="spinner-news" class="spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+        });
 
 
- try {
-    await $.ajax({
-        
-
-        url: '/analytic/by-keywords/sentimento/analise/' + groupId, // Rota onde será enviado o groupId
-        type: 'GET',
-        success: function(response) {
-            sentimentContainer.innerHTML = '';
-        
-            const html = response;
-
-            // Criar a div com o groupName
-            const divWithGroupName = document.createElement('div');
-            divWithGroupName.innerHTML = '<div class="text-group">' +'Notícias do Grupo  <strong>' +  groupName + '</strong></s>';
-
-            
-            const tempElement = document.createElement('div');
-            tempElement.innerHTML = html;
-
-            const sentimentElement = tempElement.querySelector('#sentiment-origin-template');
-            if (sentimentElement) {
-                // Verificar se o elemento já existe no DOM
-                const existingSentimentElement = document.querySelector('#sentiment-origin-template');
-                if (existingSentimentElement) {
-                    // Substituir o conteúdo do elemento existente pelo novo conteúdo
-                    existingSentimentElement.innerHTML = sentimentElement.innerHTML;
-                    existingSentimentElement.insertBefore(divWithGroupName, existingSentimentElement.firstChild);
-                } else {
-                    // Adicionar o novo elemento se ainda não existir
-                    sentimentElement.insertBefore(divWithGroupName, sentimentElement.firstChild);
-                    sentimentContainer.appendChild(sentimentElement);
-                }
-            } else {
-                console.error('Tag com id "sentiment-origin-template" não encontrada no HTML recebido');
-            }
-        }
-    });
-} catch (error) {
-    console.error(error);
-}    
-    });
-    
+        $('.side-chart').on('click', async function (e) {
+            var groupId = $(this).data('id');
+            var groupName = $(this).data('name');
 
 
-    });
-
-
-
-
-$(document).ready(function() {
-  $('#sentiment-btn').click(function() {
-    $('#sentiment-div').collapse('toggle');
-  });
-
-  $(document).on('click', '.slide-sentiment', async function(e) {
-    const analyticId = $(this).data('id');
-    
-    const sentimentContainer = document.querySelector('#sentiment-news');
-
-    sentimentContainer.innerHTML = '<div id="spinner-news" class="text-center spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
-
-
-    console.log("analitic id sendo pego "+analyticId)
-    try {
-      await $.ajax({
-        url: '/analytic/by-keywords/noticias-sentimento/' + analyticId,
-        type: 'GET',
-        success: function(response) {
-            sentimentContainer.innerHTML = '';
-
-          const html = response;
-          
-
-            const tempElement = document.createElement('div');
-            tempElement.innerHTML = html;
-
-            const sentimentElement = tempElement.querySelector('#news-sentiment-template');
-
-
-
-            if (sentimentElement) {
-                // Verificar se o elemento já existe no DOM
-                const existingSentimentElement = document.querySelector('#news-sentiment-template');
-                if (existingSentimentElement) {
-                    // Substituir o conteúdo do elemento existente pelo novo conteúdo
-                    existingSentimentElement.innerHTML = sentimentElement.innerHTML;
-                    console.log(existingSentimentElement.innerHTML)
-                   
-    
-                } else {
-                    // Adicionar o novo elemento se ainda não existi
-                    console.log("Adicionar o novo elemento se ainda não existente")
-                    
-                    sentimentContainer.appendChild(sentimentElement);
-                    
-                        $(document).ready(function(){
-
-                            
-                            
-
-                            $('.btn-view-more').click(function(){
-                                $(this).closest('.card').find('.card-content-news').first().slideToggle();
-
-                                    /*
-                                var estadoBotao = "fechado";
-                                
-                                // Alternar classes e texto do botão
-                                if (estadoBotao === "fechado" || !$(this).hasClass("bi bi-eye-fill")) {
-                                    $(this).removeClass("bi bi-eye-fill").addClass("bi bi-eye-slash-fill");
-                                    $(this).text(" Ocultar análise");
-                                    estadoBotao = "aberto";
-                                } 
-                                */
-
-                            });
-
-                        });
-                
-                }
-            } else {
-                console.error('Tag com id "news-sentiment-template" não encontrada no HTML recebido');
+            if (!document.getElementById("charts").classList.contains("show")) {
+                document.getElementById("chart-button").click();
             }
 
+            const sentimentContainer = document.querySelector('#sentiment-container');
+            sentimentContainer.innerHTML = '<div id="spinner-news" class="spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
 
 
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-          console.log("esse é o erro da resposta da requisição get "+errorThrown)
-        }
-      });
-    } catch (error) {
-      console.log("esse é o erro geral "+error)
-    }
-  });
-});
+            try {
+                await $.ajax({
+
+
+                    url: '/analytic/by-keywords/sentimento/analise/' + groupId, // Rota onde será enviado o groupId
+                    type: 'GET',
+                    success: function (response) {
+                        sentimentContainer.innerHTML = '';
+
+                        const html = response;
+
+                        // Criar a div com o groupName
+                        const divWithGroupName = document.createElement('div');
+                        divWithGroupName.innerHTML = '<div class="text-group">' + 'Notícias do Grupo  <strong>' + groupName + '</strong></s>';
+
+
+                        const tempElement = document.createElement('div');
+                        tempElement.innerHTML = html;
+
+                        const sentimentElement = tempElement.querySelector('#sentiment-origin-template');
+                        if (sentimentElement) {
+                            // Verificar se o elemento já existe no DOM
+                            const existingSentimentElement = document.querySelector('#sentiment-origin-template');
+                            if (existingSentimentElement) {
+                                // Substituir o conteúdo do elemento existente pelo novo conteúdo
+                                existingSentimentElement.innerHTML = sentimentElement.innerHTML;
+                                existingSentimentElement.insertBefore(divWithGroupName, existingSentimentElement.firstChild);
+                            } else {
+                                // Adicionar o novo elemento se ainda não existir
+                                sentimentElement.insertBefore(divWithGroupName, sentimentElement.firstChild);
+                                sentimentContainer.appendChild(sentimentElement);
+                            }
+                        } else {
+                            console.error('Tag com id "sentiment-origin-template" não encontrada no HTML recebido');
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error(error);
+            }
+        });
+
+
+
+    });
+
+
+
+
+    $(document).ready(function () {
+        $('#sentiment-btn').click(function () {
+            $('#sentiment-div').collapse('toggle');
+        });
+
+        $(document).on('click', '.slide-sentiment', async function (e) {
+            const analyticId = $(this).data('id');
+
+            const sentimentContainer = document.querySelector('#sentiment-news');
+
+            sentimentContainer.innerHTML = '<div id="spinner-news" class="text-center spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+
+
+            console.log("analitic id sendo pego " + analyticId)
+            try {
+                await $.ajax({
+                    url: '/analytic/by-keywords/noticias-sentimento/' + analyticId,
+                    type: 'GET',
+                    success: function (response) {
+                        sentimentContainer.innerHTML = '';
+
+                        const html = response;
+
+
+                        const tempElement = document.createElement('div');
+                        tempElement.innerHTML = html;
+
+                        const sentimentElement = tempElement.querySelector('#news-sentiment-template');
+
+
+
+                        if (sentimentElement) {
+                            // Verificar se o elemento já existe no DOM
+                            const existingSentimentElement = document.querySelector('#news-sentiment-template');
+                            if (existingSentimentElement) {
+                                // Substituir o conteúdo do elemento existente pelo novo conteúdo
+                                existingSentimentElement.innerHTML = sentimentElement.innerHTML;
+                                console.log(existingSentimentElement.innerHTML)
+
+
+                            } else {
+                                // Adicionar o novo elemento se ainda não existi
+                                console.log("Adicionar o novo elemento se ainda não existente")
+
+                                sentimentContainer.appendChild(sentimentElement);
+
+                                $(document).ready(function () {
+
+
+
+
+                                    $('.btn-view-more').click(function () {
+                                        $(this).closest('.card').find('.card-content-news').first().slideToggle();
+
+                                        /*
+                                    var estadoBotao = "fechado";
+                                    
+                                    // Alternar classes e texto do botão
+                                    if (estadoBotao === "fechado" || !$(this).hasClass("bi bi-eye-fill")) {
+                                        $(this).removeClass("bi bi-eye-fill").addClass("bi bi-eye-slash-fill");
+                                        $(this).text(" Ocultar análise");
+                                        estadoBotao = "aberto";
+                                    } 
+                                    */
+
+                                    });
+
+                                });
+
+                            }
+                        } else {
+                            console.error('Tag com id "news-sentiment-template" não encontrada no HTML recebido');
+                        }
+
+
+
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log("esse é o erro da resposta da requisição get " + errorThrown)
+                    }
+                });
+            } catch (error) {
+                console.log("esse é o erro geral " + error)
+            }
+        });
+    });
 
 
 </script>
