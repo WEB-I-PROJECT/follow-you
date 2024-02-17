@@ -25,7 +25,8 @@ function add_key(event, value) {
     newInput.classList.add('form-control');
     newInput.name = 'keywords[]';
     newInput.id = 'keywords';
-    newInput.placeholder = 'username..';
+    newInput.placeholder = 'Palavra chave...';
+    newInput.required = true;
 
     const newButton = document.createElement('button');
     newButton.type = 'button';
@@ -198,6 +199,21 @@ function searchCategory(event) {
     });
 }
 
-// window.addEventListener("load", function (event) {
-//     console.log("Todos os recursos terminaram o carregamento!");
-// });
+
+(function () {
+    'use strict'
+  
+    var forms = document.querySelectorAll('.needs-validation')
+    console.log(forms);
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+  
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
