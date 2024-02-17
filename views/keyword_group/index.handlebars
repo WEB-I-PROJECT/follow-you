@@ -293,15 +293,19 @@
             var cidadeVerde = 'cidade-verde';
             var brasilDeFato = 'brasil-de-fato';
 
-            const responseCNN = await fetch(`/analytic/by-keywords/noticias/${cnn}/{{ analytic.id }}`);
-            putInHTML(responseCNN);
+            const responseCNN = fetch(`/analytic/by-keywords/noticias/${cnn}/{{ analytic.id }}`);
+            const reponseCidadeVerde = fetch(`/analytic/by-keywords/noticias/${cidadeVerde}/{{ analytic.id }}`);
+            const reponseBrasilDeFato = fetch(`/analytic/by-keywords/noticias/${brasilDeFato}/{{ analytic.id }}`);
 
-            const reponseCidadeVerde = await fetch(`/analytic/by-keywords/noticias/${cidadeVerde}/{{ analytic.id }}`);
-            putInHTML(reponseCidadeVerde);
+            const [dataCNN, dataCidadeVerde, dataBrasilDeFato] = await Promise.all([
+                responseCNN,
+                reponseCidadeVerde,
+                reponseBrasilDeFato
+            ]);
 
-            const reponseBrasilDeFato = await fetch(`/analytic/by-keywords/noticias/${brasilDeFato}/{{ analytic.id }}`);
-
-            putInHTML(reponseBrasilDeFato);
+            putInHTML(dataCNN);
+            putInHTML(dataCidadeVerde);
+            putInHTML(dataBrasilDeFato);
 
             document.getElementById('spinner-news').remove();
 
@@ -371,11 +375,11 @@
         });
     });
 
-    
+
 
 
     async function chartLineTokens(event = null) {
-        if(event){
+        if (event) {
             event.preventDefault();
         }
         if (chartLine) {

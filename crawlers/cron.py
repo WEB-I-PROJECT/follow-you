@@ -11,6 +11,7 @@ if len(sys.argv) != 2:
 id = sys.argv[1]
 
 crawlers = [
+   CNNCrawler, BrasildeFatoCrawler, CidadeVerdeCrawler, IGrawler, 
    CNNCrawler, BrasildeFatoCrawler,  CidadeVerdeCrawler, IGrawler,
 ]
 
