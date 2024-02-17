@@ -42,13 +42,13 @@
         <div class="col-12 col-md-7 col-lg-8 mt-3 text-start">
             <p>
 
-                <button id="news-btn" class="btn btn-danger btn-toggle" type="button" data-toggle="collapse"
+                <button id="news-btn" class="mb-2 btn btn-danger btn-toggle" type="button" data-toggle="collapse"
                     data-target="#news" aria-expanded="false" aria-controls="news"> Notícias </button>
 
-                <button class="btn btn-danger btn-toggle" type="button" data-toggle="collapse" data-target="#words"
+                <button class="mb-2 btn btn-danger btn-toggle" type="button" data-toggle="collapse" data-target="#words"
                     aria-expanded="false" aria-controls="words">Ocorrência de palavras </button>
 
-                <button id="charts-btn" class="btn btn-danger btn-toggle" type="button" data-toggle="collapse"
+                <button id="charts-btn" class="mb-2 btn btn-danger btn-toggle" type="button" data-toggle="collapse"
                     data-target="#charts" aria-expanded="false" aria-controls="charts">Gráficos</button>
 
 
@@ -81,7 +81,8 @@
                         <div class="card h-auto card-body">
                             <div class="text-center" id="charts-data">
                                 <div class="line-chart">
-                                    <form id="chart-line-tokens" onsubmit="chartLineTokens(event)" class="row justify-content-start align-items-center mb-3">
+                                    <form id="chart-line-tokens" onsubmit="chartLineTokens(event)"
+                                        class="row justify-content-start align-items-center mb-3">
                                         <input id="change-input" type="hidden" name="change-input" value="true">
                                         <div class="form-group h-100 col-md-12 col-lg-3 mt-3">
                                             <select id="keyword" name="keyword" id="" class="form-control">
@@ -139,9 +140,9 @@
 
                                         <div class="col-sm-2 col-lg-2 mt-3">
                                             <button class="btn btn-danger">
-                                                
-                                             <i class="bi bi-filter"></i>
-                                             <span class="d-md-none">
+
+                                                <i class="bi bi-filter"></i>
+                                                <span class="d-md-none">
                                                     Filtrar
                                                 </span>
                                             </button>
@@ -210,15 +211,19 @@
             var cidadeVerde = 'cidade-verde';
             var brasilDeFato = 'brasil-de-fato';
 
-            const responseCNN = await fetch(`/analytic/by-keywords/noticias/${cnn}/{{ analytic.id }}`);
-            putInHTML(responseCNN);
+            const responseCNN = fetch(`/analytic/by-keywords/noticias/${cnn}/{{ analytic.id }}`);
+            const reponseCidadeVerde = fetch(`/analytic/by-keywords/noticias/${cidadeVerde}/{{ analytic.id }}`);
+            const reponseBrasilDeFato = fetch(`/analytic/by-keywords/noticias/${brasilDeFato}/{{ analytic.id }}`);
 
-            const reponseCidadeVerde = await fetch(`/analytic/by-keywords/noticias/${cidadeVerde}/{{ analytic.id }}`);
-            putInHTML(reponseCidadeVerde);
+            const [dataCNN, dataCidadeVerde, dataBrasilDeFato] = await Promise.all([
+                responseCNN,
+                reponseCidadeVerde,
+                reponseBrasilDeFato
+            ]);
 
-            const reponseBrasilDeFato = await fetch(`/analytic/by-keywords/noticias/${brasilDeFato}/{{ analytic.id }}`);
-
-            putInHTML(reponseBrasilDeFato);
+            putInHTML(dataCNN);
+            putInHTML(dataCidadeVerde);
+            putInHTML(dataBrasilDeFato);
 
             document.getElementById('spinner-news').remove();
 
@@ -288,11 +293,11 @@
         });
     });
 
-    
+
 
 
     async function chartLineTokens(event = null) {
-        if(event){
+        if (event) {
             event.preventDefault();
         }
         if (chartLine) {

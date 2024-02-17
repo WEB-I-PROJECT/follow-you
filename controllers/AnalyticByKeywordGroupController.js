@@ -61,7 +61,7 @@ class AnalyticByKewordGroupController {
   }
 
   async tokensCharts(req, res) {
-    console.log(req.body)
+    // console.log(req.body)
     try{
     const group = await KeywordGroup.findOne({ _id: req.body.id })
 
@@ -123,6 +123,8 @@ class AnalyticByKewordGroupController {
     }
     
   }
+
+  
 }
 
 module.exports = AnalyticByKewordGroupController
