@@ -1,6 +1,6 @@
 # Hub-News
 
-Para rodar o projeto fHub-News:
+Para rodar o projeto Hub-News:
 
 ```bash
 npm run start
