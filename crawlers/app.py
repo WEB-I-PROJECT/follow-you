@@ -68,7 +68,7 @@ def newsBrasilDeFato(id):
 @app.route('/api/analyticCategory/<string:category>/<string:analytic>', methods=['GET'])
 def searchCategory(category, analytic):
     data = analyticCategory.requestNews(category)
-    #analyticCategory.get_content(data, analytic)
+    analyticCategory.get_content(data, analytic)
     
     return jsonify(data)
 
