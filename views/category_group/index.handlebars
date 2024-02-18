@@ -40,15 +40,12 @@
                     data-target="#multiCollapseExample2" aria-expanded="false"
                     aria-controls="multiCollapseExample2" onclick="requestNews()"> Notícias </button>
 
+                <button class="btn btn-danger btn-toggle" type="button" data-toggle="collapse" data-target="#words"
+                    aria-expanded="false" aria-controls="words" onclick="requestTokens()">Ocorrência de palavras </button>
+                
                 <button class="btn btn-danger" type="button" data-toggle="collapse"
                     data-target="#multiCollapseExample2" aria-expanded="false"
-                    aria-controls="multiCollapseExample2">Ocorrência de palavras </button>
-
-                 <button class="btn btn-danger" type="button" data-toggle="collapse"
-                    data-target="#multiCollapseExample2" aria-expanded="false"
                     aria-controls="multiCollapseExample2">Gráficos</button>
-
-                
 
             </p>
             <div class="row">
@@ -62,6 +59,15 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-12 mt-3">
+                    <div class="collapse multi-collapse" id="news">
+                        <div class="card h-auto card-body">
+                            <div class="text-center" id="news-list">
+                
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -71,12 +77,8 @@
     async function requestTokens() {
         try {
             const tokenizesContainer = document.getElementById('tokenizes');
-            tokenizesContainer.innerHTML = `<div class="spinner-container mt-5 text-center">
-                                                <div class="spinner-border text-danger" role="status">
-                                                    <span class="visually-hidden">Loading...</span>
-                                                </div>
-                                            </div>`;
-            const response = await fetch('/analytic/by-keywords/tokenizar/{{ analytic.id }}');
+            tokenizesContainer.innerHTML = '<div class="spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+            const response = await fetch('/analytic/by-category/tokenizar/{{ analytic.id }}');
 
             if (!response.ok) {
                 throw new Error('Erro na requisição', response.error);
@@ -92,7 +94,6 @@
             if (tokensElement) {
 
                 tokenizesContainer.innerHTML = '';
-
                 tokenizesContainer.appendChild(tokensElement);
             } else {
                 console.error('Tag com id "tokens" não encontrada no HTML recebido');
@@ -106,7 +107,7 @@
             try {
                 const tokenizesContainer = document.getElementById('tokenizes');
                 tokenizesContainer.innerHTML = '<div class="spinner-container mt-5 text-center"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
-                const response = await fetch('/analytic/by-category/news/{{category.id}}');
+                const response = await fetch('/analytic/by-category/news/{{category.id}}/{{analytic.id}}');
 
                 if (!response.ok) {
                     throw new Error('Erro na requisição', response.error);
@@ -130,8 +131,11 @@
             } catch (error) {
                 console.error('Erro na requisição:', error.message);
             }
-        }
-
-    requestTokens();
-
+    }
+    
+    $(document).ready(function () {
+            $('.btn-toggle').on('click', function () {
+                $('.collapse').not($(this).data('target')).collapse('hide');
+            });
+    });
 </script>

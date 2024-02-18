@@ -1,5 +1,6 @@
 const Analytic = require('../models/Analytic');
 const Category = require('../models/Category');
+const tokenizeNews = require('../services/news');
 
 class AnalyticByCategoryController {
 
@@ -29,12 +30,12 @@ class AnalyticByCategoryController {
 
     async news(req, res) {
         try {
-            const category = await Category.findOne({ _id: req.params.id });
+            const category = await Category.findOne({ _id: req.params.category });
             const categoryKeywords = category.keywords;
 
             const promises = categoryKeywords.map(async (oneCategory) => {
                 try {
-                    const response = await fetch(`http://127.0.0.1:5001/api/analyticCategory/${oneCategory}`);
+                    const response = await fetch(`http://127.0.0.1:5001/api/analyticCategory/${oneCategory}/${req.params.analytic}`);
                     return await response.json();
                 } catch (error) {
                     console.error("Erro ao chamar a API:", error);
@@ -51,7 +52,10 @@ class AnalyticByCategoryController {
         }
     }
 
-
+    async tokenize(req, res) {
+        console.log(req.params.id);
+        return res.render('category_group/tokenize', await tokenizeNews(req.params.id));
+    }
 }
 
 module.exports = AnalyticByCategoryController
