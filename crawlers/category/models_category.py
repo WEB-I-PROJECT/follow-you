@@ -14,12 +14,14 @@ class analyticCategoryModels(Analytic):
         self.db = connect['hubnews']
         
         self.origin = ''
+        self.analytic = self.db[ANALYTIC_COLLECTION].find_one({'_id': ObjectId(_id)})
         self.model = self.db[ANALYTIC_COLLECTION].find_one({'_id': ObjectId(_id)})
         self.keyword_groups =  self.db[KEYWORD_GROUP_COLLECTION].find({'analytic': ObjectId(_id)})
         self.news =  self.db[NEWS_COLLECTION]
     
-    def insert_news(self,title, content, tags, date, origin, url, image, analytic):
+    def insert_news(self,title, content, tags, date, origin, url, image):
         try:
+            print(self.analytic.get('_id'))
             return self.news.insert_one({
                 'title': title,
                 'content': content,
@@ -28,8 +30,9 @@ class analyticCategoryModels(Analytic):
                 'origin': origin,
                 'url': url,
                 'image': image,
-                'analytic': analytic,
+                'analytic': self.analytic.get('_id'),
             })
+            
         except Exception as e:
             print(e)
             return None

@@ -5,6 +5,7 @@ const AnalyticByCategoryController = require('../controllers/AnalyticByCategoryC
 router.get('/:id', new AnalyticByCategoryController().index);
 router.get('/news/:category/:analytic', new AnalyticByCategoryController().news);
 router.get('/tokenizar/:id', new AnalyticByCategoryController().tokenize);
+router.get('/tokens/grafico', new AnalyticByCategoryController().tokensCharts)
 
 
 module.exports = router;

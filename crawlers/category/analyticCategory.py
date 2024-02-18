@@ -120,9 +120,7 @@ class analyticCategory():
                                     'cnn', 
                                     article['link'], 
                                     img_src, 
-                                    analytic
                                 )
-                                print(model_instance)
                             except Exception as e:
                                 print(e)
                         elif source == 'Folha':
@@ -151,9 +149,8 @@ class analyticCategory():
                                     'folha',
                                     article['link'],
                                     img_src,
-                                    analytic
                                 )
-                                print(model_instance)
+
                             except Exception as e:
                                 print(e)
                         else:
