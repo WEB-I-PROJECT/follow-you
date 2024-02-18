@@ -74,7 +74,6 @@ class analyticCategory():
                     data.append(title.text.strip())
         except Exception as error:
             print(error)            
-        analyticCategory.get_content(data, '65be682c4454f11d7d58cb0b')
         return data
     
     

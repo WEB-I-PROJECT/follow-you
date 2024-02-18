@@ -51,6 +51,7 @@ def execute_group_keywords(id):
     return jsonify({
         'message': 'Web scrapping cron created with success'
     })
+    
 
 @app.route('/api/analytic/cnn/<string:id>', methods=['GET'])
 def newsCNN(id):
@@ -68,9 +69,11 @@ def newsIG(id):
 def newsBrasilDeFato(id):
     return jsonify(BrasildeFatoCrawler(id).get_news_partial())
 
-@app.route('/api/analyticCategory/<string:category>', methods=['GET'])
-def searchCategory(category):
+@app.route('/api/analyticCategory/<string:category>/<string:analytic>', methods=['GET'])
+def searchCategory(category, analytic):
     data = analyticCategory.requestNews(category)
+    analyticCategory.get_content(data, analytic)
+    
     return jsonify(data)
 
 

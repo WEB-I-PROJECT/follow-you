@@ -41,13 +41,11 @@
                     aria-controls="multiCollapseExample2" onclick="requestNews()"> Notícias </button>
 
                 <button class="btn btn-danger btn-toggle" type="button" data-toggle="collapse" data-target="#words"
-                    aria-expanded="false" aria-controls="words">Ocorrência de palavras </button>
+                    aria-expanded="false" aria-controls="words" onclick="requestTokens()">Ocorrência de palavras </button>
                 
                 <button class="btn btn-danger" type="button" data-toggle="collapse"
                     data-target="#multiCollapseExample2" aria-expanded="false"
                     aria-controls="multiCollapseExample2">Gráficos</button>
-
-                
 
             </p>
             <div class="row">
@@ -109,7 +107,7 @@
             try {
                 const tokenizesContainer = document.getElementById('tokenizes');
                 tokenizesContainer.innerHTML = '<div class="spinner-container mt-5 text-center"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
-                const response = await fetch('/analytic/by-category/news/{{category.id}}');
+                const response = await fetch('/analytic/by-category/news/{{category.id}}/{{analytic.id}}');
 
                 if (!response.ok) {
                     throw new Error('Erro na requisição', response.error);
@@ -133,8 +131,8 @@
             } catch (error) {
                 console.error('Erro na requisição:', error.message);
             }
-        }
-    requestTokens();
+    }
+    
     $(document).ready(function () {
             $('.btn-toggle').on('click', function () {
                 $('.collapse').not($(this).data('target')).collapse('hide');
