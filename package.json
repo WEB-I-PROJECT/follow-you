@@ -30,6 +30,8 @@
         "sentiment-ptbr": "^1.0.3",
         "stemmer": "^2.0.1",
         "stopword": "^3.0.1",
-        "stopwords-pt": "^0.3.0"
+        "stopwords-pt": "^0.3.0",
+        "swagger-autogen": "^2.23.7",
+        "swagger-ui-express": "^5.0.0"
     }
 }
