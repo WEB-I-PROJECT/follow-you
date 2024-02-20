@@ -7,14 +7,14 @@ class AnalyticController {
 
     index(req, res) {
         const user = res.locals.user;
-    
+
         Analytic.find({ User: user._id })
             .populate('category')
             .then((analytics) => {
                 analytics.forEach((analytic, i) => {
                     let data = new Date(analytic.createdAt);
                     analytics[i].createdAtFormattedDate = `${("0" + data.getDate()).slice(-2)}/${("0" + (data.getMonth() + 1)).slice(-2)}/${data.getFullYear()} ${("0" + data.getHours()).slice(-2)}:${("0" + data.getMinutes()).slice(-2)}`;
-                    
+
                     console.log(`${("0" + data.getDate()).slice(-2)}/${("0" + (data.getMonth() + 1)).slice(-2)}/${data.getFullYear()} ${("0" + data.getHours()).slice(-2)}:${("0" + data.getMinutes()).slice(-2)}`);
                 });
 
@@ -24,36 +24,36 @@ class AnalyticController {
                 console.log(err);
             });
 
-    
-       /*  index(req, res) {
-            const user = res.locals.user;
-        
-            Analytic.find({ User: user._id })
-                .populate('category')  // Adicione esta linha para popular as informações da categoria
-                .then((analytics) => {
-                    // Adiciona a propriedade 'type' ao objeto antes de passá-lo para o render
-                    res.render('analytic/index', { analytics: analytics });
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        }*/
+
+        /*  index(req, res) {
+             const user = res.locals.user;
+         
+             Analytic.find({ User: user._id })
+                 .populate('category')  // Adicione esta linha para popular as informações da categoria
+                 .then((analytics) => {
+                     // Adiciona a propriedade 'type' ao objeto antes de passá-lo para o render
+                     res.render('analytic/index', { analytics: analytics });
+                 })
+                 .catch((err) => {
+                     console.log(err);
+                 });
+         }*/
     }
 
     add(req, res) {
-          Category.find().then((categorys)=>{
-           //console.log(categorys);
-            res.render('analytic/add', {categorys: categorys});
+        Category.find().then((categorys) => {
+            //console.log(categorys);
+            res.render('analytic/add', { categorys: categorys });
 
-        }).catch((err)=>{
-            console.log("houve um erro ao listar categorias"+err)
-        }) 
+        }).catch((err) => {
+            console.log("houve um erro ao listar categorias" + err)
+        })
     }
 
     saveAnalytic(req, res) {
         const user = res.locals.user;
         let newGroupKeyWords = [];
-    
+
         Analytic.countDocuments({ User: user._id })
             .then(count => {
                 if (count >= 3) {
@@ -61,7 +61,7 @@ class AnalyticController {
                     req.flash('error_msg', 'Você já possui 3 Analytics!');
                     return res.redirect('/analytic/');
                 }
-    
+
                 let savePromises = [];
                 // buscando os grupos de palavras-chave
                 if (Array.isArray(req.body.listName)) {
@@ -76,7 +76,7 @@ class AnalyticController {
                                     listName: element,
                                     keywords: req.body.keywords[i].split(',').map(keyword => keyword.trim())
                                 };
-    
+
                                 // criando promessa da criação dos grupos de palavras-chave
                                 if (req.body.type === 'by-keywords') {
                                     savePromises.push(KeywordGroup.create({
@@ -98,9 +98,9 @@ class AnalyticController {
                         listName: req.body.listName,
                         keywords: req.body.keywords.split(',').map(keyword => keyword.trim())
                     };
-    
+
                     console.error("Não é um array");
-    
+
                     if (req.body.type === 'by-keywords') {
                         savePromises.push(KeywordGroup.create({
                             name: newGroupKeyWords[0].listName,
@@ -109,26 +109,26 @@ class AnalyticController {
                         }));
                     }
                 }
-    
+
                 const analytic = new Analytic({
                     name: req.body.name,
                     type: req.body.type,
                     category: req.body.category,
                     User: user._id,
                 });
-    
+
                 Promise.all(savePromises)
                     .then(savedKeywordGroups => {
-    
+
                         savedKeywordGroups.forEach((savedKeywordGroup, index) => {
                             if (req.body.type === 'by-keywords') {
                                 newGroupKeyWords[index].analytic = savedKeywordGroup._id;
                             }
                         });
-    
+
                         if (analytic.type === 'by-keywords') {
                             analytic.category = undefined;
-    
+
                             analytic.save()
                                 .then(savedAnalytic => {
                                     // atualizando id do analytic em KeywordGroup 
@@ -162,11 +162,11 @@ class AnalyticController {
             });
     }
 
-    async remove(req, res){
+    async remove(req, res) {
         const analytic = await Analytic.deleteOne({
             _id: req.params.id
         });
-        if(analytic){
+        if (analytic) {
             return res.redirect('/analytic');
         }
 
@@ -175,21 +175,37 @@ class AnalyticController {
         })
     }
 
-    async removeApi(req, res){
+    async removeApi(req, res) {
+        // #swagger.tags = ['Analytic']
+        // #swagger.description = 'Endpoint para deletar uma analytic.'
+        // #swagger.parameters['id'] = { description: 'ID da analytic.' }
         const analytic = await Analytic.deleteOne({
             _id: req.params.id
         });
-        if(analytic){
+        if (analytic) {
+
+            /* #swagger.responses[200] = { 
+                    schema: {
+                success: 'Analytic deleted with success'
+            },
+                    description: 'Mensagem de sucesso ao deletar.' 
+            } */
             return res.status(200).json({
                 success: 'Analytic deleted with success'
             })
         }
 
+        /* #swagger.responses[404] = { 
+                   schema: {
+                        error: 'Analytic not found'
+                    },
+                   description: 'Não encontrado.' 
+           } */
         return res.status(404).json({
             error: 'Analytic not found'
         })
     }
-       
+
 }
 
 module.exports = AnalyticController

@@ -1,0 +1,298 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "HUB NEWS",
+    "description": "Documentação da API."
+  },
+  "host": "localhost:8001",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Analytic",
+      "description": "Endpoints"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    },
+    "petstore_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "https://petstore.swagger.io/oauth/authorize",
+      "flow": "implicit",
+      "scopes": {
+        "read_pets": "read your pets",
+        "write_pets": "modify pets in your account"
+      }
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/analytic/by-keywords/word/{id}": {
+      "get": {
+        "tags": [
+          "Analytic"
+        ],
+        "description": "Endpoint para obter um frequência de palavras de uma analytic.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID da analytic."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Frequências de palavras.",
+            "schema": {
+              "$ref": "#/definitions/WordsFrequency"
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/analytic/by-keywords/word/chart": {
+      "get": {
+        "tags": [
+          "Analytic"
+        ],
+        "description": "Endpoint para obter um frequência de palavras em gráfico por grupo de palavras.",
+        "parameters": [
+          {
+            "name": "id",
+            "description": "ID do grupo de palavras.",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "origin",
+            "description": "Origem das notícias.",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "keyword",
+            "description": "Palavra-chave para do grupo de palavras.",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Frequências de palavras formatadas para gráfico.",
+            "schema": {
+              "$ref": "#/definitions/WordsCharts"
+            }
+          },
+          "404": {
+            "description": "Não encontrado.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "KeywordGroup not found!"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/analytic/by-keywords/news/{type}/{id}": {
+      "get": {
+        "tags": [
+          "Analytic"
+        ],
+        "description": "Endpoint para obter as noticías de determinado jornal.",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Jornal de origem das notícias."
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID da analytic."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Notícias do jornal específicado.",
+            "schema": {
+              "$ref": "#/definitions/NewsKeyword"
+            }
+          },
+          "404": {
+            "description": "Não encontrado.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "News not found"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/analytic/{id}": {
+      "delete": {
+        "tags": [
+          "Analytic"
+        ],
+        "description": "Endpoint para deletar uma analytic.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID da analytic."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Mensagem de sucesso ao deletar.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "string",
+                  "example": "Analytic deleted with success"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "404": {
+            "description": "Não encontrado.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "Analytic not found"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "WordsFrequency": {
+      "type": "object",
+      "properties": {
+        "mostFrequentWordsInContent": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "word": {
+                "type": "string",
+                "example": "ensino"
+              },
+              "frequency": {
+                "type": "number",
+                "example": 732
+              }
+            }
+          }
+        }
+      }
+    },
+    "WordsCharts": {
+      "type": "object",
+      "properties": {
+        "labels": {
+          "type": "array",
+          "example": [
+            "3-3-2021",
+            "9-11-2021",
+            "7-2-2022"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "data": {
+          "type": "array",
+          "example": [
+            1,
+            1,
+            1
+          ],
+          "items": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "NewsKeyword": {
+      "type": "object",
+      "properties": {
+        "news": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "example": " 23/09/2022 às 08:42 "
+              },
+              "img": {
+                "type": "string",
+                "example": "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2022/05/Copia-de-16x9-Podcast-WW.png?w=347"
+              },
+              "title": {
+                "type": "string",
+                "example": "As pesquisas eleitorais são confiáveis?"
+              },
+              "url": {
+                "type": "string",
+                "example": "https://www.cnnbrasil.com.br/politica/as-pesquisas-eleitorais-sao-confiaveis/"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
