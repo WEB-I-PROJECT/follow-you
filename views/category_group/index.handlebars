@@ -50,15 +50,25 @@
                     palavras </button>
             
                 <button id="news-btn" class="mb-1 btn btn-danger btn-toggle bi bi-newspaper" type="button" data-toggle="collapse"
-                    data-target="#news" aria-expanded="false" aria-controls="news" onclick="requestNews()"> Notícias
+                    data-target="#site" aria-expanded="false" aria-controls="site" onclick="requestNews()"> Notícias
                 </button>
             
             </p>
             <div class="row">
                 <div class="col-12">
+                    <div class="collapse multi-collapse" id="site">
+                        <div class="card h-auto card-body">
+                            <div class="text-center" id="news-site">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
                     <div class="collapse multi-collapse" id="words">
                         <div class="card h-auto card-body">
-                            <div class="text-center" id="tokenizes">
+                            <div class="text-center" id="tonkenzie">
 
                             </div>
                         </div>
@@ -170,8 +180,8 @@
 
     async function requestTokens() {
         try {
-            const tokenizesContainer = document.getElementById('tokenizes');
-            tokenizesContainer.innerHTML = '<div class="spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+            const tokenizesContainer = document.getElementById('tonkenzie');
+            tokenizesContainer.innerHTML = '<div class="spinner-container py-3 text-center"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
             const response = await fetch('/analytic/by-category/tokenizar/{{ analytic.id }}');
 
             if (!response.ok) {
@@ -201,8 +211,8 @@
 
      async function requestNews() {
             try {
-                const tokenizesContainer = document.getElementById('tokenizes');
-                tokenizesContainer.innerHTML = '<div class="spinner-container mt-5 text-center"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+                const tokenizesContainer = document.getElementById('news-site');
+                tokenizesContainer.innerHTML = '<div class="spinner-container py-3 text-center"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
                 const response = await fetch('/analytic/by-category/news/{{category.id}}/{{analytic.id}}');
 
                 if (!response.ok) {
@@ -301,7 +311,7 @@
         }
 
         var container = document.getElementById('chart-line-container');
-        container.innerHTML = '<div id="spinner-news" class="spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+        container.innerHTML = '<div id="spinner-news" class="spinner-container py-3"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
 
         var keywords = document.getElementById("keyword").value.split(",");
         console.log(keywords)
@@ -364,7 +374,7 @@
             }
 
             const sentimentContainer = document.querySelector('#sentiment-container');
-            sentimentContainer.innerHTML = '<div id="spinner-news" class="spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+            sentimentContainer.innerHTML = '<div id="spinner-news" class="spinner-container py-3"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
 
 
             try {
@@ -426,7 +436,7 @@
 
             const sentimentContainer = document.querySelector('#sentiment-news');
 
-            sentimentContainer.innerHTML = '<div id="spinner-news" class="text-center spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+            sentimentContainer.innerHTML = '<div id="spinner-news" class="text-center spinner-container py-3"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
 
 
             console.log("analitic id sendo pego " + analyticId)
