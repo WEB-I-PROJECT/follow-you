@@ -42,14 +42,13 @@
       <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link user-profile dropdown-toggle text-center" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
               aria-expanded="true">
               {{#if user.profilePicture}}
               <img src="{{user.profilePicture}}" alt="Imagem de Perfil" style="width: 25px; height: 25px"
                 class="rounded-circle" />
               {{else}}
-              <img src="/user/img/user.png" alt="Imagem Padrão de Perfil" style="width: 25px; height: 25px"
-                class="rounded-circle" />
+               <i class="fa fa-user-circle fs-5 me-1" aria-hidden="true"></i>
               {{/if}}
               {{user.name}}
 

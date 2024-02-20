@@ -1,6 +1,6 @@
-# follow-you
+# Hub-News
 
-Para rodar o projeto follow-you:
+Para rodar o projeto Hub-News:
 
 ```bash
 npm run start

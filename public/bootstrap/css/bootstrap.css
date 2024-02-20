@@ -3852,9 +3852,18 @@ textarea.form-control-lg {
 }
 .nav-link:hover, .nav-link:focus {
   color: #FFFFFF;
+
+}
+
+.nav-link:hover:not(.user-profile), .nav-link:focus:not(.user-profile) {
   border-bottom: 2px solid white;
   padding-bottom: 0;
 }
+
+.user-profile{
+  color: white !important;
+}
+
 .nav-link:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgb(255, 255, 255);
@@ -12078,6 +12087,9 @@ textarea.form-control-lg {
   }
 }
 
+#scrollTopButton h4{
+  margin-bottom: 0px !important;
+}
 #scrollTopButton {
   display: none;
   position: fixed;

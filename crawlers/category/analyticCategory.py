@@ -1,9 +1,8 @@
 import datetime
 import re
 from bs4 import BeautifulSoup
-from flask import jsonify
 import requests
-import json
+from category.models_category import analyticCategoryModels
 
 class analyticCategory():
     
@@ -25,9 +24,9 @@ class analyticCategory():
                     link = tags.get('href')
                     data["CNN"].append({
                         'title': title,
-                        'date': date,
                         'link': link,
-                        'img_src': img
+                        'img_src': img,
+                        'date': date,
                     })
                 
         except Exception as error:
@@ -37,27 +36,27 @@ class analyticCategory():
             url = 'https://search.folha.uol.com.br/?q='+keyword+'&site=todos'
             data["Folha"] = []
             response = requests.get(url)
-
             if response.status_code == 200:
                 soup = BeautifulSoup(response.text, 'html.parser')
                 articles = soup.find_all('li', class_='c-headline--newslist')
-
                 for tags in articles:
-                    picture = tags.find('div', class_='c-masked-image--3x2')
-                    link = picture.find('a')['href']
-                    img = picture.find('img')['src']
-                    title_element = tags.find('h2', class_='c-headline__title')
-                    title_text = title_element.get_text(strip=True) if title_element else "N/A"
-                    sub_title = tags.find('p', 'c-headline__standfirst').getText()
-                    date = tags.find('time', 'c-headline__dateline').getText()
-                    data['Folha'].append({
-                        'title': title_text,
-                        'date': date,
-                        'sub_title': sub_title,
-                        'img_src': img,
-                        'link': link
-                    })
-            
+                    try:
+                        img = tags.find('img', class_='c-headline__image')['src']
+                        a = tags.find('div', class_='c-headline__content')
+                        link = a.find('a')['href']
+                        title_element = tags.find('h2', class_='c-headline__title')
+                        title_text = title_element.get_text(strip=True) if title_element else "N/A"
+                        sub_title = tags.find('p', 'c-headline__standfirst').getText()
+                        date = tags.find('time', 'c-headline__dateline').getText()
+                        data['Folha'].append({
+                            'title': title_text,
+                            'link': link,
+                            'img_src': img,
+                            'sub_title': sub_title,
+                            'date': date,
+                        })
+                    except Exception as error:
+                        print(error)
         except Exception as error:
             print(error)
             
@@ -73,10 +72,8 @@ class analyticCategory():
 
                 for title in titles:
                     data.append(title.text.strip())
-
         except Exception as error:
             print(error)            
-
         return data
     
     
@@ -85,6 +82,7 @@ class analyticCategory():
             dbNews = {}
             dbNews["CNN"] = []
             dbNews["Folha"] = []
+            model_instance = analyticCategoryModels(analytic)
             for source, articles in data.items():
                 for article in articles:
                     response = requests.get(article['link'])
@@ -92,7 +90,6 @@ class analyticCategory():
                         soup = BeautifulSoup(response.text, 'html.parser')
                         if source == 'CNN':
                             print(f"\n{source} News:")
-                            
                             try:
                                 title = soup.find('h1', 'post__title').getText()
                                 picture = soup.find('picture', 'img__destaque') 
@@ -114,19 +111,18 @@ class analyticCategory():
                                     for tag_item in tag_items:
                                         tag = tag_item.find('a').text.strip()
                                         tags.append(tag)
-                                dbNews['CNN'].append({
-                                    'title': title,
-                                    'content': content,
-                                    'tags': tags,
-                                    'date': date.strftime(' %Y-%m-%d %H:%M:%S '),
-                                    'origin': 'cnn',
-                                    'url': article['link'],
-                                    'image': img_src,
-                                    'analytic': analytic,
-                                })
+
+                                model_instance.insert_news(
+                                    title, 
+                                    content, 
+                                    tags, 
+                                    date.strftime(' %Y-%m-%d %H:%M:%S '), 
+                                    'cnn', 
+                                    article['link'], 
+                                    img_src, 
+                                )
                             except Exception as e:
                                 print(e)
-                            
                         elif source == 'Folha':
                             print(f"\n{source} News:")
                             try:
@@ -145,17 +141,16 @@ class analyticCategory():
                                         tag = tag_item.find('a').text.strip()
                                         tags.append(tag)
 
-                                dbNews['Folha'].append({
-                                    'title': title,
-                                    'content': content,
-                                    'tags': tags,
-                                    'date': date.strftime(' %Y-%m-%d %H:%M:%S '),
-                                    'origin': 'folha',
-                                    'url': article['link'],
-                                    'image': img_src,
-                                    'analytic': analytic,
-                                })
-                                
+                                model_instance.insert_news(
+                                    title,
+                                    content,
+                                    tags,
+                                    date.strftime(' %Y-%m-%d %H:%M:%S '),
+                                    'folha',
+                                    article['link'],
+                                    img_src,
+                                )
+
                             except Exception as e:
                                 print(e)
                         else:

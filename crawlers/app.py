@@ -1,3 +1,4 @@
+import json
 from flask import Flask, jsonify
 from category.analyticCategory import analyticCategory
 from crontab import CronTab
@@ -50,6 +51,7 @@ def execute_group_keywords(id):
     return jsonify({
         'message': 'Web scrapping cron created with success'
     })
+    
 
 @app.route('/api/analytic/cnn/<string:id>', methods=['GET'])
 def newsCNN(id):
@@ -59,17 +61,15 @@ def newsCNN(id):
 def newsCidadeVerde(id):
     return jsonify(CidadeVerdeCrawler(id).get_news_partial())
 
-@app.route('/api/analytic/ig/<string:id>', methods=['GET'])
-def newsIG(id):
-    return jsonify(IGrawler(id).get_news_partial())
-
 @app.route('/api/analytic/brasil-de-fato/<string:id>', methods=['GET'])
 def newsBrasilDeFato(id):
     return jsonify(BrasildeFatoCrawler(id).get_news_partial())
 
-@app.route('/api/analyticCategory/<string:category>', methods=['GET'])
-def searchCategory(category):
+@app.route('/api/analyticCategory/<string:category>/<string:analytic>', methods=['GET'])
+def searchCategory(category, analytic):
     data = analyticCategory.requestNews(category)
+    analyticCategory.get_content(data, analytic)
+    
     return jsonify(data)
 
 

@@ -45,40 +45,133 @@
                     aria-controls="sentiment"> Análise de Sentimentos</button>
             
                 <button class="mb-1 btn btn-danger btn-toggle bi bi-layout-text-window-reverse" type="button" data-toggle="collapse"
-                    data-target="#site" aria-expanded="false" aria-controls="site" onclick="requestTokens()"> Ocorrência
+                    data-target="#words" aria-expanded="false" aria-controls="words" onclick="requestTokens()"> Ocorrência
                     de
                     palavras </button>
             
                 <button id="news-btn" class="mb-1 btn btn-danger btn-toggle bi bi-newspaper" type="button" data-toggle="collapse"
-                    data-target="#site" aria-expanded="false" aria-controls="site" onclick="requestNews()"> Notícias
+                    data-target="#news" aria-expanded="false" aria-controls="news" onclick="requestNews()"> Notícias
                 </button>
             
             </p>
             <div class="row">
                 <div class="col-12">
-                    <div class="collapse multi-collapse" id="site">
+                    <div class="collapse multi-collapse" id="words">
                         <div class="card h-auto card-body">
-                            <div id="news-site">
-
-                <div class="col">
-                    <div class="collapse multi-collapse" id="multiCollapseExample2">
-                        <div class="card h-auto card-body">
-                            <div id="tokenizes">
+                            <div class="text-center" id="tokenizes">
 
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-12 mt-3">
+                    <div class="collapse multi-collapse" id="news">
+                        <div class="card h-auto card-body">
+                            <div class="text-center" id="news-list">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-12">
+                    <div class="collapse multi-collapse" id="charts">
+                        <div class="card h-auto card-body">
+                            <div class="text-center" id="charts-data">
+                                <div class="line-chart">
+                                    <form id="chart-line-tokens" onsubmit="chartLineTokens(event)"
+                                        class="row justify-content-start align-items-center mb-3">
+                                        <input id="change-input" type="hidden" name="change-input" value="true">
+                                        <div class="form-group h-100 col-md-12 col-lg-3 mt-3">
+                                            <select id="keyword" name="keyword" id class="form-control">
+                                                {{#each category.keywords}}
+                                                    <option class="text-dark" value="{{this}}">{{this}}</option>
+                                                {{/each}}
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-10 col-lg-7 mt-3">
+                                            <div class="row justify-content-between">
+                                                <div class="col-xs-4 col-3 col-md-2 nopad text-center">
+                                                    <label class="image-checkbox">
+                                                        <img class="col-12" height="20" class="img-responsive"
+                                                            src="/img/cnn-logo.png" />
+                                                        <input class="origin-line" type="checkbox" name="origin[]" value="cnn"
+                                                            checked="checked" />
+                
+                                                    </label>
+                                                </div>
+                                                <div class="col-xs-4 col-3 col-md-2 nopad text-center">
+                                                    <label class="image-checkbox">
+                                                        <img height="20" class="col-12" class="img-responsive"
+                                                            src="/img/folha-de-sao-paulo.png" />
+                                                        <input class="origin-line" type="checkbox" name="origin[]" value="folha"
+                                                            checked="checked" />
+                
+                                                    </label>
+                                                </div>
+                                                <div class="col-xs-4 col-3 col-md-2 nopad text-center">
+                                                    <label class="image-checkbox">
+                                                        <img height="20" class="col-12" class="img-responsive"
+                                                            src="" />
+                                                        <input class="origin-line" type="checkbox" name="origin[]"
+                                                            value="" checked="checked" />
+                
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-sm-2 col-lg-2 mt-3">
+                                            <button class="btn btn-danger">
+                
+                                                <i class="bi bi-filter"></i>
+                                                <span class="d-md-none">
+                                                    Filtrar
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <div id="chart-line-container">
+                                        <canvas id="chart-line" class="my-3" style="width: 100%;" height="150"></canvas>
+                                    </div>
+                                    <hr>
+                
+                                </div>
+                                <div id="sentiment-container">
+                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-3">
+                    <div class="collapse multi-collapse " id="sentiment-div">
+                        <div class="card h-auto card-body">
+                            <div class="text-left" id="sentiment-news">
+                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+                
         </div>
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
+
+    document.getElementById("charts-btn").click();
+    chartLineTokens();
+    var chartLine;
+
     async function requestTokens() {
         try {
-            const tokenizesContainer = document.getElementById('news-site');
-            tokenizesContainer.innerHTML = '<div class="spinner-container py-3 text-center"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+            const tokenizesContainer = document.getElementById('tokenizes');
+            tokenizesContainer.innerHTML = '<div class="spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
             const response = await fetch('/analytic/by-category/tokenizar/{{ analytic.id }}');
 
             if (!response.ok) {
@@ -103,12 +196,13 @@
         } catch (error) {
             console.error('Erro na requisição:', error.message);
         }
+        
     }
 
-    async function requestNews() {
+     async function requestNews() {
             try {
-                const tokenizesContainer = document.getElementById('news-site');
-                tokenizesContainer.innerHTML = '<div class="spinner-container py-3 text-center"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+                const tokenizesContainer = document.getElementById('tokenizes');
+                tokenizesContainer.innerHTML = '<div class="spinner-container mt-5 text-center"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
                 const response = await fetch('/analytic/by-category/news/{{category.id}}/{{analytic.id}}');
 
                 if (!response.ok) {
@@ -133,6 +227,13 @@
             } catch (error) {
                 console.error('Erro na requisição:', error.message);
             }
+    }
+    
+
+    async function putInHTML(response) {
+        const newsContainer = document.getElementById('news-list');
+        if (!response.ok) {
+            throw new Error('Erro na requisição', response.error);
         }
 
         const html = await response.text();
@@ -200,9 +301,10 @@
         }
 
         var container = document.getElementById('chart-line-container');
-        container.innerHTML = '<div id="spinner-news" class="spinner-container py-3"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+        container.innerHTML = '<div id="spinner-news" class="spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
 
         var keywords = document.getElementById("keyword").value.split(",");
+        console.log(keywords)
         var origin = [];
         var inputs = document.querySelectorAll('input[name="origin[]"]');
 
@@ -262,7 +364,7 @@
             }
 
             const sentimentContainer = document.querySelector('#sentiment-container');
-            sentimentContainer.innerHTML = '<div id="spinner-news" class="spinner-container py-3"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+            sentimentContainer.innerHTML = '<div id="spinner-news" class="spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
 
 
             try {
@@ -324,8 +426,10 @@
 
             const sentimentContainer = document.querySelector('#sentiment-news');
 
-            sentimentContainer.innerHTML = '<div id="spinner-news" class="text-center spinner-container py-3"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+            sentimentContainer.innerHTML = '<div id="spinner-news" class="text-center spinner-container mt-5"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
 
+
+            console.log("analitic id sendo pego " + analyticId)
             try {
                 await $.ajax({
                     url: '/analytic/by-keywords/noticias-sentimento/' + analyticId,
@@ -344,11 +448,18 @@
 
 
                         if (sentimentElement) {
+                            // Verificar se o elemento já existe no DOM
                             const existingSentimentElement = document.querySelector('#news-sentiment-template');
                             if (existingSentimentElement) {
+                                // Substituir o conteúdo do elemento existente pelo novo conteúdo
                                 existingSentimentElement.innerHTML = sentimentElement.innerHTML;
+                                console.log(existingSentimentElement.innerHTML)
+
 
                             } else {
+                                // Adicionar o novo elemento se ainda não existi
+                                console.log("Adicionar o novo elemento se ainda não existente")
+
                                 sentimentContainer.appendChild(sentimentElement);
 
                                 $(document).ready(function () {

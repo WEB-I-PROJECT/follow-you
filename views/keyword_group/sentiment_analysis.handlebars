@@ -5,10 +5,12 @@
         {{#each ValueSentimentOrigin}}
         <div class="col-md-4">
             <div class="border border-gray rounded  p-2 mt-3">
-                <p class="border border-gray rounded  bg-group-sentiment-news"> <strong> {{ item}}</strong></p>
+                <p class="border border-gray rounded  bg-group-sentiment-news"> <strong> {{ capitalize @key }}</strong></p>
                 <div class="col-12">
-                    {{#each  |item|}}
-                        <p class="text-kay-name border border-gray rounded mt-3 mb-1"><strong>{{ capitalize @key}}</strong></p>
+                    {{#each this }}
+                        <p class="text-kay-name border border-gray rounded mt-3 mb-1"><strong>
+                            {{ capitalize @key}}
+                        </strong></p>
                       <div class=" form-control mb-2">
                         {{#each this}}
                          
