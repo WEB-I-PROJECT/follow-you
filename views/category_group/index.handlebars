@@ -35,23 +35,30 @@
 
         <div class="col-12 col-sm-7 col-lg-8 mt-3 text-start">
             <p>
-
-                <button class="btn btn-danger" type="button" data-toggle="collapse"
-                    data-target="#multiCollapseExample2" aria-expanded="false"
-                    aria-controls="multiCollapseExample2" onclick="requestNews()"> Notícias </button>
-
-                <button class="btn btn-danger" type="button" data-toggle="collapse"
-                    data-target="#multiCollapseExample2" aria-expanded="false"
-                    aria-controls="multiCollapseExample2">Ocorrência de palavras </button>
-
-                 <button class="btn btn-danger" type="button" data-toggle="collapse"
-                    data-target="#multiCollapseExample2" aria-expanded="false"
-                    aria-controls="multiCollapseExample2">Gráficos</button>
-
-                
-
+            
+                <button id="charts-btn" class="mb-1 btn btn-danger btn-toggle bi bi-graph-up-arrow" type="button"
+                    data-toggle="collapse" data-target="#charts" aria-expanded="false" aria-controls="charts">
+                    Gráficos</button>
+            
+                <button id="sentiment-btn" class="mb-1 slide-sentiment btn btn-danger btn-toggle bi bi-lightbulb-fill" type="button"
+                    data-toggle="collapse" data-id="{{analytic.id}}" data-target="#sentiment" aria-expanded="false"
+                    aria-controls="sentiment"> Análise de Sentimentos</button>
+            
+                <button class="mb-1 btn btn-danger btn-toggle bi bi-layout-text-window-reverse" type="button" data-toggle="collapse"
+                    data-target="#site" aria-expanded="false" aria-controls="site" onclick="requestTokens()"> Ocorrência
+                    de
+                    palavras </button>
+            
+                <button id="news-btn" class="mb-1 btn btn-danger btn-toggle bi bi-newspaper" type="button" data-toggle="collapse"
+                    data-target="#site" aria-expanded="false" aria-controls="site" onclick="requestNews()"> Notícias
+                </button>
+            
             </p>
             <div class="row">
+                <div class="col-12">
+                    <div class="collapse multi-collapse" id="site">
+                        <div class="card h-auto card-body">
+                            <div id="news-site">
 
                 <div class="col">
                     <div class="collapse multi-collapse" id="multiCollapseExample2">
@@ -70,13 +77,9 @@
 <script>
     async function requestTokens() {
         try {
-            const tokenizesContainer = document.getElementById('tokenizes');
-            tokenizesContainer.innerHTML = `<div class="spinner-container mt-5 text-center">
-                                                <div class="spinner-border text-danger" role="status">
-                                                    <span class="visually-hidden">Loading...</span>
-                                                </div>
-                                            </div>`;
-            const response = await fetch('/analytic/by-keywords/tokenizar/{{ analytic.id }}');
+            const tokenizesContainer = document.getElementById('news-site');
+            tokenizesContainer.innerHTML = '<div class="spinner-container py-3 text-center"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+            const response = await fetch('/analytic/by-category/tokenizar/{{ analytic.id }}');
 
             if (!response.ok) {
                 throw new Error('Erro na requisição', response.error);
@@ -104,9 +107,9 @@
 
     async function requestNews() {
             try {
-                const tokenizesContainer = document.getElementById('tokenizes');
-                tokenizesContainer.innerHTML = '<div class="spinner-container mt-5 text-center"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
-                const response = await fetch('/analytic/by-category/news/{{category.id}}');
+                const tokenizesContainer = document.getElementById('news-site');
+                tokenizesContainer.innerHTML = '<div class="spinner-container py-3 text-center"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+                const response = await fetch('/analytic/by-category/news/{{category.id}}/{{analytic.id}}');
 
                 if (!response.ok) {
                     throw new Error('Erro na requisição', response.error);
@@ -132,6 +135,262 @@
             }
         }
 
-    requestTokens();
+        const html = await response.text();
+
+        const tempElement = document.createElement('div');
+        tempElement.innerHTML = html;
+
+        const tokensElement = tempElement.querySelector('#news-backend');
+
+        if (tokensElement) {
+            newsContainer.appendChild(tokensElement);
+        } else {
+            console.error('Tag com id "news" não encontrada no HTML recebido');
+        }
+    }
+
+
+
+    $(document).ready(function () {
+        $('.btn-toggle').on('click', function () {
+
+            $('.collapse').not($(this).data('target')).collapse('hide');
+        });
+
+        $(".image-checkbox").each(function () {
+            if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
+                $(this).addClass('image-checkbox-checked');
+            }
+            else {
+                $(this).removeClass('image-checkbox-checked');
+            }
+        });
+
+        $(".image-checkbox").on("click", function (e) {
+            $(this).toggleClass('image-checkbox-checked');
+            var $checkbox = $(this).find('input[type="checkbox"]');
+
+            if ($checkbox.attr("checked")) {
+                $checkbox.removeAttr("checked");
+            }
+            else {
+                $checkbox.attr("checked", "checked")
+            }
+            document.getElementById('change-input').value = $checkbox.val();
+
+            e.preventDefault();
+        });
+
+        $('#chart-line-tokens').change(function (event) {
+            event.preventDefault();
+
+            chartLineTokens();
+        });
+    });
+
+
+
+
+    async function chartLineTokens(event = null) {
+        if (event) {
+            event.preventDefault();
+        }
+        if (chartLine) {
+            chartLine.destroy();
+        }
+
+        var container = document.getElementById('chart-line-container');
+        container.innerHTML = '<div id="spinner-news" class="spinner-container py-3"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+
+        var keywords = document.getElementById("keyword").value.split(",");
+        var origin = [];
+        var inputs = document.querySelectorAll('input[name="origin[]"]');
+
+
+        inputs.forEach(function (input) {
+            if (input.getAttribute("checked")) {
+                origin.push(input.value);
+            }
+        });
+
+        const response = await fetch(`/analytic/by-category/tokens/grafico?id={{analytic.id}}&origin=${origin}&keyword=${keywords[0]}`);
+
+        const json = await response.json();
+
+
+        const data = {
+            labels: json.labels,
+            datasets: [{
+                label: `Noticias contendo "${keywords[0]}"`,
+                data: json.data,
+                borderColor: 'red',
+                backgroundColor: 'red',
+                tension: 0.1
+            }]
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+        };
+
+        container.innerHTML = ' <canvas id="chart-line" class="my-3" style="width: 100%;" height="250"></canvas>';
+
+        chartLine = new Chart(
+            document.getElementById('chart-line'),
+            config
+        );
+    }
+
+
+
+    $(document).ready(function () {
+
+        $('.btn-toggle').on('click', function () {
+            $('.collapse').not($(this).data('target')).collapse('hide');
+
+        });
+
+
+        $('.side-chart').on('click', async function (e) {
+            var groupId = $(this).data('id');
+            var groupName = $(this).data('name');
+
+
+            if (!document.getElementById("charts").classList.contains("show")) {
+                document.getElementById("chart-button").click();
+            }
+
+            const sentimentContainer = document.querySelector('#sentiment-container');
+            sentimentContainer.innerHTML = '<div id="spinner-news" class="spinner-container py-3"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+
+
+            try {
+                await $.ajax({
+
+
+                    url: '/analytic/by-keywords/sentimento/analise/' + groupId, // Rota onde será enviado o groupId
+                    type: 'GET',
+                    success: function (response) {
+                        sentimentContainer.innerHTML = '';
+
+                        const html = response;
+
+                        // Criar a div com o groupName
+                        const divWithGroupName = document.createElement('div');
+                        divWithGroupName.innerHTML = '<div class="text-group">' + 'Notícias do Grupo  <strong>' + groupName + '</strong></s>';
+
+
+                        const tempElement = document.createElement('div');
+                        tempElement.innerHTML = html;
+
+                        const sentimentElement = tempElement.querySelector('#sentiment-origin-template');
+                        if (sentimentElement) {
+                            // Verificar se o elemento já existe no DOM
+                            const existingSentimentElement = document.querySelector('#sentiment-origin-template');
+                            if (existingSentimentElement) {
+                                // Substituir o conteúdo do elemento existente pelo novo conteúdo
+                                existingSentimentElement.innerHTML = sentimentElement.innerHTML;
+                                existingSentimentElement.insertBefore(divWithGroupName, existingSentimentElement.firstChild);
+                            } else {
+                                // Adicionar o novo elemento se ainda não existir
+                                sentimentElement.insertBefore(divWithGroupName, sentimentElement.firstChild);
+                                sentimentContainer.appendChild(sentimentElement);
+                            }
+                        } else {
+                            console.error('Tag com id "sentiment-origin-template" não encontrada no HTML recebido');
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error(error);
+            }
+        });
+
+
+
+    });
+
+
+
+
+    $(document).ready(function () {
+        $('#sentiment-btn').click(function () {
+            $('#sentiment-div').collapse('toggle');
+        });
+
+        $(document).on('click', '.slide-sentiment', async function (e) {
+            const analyticId = $(this).data('id');
+
+            const sentimentContainer = document.querySelector('#sentiment-news');
+
+            sentimentContainer.innerHTML = '<div id="spinner-news" class="text-center spinner-container py-3"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+
+            try {
+                await $.ajax({
+                    url: '/analytic/by-keywords/noticias-sentimento/' + analyticId,
+                    type: 'GET',
+                    success: function (response) {
+                        sentimentContainer.innerHTML = '';
+
+                        const html = response;
+
+
+                        const tempElement = document.createElement('div');
+                        tempElement.innerHTML = html;
+
+                        const sentimentElement = tempElement.querySelector('#news-sentiment-template');
+
+
+
+                        if (sentimentElement) {
+                            const existingSentimentElement = document.querySelector('#news-sentiment-template');
+                            if (existingSentimentElement) {
+                                existingSentimentElement.innerHTML = sentimentElement.innerHTML;
+
+                            } else {
+                                sentimentContainer.appendChild(sentimentElement);
+
+                                $(document).ready(function () {
+
+
+
+
+                                    $('.btn-view-more').click(function () {
+                                        $(this).closest('.card').find('.card-content-news').first().slideToggle();
+
+                                        /*
+                                    var estadoBotao = "fechado";
+                                    
+                                    // Alternar classes e texto do botão
+                                    if (estadoBotao === "fechado" || !$(this).hasClass("bi bi-eye-fill")) {
+                                        $(this).removeClass("bi bi-eye-fill").addClass("bi bi-eye-slash-fill");
+                                        $(this).text(" Ocultar análise");
+                                        estadoBotao = "aberto";
+                                    } 
+                                    */
+
+                                    });
+
+                                });
+
+                            }
+                        } else {
+                            console.error('Tag com id "news-sentiment-template" não encontrada no HTML recebido');
+                        }
+
+
+
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log("esse é o erro da resposta da requisição get " + errorThrown)
+                    }
+                });
+            } catch (error) {
+                console.log("esse é o erro geral " + error)
+            }
+        });
+    });
+
 
 </script>
