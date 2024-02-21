@@ -11,6 +11,10 @@
     {
       "name": "Analytic",
       "description": "Endpoints"
+    },
+    {
+      "name": "Users",
+      "description": "Endpoints"
     }
   ],
   "schemes": [
@@ -495,6 +499,349 @@
           }
         }
       }
+    },
+    "/api/user/list-users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Endpoint para obter todos os usuarios.",
+        "responses": {
+          "200": {
+            "description": "Lista de usuários.",
+            "schema": {
+              "$ref": "#/definitions/UserList"
+            }
+          },
+          "500": {
+            "description": "Erro no servidor.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "There was an error listing users"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/user/disable-user/{userId}": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Endpoint para desativar usuário.",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "description": "ID do usuário.",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuário desativado com sucesso.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "string",
+                  "example": "User deactivated successfully!"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "404": {
+            "description": "Usuário não encontrado.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "User not found"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Erro no servidor.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "There was an error deactivating user"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/user/activate-user/{userId}": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Endpoint para ativar usuário.",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuário ativado com sucesso.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "string",
+                  "example": "User activate successfully!"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "404": {
+            "description": "Usuário não encontrado.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "string",
+                  "example": "User not found!"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Erro no servidor.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "There was an error activating user"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/user/add-user": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Endpoint para criar usuário.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "password": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "address": {
+                  "example": "any"
+                },
+                "cpf": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Usuário criado com sucesso.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "string",
+                  "example": "User created successfully!"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Já existe uma conta com esse e-mail.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "error creating user!"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Erro no servidor.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "error creating user"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/user/edit-user": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Endpoint para editar usuário.",
+        "parameters": [
+          {
+            "name": "id",
+            "description": "ID do usuário.",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "address": {
+                  "example": "any"
+                },
+                "cpf": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "string",
+                  "example": "User editing successfully!"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            },
+            "description": "Usuário atualizado com sucesso."
+          },
+          "400": {
+            "description": "Usuario nao encontrado.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "User not found!"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Erro interno.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "Internal Server Error!"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -571,6 +918,66 @@
                 "example": "https://www.cnnbrasil.com.br/politica/as-pesquisas-eleitorais-sao-confiaveis/"
               }
             }
+          }
+        }
+      }
+    },
+    "UserList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "example": "65b193785cbb532f21341011"
+          },
+          "name": {
+            "type": "string",
+            "example": "John Galdino"
+          },
+          "email": {
+            "type": "string",
+            "example": "john@gmail.com"
+          },
+          "address": {
+            "type": "string",
+            "example": "Guanambi - Caetite - IF"
+          },
+          "cpf": {
+            "type": "string",
+            "example": "908.978.666-44"
+          },
+          "phone": {
+            "type": "string",
+            "example": "(77) 66655-4444"
+          },
+          "password": {
+            "type": "string",
+            "example": "$2a$10$bPkZZJA6vAmVE9Y1pRkrx.0HvB6WgMXAQFZ.fGBCLHl.x7dqldRLO"
+          },
+          "isAdmin": {
+            "type": "boolean",
+            "example": true
+          },
+          "approved": {
+            "type": "boolean",
+            "example": true
+          },
+          "createdAt": {
+            "type": "string",
+            "example": "2024-01-24T22:47:20.691Z"
+          },
+          "updatedAt": {
+            "type": "string",
+            "example": "2024-02-14T20:05:12.420Z"
+          },
+          "__v": {
+            "type": "number",
+            "example": 0
+          },
+          "profilePicture": {
+            "type": "string",
+            "example": "/uploads/Untitled.png"
           }
         }
       }

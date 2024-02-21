@@ -126,9 +126,19 @@ class UserController {
     }
 
     listUsers(req, res) {
+    // #swagger.tags = ['Users']
+    // #swagger.description = 'Endpoint para obter todos os usuarios.'
         User.find().sort({date:'desc'}).lean().then((user) => {
+            /* #swagger.responses[200] = { 
+              schema: { $ref: "#/definitions/UserList" },
+              description: 'Lista de usuários.' 
+      } */
              res.json(user);
         }).catch((err) => {
+            /* #swagger.responses[500] = { 
+              schema: { error: "There was an error listing users" } ,
+              description: 'Erro no servidor.' 
+      } */
             res.status(500).json({ error: "Houve um erro ao listar usuários" });
 
         }) 
@@ -257,19 +267,38 @@ async approveUser(req, res) {
 }
 
 async activateUser(req, res) {
+    // #swagger.tags = ['Users']
+    // #swagger.description = 'Endpoint para ativar usuário.'
+
+
     const userId = req.params.userId;
 
     try {
         const user = await User.findByIdAndUpdate(userId, { approved: true });
 
         if (!user) {
+       /* #swagger.responses[404] = { 
+      schema:    {
+        success: "User not found!"
+      },
+      description: 'Usuário não encontrado.' } */
             return res.status(404).json({ error: "Usuário não encontrado" });
 
         }
+        
+      /* #swagger.responses[200] = { 
+      schema:    {
+        success: "User activate successfully!"
+      },
+      description: 'Usuário ativado com sucesso.' } */
 
-        return res.json({ message: "Usuário ativado com sucesso!", user });
+        return res.json({ message: "Usuário ativado com sucesso!"});
 
     } catch (err) {
+           /* #swagger.responses[500] = { 
+              schema: { error: "There was an error activating user" } ,
+              description: 'Erro no servidor.' 
+      } */
         console.error("Erro ao ativar usuário:", err);
         return res.status(500).json({ error: "Houve um erro ao ativar o usuário" });
     }
@@ -295,17 +324,33 @@ async activateUser(req, res) {
     }
 }
 async deactivateUser(req, res) {
+    // #swagger.tags = ['Users']
+    // #swagger.parameters['id'] = { description: 'ID do usuário.' }
+    // #swagger.description = 'Endpoint para desativar usuário.'
     const userId = req.params.userId;
 
     try {
         const user = await User.findByIdAndUpdate(userId, { approved: false });
 
         if (!user) {
+                  /* #swagger.responses[404] = { 
+              schema: { error: "User not found" },
+              description: 'Usuário não encontrado.' 
+      } */
             return res.status(404).json({ error: "Usuário não encontrado" });
         }
+         /* #swagger.responses[200] = { 
+      schema:    {
+        success: "User deactivated successfully!"
+      },
+      description: 'Usuário desativado com sucesso.' } */
 
         return res.json({ message: "Usuário desativado com sucesso!", user });
     } catch (err) {
+         /* #swagger.responses[500] = { 
+              schema: { error: "There was an error deactivating user" } ,
+              description: 'Erro no servidor.' 
+      } */
         console.error("Erro ao desativar usuário:", err);
         return res.status(500).json({ error: "Houve um erro ao desativar o usuário" });
     }
@@ -376,6 +421,173 @@ add(req, res) {
         res.status(500).send('Erro interno do servidor');
     }
 }
+
+async store(req, res) {
+    try {
+    // #swagger.tags = ['Users']
+    // #swagger.description = 'Endpoint para criar usuário.'
+    
+        const { name, email, address, cpf, phone, password } = req.body;
+
+        const errors = [];
+
+        if (!name || typeof name === undefined || name === null) {
+            errors.push({ message: "Nome inválido" });
+        }
+        if (!email || typeof email === undefined || email === null) {
+            errors.push({ message: "E-mail inválido" });
+        }
+        if (!password || typeof password === undefined || password === null) {
+            errors.push({ message: "Senha inválida" });
+        }
+        if (!(req.body.password && req.body.password.length >= 4)) {
+            errors.push({ message: "Senha muito curta" });
+        }
+
+        if (errors.length > 0) {
+            
+            return res.status(400).json({ errors });
+        }
+
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+       /* #swagger.responses[400] = { 
+      schema: {
+        error: 'error creating user!'
+      },
+      description: 'Já existe uma conta com esse e-mail.'
+} */
+            return res.status(400).json({ errors: [{ message: "Já existe uma conta com este e-mail no nosso sistema" }] });
+        }
+
+        const newUser = new User({
+            name,
+            email,
+            password,
+            cpf,
+            phone,
+            address
+        });
+
+        const salt = await bcrypt.genSalt(10);
+        const hash = await bcrypt.hash(newUser.password, salt);
+        newUser.password = hash;
+
+        await newUser.save();
+
+           /* #swagger.responses[201] = { 
+      schema: {
+        success: 'User created successfully!'
+      },
+      description: 'Usuário criado com sucesso.'
+} */
+        
+        return res.status(201).json({ message: "Usuário criado com sucesso!" });
+    } catch (error) {
+         /* #swagger.responses[500] = { 
+              schema: { error: "error creating user" } ,
+              description: 'Erro no servidor.' 
+      } */
+        console.error(error);
+        return res.status(500).json({ error: 'Erro interno do servidor' });
+    }
+}
+
+update(req, res) {
+    try {
+        // #swagger.tags = ['Users']
+        // #swagger.description = 'Endpoint para editar usuário.'
+        // #swagger.parameters['id'] = { description: 'ID do usuário.' }
+
+        const userId = req.user.id; 
+        const { name, email, address, cpf, phone, password } = req.body;
+        const errors = [];
+
+        console.log(req.body);
+
+        if (!userId) {
+            errors.push({ message: "Usuário não autenticado" });
+        }
+
+        if (!name || typeof name === undefined || name === null) {
+            errors.push({ message: "Nome inválido" });
+        }
+        if (!email || typeof email === undefined || email === null) {
+            errors.push({ message: "E-mail inválido" });
+        }
+
+        if (errors.length > 0) {
+            return res.status(400).json({ errors });
+        } else {
+            User.findById(userId).then((user) => {
+                if (!user) {
+                    /* #swagger.responses[400] = { 
+                 schema: {
+                 error: 'User not found!'
+                     },
+                     description: 'Usuario nao encontrado.'
+                } */
+                    return res.status(404).json({ error: "Usuário não encontrado" });
+                } else {
+                    user.name = name;
+                    user.email = email;
+                    user.address = address;
+                    user.cpf = cpf;
+                    user.phone = phone;
+
+                    // Verifica se um arquivo de imagem foi enviado
+                    console.log("File uploaded:", req.file);
+
+                    if (req.file) {
+                        const tempPath = req.file.path; 
+                        const targetDir = path.join(__dirname, '../public/uploads/');
+                        const targetPath = path.join(targetDir, req.file.originalname); 
+                        fs.mkdirSync(targetDir, { recursive: true }); // Verifica se o diretório de destino existe; se não, cria o diretório
+                        fs.rename(tempPath, targetPath, (err) => { // Move o arquivo temporário para o destino final
+                            if (err) {
+                                console.error(err);
+                                return res.status(500).json({ error: "Erro ao fazer upload da imagem" });
+                            }
+                            user.profilePicture = '/uploads/' + req.file.originalname; // Salva o caminho da imagem no usuário
+                            user.save().then(() => {
+                                         /* #swagger.responses[201] = { 
+                                            schema: {
+                                                success: 'User editing successfully!'
+                                            },
+                                            description: 'Usuário atualizado com sucesso.'
+                                        } */
+                                return res.status(200).json({ success: "Usuário atualizado com sucesso!" });
+                            }).catch((err) => {
+                                    /* #swagger.responses[500] = { 
+                 schema: {
+                 error: 'Internal Server Error!'
+                     },
+                     description: 'Erro interno.'
+                } */
+                                console.error(err);
+                                return res.status(500).json({ error: "Houve um erro ao atualizar o usuário, tente novamente!" });
+                            });
+                        });
+                    } else {
+                        user.save().then(() => {
+                            return res.status(200).json({ success: "Usuário atualizado com sucesso!" });
+                        }).catch((err) => {
+                            console.error(err);
+                            return res.status(500).json({ error: "Houve um erro ao atualizar o usuário, tente novamente!" });
+                        });
+                    }
+                }
+            }).catch((err) => {
+                console.error(err);
+                return res.status(500).json({ error: "Houve um erro interno" });
+            });
+        }
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Erro interno do servidor' });
+    }
+}
+
 
 }
 

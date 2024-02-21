@@ -65,8 +65,6 @@ class AnalyticByKewordGroupController {
     // #swagger.description = 'Endpoint para obter um frequência de palavras de uma analytic.'
     // #swagger.parameters['id'] = { description: 'ID da analytic.' }
 
-
-
     const analytic = await Analytic.findOne({
       _id: req.params.id
     })
