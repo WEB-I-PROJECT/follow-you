@@ -10,6 +10,7 @@ const analyticByCategory = require('./routes/analyticByCategory');
 const analyticByKeywordGroup = require('./routes/analyticByKeywordGroup');
 
 const analyticApi = require('./routes/api/analytic');
+const categoryApi = require('./routes/api/category');
 const analyticByKeywordGroupApi = require('./routes/api/analyticByKeywordGroup');
 
 const PORT = 8001;
@@ -24,6 +25,7 @@ app.use('/analytic/by-keywords/', analyticByKeywordGroup);
 // API ROUTES
 // app.use('/api/analytic/by-keywords/', analyticByKeywordGroupApi)
 // app.use('/api/analytic/', analyticApi)
+//app.use('/api/category/', categoryApi);
 app.use('', apiRoutes);
 
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
