@@ -12,7 +12,7 @@
         "bcryptjs": "^2.4.3",
         "bcrypto": "^5.5.2",
         "body-parser": "^1.19.0",
-        "compromise": "^14.11.2",
+        "compromise": "^14.12.0",
         "connect-flash": "^0.1.1",
         "express": "^4.18.2",
         "express-handlebars": "^5.3.2",

@@ -56,6 +56,8 @@ class AnalyticByKewordGroupController {
     }
   }
 
+
+
   async tokenize(req, res) {
     return res.render('keyword_group/tokenize', await tokenizeNews(req.params.id));
   }
@@ -222,11 +224,14 @@ class AnalyticByKewordGroupController {
 
   async sentimentAnalysis(req, res) {
     try {
+
+   
       const groupId = req.params.id;
       const keywordGroup = await KeywordGroup.findOne({ _id: groupId });
 
       if (!keywordGroup) {
         return res.status(404).json({ error: 'Grupo de palavras-chave não encontrado.' });
+        
       }
 
       const news = await News.find({ keywordGroup: groupId });
@@ -268,17 +273,89 @@ class AnalyticByKewordGroupController {
 
 
       console.log(sentimentAnalysisResults)
-
+      
       // Passando chave e valor para o template
       return res.render('keyword_group/sentiment_analysis', {
         ValueSentimentOrigin: sentimentAnalysisResults,
       });
 
     } catch (error) {
+      /* #swagger.responses[404] = { 
+      schema: {
+        error: 'KeywordGroup not found!'
+      },
+      description: 'Não encontrado.'  } */
       console.error('Ocorreu um erro ao processar o groupId: ', error);
       res.status(500).json({ error: 'Erro ao processar o groupId.' });
     }
   }
+
+
+  async sentimentAnalysisApi(req, res) {
+     // #swagger.tags = ['Analytic']
+    // #swagger.description = 'Endpoint para obter a análise de sentimento de notícias refrente a um grupo específico de palavras chaves do analytic apresentado por origem de busca.'
+    // #swagger.parameters['id'] = { description: 'ID do grupo de palavras chaves.' }
+    try {
+        const groupId = req.params.id;
+        const keywordGroup = await KeywordGroup.findOne({ _id: groupId });
+
+        if (!keywordGroup) {
+            return res.status(404).json({ error: 'Grupo de palavras-chave não encontrado.' });
+        }
+
+        const news = await News.find({ keywordGroup: groupId });
+
+        const sentimentAnalysisResults = {};
+
+        for (const newsItem of news) {
+            const { origin, content, keyword } = newsItem;
+            const result = sentiment(content);
+
+            if (!sentimentAnalysisResults[origin]) {
+                sentimentAnalysisResults[origin] = {};
+            }
+
+            if (!sentimentAnalysisResults[origin][keyword]) {
+                sentimentAnalysisResults[origin][keyword] = {
+                    Positivas: 0,
+                    Negativas: 0,
+                    Neutras: 0
+                };
+            }
+
+            let sentimentLabel;
+            if (result.score > 0) {
+                sentimentLabel = 'Positivas';
+            } else if (result.score < 0) {
+                sentimentLabel = 'Negativas';
+            } else {
+                sentimentLabel = 'Neutras';
+            }
+
+            sentimentAnalysisResults[origin][keyword][sentimentLabel]++;
+        }
+
+        console.log(sentimentAnalysisResults);
+
+        /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/SentimentAnlaises" },
+               description: 'Analise de sentimentos de grupo de palavras chaves de Analytic - apresentado por fonte de busca.' 
+       } */
+
+        // Retorna o objeto JSON com os resultados da análise de sentimento
+        return res.status(200).json(sentimentAnalysisResults);
+
+    } catch (error) {
+      /* #swagger.responses[404] = { 
+      schema: {
+        error: 'Error processing groupId.'
+      },
+      description: 'Não encontrado.'  } */
+        console.error('Ocorreu um erro ao processar o groupId: ', error);
+        return res.status(500).json({ error: 'Erro ao processar o groupId.' });
+    }
+}
+
 
 
   async newsSentiment(req, res) {
@@ -348,6 +425,75 @@ class AnalyticByKewordGroupController {
   }
 
 
+  async newsSentimentApi(req, res) {
+    try {
+        const analyticId = req.params.id;
+        // #swagger.tags = ['Analytic']
+        // #swagger.description = 'Endpoint para obter a análise de sentimento de cada notícia, filtradas por grupo de palavras chave.'
+        // #swagger.parameters['id'] = { description: 'ID do analytic.' }
+
+        // Retrieve news analytics and populate keyword groups efficiently
+        const news_analitic = await News.find({ analytic: analyticId })
+            .populate('keywordGroup', 'name')
+            .sort({ date: -1 }); // Classifique por data em ordem decrescente
+
+        if (!news_analitic || news_analitic.length === 0) {
+            return res.status(404).json({ error: 'Análise não encontrada.' });
+        }
+
+        const groupedSentimentResults = {};
+
+        for (const newsItem of news_analitic) {
+            const { title, image, origin, tags, keywordGroup, date } = newsItem;
+
+            // Group results by keyword group name
+            if (!groupedSentimentResults[keywordGroup.name]) {
+                groupedSentimentResults[keywordGroup.name] = [];
+            }
+
+            if (groupedSentimentResults[keywordGroup.name].length < 15) {
+
+                const result = sentiment(newsItem.content);
+
+                const uniquePositiveWords = new Set(result.positive);
+                const uniqueNegativeWords = new Set(result.negative);
+
+                const positiveWordsArray = Array.from(uniquePositiveWords);
+                const negativeWordsArray = Array.from(uniqueNegativeWords);
+
+                const totalPositiveWords = positiveWordsArray.length;
+                const totalNegativeWords = negativeWordsArray.length;
+
+                groupedSentimentResults[keywordGroup.name].push({
+                    image,
+                    title,
+                    origin,
+                    tags,
+                    totalPositiveWords,
+                    positiveWords: positiveWordsArray.join(', '), // Join with comma and space
+                    totalNegativeWords,
+                    negativeWords: negativeWordsArray.join(', '),
+                    date
+                });
+            }
+        }
+
+        console.log(groupedSentimentResults);
+         /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/NewsSentiment" },
+               description: 'Análise de sentimento de cada notícia, filtradas por grupo de palavras chave.' 
+       } */
+        return res.status(200).json({ newsSentimentGroup: groupedSentimentResults });
+    } catch (error) {
+       /* #swagger.responses[500] = { 
+      schema: {
+        error: 'Error when searching for news.'
+      },
+      description: 'Erro ao buscar as noticias.'  } */
+        console.error('Ocorreu um erro ao buscar as noticias ', error);
+        res.status(500).json({ error: 'Erro ao buscar as noticias.' });
+    }
+}
 
 
 }
@@ -355,13 +501,19 @@ class AnalyticByKewordGroupController {
 
 async function getNews(req, res) {
 
-  const url = `http://localhost:5001/api/analytic/${req.params.type}/${req.params.id}`;
-  const response = await fetch(url);
-  if (response.status == 200) {
-    return await response.json();
-  }
+  try{
 
-  return null;
+    const url = `http://localhost:5001/api/analytic/${req.params.type}/${req.params.id}`;
+    const response = await fetch(url);
+    if (response.status == 200) {
+      return await response.json();
+    }
+  
+    return null;
+  }
+  catch(e){
+    return null;
+  }
 
 }
 
