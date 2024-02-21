@@ -18,6 +18,11 @@ const doc = {
         {
             "name": "Analytic",
             "description": "Endpoints"
+        },
+        {
+            "name": "Users",
+            "description": "Endpoints"
+
         }
     ],
     securityDefinitions: {
@@ -81,8 +86,25 @@ const doc = {
                     url: "https://www.cnnbrasil.com.br/politica/as-pesquisas-eleitorais-sao-confiaveis/"
                 }
             ]
-        }
-        
+        },
+        UserList:
+            [
+                {
+                    "_id": "65b193785cbb532f21341011",
+                    "name": "John Galdino",
+                    "email": "john@gmail.com",
+                    "address": "Guanambi - Caetite - IF",
+                    "cpf": "908.978.666-44",
+                    "phone": "(77) 66655-4444",
+                    "password": "$2a$10$bPkZZJA6vAmVE9Y1pRkrx.0HvB6WgMXAQFZ.fGBCLHl.x7dqldRLO",
+                    "isAdmin": true,
+                    "approved": true,
+                    "createdAt": "2024-01-24T22:47:20.691Z",
+                    "updatedAt": "2024-02-14T20:05:12.420Z",
+                    "__v": 0,
+                    "profilePicture": "/uploads/Untitled.png"
+                }
+            ]
     }
 }
 
