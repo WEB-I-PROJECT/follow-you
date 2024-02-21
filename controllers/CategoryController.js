@@ -5,6 +5,7 @@ const path = require("path");
 
 class CategoryController {
   index(req, res) {
+
     Category.find().then(function (categories) {
       res.render("category/index", { categories: categories });
     }).catch((e) => {
@@ -12,40 +13,29 @@ class CategoryController {
     });
   }
 
-  search(req, res) {
-    
-    Category.findOne({ _id: req.params.id }).then((category) => {
-      const categoryKeywords = category.keywords;
-      let news = [];
-      let promises = [];
-      categoryKeywords.forEach(function(oneCategory){
-        const promise = new Promise((resolve, reject)=>{
-          try {
-            fetch(`http://127.0.0.1:5001/api/analyticCategory/${oneCategory}`)
-              .then((response) => response.json())
-              .then((data) => {
-                news.push(data)
-                resolve();
-              })
-              .catch((error) => {
-                console.error("Erro ao chamar a API:", error);
-                reject(error);
-              });
-          } catch (error) {
-            console.error("Erro durante a execução do script Python:", error);
-            reject(error);
-          }
-        });
-        promises.push(promise) 
-      });
-      Promise.all(promises)
-        .then(() => {
-          res.status(200).json({ news });
-        })
-        .catch((error) => {
-          console.error("Erro no processamento das categorias:", error);
-          res.status(500).json({ error: "Erro no processamento das categorias" });
-        });   
+  indexApi(req, res) {
+    // #swagger.tags = ['Categorias']
+    // #swagger.description = 'Endpoint para obter as categorias cadastradas.'
+    // #swagger.parameters['id'] = { description: 'ID da categoria/category.' }
+
+    Category.find().then(function (categories) {
+      /* #swagger.responses[200] = {
+              schema: { $ref: "#/definitions/indexCategory" },
+              description: 'Todas as categorias.' 
+      } */
+      return res.status(200).json({categories: categories});
+
+    }).catch((e) => {
+      /* #swagger.responses[404] = { 
+        schema:  {
+        error: 'Category not found'
+      },
+        description: 'Não encontrado.'  } */
+      return res.status(404).json(
+        {
+          error: 'News not found'
+        }
+      ).flash("error_msg", "Houve um erro ao listar categorias");
     });
   }
 
@@ -72,18 +62,30 @@ class CategoryController {
   }
 
   delete(req, res) {
+    // #swagger.tags = ['Categorias']
+    // #swagger.description = 'Endpoint para deletar as categorias.'
+    // #swagger.parameters['id'] = { description: 'ID da categoria/category.' }
+
     Category.deleteOne({ _id: req.params.id })
       .then((result) => {
         if (result.deletedCount > 0) {
-          req.flash("success_msg", "Categoria deletada com sucesso.");
-          res.redirect("/categoria/");
+          /* #swagger.responses[200] = {
+              schema: { $ref: "#/definitions/deleteCategory" },
+              description: 'deletar categoria específicada.' 
+          } */
+          res.status(200).json({"success_msg": "Categoria deletada com sucesso." });
         } else {
           req.flash("error_msg", "categoria não encontrada.");
           res.redirect("/categoria/");
         }
       })
       .catch(function (erro) {
-        req.flash("error_msg", "Houve um erro ao deletar a categoria.");
+        /* #swagger.responses[404] = {
+          schema:  {
+          error: 'category not found'
+        },
+          description: 'Não encontrado.'  } */
+        res.status(500).json({ error: "Houve um erro ao deletar a categoria." . erro });
       });
   }
 
@@ -117,13 +119,25 @@ class CategoryController {
   }
 
   details(req, res) {
+    // #swagger.tags = ['Categorias']
+    // #swagger.description = 'Endpoint para consultar as categorias.'
+    // #swagger.parameters['id'] = { description: 'ID da categoria/category.' }
+
     Category.findOne({ _id: req.params.id })
       .then(function (category) {
+        /* #swagger.responses[200] = {
+            schema: { $ref: "#/definitions/detailsCategory" },
+            description: 'Categoria específicada.' 
+        } */
         res.status(200).json(category);
       })
       .catch(function (error) {
-        req.flash("error_msg", "Houve um erro ao consultar a categoria.");
-        res.redirect("/categoria/");
+        /* #swagger.responses[404] = {
+          schema:  {
+          error: 'category not found'
+        },
+          description: 'Não encontrado.'  } */
+        res.status(500).json({ "error_msg": "Houve um erro ao consultar a categoria." });
       });
   }
 }

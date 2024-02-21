@@ -170,6 +170,287 @@
         }
       }
     },
+    "/api/analytic/by-category/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/analytic/by-category/news-api/{category}/{analytic}": {
+      "get": {
+        "tags": [
+          "Analytic"
+        ],
+        "description": "Endpoint para obter as noticías de determinado jornal.",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "analytic",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "description": "ID da analytic.",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "description": "Jornal de origem das notícias.",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Notícias do jornal específicado.",
+            "schema": {
+              "$ref": "#/definitions/newsCategory"
+            }
+          },
+          "404": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "News not found"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            },
+            "description": "Não encontrado."
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/analytic/by-category/tokenizar-api/{id}": {
+      "get": {
+        "tags": [
+          "Analytic"
+        ],
+        "description": "Endpoint para obter um frequência de palavras de uma analytic.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID da analytic."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Frequências de palavras.",
+            "schema": {
+              "$ref": "#/definitions/WordsFrequency"
+            }
+          }
+        }
+      }
+    },
+    "/api/analytic/by-category/word/chart": {
+      "get": {
+        "tags": [
+          "Analytic"
+        ],
+        "description": "Endpoint para obter um frequência de palavras em gráfico por grupo de palavras.",
+        "parameters": [
+          {
+            "name": "id",
+            "description": "ID do grupo de palavras.",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "origin",
+            "description": "Origem das notícias.",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "keyword",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Frequências de palavras formatadas para gráfico.",
+            "schema": {
+              "$ref": "#/definitions/WordsCharts"
+            }
+          },
+          "404": {
+            "description": "Não encontrado.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "Analytic not found!"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/category/": {
+      "get": {
+        "tags": [
+          "Categorias"
+        ],
+        "description": "Endpoint para obter as categorias cadastradas.",
+        "parameters": [
+          {
+            "name": "id",
+            "description": "ID da categoria/category.",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Todas as categorias.",
+            "schema": {
+              "$ref": "#/definitions/indexCategory"
+            }
+          },
+          "404": {
+            "description": "Não encontrado.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "Category not found"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/category/delete/{id}": {
+      "get": {
+        "tags": [
+          "Categorias"
+        ],
+        "description": "Endpoint para deletar as categorias.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID da categoria/category."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "deletar categoria específicada.",
+            "schema": {
+              "$ref": "#/definitions/deleteCategory"
+            }
+          },
+          "404": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "category not found"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            },
+            "description": "Não encontrado."
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/category/details/{id}": {
+      "get": {
+        "tags": [
+          "Categorias"
+        ],
+        "description": "Endpoint para consultar as categorias.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID da categoria/category."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Categoria específicada.",
+            "schema": {
+              "$ref": "#/definitions/detailsCategory"
+            }
+          },
+          "404": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "category not found"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            },
+            "description": "Não encontrado."
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/api/analytic/{id}": {
       "delete": {
         "tags": [

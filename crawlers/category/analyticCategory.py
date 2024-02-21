@@ -62,16 +62,17 @@ class analyticCategory():
             
         try:
             url = 'https://busca.ig.com.br/buscar/?q='+keyword
+            
             data["IG"] = []
             response = requests.get(url)
-
+            
             if response.status_code == 200:
                 soup = BeautifulSoup(response.text, 'html.parser')
-                titles = soup.find_all(
-                    'h2', class_='destaque-item-link-ContentText-titulo')
-
-                for title in titles:
-                    data.append(title.text.strip())
+                titles = soup.find_all('id', '379BB851-54D8-4EAF-913B-23C4471FCBC1')
+                data['Folha'].append({
+                    'title': titles
+                })
+                
         except Exception as error:
             print(error)            
         return data

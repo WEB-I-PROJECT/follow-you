@@ -104,7 +104,26 @@ const doc = {
                     "__v": 0,
                     "profilePicture": "/uploads/Untitled.png"
                 }
+            ],
+
+        newsCategory: {
+            news: [
+                {
+                    date: " 06/10/2022 às 16:03 ",
+                    img: "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2022/08/FTA20220905046-e1664892465983.jpg?w=347",
+                    title: "Boris Casoy: Pesquisando as pesquisas",
+                    url: "https://www.cnnbrasil.com.br/politica/boris-casoy-pesquisando-as-pesquisas/"
+                },
+                {
+                    date: " 23/09/2022 às 08:42 ",
+                    img: "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2022/05/Copia-de-16x9-Podcast-WW.png?w=347",
+                    title: "As pesquisas eleitorais são confiáveis?",
+                    url: "https://www.cnnbrasil.com.br/politica/as-pesquisas-eleitorais-sao-confiaveis/"
+                }
             ]
+        }
+        
+
     }
 }
 
