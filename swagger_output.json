@@ -213,7 +213,7 @@
         }
       }
     },
-    "/api/analytic/by-keywords/news-sentiment/{id}": {
+    "/api/analytic/by-keywords/news/sentiment/{id}": {
       "get": {
         "tags": [
           "Analytic"
@@ -256,28 +256,7 @@
         }
       }
     },
-    "/api/analytic/by-category/{id}": {
-      "get": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/api/analytic/by-category/news-api/{category}/{analytic}": {
+    "/api/analytic/by-category/news/{category}/{analytic}": {
       "get": {
         "tags": [
           "Analytic"
@@ -331,7 +310,7 @@
         }
       }
     },
-    "/api/analytic/by-category/tokenizar-api/{id}": {
+    "/api/analytic/by-category/tokenize/{id}": {
       "get": {
         "tags": [
           "Analytic"
@@ -409,7 +388,7 @@
     "/api/category/": {
       "get": {
         "tags": [
-          "Categorias"
+          "Category"
         ],
         "description": "Endpoint para obter as categorias cadastradas.",
         "parameters": [
@@ -445,10 +424,10 @@
         }
       }
     },
-    "/api/category/delete/{id}": {
-      "get": {
+    "/api/category/{id}": {
+      "delete": {
         "tags": [
-          "Categorias"
+          "Category"
         ],
         "description": "Endpoint para deletar as categorias.",
         "parameters": [
@@ -486,12 +465,10 @@
             "description": "Internal Server Error"
           }
         }
-      }
-    },
-    "/api/category/details/{id}": {
+      },
       "get": {
         "tags": [
-          "Categorias"
+          "Category"
         ],
         "description": "Endpoint para consultar as categorias.",
         "parameters": [
@@ -625,7 +602,7 @@
         }
       }
     },
-    "/api/analytic/save-analytic": {
+    "/api/analytic/": {
       "post": {
         "tags": [
           "Analytic"
@@ -637,7 +614,7 @@
             "in": "body",
             "description": "Add new Analytic.",
             "schema": {
-              "$ref": "#/definitions/AddAnaly"
+              "$ref": "#/definitions/AddAnalytic"
             }
           }
         ],
@@ -669,7 +646,7 @@
         }
       }
     },
-    "/api/user/list-users": {
+    "/api/user/": {
       "get": {
         "tags": [
           "Users"
@@ -698,141 +675,7 @@
             }
           }
         }
-      }
-    },
-    "/api/user/disable-user/{userId}": {
-      "post": {
-        "tags": [
-          "Users"
-        ],
-        "description": "Endpoint para desativar usuário.",
-        "parameters": [
-          {
-            "name": "userId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id",
-            "description": "ID do usuário.",
-            "in": "query",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Usuário desativado com sucesso.",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "success": {
-                  "type": "string",
-                  "example": "User deactivated successfully!"
-                }
-              },
-              "xml": {
-                "name": "main"
-              }
-            }
-          },
-          "404": {
-            "description": "Usuário não encontrado.",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "error": {
-                  "type": "string",
-                  "example": "User not found"
-                }
-              },
-              "xml": {
-                "name": "main"
-              }
-            }
-          },
-          "500": {
-            "description": "Erro no servidor.",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "error": {
-                  "type": "string",
-                  "example": "There was an error deactivating user"
-                }
-              },
-              "xml": {
-                "name": "main"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/user/activate-user/{userId}": {
-      "post": {
-        "tags": [
-          "Users"
-        ],
-        "description": "Endpoint para ativar usuário.",
-        "parameters": [
-          {
-            "name": "userId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Usuário ativado com sucesso.",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "success": {
-                  "type": "string",
-                  "example": "User activate successfully!"
-                }
-              },
-              "xml": {
-                "name": "main"
-              }
-            }
-          },
-          "404": {
-            "description": "Usuário não encontrado.",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "success": {
-                  "type": "string",
-                  "example": "User not found!"
-                }
-              },
-              "xml": {
-                "name": "main"
-              }
-            }
-          },
-          "500": {
-            "description": "Erro no servidor.",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "error": {
-                  "type": "string",
-                  "example": "There was an error activating user"
-                }
-              },
-              "xml": {
-                "name": "main"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/user/add-user": {
+      },
       "post": {
         "tags": [
           "Users"
@@ -914,10 +757,8 @@
             }
           }
         }
-      }
-    },
-    "/api/user/edit-user": {
-      "post": {
+      },
+      "put": {
         "tags": [
           "Users"
         ],
@@ -1002,6 +843,138 @@
                 "error": {
                   "type": "string",
                   "example": "Internal Server Error!"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/user/disable/{userId}": {
+      "patch": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Endpoint para desativar usuário.",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "description": "ID do usuário.",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuário desativado com sucesso.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "string",
+                  "example": "User deactivated successfully!"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "404": {
+            "description": "Usuário não encontrado.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "User not found"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Erro no servidor.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "There was an error deactivating user"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/user/activate/{userId}": {
+      "patch": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Endpoint para ativar usuário.",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuário ativado com sucesso.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "string",
+                  "example": "User activate successfully!"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "404": {
+            "description": "Usuário não encontrado.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "string",
+                  "example": "User not found!"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Erro no servidor.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "There was an error activating user"
                 }
               },
               "xml": {
@@ -1474,7 +1447,7 @@
         }
       }
     },
-    "AddAnaly": {
+    "AddAnalytic": {
       "type": "object",
       "properties": {
         "name": {

@@ -13,7 +13,7 @@ const analyticApi = require('./routes/api/analytic');
 const categoryApi = require('./routes/api/category');
 const analyticByKeywordGroupApi = require('./routes/api/analyticByKeywordGroup');
 
-const PORT = 8001;
+const PORT = 8002;
 
 app.use('/', user)
 app.use('/usuario', user);

@@ -6,6 +6,7 @@ const News = require('../models/News');
 class AnalyticByCategoryController {
 
     async index(req, res) {
+        
         try {
             Analytic.findOne({ _id: req.params.id })
                 .then(data => {

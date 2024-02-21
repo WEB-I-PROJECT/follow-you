@@ -201,7 +201,7 @@ class AnalyticController {
              /*  #swagger.parameters['body'] = {
             in: 'body',
             description: 'Add new Analytic.',
-            schema: { $ref: '#/definitions/AddAnaly' }
+            schema: { $ref: '#/definitions/AddAnalytic' }
     } */
             
 

@@ -232,7 +232,7 @@ const doc = {
                     }
                 ]
             },
-            AddAnaly: 
+            AddAnalytic: 
                 {
                     "name": "Economia",
                     "type": "by-category",

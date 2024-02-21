@@ -14,7 +14,7 @@ class CategoryController {
   }
 
   indexApi(req, res) {
-    // #swagger.tags = ['Categorias']
+    // #swagger.tags = ['Category']
     // #swagger.description = 'Endpoint para obter as categorias cadastradas.'
     // #swagger.parameters['id'] = { description: 'ID da categoria/category.' }
 
@@ -62,7 +62,7 @@ class CategoryController {
   }
 
   delete(req, res) {
-    // #swagger.tags = ['Categorias']
+    // #swagger.tags = ['Category']
     // #swagger.description = 'Endpoint para deletar as categorias.'
     // #swagger.parameters['id'] = { description: 'ID da categoria/category.' }
 
@@ -119,7 +119,7 @@ class CategoryController {
   }
 
   details(req, res) {
-    // #swagger.tags = ['Categorias']
+    // #swagger.tags = ['Category']
     // #swagger.description = 'Endpoint para consultar as categorias.'
     // #swagger.parameters['id'] = { description: 'ID da categoria/category.' }
 

@@ -8,6 +8,6 @@ router.delete('/:id', new AnalyticController().removeApi);
 
 // TO DO
 router.get('/:userId', new AnalyticController().indexApi);
-router.post('/save-analytic', new AnalyticController().saveAnalyticApi);
+router.post('/', new AnalyticController().saveAnalyticApi);
 
 module.exports = router;
