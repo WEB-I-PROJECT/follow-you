@@ -12,7 +12,6 @@ id = sys.argv[1]
 
 crawlers = [
    CNNCrawler, BrasildeFatoCrawler, CidadeVerdeCrawler, IGrawler, 
-   CNNCrawler, BrasildeFatoCrawler,  CidadeVerdeCrawler, IGrawler,
 ]
 
 for Crawler in crawlers:

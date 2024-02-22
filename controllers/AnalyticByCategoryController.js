@@ -77,7 +77,7 @@ class AnalyticByCategoryController {
             const json = await Promise.all(promises);
             console.log(json);
             if (json) {
-
+                
                 /* #swagger.responses[200] = { 
                         schema: { $ref: "#/definitions/newsCategory" },
                         description: 'Notícias do jornal específicado.' 
