@@ -1,19 +1,27 @@
-<div class="background"></div>
+
+
+<div class="background">
 <div class="container">
   <div class="generic-card">
-    <div class="generic-form">
-      <div class="generic-heading">Faça Login</div>
-      <div class="generic-register-link">Ainda não tem <a class="a-register" href="/registro">cadastro</a>?</div>
-      <form action="/usuario/login" method="post">
+    <div class="generic-form ">
+      <div class="generic-heading mb-2 text-center">Faça Login</div>
+      <div class="generic-register-link mb-4 text-center">Ainda não tem <a
+          class="a-register" href="/registro">cadastro</a>?</div>
+      <form action="/usuario/login" method="post" >
         <label for="email" class="generic-label">E-mail</label>
-        <input type="email" placeholder="insira seu email" name="email" class="generic-input" required />
+        <input type="email" placeholder="insira seu email" name="email"
+          class="generic-input px-3 col-12" required />
         <label for="senha" class="generic-label">Senha</label>
-        <input type="password" placeholder="Insira sua senha" name="password" class="generic-input" required />
-        <div class="generic-forgot-password">Esqueceu a <a class="a-register" href="#">senha</a>?</div>
-        <button class="generic-btn-primary">Entrar</button>
+        <input  type="password" placeholder="Insira sua senha" name="password"
+          class="generic-input col-12 px-3" required />
+        <div class="generic-forgot-password mb-2 generic-register-link">Esqueceu a <a
+            class="a-register" href="#">senha</a>?</div>
+        <div class="text-center mt-3">
+          <button class="generic-btn-primary px-4 p-1 ">Entrar</button>
+        </div>
       </form>
-      
     </div>
     <div class="generic-image"></div>
   </div>
+</div>
 </div>
