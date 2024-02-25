@@ -1,71 +1,43 @@
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(365.63deg, #FCBD33 16.64%, #C4170C 52.19%);  z-index: -1;
-}
-.generic-input:focus {
-  border-color: #890101 !important;
-  box-shadow: 0 0 0 0.2rem rgba(137, 1, 1, 0.25) !important;
-}
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(365.63deg, #FCBD33 16.64%, #C4170C 52.19%);
+    z-index: -1;
+  }
 
-.generic-card {
-  width: 700px;
-  height: 500px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  display: flex;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-height: 70%;
-  max-width: 70%;
-  margin-top: 50px;
-  z-index: -1;
-}
+  .generic-card {
+    width: 700px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 70%;
+    max-width: 70%;
+    margin-top: 50px;
+    z-index: -1;
+  }
 
-.a-register{
+
+   .a-register{
   color: #890101;
 
-}
-
-.generic-form {
-  flex: 1;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .generic-heading {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 5px;
-  margin-top: 0;
   color: #890101;
-  margin-left: 70px;
 }
 
-.generic-image {
-  flex: 1.3;
-  margin-left: 10;
-  background: url('/img/news4.png');
-  background-size: cover;
-}
-
-.generic-input {
-  margin-bottom: 10px;
-  padding: 8px 70px;
-  border: 2px solid #890101;
-  border-radius: 20px;
-  font-size: 14px;
-  
-}
 
 .generic-label {
   display: block;
@@ -74,131 +46,85 @@
   color: #890101;
 }
 
-.generic-btn-primary {
-  text-align: center;
-  padding: 5px 30px;
+
+.generic-register-link {
+  font-size: 14px;
+  color: #890101;
+  cursor: pointer;
+  text-decoration: none;
+  
+}
+
+  .generic-image {
+    flex: 1;
+    background: url('/img/news4.png');
+    background-size: cover;
+    display: block;
+  }
+
+  .generic-btn-primary {
   background-color: #890101;
   color: #fff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   font-size: 18px;
-  margin-left: 70px;
-  margin-top: 20px;
 }
+
 
 .generic-btn-primary:hover {
-  background-color: #dfc608;
+  background-color: #c4170c;
+  color: #fff;
 }
 
 
-
-.generic-forgot-password {
-  margin-top: 10px;
-  text-align: left;
-  font-size: 14px;
-  color: #890101;
-  cursor: pointer;
-}
-
-.generic-register-link {
-  margin-top: 1px;
-  margin-bottom: 20px;
-  font-size: 14px;
-  color: #890101;
-  cursor: pointer;
-  text-decoration: none;
-  margin-left: 50px;
-}
-
-@media screen and (max-width: 768px) {
-  .generic-card {
-      width: 80%;
-      max-width: none;
-  }
-}
-
-@media screen and (max-width: 375px), (max-width: 668px), (max-width: 692px), (max-width: 319px), (max-width: 640px), (max-width: 414px) {
-  .generic-card {
-    margin-top: -20;
-      width: 80%;
-      height: 80%;
-  }
-
-  .generic-btn-primary {
-      text-align: center;
-      padding: 2px 20px;
-      background-color: #890101;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 25px;
-      margin-left: 50px;
-  }
-
-  .generic-image {
-      display: none;
-  }
-
-  
   .generic-form {
     flex: 1;
-    padding: 70px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
+
+  @media screen and (max-width: 768px) {
+    .generic-card {
+      width: 80%;
+      max-width: none;
+    }
+
+    .generic-image {
+      display: none;
+    }
+  }
+
+ 
+
+
+.generic-input {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 2px solid #890101;
+  border-radius: 20px;
+  font-size: 14px;
+  
 }
 
-  @media screen and (max-width: 319px), (max-width: 440px) {
-      .generic-card {
-          width: 80%;
-          height: 80%;
-      }
 
-      .generic-btn-primary {
-          text-align: center;
-          padding: 5px 20px;
-          background-color: #890101;
-          color: #fff;
-          border: none;
-          border-radius: 10px;
-          cursor: pointer;
-          font-size: 15px;
-          align-items: center;
-      }
+  @media screen and (max-width: 319px), (max-width: 440px) {
+    
 
       .generic-image {
           display: none;
       }
 
-      .generic-heading {
-          font-size: 20px;
-          font-weight: bold;
-          margin-bottom: 1px;
-          margin-top: 10px;
-          color: #890101;
-          margin-left: 45px;
-      }
-
-      .generic-register-link {
-        margin-top: 1px;
-        margin-bottom: 20px;
-        font-size: 13px;
-        color: #890101;
-        cursor: pointer;
-        text-decoration: none;
-        margin-left: 20px;
-      }
-      
       .generic-input {
             margin-bottom: 10px;
             padding: 10px;
             border: 1px solid #890101;
             border-radius: 20px;
             font-size: 14px;
-            margin-left: -5px;
+           
         }
       
     }
+

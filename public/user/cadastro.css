@@ -17,9 +17,8 @@
     height: 700px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgb(255, 255, 255);
     background: #C4170C;
-
     display: flex;
     position: fixed;
     top: 50%;
@@ -41,12 +40,9 @@
 }
 
 .custom-login-heading {
-    font-size: 34px;
+    font-size: 30px;
     font-weight: bold;
-    margin-bottom: -5px;
-    margin-top: 0;
     color: #ffffff;
-    margin-left: 100px;
 }
 
 .custom-login-image {
@@ -61,6 +57,7 @@
     border: 1px solid #fefdfe;
     border-radius: 20px;
     font-size: 15px;
+    border-color: #ffffff;
 }
 
 .custom-label {
@@ -68,7 +65,6 @@
     font-size: 15px;
     margin-bottom: 2px;
     color: #ffffff;
-    margin-left: 15px;
 }
 
 .custom-btn-primary {
@@ -103,14 +99,13 @@
 }
 
 .custom-register-link {
-    margin-top: 10px;
-    margin-bottom: 1px;
     font-size: 15px;
     color: #ffffff;
     cursor: pointer;
     text-decoration: none;
-    margin-left: 75px;
 }
+
+
 .a-login{
     color: #FCBD33;
     text-decoration: none;
@@ -133,8 +128,8 @@
     .custom-btn-primary {
         text-align: center;
         padding: 10px 10px;
-        background-color: #FCBD33;
-        color: #ffffff;
+        background-color: #ffffff;
+        color: #be0c0c;
         border: none;
         border-radius: 10px;
         cursor: pointer;
@@ -145,24 +140,7 @@
 
 
 
-    .custom-login-heading {
-        font-size: 25px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        margin-top: 10;
-        color: #ffffff;
-        margin-left: 50px;
-    }
-
-    .custom-register-link {
-        margin-top: -15px;
-        margin-bottom: -2px;
-        font-size: 12px;
-        color: #ffffff;
-        cursor: pointer;
-        text-decoration: none;
-        margin-left: 53px;
-    }
+ 
 
     .custom-input {
         margin-bottom: 3px;
@@ -174,7 +152,6 @@
     .custom-label {
         display: block;
         font-size: 12px;
-        margin-bottom: 2px;
         color: #ffffff;
     }
 }
@@ -190,8 +167,8 @@
     .custom-btn-primary {
         text-align: center;
         padding: 2px 10px;
-        background-color: #FCBD33;
-        color: #ffffff;
+        background-color: #ffffff;
+        color: #be0c0c;
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -205,24 +182,7 @@
         display: none;
     }
 
-    .custom-login-heading {
-        font-size: 12px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        margin-top: 10;
-        color: #ffffff;
-        margin-left: 30px;
-    }
-
-    .custom-register-link {
-        margin-top: -15px;
-        margin-bottom: -2px;
-        font-size: 8px;
-        color: #ffffff;
-        cursor: pointer;
-        text-decoration: none;
-        margin-left: 53px;
-    }
+ 
 
     .custom-input {
         margin-bottom: 3px;
@@ -233,7 +193,6 @@
     }
 
     .custom-label {
-        margin-left: 10px;
         display: block;
         font-size: 8px;
         margin-bottom: 2px;
@@ -252,8 +211,8 @@
         .custom-btn-primary {
             text-align: center;
             padding: 2px 10px;
-            background-color: #FCBD33;
-            color: #ffffff;
+            background-color: #ffffff;
+            color: #be0c0c;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -270,20 +229,14 @@
         .custom-login-heading {
             font-size: 12px;
             font-weight: bold;
-            margin-bottom: 20px;
-            margin-top: 10;
             color: #ffffff;
-            margin-left: 50px;
         }
 
         .custom-register-link {
-            margin-top: -15px;
-            margin-bottom: -2px;
             font-size: 8px;
             color: #ffffff;
             cursor: pointer;
             text-decoration: none;
-            margin-left: 53px;
         }
 
         .custom-input {
@@ -295,7 +248,6 @@
         }
 
         .custom-label {
-            margin-left: 50px;
             display: flex;
             font-size: 8px;
             margin-bottom: 2px;
