@@ -40,23 +40,24 @@
   }
   .custom2-btn-seguidores:hover {
     transition: background-color 0.3s; 
-    background-color: #ffc229;
+    background-color: #C4170C;
+    color: #ffffff;
   }
 
+  
   .background-container {
-    background-image: url(/img/indexHub3.png);
+    background-image: url(/img/index3.png);
     background-size: 56% 105%;
     background-position: bottom;
     background-repeat: no-repeat;
     position: absolute;
     width: 129%;
-    height: 100vh;
+    height: 88vh;
     z-index: -1;
 }
   .custom2-container-fluid {
     position: relative;
-    padding: 2px;
-    margin-left: 30px; 
+   
   }
   .custom2-content-container {
     text-align: center;

@@ -46,8 +46,8 @@
 }
 
 .custom-login-image {
-    flex: 40;
-    background: url('/img/register2.png');
+    flex: 35;
+    background: url('/img/news4.png');
     background-size: cover;
 }
 
@@ -58,6 +58,8 @@
     border-radius: 20px;
     font-size: 15px;
     border-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+
 }
 
 .custom-label {

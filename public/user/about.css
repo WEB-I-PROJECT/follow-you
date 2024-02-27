@@ -6,6 +6,8 @@ body {
 .page-main-image {
 
     background-image: url(/img/about.png);
+    
+
     background-position: 100% 30%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -13,7 +15,7 @@ body {
     width: 100vw;
     height: 100vh;
 
-    max-height: 80vh;
+    max-height: 90vh;
 
     display: flex;
 }
@@ -54,6 +56,8 @@ body {
 .background2-container {
     margin: 0 auto;
     max-width: 1560px;
+    
+
 }
 
 .features-container,
@@ -77,6 +81,7 @@ body {
     width: 71.79%;
     color: #C4170C;
 
+
     & h3 {
         font-size: 60px;
     }
@@ -89,7 +94,6 @@ body {
 
 .carousel-container {
     margin-top: 32px;
-
     list-style-type: none;
     padding: 0;
     display: flex;
@@ -101,6 +105,7 @@ body {
         display: flex;
         flex-direction: column;
         background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
         border-radius: 18px;
         max-width: 460px;
         padding: 16px;
@@ -140,6 +145,7 @@ body {
 
     background-color: white;
     border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
     text-align: center;
     color: var(--primary-color);
 
@@ -154,6 +160,7 @@ body {
 .features-container {
     margin-top: 18px;
     padding: 16px 0;
+   
 
 
     display: flex;
@@ -360,4 +367,11 @@ body {
     & a {
         color: white;
     }
+}
+
+
+
+
+.text-initial-hub-news{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
 }

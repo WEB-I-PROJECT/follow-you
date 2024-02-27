@@ -4,39 +4,56 @@
 
 {{/each}}
 <div class="background-r">
-<div class="container">
-    <div class="custom-login-card">
-        <form class="custom-login-form" action="" method="post">
-            <div class="custom-login-heading text-center mt-4">Cadastre-se</div>
-            <div class="custom-register-link mb-2 text-center">Já tem cadastro? <a class="a-login" href="/login" class="text-white">Faça login.</a></div>
-            <label for="nome" class="custom-label">Nome</label>
-            <input type="text" name="name" placeholder="Insira seu nome completo" required class="custom-input px-3" />
-            <label for="email" class="custom-label">E-mail</label>
-            <input type="email" name="email" placeholder="Insira seu e-mail" required class="custom-input px-3" />
-            <label for="endereco" class="custom-label">Endereço</label>
-            <input type="address" name="address" placeholder="Insira seu endereço" required class="custom-input px-3" />
-            <label for="cpf" class="custom-label">CPF</label>
-            <input type="cpf" name="cpf" id="cpf" placeholder="Insira seu CPF" required class="custom-input px-3" />
-            <label for="telefone" class="custom-label">Telefone</label>
-            <input type="phone" name="phone" id="phone" placeholder="Insira seu telefone" required class="custom-input px-3" />
-            <label for="senha" class="custom-label">Senha</label>
-            <input type="password" name="password" placeholder="Insira sua senha" required class="custom-input px-3" />
+    <div class="container">
+        <div class="custom-login-card">
+            <form class="custom-login-form" action method="post">
+                <div
+                    class="custom-login-heading text-center mt-5">Cadastre-se</div>
+                <div class="custom-register-link mb-1 text-center">Já tem
+                    cadastro? <a class="a-login" href="/login"
+                        class="text-white">Faça login.</a></div>
+                <label for="nome" class="custom-label">Nome</label>
+                <input type="text" name="name"
+                    placeholder="Insira seu nome completo" required
+                    class="custom-input px-3" />
+                <label for="email" class="custom-label">E-mail</label>
+                <input type="email" name="email" placeholder="Insira seu e-mail"
+                    required class="custom-input px-3" />
+                <label for="endereco" class="custom-label">Endereço</label>
+                <input type="address" name="address"
+                    placeholder="Insira seu endereço" required
+                    class="custom-input px-3" />
+                <label for="cpf" class="custom-label">CPF</label>
+                <input type="cpf" name="cpf" id="cpf"
+                    placeholder="Insira seu CPF" required
+                    class="custom-input px-3" />
+                <label for="telefone" class="custom-label">Telefone</label>
+                <input type="phone" name="phone" id="phone"
+                    placeholder="Insira seu telefone" required
+                    class="custom-input px-3" />
+                <label for="senha" class="custom-label">Senha</label>
+                <input type="password" name="password"
+                    placeholder="Insira sua senha" required
+                    class="custom-input px-3" />
 
-            <button type="submit" class="btn custom-btn-primary mb-5">Cadastrar</button>
-        </form>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+                <button type="submit"
+                    class="btn custom-btn-primary mb-5">Cadastrar</button>
+            </form>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
 
-        <script>
-            $(document).ready(function () {
-                // Máscara para o campo de CPF
-                $('#cpf').inputmask('999.999.999-99', { placeholder: '___.___.___-__' });
-
-                // Máscara para o campo de telefone
-                $('#phone').inputmask('(99) 99999-9999', { placeholder: '(__) _____-____' });
-            });
-        </script>
-        <div class="custom-login-image"></div>
+            <div class="custom-login-image"></div>
+        </div>
     </div>
 </div>
-</div>
+
+<script>
+     $(document).ready(function () {
+                // Máscara para o campo de CPF
+     $('#cpf').inputmask('999.999.999-99', { placeholder: '___.___.___-__' });
+
+                // Máscara para o campo de telefone
+    $('#phone').inputmask('(99) 99999-9999', { placeholder: '(__) _____-____' });
+    });
+</script>
