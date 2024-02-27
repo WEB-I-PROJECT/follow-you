@@ -54,9 +54,6 @@ class AnalyticController {
         }
     }
 
-
-
-
     add(req, res) {
         Category.find().then((categorys) => {
             //console.log(categorys);
@@ -306,9 +303,6 @@ class AnalyticController {
             return res.status(500).json({ error: 'Internal Server Error' });
         }
     }
-
-
-
 
     async remove(req, res) {
         const analytic = await Analytic.deleteOne({

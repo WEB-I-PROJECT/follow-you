@@ -137,8 +137,6 @@ class AnalyticByKewordGroupController {
     )
   }
 
-
-
   async tokensCharts(req, res) {
     console.log(req.query)
     // #swagger.tags = ['Analytic']
@@ -217,8 +215,6 @@ class AnalyticByKewordGroupController {
     }
 
   }
-
-
 
   async sentimentAnalysis(req, res) {
     try {
@@ -353,7 +349,6 @@ class AnalyticByKewordGroupController {
         return res.status(500).json({ error: 'Erro ao processar o groupId.' });
     }
 }
-
 
 
   async newsSentiment(req, res) {
