@@ -29,7 +29,6 @@ class UserController {
             const { name, email, address, cpf, phone, password } = req.body;
             const erros = [];
 
-            console.log(req.body);
 
             if (!userId) {
                 erros.push({ texto: "Usuário não autenticado" });
@@ -55,8 +54,6 @@ class UserController {
                         user.cpf = cpf;
                         user.phone = phone;
 
-                        // Verifica se um arquivo de imagem foi enviado
-                        console.log("File uploaded:", req.file);
 
                         if (req.file) {
                             const tempPath = req.file.path; // Define o caminho temporário do arquivo
@@ -471,6 +468,11 @@ class UserController {
             const hash = await bcrypt.hash(newUser.password, salt);
             newUser.password = hash;
 
+
+        if (!userId) {
+            errors.push({ message: "Usuário não autenticado" });
+        }
+
             await newUser.save();
 
             /* #swagger.responses[201] = { 
@@ -479,6 +481,7 @@ class UserController {
        },
        description: 'Usuário criado com sucesso.'
  } */
+
 
             return res.status(201).json({ message: "Usuário criado com sucesso!" });
         } catch (error) {
@@ -490,6 +493,48 @@ class UserController {
             return res.status(500).json({ error: 'Erro interno do servidor' });
         }
     }
+
+
+        if (errors.length > 0) {
+            return res.status(400).json({ errors });
+        } else {
+            User.findById(userId).then((user) => {
+                if (!user) {
+                    /* #swagger.responses[400] = { 
+                 schema: {
+                 error: 'User not found!'
+                     },
+                     description: 'Usuario nao encontrado.'
+                } */
+                    return res.status(404).json({ error: "Usuário não encontrado" });
+                } else {
+                    user.name = name;
+                    user.email = email;
+                    user.address = address;
+                    user.cpf = cpf;
+                    user.phone = phone;
+
+
+                    if (req.file) {
+                        const tempPath = req.file.path; 
+                        const targetDir = path.join(__dirname, '../public/uploads/');
+                        const targetPath = path.join(targetDir, req.file.originalname); 
+                        fs.mkdirSync(targetDir, { recursive: true }); // Verifica se o diretório de destino existe; se não, cria o diretório
+                        fs.rename(tempPath, targetPath, (err) => { // Move o arquivo temporário para o destino final
+                            if (err) {
+                                console.error(err);
+                                return res.status(500).json({ error: "Erro ao fazer upload da imagem" });
+                            }
+                            user.profilePicture = '/uploads/' + req.file.originalname; // Salva o caminho da imagem no usuário
+                            user.save().then(() => {
+                                         /* #swagger.responses[201] = { 
+                                            schema: {
+                                                success: 'User editing successfully!'
+                                            },
+                                            description: 'Usuário atualizado com sucesso.'
+                                        } */
+                                return res.status(200).json({ success: "Usuário atualizado com sucesso!" });
+                            }).catch((err) => {
 
     update(req, res) {
         try {
@@ -556,6 +601,7 @@ class UserController {
                                    } */
                                     return res.status(200).json({ success: "Usuário atualizado com sucesso!" });
                                 }).catch((err) => {
+
                                     /* #swagger.responses[500] = { 
                  schema: {
                  error: 'Internal Server Error!'
