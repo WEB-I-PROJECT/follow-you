@@ -69,49 +69,49 @@
         </ul>
       </div>
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
+    <div class="modal-dialog">
+        <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Atualizar Dados</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="exampleModalLabel">Atualizar Dados</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form action="/edit" method="post" enctype="multipart/form-data">
-                <!-- Campos do formulário preenchidos com os dados atuais do usuário -->
-                <div class="mb-3">
-                  <label for="name" class="form-label">Nome</label>
-                  <input type="text" class="form-control" id="name" name="name" value="{{user.name}}">
-                </div>
-                <div class="mb-3">
-                  <label for="profile_picture" class="form-label">Foto de Perfil</label>
-                  <input type="file" class="form-control" id="profile_picture" name="profile_picture">
-                </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" name="email" value="{{user.email}}">
-                </div>
-                <div class="mb-3">
-                  <label for="address" class="form-label">Endereço</label>
-                  <input type="text" class="form-control" id="address" name="address" value="{{user.address}}">
-                </div>
-                <div class="mb-3">
-                  <label for="cpf" class="form-label">CPF</label>
-                  <input type="text" class="form-control" id="cpf" name="cpf" value="{{user.cpf}}">
-                </div>
-                <div class="mb-3">
-                  <label for="phone" class="form-label">Telefone</label>
-                  <input type="text" class="form-control" id="phone" name="phone" value="{{user.phone}}">
-                </div>
-                <div class="mb-3">
-                  <label for="password" class="form-label">Nova Senha</label>
-                  <input type="password" class="form-control" id="password" name="password" placeholder="Nova senha">
-                </div>
-                <button type="submit" class="btn btn-primary">Atualizar</button>
-              </form>
+                <form action="/edit" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{user.name}}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="profile_picture" class="form-label">Foto de Perfil</label>
+                        <input type="file" class="form-control" id="profile_picture" name="profile_picture" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value="{{user.email}}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Endereço</label>
+                        <input type="text" class="form-control" id="address" name="address" value="{{user.address}}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cpf" class="form-label">CPF</label>
+                        <input type="text" class="form-control" id="cpf" name="cpf" value="{{user.cpf}}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Telefone</label>
+                        <input type="text" class="form-control" id="phone" name="phone" value="{{user.phone}}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Nova Senha</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Nova senha" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Atualizar</button>
+                </form>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
+</div>
+
 
 
 

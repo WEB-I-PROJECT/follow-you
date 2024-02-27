@@ -1,0 +1,41 @@
+
+    .search-bar-container {
+        position: relative;
+        width: 300px;
+        margin-bottom: 10px;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        right: 1px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        background-color: #C4170C;
+        padding: 10px;
+        border-radius: 0 5px 5px 0;
+    }
+
+    .search-icon i {
+        color: white;
+    }
+    .table-rounded {
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
+    .table-rounded thead tr th:first-child {
+        border-top-left-radius: 10px;
+    }
+
+    .table-rounded thead tr th:last-child {
+        border-top-right-radius: 10px;
+    }

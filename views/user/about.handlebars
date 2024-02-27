@@ -1,265 +1,158 @@
-<style>
-    .custom3-content-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 20px;
-    }
-
-    .custom3-content-container h1 {
-        margin-top: -10px;
-        margin-left: 80px;
-        white-space: nowrap;
-        background: linear-gradient(180deg, #C4170C 37.62%, #FCBD33 92.76%, #FCBD33 92.77%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
-        font-size: 80px;
-        font-weight: bold;
-
-    }
-
-    .custom4-content-container h3 {
-        margin-top: 150px;
-        white-space: nowrap;
-        color: #C4170C;
-
-        font-size: 60px;
-        font-weight: bold;
-
-    }
-
-    .custom3-content-container h3 {
-        color: #C4170C;
-        margin-left: 9px;
-        font-size: 30px;
-    }
-
-
-
-
-
-    .background1-container {
-        background-image: url(/img/about.png);
-        background-size: 82% 104%;
-        background-position: bottom;
-        background-repeat: no-repeat;
-        position: absolute;
-        width: 110%;
-        height: 93vh;
-        z-index: -1;
-    }
-
-    .custom3-container-fluid {
-        position: relative;
-        padding: 2px;
-        margin-left: 30px;
-    }
-
-    .custom3-content-container {
-        text-align: center;
-    }
-
-    .background1-image-container {
-        margin-top: 20px;
-    }
-
-    .background2-container {
-        clear: both;
-        /* Isso garante que a div fique abaixo de todos os elementos anteriores */
-        margin-top: 58.9vh;
-    }
-    .quadros-image {
-    width: 440px; /* Defina a largura desejada */
-    /* ou */
-    height: 300px; /* Defina a altura desejada */
-  }
-   .quadros-container {
-        display: flex;
-        align-items: center;
-    }
-   .quadros-text {
-    margin-left: 170px; /* Espaçamento entre a imagem e o texto */
-    margin-top: 0px; /* Move o texto para cima */
-}
-.quadros-text h3 {
-    color: #C4170C;
-    font-size: 60px; /* Tamanho da fonte */
-}
- 
-     .quadros-text p {
-        font-size: 25px; /* Tamanho da fonte */
-
-        color: #C4170C; /* Cor do texto */
-        margin-left: -250px; /* Movendo o texto para a esquerda */
-        margin-top: 65px; /* Margem superior para mover o parágrafo para baixo */
-    }
-
-  
-.carousel-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    background-color: #FFFFFF; /* Cor de fundo */
-    border-radius: 20px; /* Bordas arredondadas */
-    padding: 20px; /* Espaçamento interno */
-    overflow: hidden; /* Para esconder o conteúdo que ultrapassa as bordas arredondadas */
-    margin-left: 40px; /* Margem à esquerda */
-    margin-right: 40px; /* Margem à direita */
-}
-.text-container {
-    width: 48%; /* Ajuste a largura conforme necessário */
-}
-
-.text-container p {
-    font-size: 16px; /* Ajuste o tamanho da fonte conforme necessário */
-    color: #C4170C; /* Cor do texto */
-}
-
-
-
-.left-content,
-.right-content {
-    flex-basis: 48%; /* Define a largura dos conteúdos */
-}
-
-.left-content h4,
-.right-content h4 {
-    text-align: center; /* Centraliza o texto */
-    margin-top: 0; /* Remove a margem superior padrão */
-    color: #C4170C; /* Cor do texto */
-    margin-bottom: 25px; /* Adicione uma margem inferior ao h4 */
-
-
-}
-
-.left-content p,
-.right-content p {
-    color: #C4170C; /* Altere para a cor desejada */
-    text-align: justify; /* Justifica o texto */
-   
-
-}
-.left-content p::before,
-    .right-content p::before {
-        content: '';
-        display: block;
-        width: 100%;
-        border-top: 2px solid #C4170C; /* Cor vermelha */
-        margin: 20px 0 20px; /* Espaçamento entre o traço e o texto */
-    }
- .left-content img,
- .right-content img {
-        display: block;
-        margin: 0 auto;
-        max-width: 100px; /* Defina a largura máxima desejada */
-        height: 100px;
-    }
- .ct-background {
-        background-color: #FFFFFF; /* Cor de fundo azul */
-        border-radius: 20px; /* Bordas arredondadas */
-        padding: 20px; /* Espaçamento interno */
-        text-align: center; /* Centralizar o texto */
-        color: #C4170C; /* Cor do texto */
-        margin-left: 40px; /* Margem à esquerda */
-        margin-right: 40px;
-        margin-top: 30px; /* Margem superior */
-
-    }
-     .ct-background h1 {
-        font-size: 60px; /* Tamanho da fonte do h1 */
-    }
-    .red-background {
-        background-color: #C4170C; /* Cor de fundo vermelha */
-        border-radius: 20px; /* Bordas arredondadas */
-        padding: 20px; /* Espaçamento interno */
-        display: flex; /* Exibir elementos lado a lado */
-        align-items: center; /* Alinhar elementos verticalmente */
-        color: white; /* Cor do texto */
-        margin-top: 20px; /* Margem superior */
-        margin-left: 40px; /* Margem à esquerda */
-        margin-right: 40px;
-    }
-
- .red-background {
-    position: relative; /* Tornar a div um contexto de posicionamento para os elementos internos */
-    padding-left: 50px; /* Adicionar margem à esquerda para acomodar a imagem */
-}
-
-.red-background img {
-    position: absolute;
-    top: 140%;
-    left: -299px;
-    transform: translateY(-50%);
-    width: 100vh;
-    height: 50vh;
-}
-
-.red-background ul {
-    list-style-type: none; /* Remover marcadores da lista */
-    padding: 0; /* Remover padding da lista */
-    margin-left: 500px; /* Margem à esquerda para evitar sobreposição com a imagem */
-}
-
-.red-background li {
-    margin-bottom: 10px; /* Espaçamento entre os itens da lista */
-}
-
-
-
-</style>
-
-
-
-<div class="background1-container"></div>
-
-<div class="custom3-container-fluid">
-    <div class="custom4-content-container">
+<div class="page-main-image">
+    <div class="page-main-title">
         <h3>Conheça mais sobre o </h3>
-    </div>
-    <div class="custom3-content-container">
+        <br>
         <h1>HUBNews</h1>
     </div>
 </div>
 
 <div class="background2-container">
-    <div class="quadros-container">
-        <img src="/img/quadros.png" alt="Quadrados" class="quadros-image">
-        <div class="quadros-text">
-            <h3>O que temos para você</h3>
-                <p>"Fique sempre à frente do jogo! Mantenha-se informado com notícias atualizadas em tempo real e nunca perca um momento importante. Sua fonte confiável para insights instantâneos e conhecimento impactante."</p>
+    <img src="/img/quadros.png" alt="Quadrados" class="quadros-image">
 
+    <div class="quadros-text">
+        <h2>O que temos para você</h2>
+        <p>"Fique sempre à frente do jogo! Mantenha-se informado com notícias atualizadas em tempo real e nunca
+            perca um momento importante. Sua fonte confiável para insights instantâneos e conhecimento impactante."
+        </p>
+    </div>
+</div>
+
+<ul class="carousel-container">
+    <li class="content left-content">
+        <h4>Notícias por categoria</h4>
+        <img src="img/icone-categoria.png" class="img-fluid" alt="Imagem 1">
+
+        <h5>Explore as últimas notícias por categorias que são essenciais para seus interesses!</h5>
+        <p>
+            Com nossa plataforma, você pode personalizar sua experiência, concentrando-se nas categorias que mais
+            importam para você. Elimine
+            o ruído informativo e mantenha-se atualizado de maneira direcionada. Não perca tempo procurando; deixe-nos
+            fornecer as atualizações que você deseja, quando você deseja. Otimize sua estratégia de marketing com
+            informações específicas por categoria, garantindo que sua abordagem seja precisa e relevante. Suas notícias
+            personalizadas, suas escolhas.</p>
+    </li>
+    <li class="content right-content">
+        <h4>Notícias por palavra-chave</h4>
+        <img src="img/icone-palavra-chave.png" class="img-fluid" alt="Imagem 1">
+
+        <h5>Descubra as últimas notícias que realmente importam para você!</h5>
+        <p>Com nossa abordagem inovadora de busca por
+            palavra-chave, oferecemos uma experiência personalizada, mantendo-o informado sobre os temas que mais
+            interessam. Não perca tempo filtrando informações irrelevantes; concentre-se no que é relevante para seu
+            mundo. Potencialize sua estratégia de marketing com atualizações instantâneas e direcionadas, moldando sua
+            narrativa de forma eficaz. Sua busca por notícias sob medida começa agora.</p>
+    </li>
+</ul>
+
+<div class="ct-background">
+    <h2>Benefícios</h2>
+</div>
+
+<div class="container features-container">
+    {{!-- <img src="img/decorativo_categorias.png" alt="Imagem" />
+    <!-- Substitua 'sua-imagem.jpg' pelo caminho da sua imagem --> --}}
+    <div class="features d-flex flex-column w-100">
+        <div class="features__item">
+            <div class="features__item__image d-none d-md-flex">
+                <img class="" src="/img/decorativo_categorias.png" alt="">
+            </div>
+            <div class="features__item__info">
+                <h3 class="h1">Categorias</h3>
+                <ul>
+                    <li>
+                        <i class="bi bi-check2-circle"></i>
+                        <span>Categorizar notícias permite uma segmentação eficaz,
+                            garantindo
+                            informações
+                            específicas de interesse.</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-check2-circle"></i>
+                        <span>Busca por categorias personaliza fontes de notícias
+                            com
+                            base em temas
+                            específicos.</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-check2-circle"></i>
+                        <span>Categorias facilitam atualizações específicas,
+                            mantendo
+                            usuários
+                            informados
+                            em áreas de interesse.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="features__item features__item--inverted">
+            <div class="features__item__image d-none d-md-flex">
+                <img class="" src="/img/decorativo_palavras_chave.png" alt="">
+            </div>
+            <div class="features__item__info">
+                <h3 class="h1">Palavras Chave</h3>
+                <ul>
+                    <li>
+                        <i class="bi bi-check2-circle"></i>
+                        <span>Palavras chave garantem acesso rápido e preciso a notícias específicas.</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-check2-circle"></i>
+                        <span>Os usuários podem direcionar suas preferências, recebendo apenas informações relacionadas
+                            às suas palavras chave
+                            escolhidas.</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-check2-circle"></i>
+                        <span>A busca por palavra-chave oferece notícias em tempo real, mantendo os usuários sempre
+                            atualizados.</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-check2-circle"></i>
+                        <span>Empresas podem otimizar estratégias de marketing, segmentando audiências específicas
+                            através de palavras chave.</span>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="carousel-container">
-    <div class="left-content">
-        <h4>Notícias por categoria</h4>
-              <img src="img/icone-categoria.png" class="img-fluid" alt="Imagem 1">
+<hr style="border: 2px solid var(--primary-color); opacity: 100%;">
 
-        <p>Explore as últimas notícias por categorias que são essenciais para seus interesses! Com nossa plataforma, você pode personalizar sua experiência, concentrando-se nas categorias que mais importam para você. Elimine o ruído informativo e mantenha-se atualizado de maneira direcionada. Não perca tempo procurando; deixe-nos fornecer as atualizações que você deseja, quando você deseja. Otimize sua estratégia de marketing com informações específicas por categoria, garantindo que sua abordagem seja precisa e relevante. Suas notícias personalizadas, suas escolhas.</p>
-    </div>
-    <div class="right-content">
-        <h4>Notícias por palavra-chave</h4>
-                      <img src="img/icone-palavra-chave.png" class="img-fluid" alt="Imagem 1">
-
-        <p>Descubra as últimas notícias que realmente importam para você! Com nossa abordagem inovadora de busca por palavra-chave, oferecemos uma experiência personalizada, mantendo-o informado sobre os temas que mais interessam. Não perca tempo filtrando informações irrelevantes; concentre-se no que é relevante para seu mundo. Potencialize sua estratégia de marketing com atualizações instantâneas e direcionadas, moldando sua narrativa de forma eficaz. Sua busca por notícias sob medida começa agora.</p>
-    </div>
+<div class="footer-text">
+    <span>
+        Desperte sua curiosidade e esteja no centro da ação com nossa plataforma de notícias exclusiva. Informe-se com
+        conteúdo relevante, análises profundas e notícias de última hora. Conecte-se ao mundo ao seu redor e fortaleça
+        sua
+        compreensão com informações precisas e impactantes, moldando um amanhã mais informado e consciente.</span>
 </div>
 
-<div class="ct-background">
-    <h1>Benefícios</h1>
+<div class="social-icons">
+    {{!-- TODO: Adicionar links para redes sociais --}}
+    <a href="#"><i class="bi bi-facebook"></i></a>
+    <a href="#"><i class="bi bi-youtube"></i></a>
+    <a href="#"><i class="bi bi-twitter-x"></i></a>
+    <a href="#"><i class="bi bi-whatsapp"></i></a>
 </div>
 
-<div class="red-background">
-    {{!-- <img src="img/decorativo_categorias.png" alt="Imagem" /> <!-- Substitua 'sua-imagem.jpg' pelo caminho da sua imagem --> --}}
-    <ul>
-        <li>Categorizar notícias permite uma segmentação eficaz, garantindo informações específicas de interesse.</li>
-        <li>Busca por categorias personaliza fontes de notícias com base em temas específicos.</li>
-        <li>Categorias facilitam atualizações específicas, mantendo usuários informados em áreas de interesse.</li>
-    </ul>
+<div class="git-links">
+    {{!-- TODO: Adicionar links para github --}}
+    <a href="https://www.github.com">
+        <i class="bi bi bi-github"></i>
+        <span>JohnGdev</span>
+    </a>
+    <a href="https://www.github.com">
+        <i class="bi bi bi-github"></i>
+        <span>JohnGdev</span>
+    </a>
+    <a href="https://www.github.com">
+        <i class="bi bi bi-github"></i>
+        <span>JohnGdev</span>
+    </a>
+    <a href="https://www.github.com">
+        <i class="bi bi bi-github"></i>
+        <span>JohnGdev</span>
+    </a>
 </div>
 
-
+<div class="footer-email"><a href="mailto:email.example@domain.com">HubNews.com</a></div>

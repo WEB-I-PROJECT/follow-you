@@ -29,7 +29,6 @@ class UserController {
             const { name, email, address, cpf, phone, password } = req.body;
             const erros = [];
 
-            console.log(req.body);
     
             if (!userId) {
                 erros.push({ texto: "Usuário não autenticado" });
@@ -55,8 +54,7 @@ class UserController {
                         user.cpf = cpf;
                         user.phone = phone;
     
-                        // Verifica se um arquivo de imagem foi enviado
-                        console.log("File uploaded:", req.file);
+                        
 
                         if (req.file) {
                             const tempPath = req.file.path; // Define o caminho temporário do arquivo
@@ -503,8 +501,6 @@ update(req, res) {
         const { name, email, address, cpf, phone, password } = req.body;
         const errors = [];
 
-        console.log(req.body);
-
         if (!userId) {
             errors.push({ message: "Usuário não autenticado" });
         }
@@ -535,8 +531,6 @@ update(req, res) {
                     user.cpf = cpf;
                     user.phone = phone;
 
-                    // Verifica se um arquivo de imagem foi enviado
-                    console.log("File uploaded:", req.file);
 
                     if (req.file) {
                         const tempPath = req.file.path; 
