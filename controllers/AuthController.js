@@ -3,7 +3,12 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 
 class AuthController {
+    
+
     async login(req, res) {
+        // #swagger.tags = ['Auth']
+        // #swagger.description = 'Endpoint para obter Json Web Token.'
+
         const { email, password } = req.body;
 
         try {
@@ -21,6 +26,11 @@ class AuthController {
 
             const token = jwt.sign({ userId: user._id }, 'seu_segredo_jwt', { expiresIn: '1h' });
 
+               /* #swagger.responses[200] = { 
+                schema:    {
+                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWQzOTZhZjVjYjM3NDBlOTMxMWVjNzgiLCJpYXQiOjE3MDkzMTczMDMsImV4cCI6MTcwOTMyMDkwM30.-VJHXvtovGWnKX0-ecFfZi-aNPZc6FjW1ECaESIRBv4"
+                },
+                description: 'Usuário ativado com sucesso.' } */
             res.json({ token });
         } catch (error) {
             res.status(400).json({ message: error.message });

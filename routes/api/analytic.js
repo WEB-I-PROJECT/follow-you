@@ -1,13 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const AnalyticController = require('../../controllers/AnalyticController');
-const {loggedUser} = require('../../helpers/loggedUser');
+const { verifyToken } = require('../../controllers/AuthController');
 
-router.delete('/:id', new AnalyticController().removeApi);
-//funciona
 
-// TO DO
-router.get('/:userId', new AnalyticController().indexApi);
-router.post('/', new AnalyticController().saveAnalyticApi);
+router.delete('/:id', verifyToken, new AnalyticController().removeApi);
+router.get('/:userId',verifyToken, new AnalyticController().indexApi);
+router.post('/', verifyToken, new AnalyticController().saveAnalyticApi);
 
 module.exports = router;

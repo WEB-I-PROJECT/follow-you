@@ -7,10 +7,9 @@ const analyticByKeywordGroupApi = require('./routes/api/analyticByKeywordGroup')
 const userApi = require('./routes/api/user.js');
 const analyticByCategoryApi = require('./routes/api/analyticByCategory');
 const categoryApi = require('./routes/api/category');
+const authApi = require('./routes/api/auth');
 
-
-
-
+router.use('/api/auth/' , authApi )
 router.use('/api/analytic/by-keywords/', analyticByKeywordGroupApi);
 router.use('/api/analytic/by-category/', analyticByCategoryApi);
 router.use('/api/category/', categoryApi);

@@ -1,14 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const AnalyticByKeywordGroupController = require('../../controllers/AnalyticByKeywordGroupController');
+const { verifyToken } = require('../../controllers/AuthController');
 
-router.get('/word/:id', new AnalyticByKeywordGroupController().tokenizeApi);
-router.get('/word/chart', new AnalyticByKeywordGroupController().tokensCharts)
-router.get('/news/:type/:id', new AnalyticByKeywordGroupController().getNewsApi)
 
-// TO DO
-//router.get('/:id', new AnalyticByKeywordGroupController().indexApi); - É de Durval
-router.get('/sentiment/analysis/:id', new AnalyticByKeywordGroupController().sentimentAnalysisApi)
-router.get('/news/sentiment/:id', new AnalyticByKeywordGroupController().newsSentimentApi)
+router.get('/word/:id', verifyToken, new AnalyticByKeywordGroupController().tokenizeApi);
+router.get('/word/chart',verifyToken, new AnalyticByKeywordGroupController().tokensCharts)
+router.get('/news/:type/:id', verifyToken, new AnalyticByKeywordGroupController().getNewsApi)
+router.get('/sentiment/analysis/:id', verifyToken, new AnalyticByKeywordGroupController().sentimentAnalysisApi)
+router.get('/news/sentiment/:id', verifyToken, new AnalyticByKeywordGroupController().newsSentimentApi)
 
 module.exports = router;

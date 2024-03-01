@@ -9,7 +9,7 @@ const doc = {
         title: "HUB NEWS",
         description: "Documentação da API."
     },
-    host: "localhost:8001",
+    host: "localhost:8002",
     basePath: "/",
     schemes: ['http', 'https'],
     consumes: ['application/json'],
@@ -26,21 +26,13 @@ const doc = {
         }
     ],
     securityDefinitions: {
-        api_key: {
+        jwt: {
             type: "apiKey",
-            name: "api_key",
+            name: "Authorization",
             in: "header"
-        },
-        petstore_auth: {
-            type: "oauth2",
-            authorizationUrl: "https://petstore.swagger.io/oauth/authorize",
-            flow: "implicit",
-            scopes: {
-                read_pets: "read your pets",
-                write_pets: "modify pets in your account"
-            }
         }
     },
+    security: [{ jwt: [] }], 
     definitions: {
         WordsFrequency: {
             mostFrequentWordsInContent: [
@@ -223,7 +215,7 @@ const doc = {
                     },
                     {
                         "_id": "65d4e02b46712317a3dfb6c7",
-                        "name": "vanubia",
+                        "name": "Política",
                         "createdAt": "2024-02-20T17:23:14.187Z",
                         "type": "by-category",
                         "category": "65b2b86fcf67b92db75e22bd",
@@ -238,10 +230,16 @@ const doc = {
                     "type": "by-category",
                     "category": "Finanças",
                     "user": "65b36f0519b6c96b32b8ac3e"
-                }
-                        
-            
-
+                },
+            SaveAnalytic: {
+                        "_id": "65d4e02b46712317a3dfb6c7",
+                        "name": "Economia",
+                        "createdAt": "2024-02-20T17:23:14.187Z",
+                        "type": "by-category",
+                        "category": "65b2b86fcf67b92db75e22bd",
+                        "User": "65b36f0519b6c96b32b8ac3e",
+                        "__v": 0
+            }
         }
     }
 

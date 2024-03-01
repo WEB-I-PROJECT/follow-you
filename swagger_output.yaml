@@ -5,7 +5,7 @@
     "title": "HUB NEWS",
     "description": "Documentação da API."
   },
-  "host": "localhost:8002",
+  "host": "localhost:8001",
   "basePath": "/",
   "tags": [
     {
@@ -22,10 +22,19 @@
     "https"
   ],
   "securityDefinitions": {
-    "jwt": {
+    "api_key": {
       "type": "apiKey",
-      "name": "Authorization",
+      "name": "api_key",
       "in": "header"
+    },
+    "petstore_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "https://petstore.swagger.io/oauth/authorize",
+      "flow": "implicit",
+      "scopes": {
+        "read_pets": "read your pets",
+        "write_pets": "modify pets in your account"
+      }
     }
   },
   "consumes": [
@@ -35,51 +44,6 @@
     "application/json"
   ],
   "paths": {
-    "/api/auth/": {
-      "post": {
-        "tags": [
-          "Auth"
-        ],
-        "description": "Endpoint para obter Json Web Token.",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "email": {
-                  "example": "any"
-                },
-                "password": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Usuário ativado com sucesso.",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "token": {
-                  "type": "string",
-                  "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWQzOTZhZjVjYjM3NDBlOTMxMWVjNzgiLCJpYXQiOjE3MDkzMTczMDMsImV4cCI6MTcwOTMyMDkwM30.-VJHXvtovGWnKX0-ecFfZi-aNPZc6FjW1ECaESIRBv4"
-                }
-              },
-              "xml": {
-                "name": "main"
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request"
-          }
-        }
-      }
-    },
     "/api/analytic/by-keywords/word/{id}": {
       "get": {
         "tags": [
@@ -93,11 +57,6 @@
             "required": true,
             "type": "string",
             "description": "ID da analytic."
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
           }
         ],
         "responses": {
@@ -106,9 +65,6 @@
             "schema": {
               "$ref": "#/definitions/WordsFrequency"
             }
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "404": {
             "description": "Not Found"
@@ -123,11 +79,6 @@
         ],
         "description": "Endpoint para obter um frequência de palavras em gráfico por grupo de palavras.",
         "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
-          },
           {
             "name": "id",
             "description": "ID do grupo de palavras.",
@@ -153,9 +104,6 @@
             "schema": {
               "$ref": "#/definitions/WordsCharts"
             }
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "404": {
             "description": "Não encontrado.",
@@ -195,11 +143,6 @@
             "required": true,
             "type": "string",
             "description": "ID da analytic."
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
           }
         ],
         "responses": {
@@ -208,9 +151,6 @@
             "schema": {
               "$ref": "#/definitions/NewsKeyword"
             }
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "404": {
             "description": "Não encontrado.",
@@ -243,11 +183,6 @@
             "required": true,
             "type": "string",
             "description": "ID do grupo de palavras chaves."
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
           }
         ],
         "responses": {
@@ -256,9 +191,6 @@
             "schema": {
               "$ref": "#/definitions/SentimentAnlaises"
             }
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "404": {
             "description": "Não encontrado.",
@@ -294,11 +226,6 @@
             "required": true,
             "type": "string",
             "description": "ID do analytic."
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
           }
         ],
         "responses": {
@@ -307,9 +234,6 @@
             "schema": {
               "$ref": "#/definitions/NewsSentiment"
             }
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "404": {
             "description": "Not Found"
@@ -352,11 +276,6 @@
             "type": "string"
           },
           {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
-          },
-          {
             "name": "id",
             "description": "ID da analytic.",
             "in": "query",
@@ -369,9 +288,6 @@
             "schema": {
               "$ref": "#/definitions/newsCategory"
             }
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "404": {
             "schema": {
@@ -407,11 +323,6 @@
             "required": true,
             "type": "string",
             "description": "ID da analytic."
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
           }
         ],
         "responses": {
@@ -420,9 +331,6 @@
             "schema": {
               "$ref": "#/definitions/WordsFrequency"
             }
-          },
-          "401": {
-            "description": "Unauthorized"
           }
         }
       }
@@ -434,11 +342,6 @@
         ],
         "description": "Endpoint para obter um frequência de palavras em gráfico por grupo de palavras.",
         "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
-          },
           {
             "name": "id",
             "description": "ID do grupo de palavras.",
@@ -463,9 +366,6 @@
             "schema": {
               "$ref": "#/definitions/WordsCharts"
             }
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "404": {
             "description": "Não encontrado.",
@@ -493,11 +393,6 @@
         "description": "Endpoint para obter as categorias cadastradas.",
         "parameters": [
           {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
-          },
-          {
             "name": "id",
             "description": "ID da categoria/category.",
             "in": "query",
@@ -510,9 +405,6 @@
             "schema": {
               "$ref": "#/definitions/indexCategory"
             }
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "404": {
             "description": "Não encontrado.",
@@ -545,11 +437,6 @@
             "required": true,
             "type": "string",
             "description": "ID da categoria/category."
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
           }
         ],
         "responses": {
@@ -558,9 +445,6 @@
             "schema": {
               "$ref": "#/definitions/deleteCategory"
             }
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "404": {
             "schema": {
@@ -594,11 +478,6 @@
             "required": true,
             "type": "string",
             "description": "ID da categoria/category."
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
           }
         ],
         "responses": {
@@ -607,9 +486,6 @@
             "schema": {
               "$ref": "#/definitions/detailsCategory"
             }
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "404": {
             "schema": {
@@ -645,11 +521,6 @@
             "required": true,
             "type": "string",
             "description": "ID da analytic."
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
           }
         ],
         "responses": {
@@ -667,9 +538,6 @@
                 "name": "main"
               }
             }
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "404": {
             "description": "Não encontrado.",
@@ -703,11 +571,6 @@
             "type": "string"
           },
           {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
-          },
-          {
             "name": "id",
             "description": "ID do usuário.",
             "in": "query",
@@ -720,9 +583,6 @@
             "schema": {
               "$ref": "#/definitions/AnalyticUser"
             }
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "500": {
             "description": "Analytic não encontrado.",
@@ -750,11 +610,6 @@
         "description": "Endpoint para criar Analytic.",
         "parameters": [
           {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
-          },
-          {
             "name": "body",
             "in": "body",
             "description": "Add new Analytic.",
@@ -769,9 +624,6 @@
             "schema": {
               "$ref": "#/definitions/SaveAnalytic"
             }
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "403": {
             "description": "Forbidden"
@@ -800,22 +652,12 @@
           "Users"
         ],
         "description": "Endpoint para obter todos os usuarios.",
-        "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "Lista de usuários.",
             "schema": {
               "$ref": "#/definitions/UserList"
             }
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "500": {
             "description": "Erro no servidor.",
@@ -840,11 +682,6 @@
         ],
         "description": "Endpoint para criar usuário.",
         "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
-          },
           {
             "name": "body",
             "in": "body",
@@ -904,9 +741,6 @@
               }
             }
           },
-          "401": {
-            "description": "Unauthorized"
-          },
           "500": {
             "description": "Erro no servidor.",
             "schema": {
@@ -930,11 +764,6 @@
         ],
         "description": "Endpoint para editar usuário.",
         "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
-          },
           {
             "name": "id",
             "description": "ID do usuário.",
@@ -1003,9 +832,6 @@
               }
             }
           },
-          "401": {
-            "description": "Unauthorized"
-          },
           "404": {
             "description": "Not Found"
           },
@@ -1041,11 +867,6 @@
             "type": "string"
           },
           {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
-          },
-          {
             "name": "id",
             "description": "ID do usuário.",
             "in": "query",
@@ -1067,9 +888,6 @@
                 "name": "main"
               }
             }
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "404": {
             "description": "Usuário não encontrado.",
@@ -1116,11 +934,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
           }
         ],
         "responses": {
@@ -1138,9 +951,6 @@
                 "name": "main"
               }
             }
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "404": {
             "description": "Usuário não encontrado.",
@@ -1610,7 +1420,7 @@
               },
               "name": {
                 "type": "string",
-                "example": "Política"
+                "example": "vanubia"
               },
               "createdAt": {
                 "type": "string",
@@ -1657,44 +1467,6 @@
           "example": "65b36f0519b6c96b32b8ac3e"
         }
       }
-    },
-    "SaveAnalytic": {
-      "type": "object",
-      "properties": {
-        "_id": {
-          "type": "string",
-          "example": "65d4e02b46712317a3dfb6c7"
-        },
-        "name": {
-          "type": "string",
-          "example": "Economia"
-        },
-        "createdAt": {
-          "type": "string",
-          "example": "2024-02-20T17:23:14.187Z"
-        },
-        "type": {
-          "type": "string",
-          "example": "by-category"
-        },
-        "category": {
-          "type": "string",
-          "example": "65b2b86fcf67b92db75e22bd"
-        },
-        "User": {
-          "type": "string",
-          "example": "65b36f0519b6c96b32b8ac3e"
-        },
-        "__v": {
-          "type": "number",
-          "example": 0
-        }
-      }
     }
-  },
-  "security": [
-    {
-      "jwt": []
-    }
-  ]
+  }
 }

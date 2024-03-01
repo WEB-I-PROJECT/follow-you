@@ -11,9 +11,6 @@ router.patch('/disable/:userId', verifyToken, new UserController().deactivateUse
 router.patch('/activate/:userId', verifyToken, new UserController().activateUser);
 router.post('/', verifyToken, new UserController().store);
 router.put('/', verifyToken, new UserController().update);
-router.post('/login', new AuthController().login);
-
-
 
 module.exports = router;
 
