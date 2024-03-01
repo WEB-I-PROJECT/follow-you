@@ -2,12 +2,16 @@
 const express = require('express');
 const router = express.Router();
 const UserController = require('../../controllers/UserController');
+const { AuthController } = require('../../controllers/AuthController');
+const { verifyToken } = require('../../controllers/AuthController');
 
-router.get('/', new UserController().listUsers);
-router.patch('/disable/:userId', new UserController().deactivateUser);
-router.patch('/activate/:userId', new UserController().activateUser);
-router.post('/', new UserController().store);
-router.put('/', new UserController().update);
+
+router.get('/', verifyToken, new UserController().listUsers);
+router.patch('/disable/:userId', verifyToken, new UserController().deactivateUser);
+router.patch('/activate/:userId', verifyToken, new UserController().activateUser);
+router.post('/', verifyToken, new UserController().store);
+router.put('/', verifyToken, new UserController().update);
+router.post('/login', new AuthController().login);
 
 
 
