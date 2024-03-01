@@ -3,6 +3,7 @@ const router = express.Router();
 const CategoryController = require('../controllers/CategoryController');
 const multer = require('multer');
 const path = require('path');
+const {isAdmin} = require('../helpers/isAdmin');
 
 // Configuração do Multer
 const storage = multer.diskStorage({
@@ -18,10 +19,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-router.get('/', new CategoryController().index);
-router.post('/create', upload.single('imgPath'), new CategoryController().create);
-router.post('/edit', upload.single('imgPath'), new CategoryController().edit);
-router.get('/delete/:id', new CategoryController().delete);
-router.get('/details/:id', new CategoryController().details);
+router.get('/', isAdmin, new CategoryController().index);
+router.post('/create', isAdmin,  upload.single('imgPath'), new CategoryController().create);
+router.post('/edit', isAdmin, upload.single('imgPath'), new CategoryController().edit);
+router.get('/delete/:id', isAdmin, new CategoryController().delete);
+router.get('/details/:id', isAdmin, new CategoryController().details);
 
 module.exports = router;
